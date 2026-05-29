@@ -1,0 +1,104 @@
+% !TeX root = ../main.tex
+
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\chapter{TÍNH TOÁN CÂN BẰNG VẬT CHẤT, NĂNG LƯỢNG VÀ LỰA CHỌN THIẾT BỊ}
+
+\section{Cân bằng vật chất và năng lượng nhà máy}
+
+\subsection{Cân bằng vật chất khối tiền xử lý và sản xuất RDF}
+
+Cân bằng vật chất và nước thải cho một tấn chất thải rắn sinh hoạt (CTRSH) đầu vào của dây chuyền sản xuất viên nén RDF được xác định dựa trên đặc trưng thành phần và độ ẩm của rác thải tại Hội An. Kết quả tính toán cho thấy trong 1.000 kg CTRSH ban đầu, sau công đoạn phân loại cơ học và thủ công, lượng chất thải trơ và không cháy tách ra chiếm khoảng 133,8 kg, phần rác hữu cơ và rác cháy được còn lại là 866,2 kg. 
+
+Khi đi qua công đoạn bức xạ "sốc nhiệt", khối lượng tiếp tục giảm xuống còn 822,9 kg do một phần lượng ẩm bề mặt (khoảng 43,3 kg nước) bị bay hơi dưới tác dụng của nhiệt độ cao. Tiếp đến, công đoạn nén ép rác áp lực cao đóng vai trò then chốt trong việc giảm độ ẩm cơ học, cho phép tách ra khoảng 311,4 kg nước thải rỉ rác, đưa khối lượng chất rắn còn lại về mức 511,5 kg. Dòng nước thải này sẽ được thu gom và đưa về hệ thống xử lý nước thải tập trung của nhà máy.
+
+Phần rác sau ép tiếp tục được đưa qua lồng sấy quay sử dụng nhiệt dư. Tại đây, rác được sấy khô để đạt độ ẩm tối ưu khoảng 10,4\%, làm bay hơi thêm 89,1 kg nước, do đó khối lượng cuối cùng giảm còn 422,4 kg. Đây chính là khối lượng nguyên liệu tinh xốp được nạp vào máy ép trục ngang để tạo hình viên nén RDF. 
+
+Như vậy, hệ số chuyển hóa rác thành nhiên liệu đạt mức $Q_{\text{RDF}} = 422,4 \text{ kg} / 1.000 \text{ kg}$ rác đầu vào. Áp dụng hệ số này cho quy mô công suất thiết kế toàn nhà máy là 120 tấn/ngày.đêm, ta thu được bảng cân bằng vật chất tổng thể như sau:
+
+\begin{table}[H]
+\centering
+\caption{Cân bằng vật chất sản xuất RDF cho công suất 120 tấn/ngày}
+\label{tab:canbang_rdf}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|l|c|c|c|l|}
+\hline
+\textbf{TT} & \textbf{Công đoạn} & \textbf{Đầu vào (tấn)} & \textbf{Đầu ra (tấn)} & \textbf{Phế thải (tấn)} & \textbf{Ghi chú} \\
+\hline
+1 & Phân loại & 120,000 & 103,944 & 16,056 & Chất thải trơ, không cháy \\
+\hline
+2 & Bức xạ nhiệt & 103,944 & 98,748 & 5,196 & Hơi nước bay hơi \\
+\hline
+3 & Ép tách nước & 98,748 & 61,380 & 37,368 & Nước thải rỉ rác \\
+\hline
+4 & Sấy bằng nhiệt dư & 61,380 & 50,688 & 10,692 & Hơi nước bay hơi \\
+\hline
+5 & Ép viên nén RDF & 50,688 & 46,080 & - & Nhiên liệu cấp cho lò nhiệt phân \\
+\hline
+\end{tabular}
+\end{table}
+
+Việc kiểm tra cân bằng khối lượng định luật bảo toàn được thể hiện qua tổng các thành phần đầu ra và phế thải: $46,080 + 37,368 + 16,056 + 5,196 + 10,692 + \text{hao hụt} \approx 120 \text{ tấn}$, hoàn toàn phù hợp với khối lượng rác đầu vào ban đầu.
+
+\subsection{Cân bằng sản phẩm khối nhiệt phân}
+
+Với lượng nguyên liệu viên nén RDF nạp vào lò nhiệt phân là 46,08 tấn/ngày (thành phần chủ yếu bao gồm nhựa, nilon, giấy và một lượng nhỏ hữu cơ sót), sản phẩm nhiệt phân sinh ra được phân tách thành ba pha: lỏng, khí và rắn. Quá trình được kiểm soát ở dải nhiệt độ tối ưu 350 -- 450°C trong môi trường yếm khí tuyệt đối.
+
+\begin{itemize}
+    \item \textbf{Dầu nhiệt phân thô (Pha lỏng):} Chiếm tỷ trọng lớn nhất với khoảng 45\% khối lượng đầu vào, tương đương 20,74 tấn/ngày. Phần dầu thô này sẽ được bơm tiếp sang hệ thống tinh chế đa bậc (chưng cất và cracking xúc tác) của khối 3. Sau quá trình tinh chế với tổng mức hao hụt dự kiến khoảng 20\%, sản lượng dầu thành phẩm (refined bio-oil) thu hồi đạt 16,6 tấn/ngày, tương đương khoảng 19.500 lít/ngày (với tỷ trọng trung bình $\rho \approx 0,85$ kg/lít).
+    \item \textbf{Khí tổng hợp Syngas (Pha khí):} Lượng khí không ngưng sinh ra chiếm khoảng 30\% khối lượng, tương đương 13,82 tấn/ngày. Dòng khí này chứa lượng nhiệt năng rất lớn, do đó được thiết kế hồi lưu toàn bộ trở về buồng đốt sơ cấp của chính lò nhiệt phân, đáp ứng toàn bộ nhu cầu gia nhiệt của hệ thống sau thời gian khởi động ban đầu.
+    \item \textbf{Than sinh học Biochar (Pha rắn):} Phần cặn rắn còn lại chiếm khoảng 25\% khối lượng, xấp xỉ 11,52 tấn/ngày. Than này được xả qua hệ thống làm mát kín và tùy thuộc vào kết quả phân tích hàm lượng kim loại nặng sẽ được quy hoạch ứng dụng làm chất cải tạo đất, phân bón hoặc đem chôn lấp an toàn.
+\end{itemize}
+
+\subsection{Cân bằng năng lượng và sản lượng điện}
+
+Việc quy đổi từ khối lượng rác thải sang công suất phát điện được thiết lập dựa trên các thông số nhiệt động học. Nhiệt trị thấp của nhiên liệu viên nén RDF sau khi đã quy đổi về độ ẩm làm việc 10,4\% đạt giá trị khoảng 4.600 kcal/kg (tương đương 19.259 kJ/kg). Suất tiêu hao RDF trung bình liên tục ($B_{tt}$) được tính bằng công thức:
+\begin{equation}
+B_{tt} = \frac{46.080 \text{ kg}}{24 \times 3.600 \text{ s}} \approx 0,533 \text{ kg/s}
+\end{equation}
+
+Hiệu suất chuyển hóa năng lượng thô của toàn nhà máy ($\eta_{\text{thô}}$) được tính toán khoảng 32\%, là tích số của hiệu suất chuyển hóa nhiệt phân, hiệu suất nhiệt động cơ và máy phát. Theo đó, công suất điện lý thuyết ($W_{e-lt}$) phát ra:
+\begin{equation}
+W_{e-lt} = B_{tt} \times \eta_{\text{thô}} \times q_{tlv} = 0,533 \times 0,32 \times 19.259 \approx 3.284 \text{ kW} \approx 3,28 \text{ MW}
+\end{equation}
+
+Do đặc tính nguyên liệu RDF có sự biến động nhẹ về nhiệt trị, dự án áp dụng hệ số an toàn không ổn định ($K_{\text{RDF}} = 1,25$). Do đó, công suất điện thực tế ($W_e$) dự kiến phát lên lưới định mức đạt khoảng 2,628 MW. Trong đó, hệ thống phụ tải tự dùng của nhà máy (các hệ thống quạt hút, bơm nước, động cơ quay, băng tải,...) tiêu thụ xấp xỉ 30\% sản lượng, tương đương 0,788 MW. Như vậy, công suất điện tinh ($W_{e-net}$) hòa thẳng vào lưới điện quốc gia đạt 1,82 MW. Với thời gian vận hành dự kiến, sản lượng điện ròng hàng năm nhà máy cung cấp đạt hơn 15.900 MWh, góp phần đáng kể trong việc giảm phát thải khí nhà kính so với việc sử dụng năng lượng hóa thạch (giảm tương đương 9.600 tấn $\text{CO}_2$/năm).
+
+\section{Lựa chọn danh mục máy móc và thiết bị công nghệ}
+
+Để hiện thực hóa quy trình công nghệ điều chỉnh từ khí hóa sang nhiệt phân, nhà máy đã cấu hình một danh mục máy móc thiết bị hiện đại, đồng bộ, có tính tự động hóa cao. Các thiết bị cơ khí nặng chịu tải lớn chủ yếu được nhập khẩu từ các quốc gia có nền tảng gia công cơ khí tốt, trong khi các hệ thống xử lý môi trường được thiết kế và chế tạo tối ưu hóa theo điều kiện thực tế tại Việt Nam.
+
+Dưới đây là bảng tổng hợp các nhóm thiết bị công nghệ chủ đạo (trích lược từ hồ sơ thiết kế chi tiết):
+
+\begin{table}[H]
+\centering
+\caption{Danh mục một số cụm thiết bị công nghệ chính}
+\label{tab:thietbi}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{0.05\linewidth}|p{0.3\linewidth}|p{0.4\linewidth}|p{0.15\linewidth}|}
+\hline
+\textbf{STT} & \textbf{Tên cụm thiết bị} & \textbf{Thông số kỹ thuật cơ bản} & \textbf{Ghi chú} \\
+\hline
+1 & Hệ thống máy cắt băm và xé bao & Công suất: 10 -- 15 tấn/h, Động cơ băm: $2 \times 110$ kW, điện áp 380V. & Cắt nhỏ rác.\\
+\hline
+2 & Sàng quay và hệ thống phân loại & Sàng phân loại 3D, hệ thống tách từ tính tự động $1,5$ kW. & Loại bỏ kim loại, rác trơ.\\
+\hline
+3 & Máy ép tách nước trục vít & Công suất xử lý: 7 -- 10 tấn/h. Động cơ chính: 75 kW. & Vắt kiệt độ ẩm cơ học.\\
+\hline
+4 & Lò sấy quay & Buồng cấp nhiệt, lồng quay sấy công suất 87,7 kW, có cyclone tách bụi đi kèm. & Sấy giảm ẩm rác xuống 10\%. \\
+\hline
+5 & Hệ thống nhiệt phân mô-đun & Lò phản ứng xi lanh quay kín, vỏ thép chịu nhiệt, nhiệt độ max 600°C. & Tách chiết dầu và syngas. \\
+\hline
+6 & Hệ thống tinh lọc dầu đa bậc & Bể phản ứng xúc tác, tháp cracking tầng sôi, hệ keo tụ ly tâm. & Nâng cao chỉ số cetane dầu. \\
+\hline
+7 & Tổ máy phát điện diesel & Tổ máy phát điện xoay chiều đồng bộ công suất 500 kW/tổ. & Hòa lưới điện ba pha 50 Hz. \\
+\hline
+8 & Hệ thống xử lý khói thải tĩnh điện (ESP) & Điện trường cao áp kết hợp tháp dập ướt hấp thụ khí axit. & Đạt chuẩn QCVN 61-MT:2016. \\
+\hline
+\end{tabular}
+\end{table}
+
+Tính ưu việt của danh mục thiết bị điều chỉnh nằm ở kết cấu dạng mô-đun. Việc chia nhỏ các lò nhiệt phân và tổ máy phát điện (ví dụ sử dụng nhiều tổ máy 500 kW chạy song song thay vì một tổ máy tuabin hơi vài MW) cho phép nhà máy linh hoạt cắt giảm hoặc tăng cường công suất vận hành tùy thuộc vào lượng rác biến động theo mùa tại Hội An, đồng thời thuận lợi trong công tác bảo trì bảo dưỡng mà không phải dừng toàn bộ nhà máy.
+
+\end{document}
