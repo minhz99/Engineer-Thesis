@@ -15,7 +15,9 @@
 \usepackage[top=2cm, bottom=2cm, left=3.5cm, right=2.5cm]{geometry}
 
 \usepackage{tikz} % Thư viện vẽ hình
-\usetikzlibrary{calc} % Add calc library for TikZ coordinates
+\usetikzlibrary{calc, shapes.geometric, arrows.meta, positioning} % Thêm các thư viện TikZ cần thiết
+\usepackage{pgfplots} % Vẽ biểu đồ
+\pgfplotsset{compat=1.18}
 \usepackage{graphicx} % Cho phép chèn hỉnh ảnh
 \usepackage{fancybox} % Tạo khung box
 \usepackage{indentfirst} % Thụt đầu dòng ở dòng đầu tiên trong đoạn
@@ -315,9 +317,9 @@
 % ===================================================
 \pagenumbering{roman}
 
-% \newpage
-% \pagenumbering{gobble}
-% \subfile{Chuong/0_0_Loi_cam_doan.tex}
+\newpage
+\pagenumbering{gobble}
+\subfile{Chuong/0_0_Loi_cam_doan.tex}
 
 \cleardoublepage
 \pagenumbering{gobble}
@@ -444,11 +446,10 @@
 \label{chuong4}
 \subfile{Chuong/4_Chuong_4.tex}
 
-% \newpage
-% % \pagestyle{fancy} % Áp dụng header và footer
-% \chapter{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
-% \label{chuong5}
-% \subfile{Chuong/5_Chuong_5.tex}
+\newpage
+% \pagestyle{fancy} % Áp dụng header và footer
+\label{chuong5}
+\subfile{Chuong/5_Chuong_5.tex}
 
 % ===================================================
 
@@ -465,18 +466,18 @@
 % \chapter*{PHỤ LỤC} %Kết luận và hướng phát triển}
 
 %\mainmatter
-\titleformat{\chapter}[hang]{\centering\bfseries}{ \thechapter.\ }{0pt}{}[]
-\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+% \titleformat{\chapter}[hang]{\centering\bfseries}{ \thechapter.\ }{0pt}{}[]
+% \titlespacing*{\chapter}{0pt}{-20pt}{20pt}
 
-\titlecontents{chapter}
-    [0.0cm]             % left margin
-    {\bfseries\vspace{0.3cm}}                  % above code
-    {{\bfseries{\scshape} \thecontentslabel.\ }} % numbered format
-    {}         % unnumbered format
-    {\titlerule*[0.3pc]{.}\contentspage}         % filler-page-format, e.g dots
-\chapter{MÃ NGUỒN VÀ TÀI LIỆU KỸ THUẬT}
-\subfile{Chuong/Phu_luc_A}
-\label{phu_luc_a}
+% \titlecontents{chapter}
+%     [0.0cm]             % left margin
+%     {\bfseries\vspace{0.3cm}}                  % above code
+%     {{\bfseries{\scshape} \thecontentslabel.\ }} % numbered format
+%     {}         % unnumbered format
+%     {\titlerule*[0.3pc]{.}\contentspage}         % filler-page-format, e.g dots
+% \chapter{MÃ NGUỒN VÀ TÀI LIỆU KỸ THUẬT}
+% \subfile{Chuong/Phu_luc_A}
+% \label{phu_luc_a}
 
 % \newpage
 % \chapter{THÔNG SỐ THIẾT KẾ MÔ HÌNH}
