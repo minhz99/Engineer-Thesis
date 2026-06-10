@@ -1,0 +1,110 @@
+\begin{figure}[htbp]\
+\\centering\
+\\resizebox{\	extwidth}{!}{%\
+\\begin{tikzpicture}[\
+    proc/.style={\
+        draw=gray!65, thick, rounded corners=4pt,\
+        fill=#1, minimum width=2.8cm, minimum height=1.05cm,\
+        font=\\footnotesize, align=center,\
+    },\
+    proc/.default={white},\
+    side/.style={\
+        draw=gray!55, rounded corners=3pt,\
+        fill=#1, minimum width=2.3cm, minimum height=0.8cm,\
+        font=\\scriptsize, align=center,\
+    },\
+    side/.default={gray!15},\
+    arr/.style={-{Stealth[length=6pt,width=4pt]}, thick, #1},\
+    arr/.default={gray!70},\
+    lbl/.style={font=\\scriptsize, fill=white, draw=none, inner sep=1.5pt},\
+]\
+\\
+ode[proc=green!25]                        (A) at ( 0.0, 0) {CTRSH tươi\\\\120\\,t/ngày};\
+\\
+ode[proc=orange!20]                       (B) at ( 3.4, 0) {Phân loại\\\\sơ bộ};\
+\\
+ode[proc=red!15, draw=red!50]             (C) at ( 6.8, 0) {Lò nhiệt phân quay\\\\$350$--$600^{\\circ}$C};\
+\\
+ode[proc=blue!18]                         (D) at (10.2, 0) {Ngưng tụ\\\	hu hồi dầu};\
+\\
+ode[proc=cyan!20]                         (E) at (13.6, 0) {Chưng cất\\\\+ Tinh chế};\
+\\
+ode[proc=teal!22]                         (F) at (17.0, 0) {Động cơ diesel};\
+\\
+ode[proc=yellow!30, draw=y
+<truncated 2025 bytes>","TargetFile":""/Users/minhz/Desktop/HUST/KS/Đồ án tốt nghiệp kỹ sư/Engineer Thesis/Chuong/2_Chuong_2.tex"","toolAction":""Editing file"","toolSummary":""Add figure to Chapter 2""}}]}
+{"step_index":59,"source":"MODEL","type":"CODE_ACTION","status":"DONE","created_at":"2026-06-10T07:44:48Z","content":"Created At: 2026-06-10T07:44:48Z
+Completed At: 2026-06-10T07:44:48Z
+The following changes were made by the multi_replace_file_content tool to: /Users/minhz/Desktop/HUST/KS/Đồ án tốt nghiệp kỹ sư/Engineer Thesis/Chuong/2_Chuong_2.tex. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -418,6 +418,65 @@
+ 
+ Trên cơ sở so sánh, lò nhiệt phân quay được chọn cho dự án. Thiết bị này có thể vận hành theo chế độ mẻ hoặc bán liên tục, phù hợp với hệ thống cấp liệu RDF đã qua bunker. Khi lò quay chậm, vật liệu được đảo trộn và dịch chuyển, giúp giảm chênh lệch nhiệt độ trong lớp rác. Hơi hydrocarbon sinh ra được dẫn ngay sang hệ thống ngưng tụ để thu dầu, còn khí không ngưng được xử lý và hồi lưu đốt. Cấu hình này phù hợp với mục tiêu ưu tiên thu dầu nhiệt phân và kiểm soát ổn định quá trình trong điều kiện rác đầu vào biến động.
+ 
++\begin{figure}[htbp]
++\centering
++\resizebox{	extwidth}{!}{%
++\begin{tikzpicture}[
++    proc/.style={
++        draw=gray!65, thick, rounded corners=4pt,
++        fill=#1, minimum width=2.8cm, minimum height=1.05cm,
++        font=\footnotesize, align=center,
++    },
++    proc/.default={white},
++    side/.style={
++        draw=gray!55, rounded corners=3pt,
++        fill=#1, minimum width=2.3cm, minimum height=0.8cm,
++        font=\scriptsize, align=center,
++    },
++    side/.default={gray!15},
++    arr/.style={-{Stealth[length=6pt,width=4pt]}, thick, #1},
++    arr/.default={gray!70},
++    lbl/.style={font=\scriptsize, fill=white, draw=none, inner sep=1.5pt},
++]
++\
+ode[proc=green!25]                        (A) at ( 0.0, 0) {CTRSH tươi\\120\,t/ngày};
++\
+ode[proc=orange!20]                       (B) at ( 3.4, 0) {Phân loại\\sơ bộ};
++\
+ode[proc=red!15, draw=red!50]             (C) at ( 6.8, 0) {Lò nhiệt phân quay\\$350$-
+<truncated 192 bytes>
+inh chế};
++\
+ode[proc=teal!22]                         (F) at (17.0, 0) {Động cơ diesel};
++\
+ode[proc=yellow!30, draw=yellow!65!black] (G) at (20.4, 0) {Điện};
++
++\draw[arr] (A) -- (B);
++\draw[arr] (B) -- (C)
++    node[lbl, midway, above=20pt] {Cháy được (RDF)};
++\draw[arr] (C) -- (D)
++    node[lbl, midway, above=20pt] {Dầu + hơi};
++\draw[arr] (D) -- (E)
++    node[lbl, midway, above=20pt] {Dầu thô};
++\draw[arr] (E) -- (F)
++    node[lbl, midway, above=20pt] {Dầu diesel};
++\draw[arr] (F) -- (G);
++
++\
+ode[side=gray!20] (Bw) at (3.4, -2.0) {Lò cacbon hóa\\(hữu cơ 62,56\%)};
++\
+ode[side=gray!30] (Cc) at (6.8, -2.0) {Than carbon\\(25\%)};
++
++\draw[arr=gray!60] (B.south) -- (Bw.north);
++\draw[arr=gray!60] (C.south) -- (Cc.north);
++
++\
+ode[side=blue!10, draw=blue!45] (Gr) at (8.5, 2.0) {Khí hồi lưu (30\%)};
++\draw[arr=blue!55] (D.north) |- (Gr.east);
++\draw[arr=blue!50, dashed] (Gr.west) -| (C.north);
++
++\
+ode[side=orange!20, draw=orange!55] (Hr) at (11.9, -2.0) {Dầu nặng hồi lưu};
++\draw[arr=orange!60] (E.south) |- (Hr.east);
++\draw[arr=orange!50, dashed] (Hr.south) -- ++(0,-0.3) -| (C.south west);
++
++\end{tikzpicture}%
++}
++\caption{Sơ đồ công nghệ tổng thể: tiền xử lý -- nhiệt phân -- tinh chế -- phát điện}
++\label{fig:process_flow}
++\end{figure}

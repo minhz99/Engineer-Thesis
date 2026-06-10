@@ -1,0 +1,117 @@
+\begin{figure}[htbp]\
+\\centering\
+\\resizebox{0.75\	extwidth}{!}{%\
+\\begin{tikzpicture}[\
+    proc/.style={\
+        draw=gray!70, thick, rounded corners=3pt,\
+        fill=#1, minimum width=2.4cm, minimum height=0.85cm,\
+        font=\\footnotesize, align=center,\
+    },\
+    proc/.default={white},\
+    side/.style={\
+        draw=gray!50, rounded corners=3pt,\
+        fill=gray!10, minimum width=2.0cm, minimum height=0.75cm,\
+        font=\\scriptsize, align=center,\
+    },\
+    arr/.style={-{Stealth[length=5pt,width=3.5pt]}, thick, #1},\
+    arr/.default={gray!65},\
+    lbl/.style={font=\\scriptsize, black!60},\
+]\
+\\
+ode[proc=orange!25]  (raw)  at (0, 0)    {Dầu thô\\\\
+hiệt phân};\
+\\
+ode[proc=blue!15]    (dist) at (0,-1.5)  {Chưng cất\\\\phân đoạn};\
+\\
+ode[proc=red!10]     (acid) at (0,-3.0)  {Tinh chế axit\\\\\\ce{H2SO4} đặc};\
+\\
+ode[proc=teal!15]    (base) at (0,-4.5)  {Rửa kiềm\\\\\\ce{NaOH} 3\\%};\
+\\
+ode[proc=yellow!15]  (clay) at (0,-6.0)  {Hấp phụ đất sét\\\\hoạt tính};\
+\\
+ode[proc=gray!20]    (filt) at (0,-7.5)  {Lọc ép tinh};\
+\\
+ode[proc=green!25]   (out)  at (0,-9.0)  {Dầu diesel\\\	hành phẩm};\
+\
+\\draw[arr] (raw)  -- (dist);\
+\\draw[arr] (dist) -- (acid) node[lbl, midway, right=2pt] {Dầu nhẹ (80\\%)};\
+\\draw[arr] (acid) -- (base);\
+\\draw[arr] (base) -- (clay);\
+\\draw[arr] (clay) -- (filt);\
+\\draw[arr] (filt) -- (out);\
+\
+\\
+ode[side] (heavy) at (-3.2,-1.5) {
+<truncated 1347 bytes>","TargetFile":""/Users/minhz/Desktop/HUST/KS/Đồ án tốt nghiệp kỹ sư/Engineer Thesis/Chuong/3_Chuong_3.tex"","toolAction":""Editing file"","toolSummary":""Add figure to Chapter 3""}}]}
+{"step_index":68,"source":"MODEL","type":"CODE_ACTION","status":"DONE","created_at":"2026-06-10T07:45:18Z","content":"Created At: 2026-06-10T07:45:18Z
+Completed At: 2026-06-10T07:45:18Z
+The following changes were made by the multi_replace_file_content tool to: /Users/minhz/Desktop/HUST/KS/Đồ án tốt nghiệp kỹ sư/Engineer Thesis/Chuong/3_Chuong_3.tex. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -408,6 +408,58 @@
+ 
+ Phân đoạn dầu nhẹ tiếp tục qua quá trình tinh chế hóa học bao gồm xử lý bằng axit sulfuric đậm đặc (2--5\%), rửa kiềm bằng dung dịch \ce{NaOH} 3\% và hấp phụ bằng đất sét hoạt hóa. Định mức tiêu hao hóa chất dự kiến cho mỗi tấn dầu thô là: axit sulfuric 16--40 kg, xút \ce{NaOH} 24 kg, và đất sét hoạt tính 16--40 kg. Quá trình này giúp loại bỏ hợp chất chứa lưu huỳnh, nhựa không bão hòa và cải thiện độ màu.
+ 
++\begin{figure}[htbp]
++\centering
++\resizebox{0.75	extwidth}{!}{%
++\begin{tikzpicture}[
++    proc/.style={
++        draw=gray!70, thick, rounded corners=3pt,
++        fill=#1, minimum width=2.4cm, minimum height=0.85cm,
++        font=\footnotesize, align=center,
++    },
++    proc/.default={white},
++    side/.style={
++        draw=gray!50, rounded corners=3pt,
++        fill=gray!10, minimum width=2.0cm, minimum height=0.75cm,
++        font=\scriptsize, align=center,
++    },
++    arr/.style={-{Stealth[length=5pt,width=3.5pt]}, thick, #1},
++    arr/.default={gray!65},
++    lbl/.style={font=\scriptsize, black!60},
++]
++\
+ode[proc=orange!25]  (raw)  at (0, 0)    {Dầu thô\\
+hiệt phân};
++\
+ode[proc=blue!15]    (dist) at (0,-1.5)  {Chưng cất\\phân đoạn};
++\
+ode[proc=red!10]     (acid) at (0,-3.0)  {Tinh chế axit\\\ce{H2SO4} đặc};
++\
+ode[proc=teal!15]    (base) at (0,-4.5)  {Rửa kiềm\\\ce{NaOH} 3\%};
++\
+ode[proc=yellow!15]  (clay) at (0,-6.0)  {Hấp phụ đất sét\\hoạt tính};
++\
+ode[proc=gray!20]    (filt) at (0,-7.5)  {Lọc ép tinh};
++\
+ode[proc=green!25]   (out)  at (0,-9.0)  {Dầu diesel\	hành phẩm};
++
++\draw[arr] (raw)  -- (dist);
++\draw[arr] (dist) -- (acid) node[lbl, midway, right=2pt] {Dầu nhẹ (80\%)};
++\draw[arr] (acid) -- (base);
++\draw[arr] (base) -- (clay);
++\draw[arr] (clay) -- (filt);
++\draw[arr] (filt) -- (out);
++
++\
+ode[side] (heavy) at (-3.2,-1.5) {Dầu nặng 15\%\\$\rightarrow$ hồi lưu lò};
++\
+ode[side] (gasr)  at ( 3.2,-1.5) {Khí 5\%\\$\rightarrow$ hồi lưu đốt};
++\draw[arr=orange!60] (dist.west) -- (heavy.east);
++\draw[arr=blue!50]   (dist.east) -- (gasr.west);
++
++\
+ode[side] (acid_w) at (3.2,-3.0) {Cặn axit\\(trung hòa)};
++\
+ode[side] (base_w) at (3.2,-4.5) {Nước thải kiềm\\(xử lý)};
++\
+ode[side] (clay_w) at (3.2,-6.0) {Đất sét thải\\(xử lý)};
++\draw[arr=gray!45] (acid.east) -- (acid_w.west);
++\draw[arr=gray!45] (base.east) -- (base_w.west);
++\draw[arr=gray!45] (clay.east) -- (clay_w.west);
++
++\end{tikzpicture}%
++}
++\caption{Quy trình chưng cất và tinh chế hóa học nâng cấp chất lượng dầu}
++\label{fig:oil_refining}
++\end{figure}

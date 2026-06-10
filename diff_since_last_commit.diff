@@ -1,0 +1,2592 @@
+diff --git a/Chuong/0_0_Loi_cam_doan.tex b/Chuong/0_0_Loi_cam_doan.tex
+index 075c848..c480ce0 100644
+--- a/Chuong/0_0_Loi_cam_doan.tex
++++ b/Chuong/0_0_Loi_cam_doan.tex
+@@ -16,8 +16,8 @@ Tôi xin chịu trách nhiệm hoàn toàn về tính minh bạch và độ xác
+ 
+ \begin{flushright}
+ Sinh viên thực hiện\\
++\scalebox{0.9}{
+ \begin{tabular}{@{}c@{}}
+ \textit{(Ký và ghi rõ họ tên)}
+-\end{tabular}
+-\end{flushright}
+-\end{document}
+\ No newline at end of file
++\end{tabular}%
++}
+\ No newline at end of file
+diff --git a/Chuong/0_1_Loi_cam_on.tex b/Chuong/0_1_Loi_cam_on.tex
+index 9918087..69a3add 100644
+--- a/Chuong/0_1_Loi_cam_on.tex
++++ b/Chuong/0_1_Loi_cam_on.tex
+@@ -15,10 +15,8 @@ Em cũng xin trân trọng cảm ơn toàn thể quý thầy cô giảng viên t
+ \begin{flushright}
+ Học viên thực hiện đồ án \\[0.5em]
+ 
++\scalebox{0.9}{
+ \begin{tabular}{c}
+ \textit{Vũ Đức Minh}
+-\end{tabular}
+-
+-\end{flushright}
+-
+-\end{document}
+\ No newline at end of file
++\end{tabular}%
++}
+\ No newline at end of file
+diff --git a/Chuong/0_2_Tom_tat_noi_dung.tex b/Chuong/0_2_Tom_tat_noi_dung.tex
+index a08de3d..4ca3a08 100644
+--- a/Chuong/0_2_Tom_tat_noi_dung.tex
++++ b/Chuong/0_2_Tom_tat_noi_dung.tex
+@@ -18,9 +18,8 @@ Kết quả đạt được là một phương án thiết kế sơ bộ có tí
+ 
+ % \begin{flushright}
+ % Sinh viên thực hiện\\
+-% \begin{tabular}{@{}c@{}}
++% \scalebox{0.9}{
++\begin{tabular}{@{}c@{}}
+ % \textit{(Ký và ghi rõ họ tên)}
+-% \end{tabular}
+-% \end{flushright}
+-
+-\end{document}
++% \end{tabular}%
++}
+\ No newline at end of file
+diff --git a/Chuong/1_Chuong_1.tex b/Chuong/1_Chuong_1.tex
+index 27e3856..51e08b9 100644
+--- a/Chuong/1_Chuong_1.tex
++++ b/Chuong/1_Chuong_1.tex
+@@ -3,94 +3,215 @@
+ \documentclass[../main.tex]{subfiles}
+ \begin{document}
+ 
++\definecolor{OrganicGreen}{HTML}{2D5F2E}  % Xanh lá đậm - Rác hữu cơ
++\definecolor{PlasticOrange}{HTML}{E67E22} % Cam đất - Nhựa
++\definecolor{SandBrown}{HTML}{A0522D}    % Nâu đất - Đất cát
++\definecolor{PaperBlue}{HTML}{2980B9}     % Xanh dương - Giấy
++\definecolor{GlassTeal}{HTML}{1ABC9C}     % Xanh ngọc - Thủy tinh
++\definecolor{MetalGray}{HTML}{95A5A6}     % Xám chì - Kim loại
++\definecolor{OtherGray}{HTML}{D3D3D3}     % Xám nhạt - Khác
++
+ \chapter{TỔNG QUAN}
+ 
+-\section{Thực trạng quản lý CTRSH tại thành phố Hội An}
++\section{Hiện trạng quản lý và xử lý chất thải rắn sinh hoạt tại Việt Nam}
+ 
+-Thành phố Hội An là đô thị di sản và là trung tâm du lịch quan trọng của tỉnh Quảng Nam. Quá trình phát triển du lịch, dịch vụ lưu trú, nhà hàng, thương mại và gia tăng dân số cơ học làm lượng CTRSH phát sinh có xu hướng tăng nhanh. Theo hồ sơ điều chỉnh công nghệ của dự án, lượng rác thu gom tại Hội An đã tăng từ khoảng 65,5 tấn/ngày năm 2013 lên trên 100 tấn/ngày năm 2019 và được dự báo có thể đạt 120--140 tấn/ngày trong giai đoạn 2025--2030 \cite{BaocaoHoiAn2024}. Với đặc thù là đô thị du lịch, chất thải thực phẩm, bao bì nhựa, giấy, túi nylon và rác phát sinh theo mùa du lịch chiếm tỷ lệ đáng kể.
++\subsection{Đặc điểm và thành phần rác thải sinh hoạt}
+ 
+-Kết quả phân loại CTRSH tại Hội An cho thấy rác hữu cơ chiếm trung bình 62,56\% khối lượng, nhựa và bao nylon chiếm 10,16\%, giấy chiếm 7,42\%, đất cát chiếm 7,76\%, thủy tinh chiếm 2,28\% và kim loại chiếm 1,45\%. Về tính chất cháy, nhóm chất thải cháy được chiếm khoảng 86,62\%, còn nhóm không cháy chiếm khoảng 13,38\%. Độ ẩm trung bình của mẫu rác là 56,3\%, độ tro khoảng 8,5\%. Các số liệu này cho thấy rác Hội An có tiềm năng thu hồi năng lượng nhưng bắt buộc phải có tiền xử lý tách tạp chất, giảm ẩm và ổn định kích thước trước khi đưa vào hệ thống xử lý nhiệt.
++Chất thải rắn sinh hoạt (CTRSH) tại Việt Nam mang những đặc điểm riêng biệt, phản ánh rõ nét trình độ phát triển kinh tế - xã hội và văn hóa sinh hoạt của người dân. Thành phần CTRSH nổi bật với tỷ lệ chất hữu cơ cao, thường dao động từ 50$-$70$\%$ tổng khối lượng rác. Các chất hữu cơ này chủ yếu bao gồm thức ăn thừa, rau quả, lá cây và các vật liệu dễ phân hủy sinh học khác. Đây là đặc điểm điển hình của các quốc gia đang phát triển, nơi thói quen tiêu dùng và chế biến thực phẩm tại hộ gia đình vẫn còn phổ biến \cite{Thao2011}.
+ 
+-Nhà máy xử lý rác thải sinh hoạt hiện hữu tại khu vực xã Cẩm Hà sử dụng công nghệ đốt trực tiếp với công suất thiết kế 100 tấn/ngày đêm, nhưng quá trình vận hành không ổn định, công suất thực tế chỉ đạt khoảng 25--30\% công suất thiết kế và chưa đáp ứng yêu cầu nghiệm thu môi trường. Khi hệ thống xử lý tại chỗ không vận hành ổn định, rác phát sinh hằng ngày phải vận chuyển đến bãi rác Tam Nghĩa, huyện Núi Thành, cách Hội An khoảng 100 km. Phương án vận chuyển xa này làm tăng chi phí xử lý, tiêu hao nhiên liệu vận tải, gia tăng nguy cơ rơi vãi, phát tán mùi trên tuyến đường và không bền vững trong dài hạn.
++Bên cạnh thành phần hữu cơ, CTRSH còn bao gồm các thành phần vô cơ như giấy và bìa carton (5$-$10$\%$), nhựa các loại (10$-$15$\%$), kim loại (2$-$4$\%$), thủy tinh (2$-$3$\%$), vải vụn và da (1$-$3$\%$), cùng các loại khác như cao su, gỗ, xương với tỷ lệ nhỏ hơn. Thành phần này có xu hướng biến đổi theo mức độ đô thị hóa và sự phát triển kinh tế của từng khu vực. Cụ thể, tại các đô thị lớn như Hà Nội và Thành phố Hồ Chí Minh, tỷ lệ chất thải nhựa và giấy có xu hướng gia tăng do sự phát triển của hoạt động thương mại và dịch vụ (Hình~\ref{fig:thanh-phan-rac-viet-nam}).
+ 
+-\begin{table}[htbp]
++\begin{figure}[H]
+ \centering
+-\caption{Thành phần trung bình CTRSH tại thành phố Hội An theo khối lượng}
+-\label{tab:thanh-phan-rac-hoi-an}
+-\setlength{\tabcolsep}{5pt}
+-% \resizebox{\textwidth}{!}{%
+-\begin{tabular}{>{\centering\arraybackslash}p{0.08\textwidth}>{\raggedright\arraybackslash}p{0.52\textwidth}>{\centering\arraybackslash}p{0.25\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Thành phần} & \textbf{Giá trị bình quân, \%} \\
+-\midrule
+-1 & Rác hữu cơ & 62,56 \\
+-2 & Giấy & 7,42 \\
+-3 & Vải & 1,54 \\
+-4 & Gỗ, củi, cành cây & 4,72 \\
+-5 & Nhựa, bao nylon & 10,16 \\
+-6 & Da và cao su & 0,22 \\
+-7 & Kim loại & 1,45 \\
+-8 & Thủy tinh & 2,28 \\
+-9 & Sành sứ, đất cát, xỉ than, bùn và thành phần khác & 9,65 \\
+-\midrule
+-\multicolumn{2}{l}{\textbf{Tổng cộng}} & \textbf{100,00} \\
+-\bottomrule
+-\end{tabular}%
+-% }
+-\end{table}
++\makeatletter
++\def\pgfpie@legend#1{%
++  \coordinate[xshift=0.8cm,
++  yshift={(\the\pgfpie@sliceLength*0.5+1)*0.8cm}] (pgfpie@legendpos) at
++  (current bounding box.east);
++
++  \scope[node distance=0.8cm]
++    \foreach \pgfpie@p/\pgfpie@t [count=\pgfpie@i from 0] in {#1}
++    {
++      \pgfpie@findColor{\pgfpie@i}
++      \node[draw, fill={\pgfpie@thecolor}, \pgfpie@style, below of={pgfpie@legendpos}, label={0:{\pgfpie@t}}] (pgfpie@legendpos) {};
++    }
++  \endscope
++}
++\makeatother
++\scalebox{0.9}{
++\begin{tikzpicture}
++    \pie[
++        style=drop shadow,
++        hide number,
++        text=legend,
++        radius=3.5,
++        color={OrganicGreen, PlasticOrange, PaperBlue, MetalGray, GlassTeal, SandBrown, OtherGray},
++        explode=0.1
++    ]{
++        60.0/{Chất hữu cơ (60,0\%)},
++        12.5/{Nhựa các loại (12,5\%)},
++        7.5/{Giấy \& bìa carton (7,5\%)},
++        3.0/{Kim loại (3,0\%)},
++        2.5/{Thủy tinh (2,5\%)},
++        2.0/{Vải vụn \& da (2,0\%)},
++        12.5/{Thành phần khác (12,5\%)}
++    }
++\end{tikzpicture}
++}
++\caption{Thành phần khối lượng CTRSH trung bình tại Việt Nam}
++\label{fig:thanh-phan-rac-viet-nam}
++\end{figure}
+ 
+-% \begin{figure}[htbp]
+-% \centering
+-% \fbox{\parbox{0.86\textwidth}{\centering\vspace{2.6cm}
+-% \textit{bản vẽ hiện trạng sử dụng đất hoặc vị trí nhà máy xử lý CTRSH thành phố Hội An.}
+-% \vspace{2.6cm}}}
+-% \caption{Vị trí và hiện trạng khu vực dự án Nhà máy xử lý CTRSH thành phố Hội An}
+-% \label{fig:vi-tri-du-an}
+-% \end{figure}
++Độ ẩm của CTRSH tại Việt Nam thường rất cao, dao động từ 50$\%$ đến 70$\%$, nguyên nhân chủ yếu do tỷ trọng lớn của thành phần hữu cơ và điều kiện khí hậu nhiệt đới ẩm. Độ ẩm cao này không chỉ ảnh hưởng đến hiệu quả thu gom, vận chuyển mà còn làm giảm đáng kể giá trị nhiệt của rác khi sử dụng làm nhiên liệu đốt. Khối lượng riêng của CTRSH thường nằm trong khoảng 200 đến 400 kg/$\text{m}^3$, phụ thuộc vào mức độ đầm nén và thành phần cụ thể của rác. Giá trị nhiệt trị thấp (LHV - Lower Heating Value) của CTRSH ở Việt Nam thường chỉ đạt khoảng 4$-$8 $\text{MJ}/\text{kg}$, thấp hơn so với các nước phát triển do độ ẩm cao và tỷ lệ chất hữu cơ lớn, gây khó khăn cho các công nghệ xử lý nhiệt \cite{Quang2024}.
+ 
+-\section{Bối cảnh quốc tế và khu vực về xử lý nhiệt CTRSH}
++\subsection{Sản lượng và xu hướng gia tăng chất thải rắn}
+ 
+-Xu hướng xử lý chất thải rắn sinh hoạt bằng công nghệ nhiệt đã phát triển mạnh tại châu Âu từ những năm 1970 và đặc biệt tăng tốc từ thập niên 2000. Theo dữ liệu của Eurostat, châu Âu hiện có hơn 500 nhà máy đốt rác (waste-to-energy, WtE) với công suất khoảng 90 triệu tấn/năm, đồng thời số lượng nhà máy nhiệt phân và khí hóa cũng tăng đáng kể trong thập niên gần đây. Tại Đan Mạch, Thụy Sĩ và Hà Lan, tỷ lệ CTRSH được xử lý bằng công nghệ nhiệt đạt trên 50\% tổng lượng rác thu gom, cao hơn nhiều so với mức trung bình EU khoảng 27\% \cite{Arena2012}.
++Sản lượng chất thải rắn sinh hoạt tại Việt Nam đang có xu hướng gia tăng nhanh chóng, phản ánh sự phát triển kinh tế và quá trình đô thị hóa diễn ra mạnh mẽ trong những thập kỷ gần đây. Theo số liệu từ Bộ Tài nguyên và Môi trường (nay là Bộ Nông nghiệp và Môi trường), tổng lượng chất thải rắn sinh hoạt phát sinh trên phạm vi cả nước đã tăng từ khoảng 27 triệu tấn năm 2010 lên khoảng 40 triệu tấn vào năm 2020, và dự báo sẽ tiếp tục tăng lên 50$-$55 triệu tấn vào năm 2030. Tốc độ gia tăng trung bình hàng năm của lượng chất thải rắn sinh hoạt ước tính khoảng 10$-$16$\%$, cao hơn đáng kể so với tốc độ tăng trưởng dân số.
+ 
+-Tại châu Á, Nhật Bản là quốc gia đi đầu về công nghệ nhiệt phân và khí hóa chất thải. Sau cuộc khủng hoảng rác thải nhựa 1990, Nhật Bản đầu tư mạnh vào nghiên cứu và triển khai các nhà máy pyrolysis và gasification với công suất nhỏ và vừa (50--500 tấn/ngày). Singapore xây dựng mô hình xử lý tập trung quy mô lớn với 4 nhà máy WtE có tổng công suất khoảng 3,2 triệu tấn/năm, đáp ứng nhu cầu xử lý toàn bộ rác sinh hoạt của đảo quốc này. Trung Quốc đã lắp đặt hàng trăm nhà máy đốt rác có thu hồi năng lượng, đồng thời đang đẩy mạnh phát triển công nghệ pyrolysis để xử lý rác nhựa và RDF \cite{Bridgwater2012}.
++Tại các đô thị lớn, lượng rác thải sinh hoạt phát sinh đặc biệt cao và tăng nhanh. Thành phố Hồ Chí Minh hiện phát sinh khoảng 9.000$-$10.000 tấn rác thải rắn sinh hoạt mỗi ngày, trong khi Hà Nội phát sinh khoảng 6.500$-$7.000 tấn mỗi ngày. Các thành phố lớn khác như Đà Nẵng, Cần Thơ, Hải Phòng cũng có lượng rác thải phát sinh từ 800 đến 2.000 tấn mỗi ngày. Định mức phát sinh rác thải tại các đô thị lớn dao động từ 0,8 đến 1,2 kg/người/ngày, cao hơn mức trung bình toàn quốc là 0,5$-$0,7 kg/người/ngày.
+ 
+-Xu hướng hiện nay trên thế giới cho thấy sự dịch chuyển từ đốt rác đơn thuần sang các công nghệ chuyển hóa nhiệt có kiểm soát, trong đó nhiệt phân và khí hóa được coi là bước trung gian phù hợp với các quốc gia có lượng rác nhựa và RDF lớn. Nghiên cứu của Miandad và cộng sự (2016) cho thấy nhiệt phân nhanh (fast pyrolysis) ở nhiệt độ 450--550\textdegree C với thời gian lưu hơi dưới 2 giây có thể đạt hiệu suất thu dầu tới 70--75\% khối lượng từ nguyên liệu nhựa hỗn hợp \cite{Miandad2016}. Công nghệ này đã được triển khai ở một số quốc gia Đông Nam Á như Malaysia và Thái Lan với quy mô pilot và semi-commercial.
++Xu hướng đô thị hóa tiếp tục là động lực chính thúc đẩy sự gia tăng lượng rác thải. Tỷ lệ đô thị hóa của Việt Nam đã tăng từ khoảng 30$\%$ năm 2010 lên khoảng 37$\%$ năm 2020 và dự kiến sẽ đạt 45$-$50$\%$ vào năm 2030. Quá trình này kéo theo sự dịch chuyển dân cư từ nông thôn ra thành thị, làm tăng mật độ dân số và áp lực lên hệ thống quản lý chất thải rắn tại các đô thị (Hình~\ref{fig:xu-huong-rac-viet-nam}).
+ 
+-Bài học quốc tế cho thấy ba yếu tố then chốt quyết định sự thành công của các nhà máy xử lý nhiệt CTRSH: (i) chất lượng và tính đồng nhất của nguyên liệu RDF, phụ thuộc trực tiếp vào hiệu quả phân loại tại nguồn và công đoạn tiền xử lý; (ii) công nghệ và quy mô phù hợp với điều kiện địa phương, tránh áp dụng máy móc công nghệ quy mô lớn cho các dự án vừa và nhỏ; (iii) khung pháp lý và cơ chế kinh tế khuyến khích, bao gồm tiêu chuẩn môi trường phù hợp, cơ chế giá điện ưu đãi và hỗ trợ đầu tư ban đầu \cite{Arena2012}.
++\begin{figure}[H]
++\centering
++\scalebox{0.9}{
++\begin{tikzpicture}
++\begin{axis}[
++    ybar,
++    bar width=25pt,
++    enlarge x limits=0.3,
++    ylabel={Sản lượng CTRSH (triệu tấn/năm)},
++    xlabel={Năm},
++    xtick={2010, 2020, 2030},
++    xticklabels={2010, 2020, 2030\\(Dự báo)},
++    xticklabel style={align=center},
++    nodes near coords,
++    nodes near coords align={vertical},
++    ymin=0, ymax=65,
++    axis lines*=left,
++    ymajorgrids=true,
++    grid style={dashed, gray!30},
++    width=0.8\textwidth,
++    height=6.5cm,
++    every node near coord/.append style={font=\small\bfseries, color=black},
++    xticklabel style={font=\small\bfseries},
++    yticklabel style={font=\small}
++]
++\addplot[fill=PaperBlue, draw=none] coordinates {
++    (2010, 27)
++    (2020, 40)
++    (2030, 52.5)
++};
++\end{axis}
++\end{tikzpicture}%
++}
++\caption{Dự báo xu hướng gia tăng sản lượng CTRSH phát sinh tại Việt Nam}
++\label{fig:xu-huong-rac-viet-nam}
++\end{figure}
+ 
+-\section{Khung pháp lý và chính sách về xử lý CTRSH tại Việt Nam}
++\subsection{Tình hình quản lý và xử lý chất thải hiện nay}
+ 
+-Việt Nam đã xây dựng hệ thống pháp luật về bảo vệ môi trường và quản lý chất thải rắn ngày càng hoàn thiện. Luật Bảo vệ môi trường năm 2020 (Luật số 72/2020/QH14) và các Nghị định hướng dẫn thi hành đã tạo cơ sở pháp lý cho việc xử lý chất thải rắn bằng công nghệ nhiệt. Điều 54 và Điều 55 của Luật quy định rõ trình tự, thủ tục đầu tư xây dựng công trình xử lý chất thải, trong đó có các quy định về điều kiện về công nghệ, môi trường và an toàn.
++Hệ thống quản lý và xử lý chất thải rắn sinh hoạt tại Việt Nam đã có những tiến bộ đáng kể trong những năm gần đây, nhưng vẫn còn nhiều hạn chế và thách thức cần giải quyết. Tỷ lệ thu gom rác thải sinh hoạt tại các đô thị hiện đạt khoảng 85$-$90$\%$, trong khi ở các khu vực nông thôn chỉ đạt khoảng 50$-$60$\%$. Tuy nhiên, việc phân loại rác tại nguồn vẫn chưa được triển khai rộng rãi, mặc dù một số thành phố lớn đã bắt đầu thí điểm chương trình này.
+ 
+-Về quy chuẩn kỹ thuật, QCVN 30:2012/BTNMT quy định giới hạn phát thải đối với lò đốt chất thải rắn và chất thải nguy hại. QCVN 19:2009/BTNMT và QCVN 19:2024/BTNMT quy định giới hạn phát thải đối với một số công nghiệp, trong đó có yêu cầu đối với khí thải công nghiệp từ các cơ sở xử lý chất thải. QCVN 40:2025/BTNMT về xả thải nước thải công nghiệp có hiệu lực từ năm 2025, đặt ra yêu cầu nghiêm ngặt hơn về nước thải từ các nhà máy xử lý chất thải. Đối với nhiên liệu từ chất thải, TCVN 5689:2013 về diesel B5 và các quy chuẩn QCVN về phát thải động cơ tĩnh tạo khung tham chiếu cho việc sử dụng dầu nhiệt phân làm nhiên liệu.
++Phương pháp xử lý chủ yếu hiện nay là chôn lấp hợp vệ sinh, chiếm khoảng 75$-$80$\%$ tổng lượng rác thải được xử lý. Các bãi chôn lấp hợp vệ sinh đã được đầu tư xây dựng tại nhiều địa phương, nhưng vẫn còn tồn tại một số bãi chôn lấp không đạt tiêu chuẩn hoặc đã quá tải. Phương pháp ủ phân compost chiếm khoảng 5$-$10$\%$, chủ yếu tập trung ở các cơ sở quy mô nhỏ và vừa. Tái chế và tái sử dụng chiếm khoảng 10$-$15$\%$, chủ yếu thông qua khu vực phi chính thức với các cơ sở thu mua và tái chế vật liệu. Công nghệ đốt rác có thu hồi năng lượng vẫn còn rất hạn chế, mặc dù đã có một số dự án đang được triển khai và đưa vào vận hành (Hình~\ref{fig:ty-le-xu-ly-rac-viet-nam}).
+ 
+-Về cơ chế kinh tế, Nghị định số 50/2024/NĐ-CP về cơ chế đặt hàng cung cấp dịch vụ công ích trong lĩnh vực môi trường và Nghị định số 02/2022/NĐ-CP về điện gió, điện mặt trời chưa có quy định cụ thể cho điện từ chất thải, tạo ra khoảng trống chính sách cần được bổ sung. Giá điện bán lẻ bình quân hiện hành (theo Quyết định số 2954/QĐ-BCT) chưa có mức ưu đãi riêng cho điện sản xuất từ CTRSH, khiến hiệu quả kinh tế của các dự án xử lý nhiệt phụ thuộc nhiều vào cơ chế hỗ trợ địa phương.
++\begin{figure}[H]
++\centering
++\makeatletter
++\def\pgfpie@legend#1{%
++  \coordinate[xshift=0.8cm,
++  yshift={(\the\pgfpie@sliceLength*0.5+1)*0.8cm}] (pgfpie@legendpos) at
++  (current bounding box.east);
++
++  \scope[node distance=0.8cm]
++    \foreach \pgfpie@p/\pgfpie@t [count=\pgfpie@i from 0] in {#1}
++    {
++      \pgfpie@findColor{\pgfpie@i}
++      \node[draw, fill={\pgfpie@thecolor}, \pgfpie@style, below of={pgfpie@legendpos}, label={0:{\pgfpie@t}}] (pgfpie@legendpos) {};
++    }
++  \endscope
++}
++\makeatother
++\scalebox{0.9}{
++\begin{tikzpicture}
++    \pie[
++        style=drop shadow,
++        hide number,
++        text=legend,
++        radius=3.5,
++        color={SandBrown, PaperBlue, OrganicGreen, MetalGray},
++        explode=0.1
++    ]{
++        77.5/{Chôn lấp hợp vệ sinh (77,5\%)},
++        12.5/{Tái chế \& tái sử dụng (12,5\%)},
++        7.5/{Ủ phân compost (7,5\%)},
++        2.5/{Đốt \& Khác (2,5\%)}
++    }
++\end{tikzpicture}
++}
++\caption{Tỷ lệ các phương pháp xử lý CTRSH tại Việt Nam hiện nay}
++\label{fig:ty-le-xu-ly-rac-viet-nam}
++\end{figure}
++
++Về mặt thể chế và chính sách, Chính phủ đã ban hành nhiều văn bản pháp luật và quy chuẩn liên quan đến quản lý chất thải rắn, trong đó có Luật Bảo vệ môi trường 2020, các quy chuẩn kỹ thuật quốc gia về môi trường (QCVN), và các chiến lược, đề án quốc gia về quản lý chất thải rắn. Tuy nhiên, việc triển khai thực thi vẫn còn nhiều khó khăn do hạn chế về nguồn lực tài chính, nhân lực và công nghệ. Đầu tư cho lĩnh vực quản lý chất thải rắn chủ yếu đến từ ngân sách nhà nước và một phần từ khu vực tư nhân thông qua các dự án đầu tư theo hình thức đối tác công tư\footnote{Đối tác công tư (Public-Private Partnership - PPP) là hình thức hợp tác giữa cơ quan nhà nước và doanh nghiệp tư nhân trong đầu tư, xây dựng và vận hành các dự án kết cấu hạ tầng, dịch vụ công.}.
++
++\subsection{Các vấn đề môi trường từ rác thải}
++
++Chất thải rắn sinh hoạt gây ra nhiều vấn đề môi trường nghiêm trọng nếu không được quản lý và xử lý đúng cách. Ô nhiễm đất là một trong những tác động trực tiếp và lâu dài nhất, đặc biệt tại các bãi chôn lấp không đạt chuẩn hoặc các điểm tập kết rác tự phát. Các chất độc hại từ rác thải, bao gồm kim loại nặng, hợp chất hữu cơ khó phân hủy và các chất hóa học nguy hại, thấm vào đất làm thay đổi thành phần và cấu trúc đất, giảm khả năng sử dụng đất và ảnh hưởng đến hệ sinh thái đất \cite{Kooch2023}.
++
++Ô nhiễm nước là hậu quả nghiêm trọng khác của việc quản lý rác thải không hiệu quả. Nước rỉ rác (leachate) từ các bãi chôn lấp chứa hàm lượng cao các chất hữu cơ, kim loại nặng, amonia và các chất ô nhiễm khác. Nếu không được thu gom và xử lý đúng cách, nước rỉ rác sẽ thấm xuống tầng nước ngầm hoặc chảy tràn ra các nguồn nước mặt, gây ô nhiễm nguồn nước và ảnh hưởng đến sức khỏe cộng đồng.
++
++Ô nhiễm không khí cũng là vấn đề đáng quan ngại. Các bãi rác thải phát sinh khí sinh học (biogas) chứa chủ yếu methane (\ce{CH4}) và carbon dioxide (\ce{CO2}) do quá trình phân hủy yếm khí của chất hữu cơ. Methane là khí nhà kính có tác động gây nóng lên toàn cầu mạnh gấp 25 lần so với \ce{CO2}. Ngoài ra, việc đốt rác không kiểm soát hoặc sử dụng công nghệ đốt lạc hậu có thể phát thải các chất độc hại như dioxin, furan, bụi mịn (PM$_{2.5}$, \ce{PM10}), khí \ce{SO_x}, \ce{NO_x} và \ce{HCl}, gây hại cho sức khỏe con người và môi trường không khí xung quanh.
++
++\section{Các phương pháp xử lý chất thải rắn sinh hoạt}
++
++\subsection{Chôn lấp hợp vệ sinh}
++
++Chôn lấp hợp vệ sinh (sanitary landfill) là phương pháp xử lý chất thải rắn phổ biến nhất hiện nay tại Việt Nam và nhiều nước trên thế giới. Đây là phương pháp xử lý cuối cùng, trong đó rác thải được chôn lấp tại các khu vực được thiết kế và vận hành theo các tiêu chuẩn kỹ thuật nhằm giảm thiểu tác động đến môi trường. Một bãi chôn lấp hợp vệ sinh chuẩn phải có hệ thống lót đáy chống thấm để ngăn nước rỉ rác thấm xuống tầng nước ngầm, hệ thống thu gom và xử lý nước rỉ rác, hệ thống thu gom khí sinh học, và hệ thống thoát nước mưa.
++
++Quy trình vận hành bãi chôn lấp hợp vệ sinh bao gồm việc trải rác thành lớp mỏng, đầm nén để giảm thể tích và tăng mật độ, sau đó phủ một lớp đất che phủ hàng ngày để hạn chế mùi hôi, ngăn côn trùng và động vật gây hại. Hệ thống thu gom khí sinh học giúp khai thác methane để sản xuất năng lượng hoặc đốt cháy để giảm phát thải khí nhà kính.
++
++Ưu điểm của phương pháp chôn lấp hợp vệ sinh là có thể tiếp nhận và xử lý hầu hết các loại chất thải rắn sinh hoạt mà không cần phân loại phức tạp, chi phí đầu tư và vận hành tương đối thấp so với các công nghệ xử lý khác. Tuy nhiên, phương pháp này cũng có nhiều hạn chế đáng kể. Chôn lấp đòi hỏi diện tích đất lớn, ngày càng khan hiếm ở các khu vực đô thị. Tiềm năng ô nhiễm môi trường vẫn tồn tại nếu hệ thống không được thiết kế và vận hành đúng cách. Phương pháp này không tận dụng được giá trị năng lượng và vật liệu từ rác thải, không phù hợp với xu hướng phát triển bền vững và kinh tế tuần hoàn.
+ 
+-Tại Quảng Nam, UBND tỉnh đã có các quy hoạch và đề án về quản lý chất thải rắn, trong đó có định hướng xây dựng các nhà máy xử lý tập trung. Quy hoạch tỉnh Quảng Nam giai đoạn 2021--2030, tầm nhìn 2050 đã xác định CTRSH là một trong các vấn đề môi trường ưu tiên xử lý. Hồ sơ điều chỉnh công nghệ nhà máy xử lý CTRSH thành phố Hội An được phê duyệt theo quy trình thủ tục môi trường theo Nghị định số 08/2022/NĐ-CP \cite{BaocaoHoiAn2024}.
++\subsection{Phân loại và tái chế}
+ 
+-\section{Tổng quan các phương pháp xử lý CTRSH}
++Phân loại và tái chế là phương pháp xử lý chất thải rắn quan trọng, góp phần giảm lượng rác thải cần xử lý cuối cùng, tiết kiệm tài nguyên thiên nhiên và giảm thiểu tác động môi trường. Phân loại tại nguồn là cách hiệu quả nhất vì giúp thu được nguyên liệu tái chế sạch hơn và giảm chi phí xử lý, nhưng đòi hỏi sự tham gia tích cực của người dân và cần có hệ thống thu gom riêng cho các loại rác khác nhau.
+ 
+-Các phương pháp xử lý CTRSH có thể được chia thành ba nhóm lớn gồm xử lý cơ học -- tái chế, xử lý sinh học và xử lý nhiệt. Việc lựa chọn công nghệ cho một địa phương không chỉ phụ thuộc vào công suất xử lý mà còn phụ thuộc trực tiếp vào thành phần rác, độ ẩm, khả năng phân loại tại nguồn, quỹ đất, yêu cầu môi trường và năng lực vận hành thực tế.
++Các loại chất thải có thể tái chế bao gồm giấy và bìa carton (có thể tái chế thành giấy tái sinh), nhựa các loại (PET, HDPE, PVC, LDPE, PP, PS — có thể tái chế thành hạt nhựa để sản xuất sản phẩm nhựa mới), kim loại (sắt, thép, nhôm, đồng — có thể tái chế nhiều lần mà không làm giảm chất lượng), và thủy tinh (có thể tái chế vô hạn lần).
+ 
+-Chôn lấp hợp vệ sinh có ưu điểm là tiếp nhận được nhiều loại chất thải và đầu tư ban đầu tương đối thấp, nhưng không phù hợp với định hướng giảm chôn lấp vì tiêu tốn quỹ đất và phát sinh nước rỉ rác, khí bãi rác. Ủ compost tận dụng được thành phần hữu cơ cao trong rác nhưng yêu cầu phân loại tốt, thời gian xử lý dài và phụ thuộc thị trường tiêu thụ sản phẩm phân hữu cơ. Đốt trực tiếp có khả năng giảm nhanh khối lượng và thể tích rác, song đối với rác có độ ẩm cao thì cần bổ sung nhiên liệu hoặc sấy sơ bộ; đồng thời hệ thống xử lý khí thải phải được đầu tư nghiêm ngặt để kiểm soát bụi, kim loại nặng, dioxin và furan \cite{Tait2020}.
++Lợi ích của phân loại và tái chế rất đáng kể: giảm lượng rác thải cần chôn lấp hoặc đốt, tiết kiệm tài nguyên thiên nhiên và năng lượng sử dụng cho sản xuất nguyên liệu mới, giảm phát thải khí nhà kính và ô nhiễm môi trường, và tạo công ăn việc làm cho nhiều người. Tuy nhiên, hiệu quả của phương pháp này phụ thuộc lớn vào ý thức và sự tham gia của người dân trong phân loại rác tại nguồn, và giá trị kinh tế của vật liệu tái chế dao động theo thị trường, ảnh hưởng đến tính bền vững của hoạt động tái chế.
+ 
+-Khí hóa là quá trình chuyển hóa vật liệu chứa carbon trong điều kiện thiếu oxy ở nhiệt độ cao, thường trong khoảng 800--1.200$^\circ$C, tạo ra khí tổng hợp gồm chủ yếu \ce{CO}, \ce{H2}, \ce{CH4} và một phần \ce{CO2} \cite{Arena2012}. Về mặt lý thuyết, khí tổng hợp có thể dùng cho động cơ khí, tuabin khí hoặc lò hơi. Tuy nhiên, khí hóa rác sinh hoạt đòi hỏi nguyên liệu RDF có độ ẩm thấp, kích thước và thành phần đồng đều. Dòng khí tổng hợp thường chứa bụi, hắc ín, hơi nước, hợp chất clo, lưu huỳnh và các cấu tử hữu cơ dễ ngưng tụ nên hệ thống làm sạch khí rất phức tạp, đặc biệt khi cấp cho tuabin khí.
++\subsection{Ủ phân compost}
+ 
+-Nhiệt phân là quá trình phân hủy nhiệt chất hữu cơ trong điều kiện không có hoặc gần như không có oxy, thường ở dải 350--600$^\circ$C đối với rác nhựa và RDF \cite{Bridgwater2012,Sharuddin2016}. Sản phẩm của quá trình gồm dầu nhiệt phân, khí không ngưng và than carbon. So với khí hóa, nhiệt phân vận hành ở nhiệt độ thấp hơn, không đốt trực tiếp rác trong buồng phản ứng, giảm phát sinh bụi mịn và tạo ra sản phẩm lỏng có thể lưu trữ, chưng cất, pha trộn và sử dụng cho động cơ diesel sau xử lý thích hợp \cite{Miandad2016,Williams2007}. Vì vậy, công nghệ nhiệt phân có mức độ phù hợp cao hơn đối với cấu hình xử lý rác nhựa, nylon và phần RDF đã được tiền xử lý.
++Ủ phân compost là phương pháp xử lý sinh học chất thải hữu cơ thông qua quá trình phân hủy hiếu khí, trong đó vi sinh vật phân hủy chất hữu cơ thành sản phẩm ổn định, giàu dinh dưỡng có thể sử dụng làm phân bón cải tạo đất. Phương pháp này đặc biệt phù hợp với rác thải sinh hoạt ở Việt Nam do tỷ lệ chất hữu cơ cao.
++
++Quá trình ủ phân compost trải qua các giai đoạn: giai đoạn trung nhiệt (nhiệt độ tăng lên 40$-$45$^\circ\mathrm{C}$), giai đoạn cao nhiệt (50$-$70$^\circ\mathrm{C}$ — tiêu diệt hầu hết vi khuẩn gây bệnh), giai đoạn làm nguội và cuối cùng là giai đoạn ổn định hóa và chín. Các yếu tố ảnh hưởng đến quá trình ủ phân bao gồm tỷ lệ C/N (tốt nhất 25$-$30:1), độ ẩm (50$-$60$\%$), cung cấp oxy (cần lật trộn định kỳ), kích thước hạt (nghiền nhỏ 2$-$5 cm) và pH (giữ mức 6$-$8).
++
++Ưu điểm của phương pháp ủ phân compost là giảm đáng kể khối lượng và thể tích rác thải hữu cơ, tạo ra sản phẩm có giá trị kinh tế làm phân bón cải tạo đất, công nghệ thân thiện với môi trường. Tuy nhiên, phương pháp này chỉ phù hợp với phần rác hữu cơ, cần phân loại rác thải trước khi ủ, thời gian xử lý khá dài (2$-$6 tháng), cần diện tích mặt bằng tương đối lớn, và thị trường tiêu thụ compost còn hạn chế.
++
++\subsection{Các công nghệ xử lý nhiệt}
++
++Công nghệ xử lý nhiệt chuyển hóa năng lượng hóa học trong rác thải thành năng lượng hữu ích. Tùy thuộc vào tác nhân oxy hóa và nhiệt độ phản ứng, các công nghệ này được chia thành ba nhánh chính.
++
++\textbf{Đốt rác có thu hồi năng lượng (Waste-to-Energy - WtE):} Rác thải được đốt cháy hoàn toàn trong môi trường dư oxy ở nhiệt độ từ 850$-$1100$^\circ$C. Nhiệt lượng sinh ra làm hóa hơi nước trong lò hơi, kéo tuabin phát điện. Đây là công nghệ trưởng thành nhất. Đối với rác độ ẩm cao như ở Việt Nam, lò đốt thường cần sấy sơ bộ hoặc phun thêm dầu mồi để ổn định quá trình cháy.
++
++\textbf{Khí hóa (Gasification):} Quá trình chuyển hóa chất thải chứa carbon trong điều kiện thiếu oxy ở nhiệt độ cao (800$-$1200$^\circ$C), tạo ra khí tổng hợp (syngas) chứa \ce{CO}, \ce{H2}, \ce{CH4} \cite{Arena2012}. Nhược điểm lớn của khí hóa là đòi hỏi nguyên liệu (RDF) phải rất đồng nhất, độ ẩm thấp. Dòng khí tổng hợp chứa hắc ín (tar), bụi và các chất ăn mòn, làm cho hệ thống làm sạch khí trở nên phức tạp và đắt đỏ.
++
++\textbf{Nhiệt phân (Pyrolysis):} Quá trình phân hủy nhiệt chất hữu cơ trong môi trường không có oxy, ở nhiệt độ 350$-$600$^\circ$C đối với rác nhựa và RDF \cite{Bridgwater2012,Sharuddin2016}. Sản phẩm tạo ra gồm dầu nhiệt phân (pha lỏng), khí không ngưng (pha khí), và than carbon (pha rắn). Khác với khí hóa, nhiệt phân sinh ra nhiên liệu lỏng có thể lưu trữ, chưng cất thành nhiên liệu tương đương diesel, rất phù hợp với thành phần rác chứa nhiều bao bì nhựa, nylon \cite{Miandad2016,Williams2007}.
+ 
+ \begin{table}[htbp]
+ \centering
+ \caption{So sánh khái quát một số phương pháp xử lý CTRSH}
+ \label{tab:so-sanh-phuong-phap-xu-ly}
+ \setlength{\tabcolsep}{5pt}
+-\resizebox{\textwidth}{!}{%
++\scalebox{0.9}{
+ \begin{tabular}{>{\raggedright\arraybackslash}p{0.18\textwidth}p{0.26\textwidth}p{0.32\textwidth}>{\raggedright\arraybackslash}p{0.20\textwidth}}
+ \toprule
+ \textbf{Phương pháp} & \textbf{Ưu điểm} & \textbf{Hạn chế} & \textbf{Sản phẩm chính} \\
+ \midrule
+ Chôn lấp hợp vệ sinh & Đơn giản, tiếp nhận nhiều loại rác & Chiếm đất, phát sinh nước rỉ rác và khí nhà kính & Khí bãi rác, nước rỉ rác \\
+ Ủ compost & Phù hợp rác hữu cơ đã phân loại & Thị trường sản phẩm hạn chế, không xử lý rác nhựa & Phân hữu cơ \\
+-Đốt trực tiếp & Giảm nhanh thể tích rác, có thể thu hồi nhiệt & Yêu cầu kiểm soát khí thải nghiêm ngặt, bất lợi với rác ẩm & Nhiệt, tro xỉ \\
++Đốt trực tiếp (WtE) & Giảm nhanh thể tích rác, thu hồi năng lượng lớn & Yêu cầu kiểm soát khí thải nghiêm ngặt, bất lợi với rác ẩm & Điện năng, nhiệt, tro xỉ \\
+ Khí hóa & Thu hồi khí nhiên liệu, hiệu suất lý thuyết cao & Yêu cầu RDF đồng nhất, làm sạch khí phức tạp & Khí tổng hợp, tro xỉ \\
+ Nhiệt phân & Tạo dầu lỏng dễ lưu trữ, giảm bụi do không đốt trực tiếp & Cần phân loại và tinh chế sản phẩm dầu & Dầu nhiệt phân, khí, than carbon \\
+ \bottomrule
+@@ -98,13 +219,229 @@ Nhiệt phân & Tạo dầu lỏng dễ lưu trữ, giảm bụi do không đố
+ }
+ \end{table}
+ 
+-\section{Giới thiệu dự án và công nghệ ban đầu}
++\subsection{So sánh và lựa chọn công nghệ}
++
++Việc lựa chọn công nghệ xử lý chất thải rắn phù hợp cần dựa trên nhiều tiêu chí khác nhau, bao gồm điều kiện kinh tế - xã hội, đặc điểm rác thải, yêu cầu môi trường, và khả năng triển khai của từng địa phương. Xu hướng chung trên thế giới và tại Việt Nam đang hướng tới quản lý chất thải rắn tích hợp\footnote{Quản lý chất thải rắn tích hợp (Integrated Solid Waste Management - ISWM) là phương pháp quản lý chất thải toàn diện, kết hợp nhiều công nghệ xử lý khác nhau nhằm tối ưu hóa hiệu quả kinh tế, môi trường và xã hội.}, kết hợp nhiều phương pháp khác nhau để tối đa hóa hiệu quả và giảm thiểu tác động môi trường. Mô hình này thường bao gồm phân loại và tái chế tại nguồn, ủ phân compost cho phần rác hữu cơ, đốt rác có thu hồi năng lượng cho phần rác còn lại, và chôn lấp hợp vệ sinh cho phần tro xỉ. Cách tiếp cận này phù hợp với nguyên tắc kinh tế tuần hoàn và phát triển bền vững.
++
++\section{Công nghệ đốt rác phát điện}
++
++\subsection{Nguyên lý hoạt động}
++
++Công nghệ đốt rác phát điện hoạt động dựa trên nguyên lý chuyển hóa năng lượng hóa học trong rác thải thành năng lượng nhiệt, sau đó chuyển thành năng lượng cơ và cuối cùng là năng lượng điện. Quá trình này được thực hiện thông qua chu trình nhiệt động Rankine, tương tự như các nhà máy nhiệt điện truyền thống nhưng sử dụng rác thải sinh hoạt làm nhiên liệu thay vì than, dầu hay khí đốt.
++
++Quá trình chuyển hóa năng lượng bắt đầu từ việc rác thải được đốt cháy trong lò đốt ở nhiệt độ cao. Phản ứng cháy là quá trình oxy hóa các thành phần hữu cơ trong rác thải, giải phóng nhiệt lượng, khí thải và tro xỉ. Để đảm bảo cháy hoàn toàn, cần kiểm soát chặt chẽ lượng không khí cung cấp, thời gian lưu của rác trong lò, nhiệt độ đốt và độ hỗn hợp của rác với không khí.
++
++Nhiệt lượng sinh ra từ quá trình đốt được thu hồi thông qua lò hơi. Nước tuần hoàn trong các ống hấp thụ nhiệt từ khói nóng và chuyển thành hơi nước. Hơi nước được sinh ra thường có áp suất 30$-$60 bar và nhiệt độ 350$-$450$^\circ\mathrm{C}$, tùy thuộc vào thiết kế của lò hơi và quy mô nhà máy.
++
++Hơi nước nhiệt độ cao và áp suất cao này được dẫn vào tuabin hơi, nơi năng lượng nhiệt được chuyển hóa thành cơ năng quay. Hơi nước giãn nở qua các cấp tuabin, áp suất và nhiệt độ giảm dần, đồng thời làm quay rôto tuabin. Rôto tuabin được nối trực tiếp với rôto máy phát điện. Điện năng được tạo ra có điện áp thường từ 6$-$11 kV, sau đó được nâng áp lên 22$-$110 kV thông qua máy biến áp để truyền tải lên lưới điện quốc gia.
++
++Sau khi qua tuabin, hơi nước có áp suất thấp được dẫn vào bình ngưng. Bình ngưng hoạt động ở áp suất thấp hơn áp suất khí quyển (thường 0,05$-$0,15 bar), giúp tăng chênh lệch áp suất qua tuabin và nâng cao hiệu suất chu trình. Nước ngưng được bơm qua hệ thống gia nhiệt hồi nhiệt trước khi đưa trở lại lò hơi, hoàn thành chu trình khép kín.
++
++\subsection{Các công nghệ đốt rác chính}
++
++Có nhiều công nghệ đốt rác khác nhau đã được phát triển và ứng dụng trên thế giới, mỗi công nghệ có những đặc điểm, ưu nhược điểm riêng, phù hợp với các loại rác thải và quy mô khác nhau.
++
++\textbf{Lò đốt nhiều tầng (ghi cơ khí):} Là công nghệ phổ biến và trưởng thành nhất, chiếm hơn 85$\%$ các nhà máy đốt rác trên thế giới. Trong lò này, rác thải được cấp vào phía trên của tầng đốt và di chuyển từ từ xuống dưới nhờ hệ thống tầng cơ khí chuyển động. Quá trình cháy diễn ra qua các giai đoạn khô, nhiệt phân, cháy chính và cháy tàn khi rác di chuyển theo chiều dài của lò. Không khí sơ cấp được thổi từ dưới grate lên, trong khi không khí thứ cấp được thổi vào phía trên để đảm bảo cháy hoàn toàn khí nhiệt phân. Ưu điểm là có thể xử lý rác thải có độ ẩm và thành phần không đồng nhất, công nghệ tin cậy và đã được chứng minh qua hàng chục năm vận hành, phù hợp với quy mô lớn từ 100 đến 1500 tấn/ngày.
++
++\textbf{Lò đốt tầng sôi:} Sử dụng nguyên lý tầng sôi, trong đó rác thải được đốt trong một lớp vật liệu trơ (thường là cát) được thổi khí từ dưới lên với tốc độ cao. Trong tầng sôi, rác thải được trộn đều với vật liệu và không khí, tạo điều kiện cháy đồng nhất với nhiệt độ tương đối thấp hơn (750$-$900$^\circ\mathrm{C}$). Ưu điểm là cháy đồng nhất và hiệu quả, nhiệt độ thấp hơn giúp giảm phát thải \ce{NO_x}. Tuy nhiên, yêu cầu tiền xử lý rác thải (nghiền nhỏ) đồng nhất hơn.
++
++\textbf{Lò đốt kiểu quay:} Sử dụng một trống quay hình trụ nghiêng, rác thải được nạp vào đầu cao và di chuyển về phía thấp hơn khi trống quay. Nhiệt độ trong lò thường cao (900$-$1200$^\circ\mathrm{C}$), đủ để xử lý cả các chất thải nguy hại. Lò đốt kiểu quay có thể xử lý nhiều loại rác thải khác nhau, kể cả chất thải nguy hại, y tế và công nghiệp, nhưng thường áp dụng cho quy mô nhỏ và trung bình.
++
++\textbf{Lò đốt khí hóa và nhiệt phân:} Là các công nghệ nhiệt hóa học tiên tiến, trong đó rác thải được xử lý ở nhiệt độ cao trong môi trường thiếu oxy hoặc không có oxy. Quá trình này tạo ra khí tổng hợp hoặc dầu nhiệt phân, có thể được đốt để sản xuất năng lượng hoặc chuyển hóa thành nhiên liệu và hóa chất. Công nghệ phức tạp, chi phí cao, và đòi hỏi rác thải đầu vào đồng nhất hơn.
++
++\textbf{Lò đốt plasma:} Sử dụng hồ quang plasma với nhiệt độ cực cao (trên 3000$^\circ\mathrm{C}$) để phân hủy rác thải thành khí tổng hợp và xỉ thủy tinh. Công nghệ này có thể xử lý hầu hết mọi loại chất thải, phát thải rất thấp. Tuy nhiên, chi phí đầu tư và vận hành rất cao, tiêu thụ điện năng lớn, công nghệ phức tạp và đang trong giai đoạn phát triển.
++
++\subsection{Ưu điểm và hạn chế của công nghệ WtE}
++
++Công nghệ đốt rác phát điện mang lại nhiều lợi ích quan trọng cho xã hội. Một trong những ưu điểm nổi bật nhất là khả năng giảm đáng kể thể tích và khối lượng rác thải: quá trình đốt làm giảm khoảng 85$-$90$\%$ thể tích và 70$-$80$\%$ khối lượng rác thải ban đầu, chỉ còn lại tro xỉ chiếm 15$-$25$\%$ khối lượng.
++
++Thu hồi năng lượng từ rác thải là lợi ích kinh tế và môi trường quan trọng khác. Rác thải sinh hoạt có giá trị nhiệt trung bình từ 5$-$10 $\text{MJ}/\text{kg}$, tương đương khoảng 25$-$50$\%$ giá trị nhiệt của than. Năng lượng này được chuyển hóa thành điện năng với hiệu suất thường đạt 18$-$28$\%$. Một nhà máy đốt rác công suất 500 tấn/ngày có thể sản xuất khoảng 8$-$15 MW điện, đủ cung cấp cho khoảng 10.000$-$20.000 hộ gia đình \cite{IEA2019}.
++
++Công nghệ đốt rác phát điện giúp giảm đáng kể phát thải khí nhà kính so với chôn lấp. Bãi chôn lấp phát sinh khí methane (\ce{CH4}), một khí nhà kính có tác động mạnh gấp 25 lần \ce{CO2} trong vòng 100 năm. Trong khi đó, quá trình đốt chuyển carbon trong rác thải thành \ce{CO2}, và phần carbon hữu cơ sinh học (biogenic carbon) từ thức ăn, giấy, gỗ được coi là carbon trung hòa theo nhiều chuẩn mực quốc tế. Nhiều nghiên cứu cho thấy đốt rác có thu hồi năng lượng có dấu chân carbon thấp hơn 50$-$70$\%$ so với chôn lấp.
++
++Tuy nhiên, công nghệ đốt rác phát điện cũng có những hạn chế và thách thức cần được xem xét kỹ lưỡng. Chi phí đầu tư ban đầu rất cao là rào cản lớn nhất. Một nhà máy đốt rác phát điện công suất 500 tấn/ngày có thể tốn từ 80 đến 150 triệu USD, tùy thuộc vào công nghệ và quy mô. Chi phí vận hành có thể lên đến 30$-$50 USD/tấn rác xử lý. Mặc dù có hệ thống xử lý khí thải hiện đại, vẫn cần giám sát nghiêm ngặt để đảm bảo tuân thủ các tiêu chuẩn môi trường về dioxin, furan, kim loại nặng (\ce{Hg}, \ce{Cd}, \ce{Pb}), khí axit (\ce{HCl}, \ce{SO_x}), \ce{NO_x} và bụi mịn. Ngoài ra, lo ngại của cộng đồng về ô nhiễm môi trường và sức khỏe là thách thức xã hội quan trọng, thường gọi là hiện tượng NIMBY\footnote{NIMBY (Not In My Back Yard - Không phải ở sân sau nhà tôi) là hiện tượng người dân phản đối các dự án công trình được xây dựng gần nơi họ sinh sống, mặc dù họ có thể đồng tình rằng các dự án đó là cần thiết cho xã hội chung và chấp nhận sự tồn tại của chúng ở nơi khác.}.
++
++\subsection{Xu hướng phát triển nhà máy điện rác ở Việt Nam và thế giới}
++
++Trên thế giới, công nghệ đốt rác phát điện đã và đang được áp dụng rộng rãi, đặc biệt tại các quốc gia phát triển và các nước có diện tích đất hạn chế. Hiện có hơn 2.500 nhà máy đốt rác phát điện đang hoạt động trên toàn cầu, xử lý khoảng 300 triệu tấn rác thải mỗi năm.
++
++Châu Âu là khu vực dẫn đầu về công nghệ đốt rác phát điện, với hơn 500 nhà máy hoạt động \cite{Eurostat2023,CEWEP2021}. Một số quốc gia châu Âu đã đạt tỷ lệ đốt rác rất cao: Thụy Sĩ đốt khoảng 50$\%$ rác thải sinh hoạt, Đan Mạch khoảng 54$\%$, và Thụy Điển khoảng 50$\%$. Các nhà máy ở châu Âu thường được xây dựng ngay trong hoặc gần khu vực đô thị với thiết kế kiến trúc đẹp mắt và tích hợp các tiện ích công cộng.
++
++Châu Á là thị trường phát triển nhanh nhất của công nghệ đốt rác phát điện. Nhật Bản dẫn đầu với hơn 1.100 nhà máy, xử lý khoảng 70$\%$ tổng lượng rác thải sinh hoạt \cite{Sharuddin2016}. Singapore xử lý gần 40$\%$ rác thải bằng phương pháp đốt tại các nhà máy hiện đại \cite{NEASingapore2023}. Trung Quốc đang có chương trình phát triển mạnh mẽ với hơn 400 nhà máy đốt rác đang hoạt động, mục tiêu xử lý 50$\%$ rác thải đô thị bằng đốt vào năm 2030 \cite{Zhang2021,Chen2014}.
++
++Tại Việt Nam, công nghệ đốt rác phát điện đang trong giai đoạn khởi đầu phát triển nhưng có tiềm năng rất lớn. Trong bối cảnh các bãi chôn lấp tại các thành phố lớn đang dần quá tải và áp lực về bảo vệ môi trường ngày càng tăng, Chính phủ đã khuyến khích phát triển công nghệ đốt rác thu hồi năng lượng thông qua các chính sách ưu đãi. Một số dự án nhà máy điện rác đã được triển khai và đưa vào vận hành tại Hà Nội, Cần Thơ và nhiều dự án khác đang trong giai đoạn xây dựng.
++
++Xu hướng công nghệ hiện đại đang hướng tới hiệu suất cao hơn, phát thải thấp hơn và tích hợp công nghệ số. Các nhà máy thế hệ mới áp dụng thông số hơi cao hơn (áp suất 80$-$100 bar, nhiệt độ 450$-$500$^\circ\mathrm{C}$), giúp nâng hiệu suất phát điện lên 25$-$30$\%$ so với 18$-$22$\%$ của các nhà máy cũ. Công nghệ số và tự động hóa được áp dụng rộng rãi với hệ thống điều khiển phân tán, giám sát trực tuyến, và ứng dụng trí tuệ nhân tạo để tối ưu hóa quá trình đốt và dự báo bảo trì.
++
++\section{Các quy chuẩn và khung pháp lý áp dụng}
++
++\subsection{Khung pháp lý về xử lý CTRSH tại Việt Nam}
++
++Việt Nam đã xây dựng hệ thống pháp luật về bảo vệ môi trường và quản lý chất thải rắn ngày càng hoàn thiện. Luật Bảo vệ môi trường năm 2020 (Luật số 72/2020/QH14) \cite{LuatBVMT2020} và các Nghị định hướng dẫn thi hành đã tạo cơ sở pháp lý cho việc xử lý chất thải rắn bằng công nghệ nhiệt. Điều 54 và Điều 55 của Luật quy định rõ trình tự, thủ tục đầu tư xây dựng công trình xử lý chất thải, trong đó có các quy định về điều kiện về công nghệ, môi trường và an toàn.
++
++Về cơ chế kinh tế, Nghị định số 32/2019/NĐ-CP về cơ chế đặt hàng cung cấp dịch vụ công ích trong lĩnh vực môi trường \cite{NghiDinh32_2019_NDCP} và các Quyết định khuyến khích phát triển điện gió, điện mặt trời \cite{QuyetDinh39_2018_QDTTg,QuyetDinh13_2020_QDTTg} chưa có quy định cụ thể cho điện từ chất thải, tạo ra khoảng trống chính sách cần được bổ sung. Tại Quảng Nam, Quy hoạch tỉnh Quảng Nam giai đoạn 2021--2030 \cite{QuyHoachQuangNam2024} đã xác định CTRSH là một trong các vấn đề môi trường ưu tiên xử lý.
++
++\subsection{Quy chuẩn môi trường về khí thải}
++
++Khí thải từ các lò đốt chất thải rắn phải tuân thủ \textbf{QCVN 19:2024/BTNMT} - Quy chuẩn kỹ thuật quốc gia về khí thải công nghiệp \cite{QCVN19_2024_BTNMT}. Các thông số khí thải chính cần kiểm soát theo QCVN 19:2024/BTNMT (theo điều kiện oxy tham chiếu 11\%) bao gồm:
++\begin{itemize}
++    \item Bụi tổng số: $\leq$ 30 mg/Nm$^3$
++    \item Bụi mịn PM$_{2,5}$: $\leq$ 10 mg/Nm$^3$
++    \item Lưu huỳnh dioxit (\ce{SO2}): $\leq$ 70 mg/Nm$^3$
++    \item Oxit nitơ tổng (\ce{NO_x}, tính theo \ce{NO2}): $\leq$ 150 mg/Nm$^3$
++    \item Khí hydroclorua (\ce{HCl}): $\leq$ 20 mg/Nm$^3$
++    \item Cacbon monoxit (\ce{CO}): $\leq$ 50 mg/Nm$^3$
++    \item Dioxin/Furan (tính quy về \ce{TEQ}): $\leq$ 0,1 ng TEQ/Nm$^3$
++    \item Thủy ngân và hợp chất (\ce{Hg}): $\leq$ 0,05 mg/Nm$^3$
++    \item Tổng các kim loại nặng (Cd, Tl): $\leq$ 0,05 mg/Nm$^3$
++    \item Tổng các kim loại nặng (Sb, As, Pb, Cr, Co, Cu, Mn, Ni, V): $\leq$ 0,5 mg/Nm$^3$
++\end{itemize}
++Nhà máy phải lắp đặt hệ thống giám sát khí thải liên tục (CEMS) và thực hiện quan trắc định kỳ để đảm bảo tuân thủ quy chuẩn này.
++
++\subsection{Tiêu chuẩn về nước thải}
++
++Nước thải từ nhà máy điện rác bắt buộc phải đáp ứng các yêu cầu của \textbf{QCVN 40:2025/BTNMT} -- Quy chuẩn kỹ thuật quốc gia về nước thải công nghiệp \cite{QCVN40_2025_BTNMT}. Một số thông số kỹ thuật chủ yếu cần kiểm soát (giá trị cột A/cột B):
++\begin{itemize}
++    \item pH: 6,0--9,0
++    \item Tổng chất rắn lơ lửng (TSS): $\leq 30/50$ mg/L
++    \item BOD$_5$: $\leq 20/50$ mg/L
++    \item COD: $\leq 50/150$ mg/L
++    \item Tổng Nitơ: $\leq 15/30$ mg/L
++    \item Amoni: $\leq 5/10$ mg/L
++    \item Chì (\ce{Pb}): $\leq 0,05/0,5$ mg/L
++    \item Thủy ngân (\ce{Hg}): $\leq 0,001/0,002$ mg/L
++    \item Tổng coliform: $\leq 3.000/5.000$ MPN/100 mL
++\end{itemize}
++
++Đối với nước rỉ rác, do đặc tính ô nhiễm cao với hàm lượng chất hữu cơ, amonia và kim loại nặng lớn, cần có hệ thống xử lý chuyên biệt kết hợp nhiều công nghệ như xử lý sinh học kỵ khí và hiếu khí, xử lý vật lý hóa học, và công nghệ màng lọc để đạt tiêu chuẩn xả thải.
++
++\section{Bối cảnh quốc tế về xử lý nhiệt CTRSH và bài học cho Việt Nam}
++
++Xu hướng hiện nay trên thế giới cho thấy sự dịch chuyển từ đốt rác đơn thuần sang các công nghệ chuyển hóa nhiệt có kiểm soát, trong đó nhiệt phân và khí hóa được coi là bước trung gian phù hợp với các quốc gia có lượng rác nhựa và RDF lớn. Nghiên cứu của Miandad và cộng sự (2016) cho thấy nhiệt phân nhanh (fast pyrolysis) ở nhiệt độ 450$-$550\textdegree C với thời gian lưu hơi dưới 2 giây có thể đạt hiệu suất thu dầu tới 70$-$75\% khối lượng từ nguyên liệu nhựa hỗn hợp \cite{Miandad2016}.
++
++Bài học quốc tế cho thấy ba yếu tố then chốt quyết định sự thành công của các nhà máy xử lý nhiệt CTRSH: (i) chất lượng và tính đồng nhất của nguyên liệu RDF, phụ thuộc trực tiếp vào hiệu quả phân loại tại nguồn và công đoạn tiền xử lý; (ii) công nghệ và quy mô phù hợp với điều kiện địa phương, tránh áp dụng máy móc công nghệ quy mô lớn cho các dự án vừa và nhỏ; (iii) khung pháp lý và cơ chế kinh tế khuyến khích, bao gồm tiêu chuẩn môi trường phù hợp và hỗ trợ đầu tư ban đầu \cite{Arena2012}.
++
++\begin{table}[H]
++\centering
++\caption{So sánh công nghệ nhiệt phân và khí hóa trên thế giới}
++\label{tab:so-sanh-cong-nghe-wte-quoc-te}
++\centering
++\setlength{\tabcolsep}{4pt}
++\scalebox{0.9}{
++\begin{tabular}{p{0.18\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
++\toprule
++\textbf{Thông số} & \textbf{Lò quay (Nhật Bản)} & \textbf{Lò tầng sôi (Châu Âu)} & \textbf{Khí hóa plasma (Bắc Mỹ)} & \textbf{Lò quay (Hội An, thiết kế)} \\
++\midrule
++Quy mô (tấn/ngày) & 50--200 & 200--1.000 & 1.000--3.000 & 120 (tổng) \\
++\midrule
++Nhiệt độ ($^\circ$C) & 400--600 & 750--900 & 1.000--1.500 & 400--500 \\
++\midrule
++Sản phẩm chính & Dầu + khí + than & Khí tổng hợp & Khí tổng hợp + điện & Dầu DO + khí + than \\
++\midrule
++Hiệu suất thu dầu & 40--55\% & -- & -- & 45\% (thiết kế) \\
++\midrule
++Yêu cầu tiền xử lý & Phân loại, sấy, tạo viên & Nghiền, sấy & Nghiền mịn, sấy & Phân loại, ép, sấy, tạo viên \\
++\midrule
++Tự cân bằng năng lượng & Có (khí hồi lưu) & Phụ thuộc & Có & Có (khí hồi lưu) \\
++\midrule
++Chi phí đầu tư (USD/tấn/ngày) & 30.000--50.000 & 50.000--80.000 & 100.000--200.000 & Thiết kế sơ bộ \\
++\bottomrule
++\end{tabular}
++}
++\end{table}
++
++\section{Phân tích đặc tính CTRSH Hội An và luận chứng lựa chọn công nghệ}
++
++\subsection{Đặc trưng dòng rác tại Hội An}
++
++Thành phố Hội An là đô thị du lịch trọng điểm của tỉnh Quảng Nam. Lượng CTRSH phát sinh có xu hướng tăng nhanh, dự báo đạt 120$-$140 tấn/ngày trong giai đoạn 2025$-$2030 \cite{BaocaoHoiAn2024}. Do yếu tố du lịch, dòng rác tại Hội An có đặc trưng phức tạp hơn so với đô thị thuần dân cư: rác từ nhà hàng, khách sạn, chợ, khu dân cư và hoạt động thương mại có tỷ lệ hữu cơ cao, lẫn nhiều bao bì nhựa, giấy, vải, thủy tinh, kim loại và tạp chất vô cơ, và biến động mạnh theo mùa du lịch.
++
++Kết quả phân loại CTRSH cho thấy rác hữu cơ chiếm trung bình 62,56\% khối lượng; nhựa và bao nylon chiếm 10,16\%; giấy chiếm 7,42\%; đất cát chiếm 7,76\%; thủy tinh chiếm 2,28\% và kim loại chiếm 1,45\%. Về tính chất cháy, nhóm chất thải cháy được chiếm khoảng 86,62\%, còn nhóm không cháy chiếm khoảng 13,38\%. Độ ẩm trung bình của mẫu rác là 56,3\%, độ tro khoảng 8,5\% \cite{BaocaoHoiAn2024}.
++
++\begin{figure}[H]
++\centering
++\makeatletter
++\def\pgfpie@legend#1{%
++  \coordinate[xshift=0.8cm,
++  yshift={(\the\pgfpie@sliceLength*0.5+1)*0.8cm}] (pgfpie@legendpos) at
++  (current bounding box.east);
++
++  \scope[node distance=0.8cm]
++    \foreach \pgfpie@p/\pgfpie@t [count=\pgfpie@i from 0] in {#1}
++    {
++      \pgfpie@findColor{\pgfpie@i}
++      \node[draw, fill={\pgfpie@thecolor}, \pgfpie@style, below of={pgfpie@legendpos}, label={0:{\pgfpie@t}}] (pgfpie@legendpos) {};
++    }
++  \endscope
++}
++\makeatother
++\scalebox{0.9}{
++\begin{tikzpicture}
++    \pie[
++        style=drop shadow,
++        hide number,
++        text=legend,
++        radius=3.5,
++        color={OrganicGreen, PlasticOrange, SandBrown, PaperBlue, GlassTeal, MetalGray, OtherGray},
++        explode=0.1
++    ]{
++        62.56/{Rác hữu cơ (62,56\%)},
++        10.16/{Nhựa \& bao nylon (10,16\%)},
++        7.76/{Đất cát (7,76\%)},
++        7.42/{Giấy (7,42\%)},
++        2.28/{Thủy tinh (2,28\%)},
++        1.45/{Kim loại (1,45\%)},
++        8.37/{Thành phần khác (8,37\%)}
++    }
++\end{tikzpicture}
++}
++\caption{Thành phần khối lượng CTRSH tại Hội An}
++\label{fig:thanh-phan-rac}
++\end{figure}
++
++\subsection{Ý nghĩa kỹ thuật của đặc tính CTRSH Hội An}
++
++Đối với công nghệ xử lý nhiệt, CTRSH không thể được xem như một loại nhiên liệu đồng nhất. Độ ẩm bình quân 56,3\% ảnh hưởng trực tiếp đến quá trình xử lý nhiệt theo ba cơ chế: (1) một phần đáng kể năng lượng đầu vào phải dùng để hóa hơi nước, làm giảm năng lượng hữu ích cho phản ứng; (2) hơi nước làm thay đổi cân bằng nhiệt và thành phần sản phẩm khí, khiến việc kiểm soát nhiệt độ trong lò trở nên khó khăn hơn; (3) rác ẩm dễ bám dính, kết khối, lên men và phát sinh mùi trong khu tiếp nhận. Vì vậy, khối tiền xử lý gồm phân loại, ép tách nước và sấy không phải là phần phụ trợ đơn giản mà là điều kiện quyết định cho khả năng vận hành của toàn dây chuyền.
++
++Tỷ lệ đất cát, thủy tinh, sành sứ và kim loại trong rác tuy không lớn so với thành phần hữu cơ, nhưng có ý nghĩa quan trọng đối với thiết bị. Các thành phần này không tham gia tạo dầu hoặc khí có ích, đồng thời gây mài mòn dao cắt, máy nghiền, vít tải, băng tải và lớp chịu nhiệt của lò. Do đó, công đoạn phân loại cơ học, tách từ, sàng và loại bỏ tạp chất trơ cần được xem là một phần của thiết kế công nghệ chứ không chỉ là công đoạn vệ sinh nguyên liệu.
++
++\begin{table}[H]
++\centering
++\caption{Ý nghĩa kỹ thuật của các đặc tính CTRSH Hội An đối với lựa chọn công nghệ}
++\label{tab:y-nghia-dac-tinh-rac}
++\setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
++\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\textwidth}p{0.36\textwidth}p{0.36\textwidth}}
++\toprule
++\textbf{Đặc tính rác} & \textbf{Ảnh hưởng kỹ thuật} & \textbf{Hàm ý đối với phương án công nghệ} \\
++\midrule
++Rác hữu cơ và độ ẩm cao & Giảm nhiệt trị, tăng năng lượng sấy, phát sinh nước thải ép và mùi trong khu tiếp nhận & Cần tiền xử lý ẩm hiệu quả; công nghệ phía sau phải chịu được dao động độ ẩm và không yêu cầu RDF quá đồng nhất \\
++Tỷ lệ nhựa, nylon và giấy đáng kể & Tạo tiềm năng sinh dầu và khí khi nhiệt phân; đồng thời có thể phát sinh hợp chất chứa clo nếu lẫn PVC & Nhiệt phân phù hợp để thu hồi dầu, nhưng cần kiểm soát phân loại và xử lý khí axit trong hệ thống khí thải \\
++Thành phần không cháy khoảng 13,38\% & Làm tăng tro, cặn, bụi, mài mòn và nguy cơ kẹt thiết bị & Cần tách kim loại, thủy tinh, đất cát trước khi tạo RDF và trước khi cấp vào lò nhiệt phân \\
++Biến động theo nguồn và mùa & Làm thay đổi nhiệt trị, độ ẩm, tỷ lệ dầu/khí/than và tải xử lý môi trường & Cần bố trí hầm/bunker đệm, trộn đều nguyên liệu và vận hành theo dải thông số thay vì một điểm cố định \\
++Chưa phân loại triệt để tại nguồn & Làm tăng tạp chất nguy hại, rác trơ và rủi ro môi trường thứ cấp & Dây chuyền phải có công đoạn phân loại cơ học, thu gom chất thải nguy hại lẫn trong rác và quản lý chất thải thứ cấp \\
++\bottomrule
++\end{tabular}%
++}
++\end{table}
++
++\subsection{Luận chứng lựa chọn công nghệ nhiệt phân}
++
++Từ phân tích đặc tính rác và bối cảnh công nghệ, đồ án luận chứng sự chuyển đổi từ phương án khí hóa -- tuabin khí (công nghệ ban đầu) sang phương án nhiệt phân -- chưng cất dầu -- động cơ diesel.
++
++Đặc biệt, khí hóa yêu cầu vùng phản ứng ở nhiệt độ cao, có cấp tác nhân oxy hóa và cần khí sản phẩm tương đối sạch để cấp cho tuabin khí. Với rác ẩm và không đồng nhất như tại Hội An, việc giữ ổn định vùng phản ứng khí hóa và kiểm soát hắc ín là rất khó. Ngược lại, nhiệt phân có thể làm việc ở nhiệt độ thấp hơn (350$-$600$^\circ$C), sản phẩm năng lượng chính là dầu lỏng có thể lưu chứa, và khí không ngưng có thể hồi lưu làm nhiên liệu gia nhiệt. Đây là điểm khác biệt có ý nghĩa lớn khi xử lý dòng CTRSH chưa được phân loại triệt để.
++
++Cần nhấn mạnh rằng công nghệ nhiệt phân không làm mất yêu cầu tiền xử lý. Nhiệt phân chỉ phù hợp hơn với rác có dao động nhất định, nhưng vẫn cần RDF đủ khô, kích thước phù hợp và tạp chất trơ được giảm đến mức chấp nhận được. Vì vậy, luận chứng lựa chọn nhiệt phân phải đi kèm với luận chứng về hệ thống RDF.
++
++\section{Giới thiệu dự án, mục tiêu và phương pháp tiếp cận}
++
++\subsection{Giới thiệu dự án và công nghệ ban đầu}
+ 
+-Dự án Nhà máy xử lý CTRSH thành phố Hội An có công suất xử lý 120 tấn/ngày đêm, được đầu tư tại thôn Bàu Ốc, xã Cẩm Hà, thành phố Hội An, tỉnh Quảng Nam. Diện tích mặt bằng xây dựng công trình là 14.068,5 m\textsuperscript{2}. Dự án được triển khai nhằm xử lý rác sinh hoạt phát sinh trên địa bàn thành phố, giảm phụ thuộc vào vận chuyển rác đi xa, giảm áp lực chôn lấp và từng bước thu hồi năng lượng từ chất thải.
++Dự án Nhà máy xử lý CTRSH thành phố Hội An có công suất xử lý 120 tấn/ngày đêm, được đầu tư tại thôn Bàu Ốc, phường Hội An Tây (trước đây là xã Cẩm Hà), thành phố Hội An, Đà Nẵng. Diện tích mặt bằng xây dựng công trình là 14.068,5 m\textsuperscript{2}. Dự án được triển khai nhằm xử lý rác sinh hoạt phát sinh trên địa bàn thành phố, giảm phụ thuộc vào vận chuyển rác đi xa, giảm áp lực chôn lấp và từng bước thu hồi năng lượng từ chất thải.
+ 
+-Theo phương án được phê duyệt ban đầu, dây chuyền công nghệ gồm ba khối chính: sản xuất viên nén RDF từ CTRSH, khí hóa nhiên liệu RDF và phát điện bằng tuabin khí. Sau khi rác được tiếp nhận, xé bao, phân loại, cắt, xử lý nhiệt, ép tách nước và sấy, phần cháy được được tạo thành viên RDF để cấp cho lò khí hóa. Khí tổng hợp sau khi làm sạch được cấp cho cụm tuabin khí -- máy phát điện. Công suất phát điện theo thiết kế ban đầu khoảng 2,6 MW \cite{BaocaoHoiAn2024}.
++Nhà máy xử lý rác thải hiện hữu sử dụng công nghệ đốt trực tiếp với công suất thiết kế 100 tấn/ngày đêm, nhưng quá trình vận hành không ổn định, công suất thực tế chỉ đạt khoảng 25$-$30\% công suất thiết kế và chưa đáp ứng yêu cầu nghiệm thu môi trường \cite{SNNMT2026,SKHCN2026}. Khi hệ thống xử lý tại chỗ không vận hành ổn định, rác phát sinh hằng ngày phải vận chuyển đến bãi rác Tam Nghĩa, huyện Núi Thành, cách Hội An khoảng 100 km.
+ 
+-Trong quá trình rà soát triển khai thực tế, phương án khí hóa -- tuabin khí bộc lộ nhiều điểm không phù hợp với đặc tính rác Hội An. Nhiên liệu RDF đầu vào khó duy trì đồng nhất do rác chưa được phân loại triệt để tại nguồn, độ ẩm cao và thành phần biến động theo mùa. Dòng khí tổng hợp từ rác có nguy cơ chứa hắc ín, bụi, hợp chất clo, lưu huỳnh và hơi dầu nặng; nếu không làm sạch triệt để có thể gây mài mòn, bám bẩn và giảm tuổi thọ tuabin. Ngoài ra, tuabin khí thường tối ưu ở quy mô công suất lớn hơn, trong khi dự án chỉ ở mức vài MW, làm giảm hiệu quả kinh tế của cấu hình thiết bị.
++Theo phương án được phê duyệt ban đầu, dây chuyền công nghệ gồm ba khối chính: sản xuất viên nén RDF từ CTRSH, khí hóa nhiên liệu RDF và phát điện bằng tuabin khí. Công suất phát điện theo thiết kế ban đầu khoảng 2,6 MW. Tuy nhiên, phương án khí hóa -- tuabin khí bộc lộ nhiều điểm không phù hợp với đặc tính rác Hội An: nhiên liệu RDF đầu vào khó duy trì đồng nhất, dòng khí tổng hợp có nguy cơ chứa hắc ín, bụi, hợp chất clo, lưu huỳnh có thể gây mài mòn và giảm tuổi thọ tuabin. Ngoài ra, tuabin khí thường tối ưu ở quy mô công suất lớn hơn, làm giảm hiệu quả kinh tế.
+ 
+ \begin{figure}[H]
+     \centering
+@@ -113,17 +450,17 @@ Trong quá trình rà soát triển khai thực tế, phương án khí hóa --
+     \label{fig:so-do-cong-nghe-ban-dau}
+ \end{figure}
+ 
+-\section{Mục tiêu và phạm vi nghiên cứu của đồ án}
++\subsection{Mục tiêu và phạm vi nghiên cứu của đồ án}
+ 
+ Trên cơ sở các vấn đề thực tiễn nêu trên, đồ án tập trung nghiên cứu phương án điều chỉnh công nghệ từ khí hóa -- tuabin khí sang nhiệt phân -- chưng cất dầu -- phát điện bằng động cơ diesel. Mục tiêu kỹ thuật của phương án điều chỉnh là nâng cao tính ổn định vận hành, giảm yêu cầu khắt khe đối với chất lượng khí nhiên liệu, tận dụng sản phẩm dầu nhiệt phân có khả năng lưu trữ, đồng thời giảm khối lượng chất thải phải chôn lấp.
+ 
+-Các nội dung chính của đồ án gồm: phân tích cơ sở lựa chọn công nghệ nhiệt phân đối với điều kiện rác sinh hoạt Hội An; thuyết minh quy trình tiền xử lý, tạo RDF, nhiệt phân, chưng cất dầu, phát điện và xử lý môi trường; tính toán cân bằng vật chất và năng lượng ở mức thiết kế sơ bộ; lựa chọn các nhóm thiết bị chính; đánh giá các yêu cầu quản lý vận hành, an toàn, môi trường và hiệu quả kinh tế -- xã hội. Các số liệu sử dụng  được ưu tiên lấy từ hồ sơ điều chỉnh công nghệ dự án, kết quả phân loại rác, bảng cân bằng vật chất, thông số thiết bị và các tài liệu khoa học đã được trích dẫn trong danh mục tài liệu tham khảo.
++Các nội dung chính của đồ án gồm: phân tích cơ sở lựa chọn công nghệ nhiệt phân đối với điều kiện rác sinh hoạt Hội An; thuyết minh quy trình tiền xử lý, tạo RDF, nhiệt phân, chưng cất dầu, phát điện và xử lý môi trường; tính toán cân bằng vật chất và năng lượng ở mức thiết kế sơ bộ; lựa chọn các nhóm thiết bị chính; đánh giá các yêu cầu quản lý vận hành, an toàn, môi trường và hiệu quả kinh tế -- xã hội.
+ 
+ \begin{sloppypar}
+ Phạm vi nghiên cứu của đồ án là hệ thống xử lý CTRSH công suất 120 tấn/ngày đêm tại thành phố Hội An.
+ \end{sloppypar}
+ 
+-\section{Cơ sở dữ liệu và phương pháp tiếp cận nghiên cứu}
++\subsection{Cơ sở dữ liệu và phương pháp tiếp cận nghiên cứu}
+ 
+ Nguồn số liệu chính của đồ án là hồ sơ điều chỉnh công nghệ của dự án Nhà máy xử lý CTRSH thành phố Hội An, bao gồm bảng phân loại thành phần rác, cân bằng vật chất, cân bằng năng lượng, thông số dầu nhiệt phân, danh mục thiết bị và thuyết minh các hệ thống xử lý môi trường \cite{BaocaoHoiAn2024}. Các tài liệu khoa học trong danh mục tham khảo được sử dụng để giải thích bản chất quá trình khí hóa, nhiệt phân, xử lý sản phẩm dầu và các rủi ro công nghệ liên quan \cite{Arena2012,Bridgwater2012,Sharuddin2016,Miandad2016}.
+ 
+@@ -146,7 +483,8 @@ Dữ liệu môi trường và vận hành & Hệ thống xử lý khí thải,
+ }
+ \end{table}
+ 
+-Phương pháp tiếp cận của đồ án là phân tích, luận chứng và tính toán phương án điều chỉnh công nghệ trên nền dự án đã có, không phải thiết kế mới hoàn toàn tách rời thực tế. Do đó, các thông số đã được xác định trong hồ sơ như công suất 120 tấn/ngày đêm, vị trí tại thôn Bàu Ốc, diện tích mặt bằng 14.068,5 m\textsuperscript{2}, các dòng vật chất sau phân loại, ép, sấy và lượng RDF cấp lò nhiệt phân được lấy làm điều kiện biên tính toán. Cách tiếp cận này phản ánh mục tiêu của thiết kế sơ bộ: đánh giá tính hợp lý kỹ thuật của phương án, tổ chức hệ thống tính toán, làm rõ cơ sở lựa chọn thiết bị và xác định yêu cầu vận hành -- kiểm soát môi trường.
++Phương pháp tiếp cận của đồ án là phân tích, luận chứng và tính toán phương án điều chỉnh công nghệ trên nền dự án đã có, không phải thiết kế mới hoàn toàn tách rời thực tế. Do đó, các thông số đã được xác định trong hồ sơ như công suất 120 tấn/ngày đêm, vị trí tại thôn Bàu Ốc, diện tích mặt bằng 14.068,5 m\textsuperscript{2}, các dòng vật chất sau phân loại, ép, sấy và lượng RDF cấp lò nhiệt phân được lấy làm điều kiện biên tính toán.
++
+ \begin{figure}[H]
+ \centering
+ \scalebox{0.9}{
+@@ -178,7 +516,7 @@ Phương pháp tiếp cận của đồ án là phân tích, luận chứng và
+         draw=teal!60!black
+     }
+ ]
+-\node (b1) [box] {\textbf{\color{teal!80!black}Dữ liệu đầu vào}\\ $\bullet$ Công suất xử lý chất thải rắn sinh hoạt: 120 tấn/ngày đêm.\\ $\bullet$ Đặc tính rác Hội An: Tỷ lệ hữu cơ cao, độ ẩm cao (56,3\%), nhựa (10,16\%).\\ $\bullet$ Ràng buộc mặt bằng (14.068,5 m\textsuperscript{2}) và hạ tầng đấu nôi điện, nước.};
++\node (b1) [box] {\textbf{\color{teal!80!black}Dữ liệu đầu vào}\\ $\bullet$ Công suất xử lý chất thải rắn sinh hoạt: 120 tấn/ngày đêm.\\ $\bullet$ Đặc tính rác Hội An: Tỷ lệ hữu cơ cao, độ ẩm cao (56,3\%), nhựa (10,16\%).\\ $\bullet$ Ràng buộc mặt bằng (14.068,5 m\textsuperscript{2}) và hạ tầng đấu nối điện, nước.};
+ \node (s1) [stepnum, left=of b1] {1};
+ 
+ \node (b2) [box, below=of b1] {\textbf{\color{teal!80!black}Phân tích \& Luận chứng công nghệ}\\ $\bullet$ Đánh giá ưu/nhược điểm các phương pháp (chôn lấp, đốt, khí hóa, nhiệt phân).\\ $\bullet$ Luận chứng sự chuyển dịch từ khí hóa -- tuabin khí sang nhiệt phân -- diesel.\\ $\bullet$ Xác định cấu hình công nghệ: Tiền xử lý $\rightarrow$ Tạo RDF $\rightarrow$ Nhiệt phân $\rightarrow$ Diesel.};
+@@ -195,98 +533,23 @@ Phương pháp tiếp cận của đồ án là phân tích, luận chứng và
+ \draw [arrow] (s3) -- (s4);
+ \end{tikzpicture}
+ }
+-\caption{Trình tự tiếp cận nghiên cứu }
++\caption{Trình tự tiếp cận nghiên cứu}
+ \label{fig:phuong-phap-nghien-cuu}
+ \end{figure}
+-Trong quá trình sử dụng số liệu, đồ án phân biệt ba nhóm dữ liệu. Nhóm thứ nhất là dữ liệu thiết kế ràng buộc, chẳng hạn công suất tiếp nhận rác, diện tích mặt bằng, tỷ lệ thành phần rác, độ ẩm và cân bằng khối lượng. Nhóm thứ hai là dữ liệu công nghệ dùng để tính toán sơ bộ, gồm tỷ lệ sản phẩm nhiệt phân, nhiệt trị RDF, hiệu suất chuyển đổi năng lượng và sản lượng dầu sau chưng cất. Nhóm thứ ba là dữ liệu quản lý vận hành và môi trường, bao gồm giới hạn khí thải, nước thải, chương trình giám sát, yêu cầu an toàn cháy nổ và quản lý chất thải thứ cấp. Việc tách nhóm dữ liệu giúp tránh nhầm lẫn giữa thông số đã có cơ sở trong hồ sơ và thông số cần được kiểm chứng trong vận hành thử nghiệm.
+ 
+ Về trình tự nghiên cứu, đồ án đi từ vấn đề thực tiễn đến cơ sở công nghệ, sau đó thực hiện tính toán thiết kế sơ bộ và đánh giá vận hành, bảo vệ môi trường. Trình tự này phản ánh đúng logic của một dự án xử lý chất thải: trước hết phải xác định bài toán rác, tiếp theo xác định công nghệ có khả năng xử lý dòng rác đó, sau đó kiểm tra bằng cân bằng vật chất -- năng lượng và cuối cùng là thiết kế sơ bộ thiết bị kết hợp đánh giá vận hành, môi trường.
+ 
+-\section{So sánh công nghệ nhiệt phân xử lý CTRSH trên thế giới}
+-
+-Để có cơ sở lựa chọn công nghệ, cần xem xét các mô hình nhà máy nhiệt phân và khí hóa đã được triển khai thực tế trên thế giới, đặc biệt tại các quốc gia có điều kiện tương đồng với Việt Nam.
+-
+-\textbf{Tại Nhật Bản,} nhiều nhà máy nhiệt phân RDF quy mô 50--200 tấn/ngày đã vận hành từ những năm 2000, sử dụng lò quay và lò tầng sôi. Các nhà máy như Mitsubishi Heavy Industries và JFE Engineering đã phát triển các hệ thống nhiệt phân với thu hồi dầu và khí đồng thời. Mô hình này cho thấy lò quay phù hợp với RDF từ rác sinh hoạt có tính không đồng nhất cao, trong khi lò tầng sôi đòi hỏi nguyên liệu đồng đều hơn về kích thước \cite{Sharuddin2016}.
+-
+-\textbf{Tại châu Âu,} các dự án như Thermoselect (Đức) và Enerkem (Canada) sử dụng công nghệ khí hóa nhiệt phân có xúc tác để xử lý RDF và biến thành nhiên liệu tổng hợp (synfuel) hoặc methanol. Tuy nhiên, các hệ thống này có quy mô lớn (hàng trăm nghìn tấn/năm) và chi phí đầu tư rất cao, không phù hợp với quy mô nhà máy 120 tấn/ngày tại Hội An.
+-
+-\textbf{Tại Đông Nam Á,} một số nồi hơi đốt RDF quy mô nhỏ đã được triển khai tại Malaysia và Philippines, trong đó RDF được sản xuất từ rác sinh hoạt và đốt trực tiếp trong lò hơi để phát điện. Mô hình nhiệt phân lò quay quy mô nhỏ chưa được triển khai rộng rãi tại khu vực, cho thấy đây là hướng đi có tính thử nghiệm và cần được kiểm chứng trong điều kiện vận hành thực tế tại Việt Nam.
+-
+-Bảng \ref{tab:so-sanh-cong-nghe-wte-quoc-te} tổng hợp một số thông số kỹ thuật điển hình của các công nghệ nhiệt phân và khí hóa trên thế giới.
+-
+-\begin{table}[H]
+-\centering
+-\caption{So sánh công nghệ nhiệt phân và khí hóa trên thế giới}
+-\label{tab:so-sanh-cong-nghe-wte-quoc-te}
+-\centering
+-\setlength{\tabcolsep}{4pt}
+-\scalebox{0.9}{
+-\begin{tabular}{p{0.18\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
+-\toprule
+-\textbf{Thông số} & \textbf{Lò quay (Nhật Bản)} & \textbf{Lò tầng sôi (Châu Âu)} & \textbf{Khí hóa plasma (Bắc Mỹ)} & \textbf{Lò quay (Hội An, thiết kế)} \\
+-\midrule
+-Quy mô (tấn/ngày) & 50--200 & 200--1.000 & 1.000--3.000 & 120 (tổng) \\
+-\midrule
+-Nhiệt độ (\textdegree C) & 400--600 & 750--900 & 1.000--1.500 & 400--500 \\
+-\midrule
+-Sản phẩm chính & Dầu + khí + than & Khí tổng hợp & Khí tổng hợp + điện & Dầu DO + khí + than \\
+-\midrule
+-Hiệu suất thu dầu & 40--55\% & -- & -- & 45\% (thiết kế) \\
+-\midrule
+-Yêu cầu tiền xử lý & Phân loại, sấy, tạo viên & Nghiền, sấy & Nghiền mịn, sấy & Phân loại, ép, sấy, tạo viên \\
+-\midrule
+-Tự cân bằng năng lượng & Có (khí hồi lưu) & Phụ thuộc & Có & Có (khí hồi lưu) \\
+-\midrule
+-Chi phí đầu tư (USD/tấn/ngày) & 30.000--50.000 & 50.000--80.000 & 100.000--200.000 & Thiết kế sơ bộ \\
+-\bottomrule
+-\end{tabular}
+-}
+-\end{table}
+-
+-\section{Phân tích đặc tính CTRSH Hội An dưới góc nhìn thiết kế công nghệ}
+-
+-Đối với công nghệ xử lý nhiệt, CTRSH không thể được xem như một loại nhiên liệu đồng nhất. Rác sinh hoạt là hỗn hợp biến động liên tục theo nguồn phát sinh, mùa vụ, thói quen tiêu dùng, mức độ phân loại tại nguồn và phương thức thu gom. Tại Hội An, yếu tố du lịch làm cho dòng rác có đặc trưng phức tạp hơn so với đô thị thuần dân cư. Rác từ nhà hàng, khách sạn, chợ, khu dân cư và hoạt động thương mại có tỷ lệ hữu cơ cao, lẫn nhiều bao bì nhựa, giấy, vải, thủy tinh, kim loại và tạp chất vô cơ. Vì vậy, việc lựa chọn công nghệ không chỉ căn cứ vào giá trị trung bình của thành phần rác, mà còn phải xét đến khả năng chịu dao động của dây chuyền.
+-
+-Kết quả phân loại trong hồ sơ dự án cho thấy rác hữu cơ là thành phần chiếm tỷ lệ lớn nhất, đạt bình quân 62,56\% khối lượng; giấy chiếm 7,42\%; vải chiếm 1,54\%; gỗ, củi, cành cây chiếm 4,72\%; nhựa và bao nylon chiếm 10,16\%; da và cao su chiếm 0,22\%. Tổng phần cháy được đạt 86,62\%, trong khi phần không cháy được gồm kim loại, thủy tinh, sành sứ, đất cát, xỉ than, bùn và các thành phần khác chiếm 13,38\% \cite{BaocaoHoiAn2024}. Về mặt năng lượng, tỷ lệ cháy được cao là điều kiện thuận lợi để thu hồi năng lượng. Tuy nhiên, về mặt vận hành, tỷ lệ hữu cơ và độ ẩm cao lại làm giảm nhiệt trị, tăng tải sấy và làm tăng nguy cơ biến động chất lượng RDF.
+-
+-Độ ẩm bình quân của CTRSH Hội An được xác định khoảng 56,3\%, trong khi độ tro khoảng 8,5\%. Độ ẩm cao ảnh hưởng trực tiếp đến quá trình xử lý nhiệt theo ba cơ chế. Thứ nhất, một phần đáng kể năng lượng đầu vào phải dùng để nâng nhiệt và hóa hơi nước, làm giảm năng lượng hữu ích cho phản ứng nhiệt phân hoặc khí hóa. Thứ hai, hơi nước làm thay đổi cân bằng nhiệt và thành phần sản phẩm khí, khiến việc kiểm soát nhiệt độ trong lò trở nên khó khăn hơn. Thứ ba, rác ẩm dễ bám dính, kết khối, lên men và phát sinh mùi trong khu tiếp nhận, gây ảnh hưởng đến thiết bị cấp liệu và môi trường lao động. Vì vậy, khối tiền xử lý gồm phân loại, bức xạ nhiệt, ép tách nước và sấy không phải là phần phụ trợ đơn giản mà là điều kiện quyết định cho khả năng vận hành của toàn dây chuyền.
+-
+-Tỷ lệ đất cát, thủy tinh, sành sứ và kim loại trong rác tuy không lớn so với thành phần hữu cơ, nhưng có ý nghĩa quan trọng đối với thiết bị. Các thành phần này không tham gia tạo dầu hoặc khí có ích, đồng thời gây mài mòn dao cắt, máy nghiền, vít tải, băng tải và lớp chịu nhiệt của lò. Kim loại có thể gây kẹt cơ khí hoặc tia lửa khi va đập; thủy tinh và sành sứ làm tăng hàm lượng tro; đất cát làm tăng bụi và cặn rắn. Do đó, công đoạn phân loại cơ học, tách từ, sàng và loại bỏ tạp chất trơ cần được xem là một phần của thiết kế công nghệ chứ không chỉ là công đoạn vệ sinh nguyên liệu.
+-
+-Từ góc nhìn thiết kế, thành phần cháy được cao không đồng nghĩa với việc có thể đưa trực tiếp rác vào thiết bị nhiệt. Nếu rác chưa được làm khô, đồng nhất kích thước và loại bỏ tạp chất trơ, quá trình nhiệt sẽ tiêu hao nhiều năng lượng, khó ổn định và phát sinh nhiều sự cố. Đặc biệt, khí hóa yêu cầu vùng phản ứng ở nhiệt độ cao, có cấp tác nhân oxy hóa và cần khí sản phẩm tương đối sạch để cấp cho tuabin khí. Với rác ẩm và không đồng nhất, việc giữ ổn định vùng phản ứng khí hóa và kiểm soát hắc ín là rất khó. Ngược lại, nhiệt phân có thể làm việc ở nhiệt độ thấp hơn, sản phẩm năng lượng chính là dầu lỏng có thể lưu chứa, và khí không ngưng có thể hồi lưu làm nhiên liệu gia nhiệt. Đây là điểm khác biệt có ý nghĩa lớn khi xử lý dòng CTRSH chưa được phân loại triệt để.
+-
+-Một khía cạnh cần nhấn mạnh là công nghệ nhiệt phân không làm mất yêu cầu tiền xử lý. Nhiệt phân chỉ phù hợp hơn với rác có dao động nhất định, nhưng vẫn cần RDF đủ khô, kích thước phù hợp và tạp chất trơ được giảm đến mức chấp nhận được. Nếu cấp rác quá ẩm vào lò, lượng hơi nước sinh ra sẽ làm giảm nhiệt độ vùng phản ứng, kéo dài thời gian lưu cần thiết và làm giảm chất lượng dầu. Nếu nguyên liệu quá nhiều đất cát, chất rắn sau nhiệt phân tăng lên và làm giảm hiệu suất thu hồi năng lượng. Vì vậy, luận chứng lựa chọn nhiệt phân phải đi kèm với luận chứng về hệ thống RDF.
+-\begin{table}[H]
+-\centering
+-\caption{Ý nghĩa kỹ thuật của các đặc tính CTRSH Hội An đối với lựa chọn công nghệ}
+-\label{tab:y-nghia-dac-tinh-rac}
+-\setlength{\tabcolsep}{5pt}
+-\scalebox{0.9}{
+-\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\textwidth}p{0.36\textwidth}p{0.36\textwidth}}
+-\toprule
+-\textbf{Đặc tính rác} & \textbf{Ảnh hưởng kỹ thuật} & \textbf{Hàm ý đối với phương án công nghệ} \\
+-\midrule
+-Rác hữu cơ và độ ẩm cao & Giảm nhiệt trị, tăng năng lượng sấy, phát sinh nước thải ép và mùi trong khu tiếp nhận & Cần tiền xử lý ẩm hiệu quả; công nghệ phía sau phải chịu được dao động độ ẩm và không yêu cầu RDF quá đồng nhất \\
+-Tỷ lệ nhựa, nylon và giấy đáng kể & Tạo tiềm năng sinh dầu và khí khi nhiệt phân; đồng thời có thể phát sinh hợp chất chứa clo nếu lẫn PVC & Nhiệt phân phù hợp để thu hồi dầu, nhưng cần kiểm soát phân loại và xử lý khí axit trong hệ thống khí thải \\
+-Thành phần không cháy khoảng 13,38\% & Làm tăng tro, cặn, bụi, mài mòn và nguy cơ kẹt thiết bị & Cần tách kim loại, thủy tinh, đất cát trước khi tạo RDF và trước khi cấp vào lò nhiệt phân \\
+-Biến động theo nguồn và mùa & Làm thay đổi nhiệt trị, độ ẩm, tỷ lệ dầu/khí/than và tải xử lý môi trường & Cần bố trí hầm/bunker đệm, trộn đều nguyên liệu và vận hành theo dải thông số thay vì một điểm cố định \\
+-Chưa phân loại triệt để tại nguồn & Làm tăng tạp chất nguy hại, rác trơ và rủi ro môi trường thứ cấp & Dây chuyền phải có công đoạn phân loại cơ học, thu gom chất thải nguy hại lẫn trong rác và quản lý chất thải thứ cấp \\
+-\bottomrule
+-\end{tabular}%
+-}
+-\end{table}
+-
+ \subsection{Yêu cầu kỹ thuật đối với phương án nhiệt phân -- dầu -- diesel}
+ 
+ Phương án nhiệt phân -- chưng cất dầu -- động cơ diesel cần thỏa mãn bốn nhóm yêu cầu: xử lý được rác địa phương, vận hành ổn định, kiểm soát môi trường và có hiệu quả sử dụng năng lượng.
+ 
+-Yêu cầu đầu tiên là khả năng thích nghi với RDF có chất lượng dao động. Hệ thống phải cho phép phối trộn, lưu chứa đệm và điều chỉnh tốc độ cấp liệu theo độ ẩm, kích thước và nhiệt trị thực tế. Trong lò nhiệt phân, tốc độ quay, thời gian lưu, nhiệt độ buồng phản ứng và chế độ gia nhiệt cần được điều chỉnh trong một dải nhất định để tránh tình trạng nguyên liệu chưa phân hủy hết hoặc bị quá nhiệt cục bộ. Khả năng thích nghi này đặc biệt quan trọng trong giai đoạn mùa mưa, khi độ ẩm rác tăng và tỷ lệ hữu cơ ướt trong rác đầu vào cao hơn.
++Yêu cầu đầu tiên là \textbf{khả năng thích nghi với RDF có chất lượng dao động}. Hệ thống phải cho phép phối trộn, lưu chứa đệm và điều chỉnh tốc độ cấp liệu theo độ ẩm, kích thước và nhiệt trị thực tế. Trong lò nhiệt phân, tốc độ quay, thời gian lưu, nhiệt độ buồng phản ứng và chế độ gia nhiệt cần được điều chỉnh trong một dải nhất định để tránh tình trạng nguyên liệu chưa phân hủy hết hoặc bị quá nhiệt cục bộ.
+ 
+-Yêu cầu thứ hai là kiểm soát kín dòng khí và hơi dầu. Nhiệt phân tạo ra hơi dầu, khí không ngưng và một phần hợp chất hữu cơ bay hơi. Nếu hệ thống ngưng tụ, đường ống, bồn chứa và tháp xử lý không kín, nguy cơ phát tán mùi, VOC và khí dễ cháy sẽ tăng. Vì vậy, phương án công nghệ phải coi hệ thống thu gom hơi dầu và khí không ngưng là tuyến an toàn chính. Khí không ngưng cần được hồi lưu về buồng đốt hoặc xử lý triệt để, không được xả trực tiếp ra môi trường.
++Yêu cầu thứ hai là \textbf{kiểm soát kín dòng khí và hơi dầu}. Nhiệt phân tạo ra hơi dầu, khí không ngưng và một phần hợp chất hữu cơ bay hơi. Nếu hệ thống ngưng tụ, đường ống, bồn chứa và tháp xử lý không kín, nguy cơ phát tán mùi, VOC và khí dễ cháy sẽ tăng. Khí không ngưng cần được hồi lưu về buồng đốt hoặc xử lý triệt để, không được xả trực tiếp ra môi trường.
+ 
+-Yêu cầu thứ ba là tạo ra sản phẩm dầu có thể sử dụng cho động cơ diesel sau xử lý thích hợp. Dầu nhiệt phân thô thường chứa nước, cặn rắn, hợp chất oxy hóa, hợp chất không no, lưu huỳnh, clo và phân đoạn nặng. Nếu đưa trực tiếp vào động cơ, dầu có thể gây ăn mòn, đóng cặn kim phun, tăng khói, làm giảm tuổi thọ bơm cao áp và buồng đốt. Do đó, hệ chưng cất và tinh chế dầu phải có vai trò nâng cấp nhiên liệu, tách phần nhẹ, kiểm soát nước/cặn và tuần hoàn dầu nặng về lò hoặc xử lý theo quy định.
++Yêu cầu thứ ba là \textbf{tạo ra sản phẩm dầu có thể sử dụng cho động cơ diesel sau xử lý thích hợp}. Dầu nhiệt phân thô thường chứa nước, cặn rắn, hợp chất oxy hóa, hợp chất không no, lưu huỳnh, clo và phân đoạn nặng. Hệ chưng cất và tinh chế dầu phải có vai trò nâng cấp nhiên liệu, tách phần nhẹ, kiểm soát nước/cặn và tuần hoàn dầu nặng về lò hoặc xử lý theo quy định.
+ 
+-Yêu cầu thứ tư là kiểm soát môi trường theo hướng chủ động. Nhà máy không chỉ cần xử lý khí thải ở cuối đường ống, mà phải giảm phát sinh ô nhiễm ngay từ nguồn. Điều này bao gồm kiểm soát độ ẩm RDF để giảm hơi nước và khí mùi, loại bỏ tạp chất chứa clo nếu có thể, duy trì buồng đốt khí không ngưng ở nhiệt độ phù hợp, làm nguội nhanh khí thải để hạn chế tái hình thành dioxin/furan, thu gom nước thải ép rác, quản lý cặn dầu và chất thải nguy hại.
++Yêu cầu thứ tư là \textbf{kiểm soát môi trường theo hướng chủ động}. Nhà máy không chỉ cần xử lý khí thải ở cuối đường ống, mà phải giảm phát sinh ô nhiễm ngay từ nguồn, bao gồm kiểm soát độ ẩm RDF, loại bỏ tạp chất chứa clo, duy trì buồng đốt khí không ngưng ở nhiệt độ phù hợp, làm nguội nhanh khí thải để hạn chế tái hình thành dioxin/furan.
+ 
+ \begin{table}[H]
+ \centering
+@@ -308,4 +571,4 @@ An toàn và môi trường & Cảm biến LEL, thu gom khí kín, xử lý khí
+ }
+ \end{table}
+ 
+-\end{document}
++\end{document}
+\ No newline at end of file
+diff --git a/Chuong/2_Chuong_2.tex b/Chuong/2_Chuong_2.tex
+index 0506b98..0ba53b7 100644
+--- a/Chuong/2_Chuong_2.tex
++++ b/Chuong/2_Chuong_2.tex
+@@ -14,7 +14,7 @@ Phương án công nghệ của đồ án vì vậy được xây dựng trên n
+ \begin{figure}[htbp]
+ \centering
+ 
+-\resizebox{\textwidth}{!}{%
++\scalebox{0.9}{%
+ \begin{tikzpicture}[node distance=1.5cm and 0.8cm, block/.style={draw, fill=blue!10, minimum width=2.2cm, minimum height=1cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\footnotesize, text centered}]
+ 
+ % Row 1 - Input and separation
+@@ -52,140 +52,7 @@ Phương án công nghệ của đồ án vì vậy được xây dựng trên n
+ \node[label] at (-1.8, -2.2) {Tiền xử lý cơ học};
+ \node[label] at (1.0, -4.5) {Tạo nhiên liệu RDF};
+ 
+-\end{tikzpicture}
+-}
+-\caption{Sơ đồ nguyên lý hệ thống tiền xử lý và tạo viên nhiên liệu RDF}
+-\label{fig:he-thong-rdf}
+-\end{figure}
+-
+-Về bản chất, RDF không phải là một loại nhiên liệu đồng nhất tuyệt đối như than hoặc dầu mỏ, mà là nhiên liệu thứ cấp được tạo ra từ phần chất thải có khả năng cháy. Chất lượng RDF phụ thuộc vào thành phần rác ban đầu, hiệu quả phân loại, độ ẩm sau sấy, kích thước hạt và mức độ lẫn tạp chất trơ. Do đó, mọi công nghệ sử dụng RDF đều cần xét đến biến động nhiệt trị và có hệ số an toàn vận hành phù hợp. Trong đồ án này, phương án nhiệt phân được chọn vì cho phép chuyển hóa phần hydrocarbon trong rác thành dầu lỏng, khí không ngưng và than carbon, đồng thời giảm yêu cầu làm sạch khí ở mức rất cao như khi sử dụng khí tổng hợp cho tuabin khí.
+-
+-Quá trình tiền xử lý CTRSH trước khi đưa vào xử lý nhiệt không đơn thuần là bước kỹ thuật phụ trợ, mà là điều kiện tiên quyết để đảm bảo hiệu quả vận hành và chất lượng sản phẩm. Theo kết quả phân tích thành phần tại Chương 1, CTRSH Hội An chứa trung bình 56,3\% hàm lượng ẩm và khoảng 55--60\% là chất hữu cơ dễ phân hủy sinh học \cite{BaocaoHoiAn2024}. Thành phần hữu cơ này có nhiệt trị thấp, tiêu tốn nhiệt để bay hơi nước và có thể làm giảm hiệu suất chuyển hóa polymer nếu không được tách trước. Bởi vậy, giai đoạn phân loại -- ép -- sấy -- tạo RDF phải được thực hiện như một phân xưởng độc lập và hoàn chỉnh.
+-
+-Về cơ sở lựa chọn hướng xử lý nhiệt: hướng xử lý sinh học (ủ compost, phân hủy kỵ khí) không thể xử lý triệt để nhựa, cao su và giấy tráng phủ. Hướng chôn lấp vệ sinh không thu hồi năng lượng và ngày càng gặp khó khăn về quỹ đất tại Hội An. Hướng đốt trực tiếp gặp hạn chế về yêu cầu xử lý khí thải nghiêm ngặt, chi phí đầu tư lớn và không phù hợp với quy mô 120 tấn/ngày của dự án. Hướng xử lý nhiệt phi đốt cháy -- bao gồm khí hóa và nhiệt phân -- cho phép chuyển hóa phần hydrocarbon mà không phát sinh dioxin/furan theo cơ chế đốt cháy trực tiếp, đồng thời sản phẩm trung gian (dầu hoặc khí) có thể kiểm soát chất lượng trước khi sử dụng làm nhiên liệu \cite{Bridgwater2012}.
+-
+-Theo nguyên tắc vận hành, tiền xử lý bắt buộc gồm ba giai đoạn chính: (i) phân loại cơ học -- tách chất trơ (đất đá, kính, kim loại) và chất thải nguy hại (pin, bóng đèn, sơn); (ii) tách hữu cơ dễ phân hủy (thực phẩm, chất thải nông nghiệp, lá cây) để xử lý riêng bằng compost hoặc phân hủy kỵ khí; (iii) tạo RDF từ phần cháy được còn lại (nhựa, nylon, giấy, vải, gỗ vụn, cao su) thông qua cắt, ép, sấy và đùn viên. Phần RDF sau cùng đạt độ ẩm dưới 15\%, kích thước \textless{}50 mm và nhiệt trị từ 16--25 MJ/kg là điều kiện đủ để vận hành lò nhiệt phân quay ổn định \cite{BaocaoHoiAn2024}.
+-
+-\label{sec:so-sanh-dinh-luong}
+-
+-Bốn hướng công nghệ chính được xem xét gồm: (1) xử lý sinh học -- ủ compost, (2) đốt trực tiếp với lò ghi cơ học, (3) khí hóa kết hợp tuabin khí, và (4) nhiệt phân lò quay kết hợp chưng cất và phát điện diesel. Mỗi hướng có ưu, nhược điểm riêng và mức độ phù hợp khác nhau với đặc tính rác Hội An. Bảng \ref{tab:so-sanh-dinh-luong-cong-nghe} tổng hợp một số thông số định lượng giúp đưa ra nhận xét khách quan.
+-
+-Hướng ủ compost phù hợp với phần thực phẩm và chất hữu cơ dễ phân hủy, nhưng không xử lý được nhựa và không tạo ra điện năng. Đốt trực tiếp xử lý được gần như mọi thành phần nhưng đòi hỏi hệ thống kiểm soát nhiệt độ buồng đốt (trên 850\textdegree C trong 2 giây), hệ thống tháp hấp thụ khí axit, lọc bụi túi, hấp thụ than hoạt tính để kiểm soát dioxin/furan theo QCVN 30:2012/BTNMT, và chi phí đầu tư rất lớn. Khí hóa tạo ra điện nhưng gặp hạn chế về hắc ín và làm sạch khí như đã phân tích. Nhiệt phân lò quay, với khả năng xử lý RDF đã qua tiền xử lý ở nhiệt độ trung bình (350--600\textdegree C), tạo ra dầu lỏng có thể lưu trữ và sử dụng linh hoạt, phù hợp nhất với quy mô và điều kiện địa phương Hội An.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{So sánh định lượng các hướng xử lý CTRSH theo đặc tính rác Hội An}
+-\label{tab:so-sanh-dinh-luong-cong-nghe}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.20\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
+-\toprule
+-\textbf{Tiêu chí} & \textbf{Ủ compost} & \textbf{Đốt trực tiếp} & \textbf{Khí hóa} & \textbf{Nhiệt phân lò quay} \\
+-\midrule
+-Nhiệt trị nguyên liệu đầu vào & 4--8 MJ/kg (rác thô) & 7--14 MJ/kg (rác thô, sau sấy sơ bộ) & 14--20 MJ/kg (RDF) & 16--25 MJ/kg (RDF) \\
+-Nhiệt độ vận hành & 50--70\textdegree C (ủ hiếu khí) & 850--1.100\textdegree C & 750--1.000\textdegree C & 350--600\textdegree C \\
+-Sản phẩm chính & Phân compost & Nhiệt/điện & Điện (khí tổng hợp) & Dầu nhiệt phân, điện \\
+-Yêu cầu tiền xử lý & Tách thô (nhựa, kim loại) & Sấy, xé nhỏ, tách trơ & Sấy, nghiền, đồng nhất & Phân loại, ép, sấy, tạo viên RDF \\
+-Mức phát sinh khí thải & Thấp (khí ủ) & Cao (cần xử lý dioxin) & Trung bình (hắc ín, HCl) & Trung bình (khí không ngưng có kiểm soát) \\
+-Sản phẩm lưu trữ được & Không (khí sinh học) & Không & Khó & Có (dầu lỏng trong bồn) \\
+-Chi phí đầu tư tương đối & Thấp & Rất cao & Cao & Trung bình \\
+-Phù hợp quy mô Hội An & Một phần (phần hữu cơ) & Hạn chế & Có điều kiện & Phù hợp \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\section{Cơ sở lý thuyết của công nghệ khí hóa và các hạn chế}
+-
+-Khí hóa là quá trình chuyển hóa nhiên liệu rắn chứa carbon thành khí nhiên liệu trong điều kiện thiếu oxy. Không giống đốt trực tiếp, khí hóa chỉ cấp một phần lượng oxy lý thuyết, thường khoảng 25--40\%, nhằm tạo môi trường khử ở nhiệt độ cao. Các phản ứng chính của quá trình khí hóa gồm phản ứng oxy hóa một phần, phản ứng Boudouard, phản ứng hơi nước -- carbon và phản ứng chuyển hóa khí nước:
+-
+-\begin{align}
+-\ce{C + O2 &-> CO2} \label{eq:oxi-hoa-hoan-toan} \\
+-\ce{C + 1/2 O2 &-> CO} \label{eq:oxi-hoa-mot-phan} \\
+-\ce{C + CO2 &<=> 2CO} \label{eq:boudouard} \\
+-\ce{C + H2O &<=> CO + H2} \label{eq:water-gas} \\
+-\ce{CO + H2O &<=> CO2 + H2} \label{eq:water-gas-shift}
+-\end{align}
+-
+-Sản phẩm thu được là khí tổng hợp gồm \ce{CO}, \ce{H2}, \ce{CH4}, \ce{CO2}, hơi nước và các hydrocarbon nhẹ. Khi nguyên liệu là RDF từ rác sinh hoạt, dòng khí còn chứa bụi, tro bay, hắc ín, hợp chất clo, lưu huỳnh, kim loại bay hơi và hơi dầu nặng. Các tạp chất này là trở ngại lớn nếu khí tổng hợp được sử dụng cho tuabin khí, vì tuabin yêu cầu nhiên liệu khí có nhiệt trị và thành phần ổn định, gần như không chứa bụi rắn, hắc ín hoặc các cấu tử dễ ngưng tụ \cite{Arena2012}.
+-
+-Đối với rác Hội An, hạn chế của khí hóa xuất hiện ở cả ba khâu: nguyên liệu, thiết bị và sử dụng sản phẩm. Về nguyên liệu, độ ẩm trung bình 56,3\% và thành phần hữu cơ cao làm giảm nhiệt trị và gây dao động thành phần RDF sau sấy. Về thiết bị, lò khí hóa vận hành ở 800--1.000\textdegree C, đòi hỏi vật liệu chịu nhiệt và hệ thống điều khiển chính xác. Về phía sử dụng, khí tổng hợp không thể lưu trữ lâu trong điều kiện nhà máy -- khi chất lượng khí dao động, tổ máy phát điện khí hoặc tuabin khí bị ảnh hưởng trực tiếp; khí dư phải đốt bỏ gây lãng phí năng lượng.
+-
+-Sự không ổn định của dòng khí tổng hợp kéo theo yêu cầu làm sạch khí phức tạp gồm cyclone, tháp làm mát, thiết bị tách hắc ín, hấp thụ khí axit, lọc bụi tinh và kiểm soát nước ngưng. Mỗi khâu xử lý đều làm tăng chi phí đầu tư, chi phí vận hành và yêu cầu nhân lực kỹ thuật. Với quy mô công suất phát điện ban đầu khoảng 2,6 MW, phương án tuabin khí không đạt mức tối ưu kinh tế như các nhà máy công suất lớn; do đó việc điều chỉnh sang công nghệ có sản phẩm trung gian dễ lưu trữ và dễ kiểm soát hơn là có cơ sở kỹ thuật.
+-
+-\label{sec:dong-hoc-khi-hoa}
+-
+-Ngoài năm phản ứng cơ bản nêu trên, quá trình khí hóa còn bao gồm các phản ứng methanation và reforming hơi nước ảnh hưởng đến thành phần khí cuối cùng:
+-
+-\begin{align}
+-\ce{C + 2H2 &-> CH4} \quad \Delta H = -74{,}8\ \text{kJ/mol} \label{eq:methanation-carbon} \\
+-\ce{CO + 3H2 &-> CH4 + H2O} \quad \Delta H = -206{,}1\ \text{kJ/mol} \label{eq:methanation-CO} \\
+-\ce{CH4 + H2O &<=> CO + 3H2} \quad \Delta H = +206{,}1\ \text{kJ/mol} \label{eq:steam-reforming}
+-\end{align}
+-
+-Phản ứng Boudouard (phương trình \ref{eq:boudouard}) là phản ứng thu nhiệt, thuận lợi ở nhiệt độ trên 700\textdegree C. Đây là phản ứng quyết định tỷ lệ CO trong khí tổng hợp và do đó ảnh hưởng lớn đến nhiệt trị. Phản ứng water-gas shift (phương trình \ref{eq:water-gas-shift}) là phản ứng thuận nhiệt ở nhiệt độ thấp, nghĩa là ở nhiệt độ cao (trên 800\textdegree C) phản ứng nghịch chiếm ưu thế, tỷ lệ CO tăng và \ce{H2} giảm. Sự cân bằng giữa các phản ứng này quyết định tỷ lệ CO/\ce{H2} -- thông số quan trọng khi dùng khí tổng hợp cho ứng dụng tổng hợp hóa chất (Fischer-Tropsch) hoặc phát điện \cite{Arena2012}.
+-
+-Về mặt động học, tốc độ khí hóa phụ thuộc mạnh vào diện tích bề mặt tiếp xúc carbon--khí, nhiệt độ, áp suất và xúc tác khoáng tự nhiên trong tro rác (K, Ca, Na). Đối với RDF có diện tích bề mặt thấp hơn than hoạt tính hoặc cốc, tốc độ phản ứng bề mặt chậm hơn đòi hỏi thời gian lưu dài hơn hoặc nhiệt độ cao hơn. Điều này lý giải tại sao các lò khí hóa dùng RDF thường vận hành ở 900--1.000\textdegree C thay vì 700--800\textdegree C như với than sạch.
+-
+-\label{sec:hac-in-khi-hoa}
+-
+-Hắc ín là nhóm hợp chất hydrocarbon phức tạp có nhiệt độ sôi cao, ngưng tụ thành dạng lỏng hoặc sương mù khi nhiệt độ khí giảm xuống dưới 350\textdegree C. Đây là vấn đề kỹ thuật nghiêm trọng nhất trong vận hành hệ thống khí hóa dùng chất thải làm nguyên liệu. Hắc ín bám vào thành ống, van và đầu phun động cơ, gây tắc nghẽn và ăn mòn thiết bị theo thời gian.
+-
+-Theo cơ chế hình thành, hắc ín được phân loại thành ba nhóm chính: hắc ín sơ cấp (primary tar) bao gồm các hợp chất chứa oxy như phenol, guaiacol, cresol từ sự phân hủy cellulose và lignin, hình thành ở nhiệt độ 400--500\textdegree C; hắc ín thứ cấp (secondary tar) bao gồm olefin, vòng thơm đơn giản như toluene, xylene, được tạo ra từ quá trình cracking sơ cấp ở 500--700\textdegree C; hắc ín bậc ba (tertiary tar) bao gồm các hợp chất thơm đa vòng như naphthalene, anthracene, pyrene, bền nhiệt hơn và rất khó phân hủy ở nhiệt độ thấp, hình thành trên 700\textdegree C. Đối với RDF từ CTRSH có chứa nhựa polymer, tỷ lệ hắc ín bậc ba cao hơn so với khí hóa biomass thuần túy, gây khó khăn lớn hơn cho quá trình xử lý khí \cite{Arena2012}.
+-
+-Các phương pháp xử lý hắc ín chính gồm: (1) phương pháp vật lý -- làm nguội và tách nước ngưng bằng cyclone và scrubber nước; (2) phương pháp nhiệt -- reforming hơi nước ở nhiệt độ trên 900\textdegree C; (3) phương pháp xúc tác -- dùng dolomite, olivine hoặc Ni/Al\textsubscript{2}O\textsubscript{3} để cracking hắc ín. Tuy nhiên, xúc tác thường bị đầu độc bởi lưu huỳnh và clo trong RDF, làm giảm tuổi thọ và tăng chi phí thay thế. Đây là một trong những lý do khiến khí hóa RDF gặp khó khăn vận hành hơn so với nhiệt phân đối với rác sinh hoạt hỗn hợp.
+-
+-\label{sec:khi-tong-hop-rdf}
+-
+-Thành phần khí tổng hợp từ RDF phụ thuộc vào loại lò khí hóa (tầng cố định, tầng sôi, plasma), tỷ lệ không khí/hơi nước và nhiệt độ. Bảng \ref{tab:thanh-phan-khi-tong-hop} tóm tắt các thông số điển hình từ tài liệu nghiên cứu.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Thành phần và thông số điển hình của khí tổng hợp từ RDF}
+-\label{tab:thanh-phan-khi-tong-hop}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.30\textwidth}p{0.20\textwidth}p{0.20\textwidth}p{0.20\textwidth}}
+-\toprule
+-\textbf{Thông số} & \textbf{Tầng cố định (updraft)} & \textbf{Tầng sôi} & \textbf{Đơn vị} \\
+-\ce{CO} & 15--25 & 10--20 & \% thể tích, khô \\
+-\ce{H2} & 10--20 & 8--15 & \% thể tích, khô \\
+-\ce{CH4} & 2--6 & 3--8 & \% thể tích, khô \\
+-\ce{CO2} & 10--15 & 12--18 & \% thể tích, khô \\
+-\ce{N2} (nếu dùng không khí) & 40--55 & 40--55 & \% thể tích, khô \\
+-Hắc ín (tar) & 10--150 & 1--20 & g/Nm\textsuperscript{3} \\
+-Nhiệt trị thấp (LHV) & 4,5--6,0 & 3,5--5,5 & MJ/Nm\textsuperscript{3} \\
+-Yêu cầu hàm lượng tar cho tuabin & \multicolumn{2}{c|}{\textless{} 5 mg/Nm\textsuperscript{3}} & \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Số liệu trong Bảng \ref{tab:thanh-phan-khi-tong-hop} cho thấy hàm lượng hắc ín thực tế trong khí tổng hợp từ RDF cao hơn ngưỡng chấp nhận của tuabin khí (\textless{}5 mg/Nm\textsuperscript{3}) tới hàng triệu lần, buộc phải có hệ thống làm sạch nhiều tầng đặc biệt. Yêu cầu làm sạch trước khi cấp cho động cơ khí hoặc tuabin gồm: cyclone tách bụi (loại hạt \textgreater{}10 $\mu$m); thiết bị trao đổi nhiệt làm nguội khí về 150--200\textdegree C; scrubber ướt hoặc thiết bị tách hắc ín xúc tác; hấp thụ HCl và \ce{H2S} bằng tháp kiềm; lọc bụi mịn bằng màng lọc HEPA. Toàn bộ hệ thống này là một dây chuyền phụ trợ phức tạp, chi phí lớn và nhạy cảm với sự biến động thành phần RDF \cite{Arena2012}.
+-
+-\section{Cơ sở lý thuyết của công nghệ nhiệt phân}
+-
+-Nhiệt phân là quá trình phân hủy các vật liệu hữu cơ dưới tác dụng của nhiệt trong môi trường không có oxy hoặc nồng độ oxy rất thấp. Trong điều kiện này, vật liệu không cháy trực tiếp mà các liên kết hóa học trong phân tử hữu cơ bị bẻ gãy do năng lượng nhiệt. Đối với các polymer trong rác nhựa như polyethylene, polypropylene và polystyrene, quá trình cracking nhiệt tạo ra hỗn hợp hydrocarbon có chiều dài mạch khác nhau. Một phần sản phẩm ở trạng thái hơi được ngưng tụ thành dầu nhiệt phân, phần không ngưng tụ tạo khí nhiên liệu, còn phần rắn còn lại là than carbon, tro và tạp chất vô cơ \cite{Sharuddin2016,Williams2007}.
+-
+-Quá trình nhiệt phân rác nhựa và RDF có thể mô tả theo ba giai đoạn nhiệt. Ở giai đoạn sấy và làm nóng ban đầu, nước tự do và một phần chất bay hơi nhẹ được tách khỏi vật liệu. Ở giai đoạn nhiệt phân sơ cấp, các mạch polymer dài bắt đầu đứt gãy, tạo oligomer, hơi dầu nặng và các cấu tử trung gian. Ở giai đoạn nhiệt phân thứ cấp, các sản phẩm sơ cấp tiếp tục cracking thành hydrocarbon nhẹ hơn, khí không ngưng và cặn carbon. Dải nhiệt độ vận hành được lựa chọn trong khoảng 350--600\textdegree C tùy thành phần nguyên liệu, thời gian lưu và mục tiêu thu hồi dầu.
+-
+-Phương trình cracking nhiệt tổng quát của polyethylene (PE) có thể viết như sau:
+-
+-\begin{equation}
+-\ce{(-CH2-CH2-)_n ->[\Delta] \text{Hỗn hợp} C_mH_{2m+2} + C_mH_{2m} + \text{khí nhẹ} + \text{cặn carbon}}
+-\label{eq:cracking-pe}
+-\end{equation}
+-
+-Đối với polypropylene (PP), cơ chế cracking tương tự nhưng do nhánh methyl, các sản phẩm trung gian có nhiều alkene và iso-alkane hơn:
+-
+-\begin{equation}
+-\ce{(-CH2-CH(CH3)-)_n ->[\Delta] C_3H_6 + C_6H_{12} + C_9H_{18} + ... + \text{cặn carbon}}
+-\label{eq:cracking-pp}
+-\end{equation}
+-
+-\begin{figure}[htbp]
+-\centering
+-
+-\resizebox{\textwidth}{!}{%
+-\begin{tikzpicture}[node distance=1.0cm and 0.5cm, block/.style={draw, rounded corners=2pt, minimum width=2.6cm, minimum height=1cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\footnotesize}]
++\end{tikzpicture}\begin{tikzpicture}[node distance=1.0cm and 0.5cm, block/.style={draw, rounded corners=2pt, minimum width=2.6cm, minimum height=1cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\footnotesize}]
+ 
+ % Input
+ \node[block, fill=orange!20] (rdf_in) at (0,0) {Viên RDF \\(nguyên liệu)};
+@@ -219,7 +86,8 @@ Phương trình cracking nhiệt tổng quát của polyethylene (PE) có thể
+ % \node[label, draw=none] at (3.5, -0.5) {Nhiệt phân};
+ % \node[label, draw=none] at (3.5, -2.8) {Tinh chế};
+ 
+-\end{tikzpicture}
++\end{tikzpicture}\scalebox{0.9}{
++
+ }
+ \caption{Các dòng sản phẩm chính của quá trình nhiệt phân CTRSH sau tiền xử lý}
+ \label{fig:san-pham-nhiet-phan}
+@@ -266,17 +134,8 @@ Than carbon là phần rắn còn lại sau nhiệt phân. Thành phần của t
+ \label{tab:dac-tinh-dau-nhiet-phan}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.30\textwidth}p{0.14\textwidth}p{0.14\textwidth}p{0.14\textwidth}p{0.14\textwidth}}
+-\toprule
+-\textbf{Chỉ tiêu} & \textbf{PE} & \textbf{PP} & \textbf{PS} & \textbf{RDF hỗn hợp} \\
+-Nhiệt trị thấp LHV (MJ/kg) & 42--46 & 41--45 & 38--42 & 35--43 \\
+-Độ nhớt ở 40\textdegree C (cSt) & 1,8--4,5 & 2,0--5,0 & 0,8--2,5 & 2,5--8,0 \\
+-Điểm chớp cháy (PMCC, \textdegree C) & 38--65 & 32--58 & 28--40 & 30--60 \\
+-Hàm lượng lưu huỳnh (\%) & $<$0,05 & $<$0,05 & $<$0,05 & 0,05--0,5 \\
+-Trị số cetane (ước tính) & 45--55 & 40--52 & 20--30 & 30--50 \\
+-Tỷ trọng ở 15\textdegree C (g/cm\textsuperscript{3}) & 0,76--0,82 & 0,77--0,83 & 0,88--0,92 & 0,78--0,88 \\
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ \noindent\textit{Nguồn: Tổng hợp từ \cite{Sharuddin2016}, \cite{Miandad2016}, \cite{Williams2007}.}
+@@ -291,6 +150,7 @@ Khí hóa và nhiệt phân đều là công nghệ chuyển hóa nhiệt có m
+ \label{tab:so-sanh-khi-hoa-nhiet-phan}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.18\textwidth}p{0.36\textwidth}p{0.36\textwidth}}
+ \toprule
+ \textbf{Tiêu chí} & \textbf{Khí hóa} & \textbf{Nhiệt phân} \\
+@@ -300,36 +160,8 @@ Sản phẩm & Khí, tro, hắc ín & Dầu, khí, than \\
+ Lưu trữ & Khó, dùng ngay & Dầu chứa được, linh hoạt \\
+ Làm sạch & Rất cao & Tập trung chưng cất dầu \\
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Từ góc độ môi trường, nhiệt phân có ưu điểm là giảm lượng bụi mịn phát sinh trong buồng phản ứng do không có dòng khí cấp mạnh như tầng sôi hoặc khí hóa. Sản phẩm rắn chủ yếu ở dạng than và tro đáy, dễ thu gom hơn tro bay. Khí không ngưng được tận dụng làm nhiên liệu gia nhiệt hoặc đốt trong buồng đốt phụ, nhờ đó hạn chế phát tán trực tiếp ra môi trường. Tuy nhiên, nhiệt phân không loại bỏ nhu cầu xử lý khí thải; các buồng đốt gia nhiệt, lò chưng cất và động cơ diesel vẫn phải có hệ thống thu gom, làm nguội, tách bụi, hấp thụ khí axit và quan trắc theo quy chuẩn hiện hành.
+-
+-\label{sec:capex-opex}
+-
+-Về chi phí vốn đầu tư (CAPEX), phương án khí hóa đòi hỏi đầu tư lớn cho lò khí hóa chịu nhiệt cao, hệ thống làm sạch khí nhiều tầng và tổ máy phát điện khí. Đặc biệt, các hạng mục xử lý hắc ín, làm mát khí và bảo trì thiết bị phát điện khí làm tăng đáng kể tổng mức đầu tư cũng như yêu cầu kỹ thuật vận hành. Trong điều kiện công suất của dự án Hội An ở mức trung bình, phương án khí hóa -- tuabin khí được đánh giá có chi phí đầu tư cao hơn rõ rệt so với phương án nhiệt phân -- diesel \cite{Bridgwater2012}.
+-
+-Về chi phí vận hành (OPEX), khí hóa tiêu tốn nhiều năng lượng hơn cho sấy nguyên liệu, xử lý nước thải từ scrubber ướt và bảo trì liên tục hệ thống lọc khí, tuabin. Ngược lại, phương án nhiệt phân có OPEX thấp hơn nhờ nhiệt độ vận hành thấp hơn, sản phẩm dầu lỏng có thể lưu trữ và kiểm soát chất lượng trước khi sử dụng, đồng thời hệ thống phát điện diesel là công nghệ phổ biến và dễ bảo trì hơn. Bù lại, phương án nhiệt phân phát sinh chi phí đặc thù cho công đoạn chưng cất và tinh chế dầu; đây là các khoản mục cần được lượng hóa riêng trong Chương 3.
+-
+-\label{sec:quan-ly-san-pham}
+-
+-Sản phẩm trung gian trong phương án khí hóa là khí tổng hợp -- một hỗn hợp khí có nhiệt trị thấp, dễ cháy và cần được sử dụng gần như ngay lập tức sau khi tạo thành. Khi hệ thống phát điện ngừng hoạt động, toàn bộ dòng khí phải được đốt bỏ hoặc dừng lò khí hóa; cả hai phương án đều làm giảm hiệu quả tận dụng năng lượng và tạo thêm yêu cầu khởi động lại phức tạp.
+-
+-Ngược lại, dầu nhiệt phân là sản phẩm lỏng có thể chứa trong bồn bảo quản ở điều kiện thường, cho phép tách biệt hoạt động của lò nhiệt phân và máy phát điện. Nhà máy có thể vận hành lò nhiệt phân theo ca phù hợp với nhân lực, tích lũy dầu trong bồn chứa và bố trí vận hành máy phát điện theo nhu cầu tải. Tính linh hoạt trong vận hành này là lợi thế đáng kể đối với dự án quy mô vừa tại Hội An, nơi điều kiện nhân lực và bố trí ca kíp cần được tối ưu để bảo đảm an toàn và hiệu quả \cite{BaocaoHoiAn2024}.
+-
+-\section{Lựa chọn lò nhiệt phân quay}
+-
+-Công nghệ nhiệt phân có nhiều dạng thiết bị như lò tầng cố định, lò tầng sôi, lò trục vít và lò quay. Mỗi dạng thiết bị có đặc điểm truyền nhiệt, cấp liệu, đảo trộn và yêu cầu tiền xử lý khác nhau. Đối với CTRSH sau phân loại nhưng vẫn còn tính không đồng nhất, yếu tố quan trọng nhất là khả năng đảo trộn vật liệu, tránh tạo vùng quá nhiệt hoặc vùng chưa phản ứng, đồng thời hạn chế kẹt cơ khí do tạp chất.
+-
+-Lò tầng cố định có cấu tạo đơn giản nhưng truyền nhiệt không đều, khó xử lý nguyên liệu không đồng nhất ở quy mô công nghiệp. Lò tầng sôi có hiệu suất truyền nhiệt cao nhưng yêu cầu nguyên liệu nhỏ và đồng đều, đồng thời dòng khí tạo tầng sôi có thể cuốn bụi mịn, làm tăng tải xử lý khí. Lò trục vít có khả năng kiểm soát thời gian lưu nhưng bộ phận cơ khí làm việc liên tục trong môi trường nhiệt độ cao, dễ mài mòn hoặc kẹt khi nguyên liệu còn lẫn tạp chất cứng. Lò quay có dạng xi lanh nằm ngang, quay chậm, giúp vật liệu được đảo trộn liên tục và tiếp xúc nhiệt tương đối đều, phù hợp hơn với RDF và rác nhựa sau tiền xử lý.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Đánh giá lựa chọn các dạng lò nhiệt phân cho rác sau xử lý}
+-\label{tab:lua-chon-lo-nhiet-phan}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.20\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.20\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
+ \toprule
+ \textbf{Tiêu chí} & \textbf{Cố định} & \textbf{Tầng sôi} & \textbf{Trục vít} & \textbf{Lò quay} \\
+ Nguyên liệu tạp & Thấp & Trung bình & Trung bình & Cao \\
+@@ -337,77 +169,14 @@ Truyền nhiệt & Trung bình & Cao & Trung bình & Cao \\
+ Bụi cuốn & Trung bình & Cao & Trung bình & Thấp \\
+ Phức tạp cơ khí & Thấp & Cao & Cao & Trung bình \\
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ \begin{figure}[htbp]
+ \centering
+-\begin{tikzpicture}[scale=1.1]
+-% 1. Cylinder (Lò quay) - Gray outer body, orange inner wall
+-\draw[fill=gray!20, draw=black, thick] (0,0) -- (6,0.8) -- (6,1.3) -- (0,0.5) -- cycle;
+-\draw[fill=orange!15, draw=black] (0.1,0.1) -- (5.9,0.87) -- (5.9,1.17) -- (0.1,0.4) -- cycle;
+-
+-% 2. Gas zone (Hơi) - upper half of the inner cylinder
+-\draw[fill=yellow!10, draw=black, dashed] (0.2,0.27) -- (5.8,1.00) -- (5.8,1.14) -- (0.2,0.41) -- cycle;
+-\node[green!40!black, rotate=7.6, font=\footnotesize\bfseries] at (3.8,0.81) {Hơi dầu + khí};
+-
+-% 3. Solid bed (RDF) - lower half of the inner cylinder
+-\fill[green!30!black, opacity=0.25] (0.2,0.14) -- (5.8,0.87) -- (5.8,1.00) -- (0.2,0.27) -- cycle;
+-\node[green!40!black, rotate=7.6, font=\footnotesize\bfseries] at (2.2,0.42) {RDF};
+-
+-% 4. Rotation arrow and text
+-\draw[->, >=Stealth, thick] (3.4,1.5) arc(30:150:0.8);
+-\node[above, font=\footnotesize] at (2.7,1.9) {$\omega$ (quay chậm)};
+-
+-% 5. Seals at both ends
+-% Seal đầu (left)
+-\draw[fill=gray!40, draw=black, thick] (-0.3,-0.1) rectangle (0.1,0.6);
+-\node[above, font=\footnotesize] at (-0.1,0.6) {Seal đầu};
+-
+-% Seal xả (right)
+-\draw[fill=gray!40, draw=black, thick] (5.9,0.7) rectangle (6.3,1.4);
+-\node[above, font=\footnotesize] at (6.1,1.4) {Seal xả};
+-
+-% 6. Feed Screw (Vít cấp liệu)
+-\draw[fill=blue!20, draw=black] (-1.5,0.2) rectangle (-0.3,0.3);
+-\node[below, font=\footnotesize] at (-0.9,0.15) {Vít cấp};
+-\draw[->, >=Stealth] (-1.5,0.25) -- (-0.3,0.25);
+-
+-% 7. Burner Box (Buồng đốt ngoài) - placed at the center (x=1.2 to 4.8)
+-\draw[fill=red!10, draw=black, dashed, thick] (1.2,-0.8) rectangle (4.8,-0.3);
+-\node[below, font=\footnotesize] at (3.0,-0.8) {Buồng đốt ngoài};
+-
+-% Heat arrows pointing UPWARDS from the burner to the kiln
+-\foreach \x in {1.6,2.3,3.0,3.7,4.4} {
+-    \draw[->, red!60!orange, thick] (\x, -0.3) -- ++(0, 0.35);
++%
+ }
+-
+-% 8. Rollers (Con lăn) - placed outside the burner box
+-% Left Roller
+-\draw[fill=brown!30, draw=black] (0.7,-0.11) circle (0.2);
+-\node[below, font=\footnotesize] at (0.7,-0.31) {Con lăn};
+-
+-% Right Roller
+-\draw[fill=brown!30, draw=black] (5.2,0.44) circle (0.2);
+-\node[below, font=\footnotesize] at (5.2,0.24) {Con lăn};
+-
+-% 9. Discharge flows (Than và hơi)
+-% Gas exit - goes up and right from the cylinder top
+-\draw[->, >=Stealth, thick] (5.8,1.1) -- (5.8,2.0) -- (6.8,2.0) node[right, font=\footnotesize] {Hơi dầu + khí};
+-
+-% Char exit - goes straight down from the bottom of seal xả
+-\draw[->, >=Stealth, thick] (6.1,0.7) -- (6.1,0.1) node[below, font=\footnotesize] {Than};
+-
+-% 10. Dimensions
+-% Length L
+-\draw[<->, >=Stealth] (0,-1.5) -- node[below, font=\footnotesize] {$L$} (6,-1.5);
+-
+-% Diameter D_i at the right end (with extension lines)
+-\draw[gray, thin] (6.0,0.8) -- (6.7,0.8);
+-\draw[gray, thin] (6.0,1.3) -- (6.7,1.3);
+-\draw[<->, >=Stealth] (6.5,0.8) -- node[right, font=\footnotesize] {$D_i$} (6.5,1.3);
+-
+-\end{tikzpicture}
+ \caption{Nguyên lý lò nhiệt phân quay}
+ \label{fig:lo-nhiet-phan-quay}
+ \end{figure}
+@@ -446,18 +215,8 @@ Thời gian lưu điển hình của vật liệu trong lò ở chế độ mẻ
+ \label{tab:thong-so-lo-nhiet-phan-quay}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.40\textwidth}p{0.40\textwidth}}
+-\toprule
+-\textbf{Thông số} & \textbf{Giá trị} \\
+-Công suất & 10--15 tấn RDF/ngày/hệ \\
+-Số lượng & 6 hệ \\
+-Nhiệt độ lò & 400--500\textdegree C \\
+-Nhiệt độ đốt & 600--800\textdegree C \\
+-Tốc độ quay & 0,5--2 vòng/phút \\
+-Thời gian lưu & 4--8 giờ/mẻ \\
+-Tỷ lệ dầu & 35--45\% RDF \\
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ \noindent\textit{Nguồn: Theo hồ sơ thiết kế dự án \cite{BaocaoHoiAn2024}.}
+@@ -478,7 +237,7 @@ Dầu nhiệt phân thô sau khi chưng cất phân tách thành ba phân đoạ
+ 
+ \begin{figure}[htbp]
+ \centering
+-\resizebox{\textwidth}{!}{
++\scalebox{0.9}{
+ \begin{tikzpicture}[node distance=0.8cm and 0.3cm, equipment/.style={draw, rounded corners=3pt, minimum width=2.2cm, minimum height=1.2cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\footnotesize}]
+ \node[equipment, fill=blue!10] (feed_tank) at (0,0) {Bồn dầu thô};
+ \node[equipment, fill=blue!15] (pump1) [right=of feed_tank] {Bơm cấp liệu};
+@@ -505,195 +264,4 @@ Dầu nhiệt phân thô sau khi chưng cất phân tách thành ba phân đoạ
+ \draw[arrow] (base) -- (clay);
+ \draw[arrow] (clay) -- (filter);
+ \draw[arrow] (filter) -- (product);
+-\end{tikzpicture}
+-}
+-\caption{Sơ đồ chưng cất và tinh chế dầu}
+-\label{fig:chung-cat-dau-nhiet-phan}
+-\end{figure}
+-
+-\label{sec:tinh-che-dau}
+-
+-Sau chưng cất, dầu nhẹ và dầu trung phải qua các bước xử lý hóa học và vật lý để đạt chất lượng phù hợp cho động cơ diesel. Quy trình tinh chế điển hình gồm ba bước chính:
+-
+-\textbf{Xử lý axit sulfuric (H\textsubscript{2}SO\textsubscript{4}):} Dầu được khuấy trộn với dung dịch \ce{H2SO4} đậm đặc (nồng độ 93--98\%) theo tỷ lệ 1--5\% theo khối lượng dầu. Cơ chế tác dụng bao gồm: (1) sulfonation và loại bỏ hydrocarbon thơm nặng, nhựa và chất keo không bão hòa; (2) phản ứng với hợp chất chứa nitơ (amine) và lưu huỳnh (thiol) tạo muối tan vào pha axit; (3) làm đông tụ cặn và chất tạo màu. Sau phản ứng, pha axit nặng hơn tách xuống đáy bình khuấy, phần dầu nổi trên được gạn sang bước tiếp theo. Bùn axit (acid tar) phát sinh là chất thải nguy hại, phải được thu gom và xử lý theo quy định \cite{Williams2007}.
+-
+-\textbf{Rửa kiềm bằng NaOH:} Dầu sau xử lý axit còn dư axit tự do và một số hợp chất có tính axit như phenol, naphthenic acid. Dung dịch NaOH 5--10\% được thêm vào và khuấy trộn để trung hòa: \ce{RCOOH + NaOH -> RCOONa + H2O}. Phản ứng cũng loại bỏ HCl còn lại và \ce{H2S} theo: \ce{H2S + 2NaOH -> Na2S + 2H2O}. Sau tách pha, nước kiềm thải ra cần được xử lý trước khi thải vì có chứa muối natri của axit béo và hợp chất lưu huỳnh.
+-
+-\textbf{Hấp phụ bằng đất sét hoạt hóa (activated clay):} Dầu sau rửa kiềm được khuấy trộn với đất sét hoạt hóa ở 60--80\textdegree C trong 30--60 phút. Đất sét có diện tích bề mặt riêng lớn và mao quản nhỏ hấp phụ chọn lọc: màu sắc, cặn phân cực, và các ion kim loại nặng. Sau lọc tách đất sét, dầu được lọc qua màng lọc 5--10 $\mu$m để loại bỏ hạt đất sét mịn. Sản phẩm cuối là dầu nhiệt phân tinh chế sẵn sàng cấp cho động cơ diesel.
+-
+-\label{sec:yeu-cau-dong-co-diesel}
+-
+-Động cơ diesel được lựa chọn do có hiệu suất nhiệt cao, công nghệ phổ biến, dễ bảo trì và phù hợp quy mô phát điện mô-đun. Khác với tuabin khí, động cơ diesel sử dụng nhiên liệu lỏng nên quá trình lưu chứa, định lượng và vận hành thuận lợi hơn. Bảng \ref{tab:so-sanh-dau-diesel} so sánh dầu nhiệt phân sau tinh chế với diesel B5 theo TCVN 5689:2013.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{So sánh dầu NP với diesel B5 (TCVN 5689:2013)}
+-\label{tab:so-sanh-dau-diesel}
+-\centering
+-\setlength{\tabcolsep}{4pt}
+-\begin{tabular}{p{0.24\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.10\textwidth}}
+-\toprule
+-\textbf{Chỉ tiêu} & \textbf{Dầu NP tinh chế} & \textbf{Diesel B5} & \textbf{PP thử} & \textbf{Đạt?} \\
+-\midrule
+-Trị số cetane (min) & 40--52 & $\geq$51 & ASTM D613 & Có ĐK \\
+-Độ nhớt 40\textdegree C (cSt) & 2,0--5,5 & 2,0--4,5 & ASTM D445 & Có ĐK \\
+-Điểm chớp cháy (\textdegree C) & 50--65 & $\geq$55 & ASTM D93 & Có ĐK \\
+-Hàm lượng S (\%) & 0,05--0,30 & $\leq$0,05 & ASTM D2622 & Cần XL \\
+-Hàm lượng nước (mg/kg) & $<$200 & $\leq$200 & ASTM D6304 & Đạt \\
+-Tỷ trọng 15\textdegree C (kg/m\textsuperscript{3}) & 820--870 & 820--860 & ASTM D4052 & Đạt \\
+-Nhiệt trị LHV (MJ/kg) & 40--44 & 42--43 & ASTM D240 & Đạt \\
+-Màu ASTM & 2,0--4,0 & $\leq$3,5 & ASTM D1500 & Có ĐK \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\noindent\textit{Nguồn: Tổng hợp từ \cite{Sharuddin2016}, \cite{Miandad2016} và TCVN 5689:2013.}
+-
+-Bảng \ref{tab:so-sanh-dau-diesel} cho thấy dầu nhiệt phân sau tinh chế đáp ứng phần lớn các chỉ tiêu của diesel B5, song hai thông số cần theo dõi sát là trị số cetane (TCVN yêu cầu $\geq$51, trong khi dầu nhiệt phân đạt 40--52 tùy thành phần nguyên liệu) và hàm lượng lưu huỳnh (giới hạn $\leq$0,05\%, nhưng dầu từ RDF hỗn hợp có thể cao hơn nếu không kiểm soát đầu vào). Đối với phát điện nội bộ không phục vụ giao thông, QCVN về phát thải động cơ tĩnh cho phép áp dụng linh hoạt hơn tiêu chuẩn nhiên liệu thương mại; tuy nhiên nhà máy vẫn cần phân tích mẫu dầu theo từng lô và vận hành trong ngưỡng được nhà cung cấp thiết bị chấp thuận.
+-
+-\label{sec:he-thong-phat-dien}
+-
+-Hệ thống phát điện của dự án bao gồm các cụm máy phát diesel lắp đặt theo cấu hình mô-đun, mỗi cụm độc lập về nhiên liệu, làm mát và điều khiển, nhằm đảm bảo dự phòng và linh hoạt vận hành. Theo hồ sơ dự án, mỗi cụm máy phát có công suất định mức 550 kVA (tương đương 440 kW điện), vận hành ở điện áp máy phát 400/230 V (3 pha 4 dây), tần số 50 Hz, hệ số công suất $\cos\varphi = 0,8$ \cite{BaocaoHoiAn2024}.
+-
+-\textbf{Bộ lọc nhiên liệu:} Nhiên liệu dầu nhiệt phân tinh chế từ bồn chứa được cấp qua hệ thống lọc nhiên liệu hai cấp: lọc thô 30 $\mu$m loại cặn lớn và nước tự do, sau đó lọc tinh 5--10 $\mu$m trước khi vào bơm nhiên liệu cao áp của động cơ. Tách nước ly tâm (centrifugal water separator) được lắp bổ sung do dầu nhiệt phân có xu hướng chứa nhiều nước hơn diesel thương mại. Bộ gia nhiệt nhiên liệu (fuel heater) duy trì nhiệt độ dầu ở 40--60\textdegree C để ổn định độ nhớt trước khi phun.
+-
+-\textbf{Hệ thống kiểm soát và bảo vệ:} Mỗi cụm máy phát được trang bị bộ điều khiển (controller) với các bảo vệ tự động: ngắt khi áp suất dầu bôi trơn thấp ($<$2,5 bar), ngắt khi nhiệt độ nước làm mát cao ($>$95\textdegree C), ngắt khi tốc độ vượt giới hạn (over-speed), ngắt khi điện áp đầu ra quá cao hoặc quá thấp. Ngoài ra, hệ thống giám sát từ xa (SCADA) kết nối tất cả cụm máy phát với phòng điều khiển trung tâm để theo dõi lưu lượng nhiên liệu, công suất tức thời, điện năng tích lũy và cảnh báo sự cố.
+-
+-\textbf{Xử lý khí thải động cơ:} Khí thải động cơ diesel chứa \ce{NO_x}, CO, hydrocarbon chưa cháy, bụi PM và \ce{SO2} (phụ thuộc hàm lượng S trong dầu). Hệ thống xử lý khí thải gồm: bộ thu hồi nhiệt (exhaust heat recovery) tận dụng nhiệt khí thải 400--500\textdegree C để sấy RDF hoặc gia nhiệt dầu chưng cất; bộ lọc bồ hóng (diesel particulate filter, DPF) loại PM; hệ thống hòa loãng và pha loãng khí thải trước khi thải qua ống khói đạt QCVN 19:2009/BTNMT. Việc tận dụng nhiệt khí thải động cơ cải thiện đáng kể hiệu suất tổng thể của hệ thống.
+-
+-\section{Tổng hợp lựa chọn và cơ sở công nghệ của phương án điều chỉnh}
+-
+-\label{sec:tong-hop-cong-nghe}
+-
+-\label{sec:luan-diem-chon}
+-
+-Tổng hợp phân tích ở các mục trước, lựa chọn công nghệ nhiệt phân lò quay kết hợp chưng cất dầu và phát điện diesel cho dự án xử lý CTRSH Hội An được xây dựng trên ba luận điểm cụ thể:
+-
+-\textbf{Phù hợp với đặc tính nguyên liệu:} CTRSH Hội An sau tiền xử lý tạo RDF có thành phần nhựa polymer chiếm tỷ lệ lớn (polyethylene, polypropylene, polystyrene). Các polymer này cracking nhiệt hiệu quả ở 400--500\textdegree C để tạo dầu hydrocarbon có nhiệt trị cao. Lò nhiệt phân quay chấp nhận nguyên liệu không đồng đều về kích thước và thành phần trong phạm vi rộng hơn so với lò tầng sôi hay trục vít, phù hợp với tính không đồng nhất tất yếu của RDF từ CTRSH.
+-
+-\textbf{Sản phẩm lỏng có thể lưu trữ, vận hành linh hoạt:} Dầu nhiệt phân sau chưng cất và tinh chế được chứa trong bồn bảo quản ở điều kiện thường, cho phép tách biệt hoàn toàn lịch vận hành lò nhiệt phân (theo ca ngày) và lịch phát điện (theo nhu cầu tải). Đây là lợi thế vận hành cụ thể so với phương án khí hóa -- tuabin khí, nơi sản xuất và tiêu thụ điện phải đồng bộ liên tục.
+-
+-\textbf{Chi phí đầu tư và vận hành phù hợp quy mô:} Với 6 hệ lò nhiệt phân 10--15 tấn/ngày/hệ và 6 cụm máy phát 550 kVA, tổng mức đầu tư và chi phí vận hành của phương án nhiệt phân -- diesel ở mức có thể thu hồi trong thời gian hợp lý. Công nghệ thiết bị không quá phức tạp, đội ngũ vận hành có thể đào tạo tại chỗ và phụ tùng thay thế sẵn có trên thị trường nội địa \cite{BaocaoHoiAn2024}.
+-
+-\subsection{Dây chuyền công nghệ tổng thể}
+-
+-\label{sec:day-chuyen-cong-nghe}
+-
+-Dây chuyền công nghệ của phương án được xây dựng theo sơ đồ tuyến tính từ nguyên liệu đến sản phẩm, bao gồm bảy phân xưởng chính:
+-
+-\textbf{(1) Tiếp nhận và phân loại:} CTRSH từ xe thu gom đổ vào pit tiếp nhận có mái che và hệ thống hút mùi âm áp. Cầu trục gàu ngoạm hoặc băng tải cào chuyển rác lên sàn phân loại. Máy xé bao mở túi rác; thiết bị sàng trống (trommel) phân tách kích thước; máy phân loại quang học (NIR) và tay chọn thủ công tách thành phần tái chế có giá trị (giấy, kim loại màu, chai PET, HDPE); thiết bị tách kim loại (từ tính và xoáy điện) loại sắt và nhôm. Phần hữu cơ dễ phân hủy và ẩm ướt được chuyển sang phân xưởng compost. Phần cháy được còn lại (nhựa hỗn hợp, nylon, vải, gỗ vụn, giấy tạp) là nguyên liệu tiếp theo.
+-
+-\textbf{(2) Tiền xử lý và tạo RDF:} Nguyên liệu cháy được đưa qua máy cắt hai trục giảm kích thước xuống \textless{}50 mm; máy ép thủy lực tách nước cơ học; thiết bị sấy thùng quay dùng nhiệt thừa từ khí thải động cơ và buồng đốt (giảm độ ẩm từ 40--50\% xuống còn \textless{}15\%); máy tạo viên (pelletizer) hoặc hệ thống trộn đồng nhất và chứa RDF trong bunker.
+-
+-\textbf{(3) Nhiệt phân lò quay:} Mỗi hệ gồm một lò nhiệt phân quay dung tích 10--15 tấn RDF/ngày vận hành ở 400--500\textdegree C, buồng đốt ngoài sử dụng khí không ngưng hồi lưu, hệ thống ngưng tụ đa cấp (thiết bị trao đổi nhiệt ống chùm) thu hồi dầu thô, hệ thống xả than và thu gom than carbon.
+-
+-\textbf{(4) Bồn chứa và xử lý dầu thô:} Dầu thô từ 6 hệ lò hội tụ vào bồn chứa trung gian, sau đó bơm qua hệ thống gia nhiệt và tách nước sơ bộ (bình tách ba pha) trước khi cấp vào phân xưởng chưng cất.
+-
+-\textbf{(5) Chưng cất và tinh chế:} Lò chưng cất gia nhiệt dầu thô đến 350--380\textdegree C; tháp chưng cất phân tách phân đoạn nhẹ, trung và nặng; phân đoạn trung (diesel range) qua xử lý \ce{H2SO4} -- NaOH -- đất sét hoạt hóa -- lọc tinh thành dầu nhiệt phân tinh chế; phân đoạn nặng hồi lưu về lò nhiệt phân; phân đoạn nhẹ và khí không ngưng từ chưng cất hồi lưu về buồng đốt.
+-
+-\textbf{(6) Phát điện diesel:} Dầu nhiệt phân tinh chế từ bồn chứa sản phẩm cấp cho 6 cụm máy phát diesel 550 kVA thông qua hệ thống lọc nhiên liệu và ổn định nhiệt độ. Điện phát ra hòa lưới phân phối nội bộ nhà máy và bán lên lưới điện quốc gia qua trạm biến áp 400V/22kV.
+-
+-\textbf{(7) Xử lý chất thải và môi trường:} Khí thải động cơ qua DPF và ống khói; khí thải buồng đốt lò nhiệt phân qua buồng đốt thứ cấp (post-combustion chamber, 1.100\textdegree C/2 giây) và hệ thống hấp thụ khí axit; nước thải từ quá trình rửa kiềm và nước ngưng qua hệ thống XLNT nội bộ; bùn axit và than không đạt tiêu chuẩn quản lý theo chất thải nguy hại.
+-
+-\begin{figure}[htbp]
+-\centering
+-
+-\resizebox{\textwidth}{!}{
+-\begin{tikzpicture}[node distance=0.9cm and 0.4cm, unit/.style={draw, rounded corners=2pt, minimum width=2.0cm, minimum height=1.1cm, font=\small, align=center}, mainunit/.style={draw, rounded corners=2pt, minimum width=2.4cm, minimum height=1.4cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\bfseries\scriptsize, align=center}]
+-
+-% Main process flow - rows
+-
+-% Row 1: Input
+-\node[mainunit, fill=blue!15] (rdf_input) at (0,0) {Viên RDF \\(46,08 t/ngày)};
+-
+-% Row 2: Pyrolysis
+-\node[mainunit, fill=orange!15] (pyrolysis) [right=of rdf_input] {Lò nhiệt phân quay \\(400--500$^\circ$C) \\4--5 mô-đun};
+-
+-% Row 3: Products
+-\node[mainunit, fill=green!15] (oil_raw) [below=of pyrolysis] {Dầu nhiệt phân thô \\(20,74 t/ngày)};
+-\node[mainunit, fill=purple!15] (syngas) [right=of pyrolysis] {Khí không ngưng \\(13,82 t/ngày)};
+-\node[mainunit, fill=gray!20] (char) [above=of pyrolysis] {Than carbon \\(11,52 t/ngày)};
+-
+-% Row 4: Refining
+-\node[mainunit, fill=green!25] (dist) [below=of oil_raw] {Chưng cất \\(mẻ/bán liên tục)};
+-\node[mainunit, fill=green!35] (refine) [below=of dist] {Tinh chế (H$_2$SO$_4$--NaOH--đất sét)};
+-
+-% Row 5: Fuel product
+-\node[mainunit, fill=green!50, dashed] (fuel) [below=of refine] {Dầu DO tinh chế \\(16,59 t/ngày)};
+-
+-% Row 6: Power
+-\node[mainunit, fill=yellow!20] (diesel) [right=of fuel, xshift=1.0cm] {Động cơ diesel \\6x550 kVA};
+-\node[mainunit, fill=yellow!30] (gen) [below=of diesel] {Máy phát điện \\2,628 MW};
+-
+-% Side branches
+-\node[unit, fill=purple!25, dashed] (burner) [right=of syngas] {Buồng đốt hồi lưu \\(cấp nhiệt lò)};
+-\node[unit, fill=red!10, dashed] (flare) [above=of burner] {Buồng đốt phụ (flare) \\(xử lý khí dư)};
+-
+-% Main arrows
+-\draw[arrow] (rdf_input) -- node[above] {} (pyrolysis);
+-\draw[arrow] (pyrolysis) -- node[right] {} (oil_raw);
+-\draw[arrow] (pyrolysis) -- node[above] {} (syngas);
+-\draw[arrow] (pyrolysis) -- node[right] {} (char);
+-\draw[arrow] (oil_raw) -- (dist);
+-\draw[arrow] (dist) -- (refine);
+-\draw[arrow] (refine) -- (fuel);
+-\draw[arrow] (fuel) -- (diesel);
+-\draw[arrow] (diesel) -- (gen);
+-\draw[arrow] (syngas) -- (burner);
+-\draw[arrow] (burner) -- (flare);
+-
+-% % Section labels
+-% \node[label] at (-1.2, 1.0) {Nhiệt phân};
+-% \node[label] at (1.0, -4.5) {Chưng cất\\Tinh chế};
+-% \node[label] at (3.5, -3.5) {Phát điện};
+-
+-\end{tikzpicture}
+-}
+-\caption{Sơ đồ công nghệ tổng thể của phương án nhiệt phân -- chưng cất -- phát điện diesel}
+-\label{fig:so-do-cong-nghe-tong-the}
+-\end{figure}
+-
+-\label{sec:can-bang-nang-luong-khi-than}
+-
+-Trong cân bằng năng lượng của nhà máy, khí không ngưng và phân đoạn dầu nặng đóng vai trò quyết định trong việc duy trì tự cân bằng nhiệt và giảm tiêu thụ nhiên liệu mồi từ bên ngoài. Khí không ngưng từ quá trình nhiệt phân (chiếm khoảng 10--20\% khối lượng RDF đầu vào) có nhiệt trị 15--25 MJ/Nm\textsuperscript{3}, đủ để duy trì nhiệt độ buồng đốt ở 600--800\textdegree C khi hệ thống đã đạt chế độ ổn định. Trong giai đoạn khởi động nguội (cold start), LPG hoặc diesel thương mại được dùng làm mồi, và nhà máy chuyển hoàn toàn sang dùng khí không ngưng hồi lưu sau 2--4 giờ vận hành khi lò đã sinh khí ổn định.
+-
+-Phần khí không ngưng dư (sau khi đủ cho buồng đốt) được đốt trong buồng đốt phụ (flare stack hoặc thermal oxidizer) có nhiệt độ duy trì trên 1.100\textdegree C để đảm bảo tiêu hủy hoàn toàn các hydrocarbon và ức chế hình thành dioxin/furan. Nhiệt từ buồng đốt phụ có thể hồi thu để sấy RDF hoặc gia nhiệt không khí cấp vào buồng đốt chính.
+-
+-Than carbon từ nhiệt phân (khoảng 20--30\% khối lượng RDF) chứa năng lượng hóa học nhưng việc sử dụng trực tiếp làm nhiên liệu phụ thuộc vào hàm lượng kim loại nặng và dioxin bám trên bề mặt hạt than. Nếu kết quả phân tích than cho thấy hàm lượng các chất nguy hại dưới ngưỡng QCVN cho phép, than có thể được đồng đốt (co-firing) trong lò đốt công nghiệp khác hoặc bán cho nhà máy xi măng làm nhiên liệu phụ. Trường hợp không đủ tiêu chuẩn, than phải được đóng gói và vận chuyển đến cơ sở xử lý chất thải công nghiệp có giấy phép.
+-
+-\label{sec:ket-noi-chuong3}
+-
+-Các thông số tỷ lệ sản phẩm (dầu 35--45\%, khí 10--20\%, than 20--30\%), nhiệt trị RDF và hiệu suất chuyển đổi nêu trong chương này là đầu vào trực tiếp cho tính toán cân bằng vật chất, cân bằng năng lượng và thiết kế sơ bộ thiết bị ở Chương~3.
+-
+-\section{Kết luận chương 2}
+-
+-Chương 2 đã luận chứng lựa chọn phương án nhiệt phân lò quay -- chưng cất dầu -- phát điện diesel thay cho khí hóa -- tuabin khí. Khí hóa gặp hạn chế về hắc ín và làm sạch khí khi dùng RDF từ rác ẩm, biến động; nhiệt phân vận hành ở 350--600\textdegree C, tạo dầu lỏng có thể lưu trữ và kiểm soát chất lượng. Lò quay được chọn nhờ khả năng đảo trộn tốt với RDF không đồng nhất. Dầu sau chưng cất và tinh chế cấp cho cụm máy phát diesel 440\,kW; khí không ngưng hồi lưu làm nhiên liệu gia nhiệt lò.
+-
+-\begin{table}[H]
+-\centering
+-\caption{Tổng hợp các thông số kỹ thuật cơ bản của phương án điều chỉnh công nghệ}
+-\label{tab:tong-hop-thong-so-phuong-an}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.06\textwidth}p{0.32\textwidth}p{0.24\textwidth}p{0.28\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Thông số} & \textbf{Giá trị thiết kế} & \textbf{Cơ sở/Ghi chú} \\
+-1 & Công suất tiếp nhận CTRSH & 120 tấn/ngày đêm & Hồ sơ dự án \\
+-2 & Nhiệt trị RDF (LHV) & 19.259 kJ/kg (4.600 kcal/kg) & Thực nghiệm \cite{BaocaoHoiAn2024} \\
+-3 & Hệ số thu hồi RDF ($K_{RDF}$) & 0,4224 & Cân bằng vật chất Chương 3 \\
+-4 & Lượng RDF cấp lò nhiệt phân & 46,08 tấn/ngày & 120 $\times$ 0,384 $\times K_{RDF}$ \\
+-5 & Nhiệt độ vận hành lò nhiệt phân & 350--500\textdegree C & Hồ sơ điều chỉnh \cite{BaocaoHoiAn2024} \\
+-6 & Tỷ lệ dầu thô/RDF & 45\% & Theo \cite{Sharuddin2016,Miandad2016} \\
+-7 & Tỷ lệ khí không ngưng/RDF & 30\% & Theo \cite{Williams2007} \\
+-8 & Tỷ lệ than carbon/RDF & 25\% & Thực nghiệm \\
+-9 & Hiệu suất chưng cất (dầu nhẹ/dầu thô) & 80\% & Thiết kế cột chưng cất \\
+-10 & Hiệu suất chuyển đổi điện ($\eta$) & 32\% (diesel, SFC = 200 g/kWh) & Thông số máy phát diesel \\
+-11 & Công suất phát điện tổng & 2,628 MW & Tính toán Chương 3 \\
+-12 & Công suất điện ròng (sau tự dùng) & 1,82 MW & Sau trừ 30\% tự dùng \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Bảng~\ref{tab:tong-hop-thong-so-phuong-an} tổng hợp các thông số thiết kế chính làm cơ sở cho Chương~3.
+-
+-\end{document}
++\end{tikzpicture}
+\ No newline at end of file
+diff --git a/Chuong/3_Chuong_3.tex b/Chuong/3_Chuong_3.tex
+index 777ef24..85d667e 100644
+--- a/Chuong/3_Chuong_3.tex
++++ b/Chuong/3_Chuong_3.tex
+@@ -77,6 +77,7 @@ Trong thiết kế sơ bộ, phương pháp xử lý độ không chắc chắn
+ \label{tab:thong-so-dau-vao}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.40\textwidth}p{0.20\textwidth}p{0.30\textwidth}}
+ \toprule
+ \textbf{Thông số} & \textbf{Giá trị} & \textbf{Ghi chú / Nguồn} \\
+@@ -106,37 +107,8 @@ Hệ số không ổn định $K$ & 1,25 & Hiệu chỉnh biến động nguyên
+ Phụ tải tự dùng / tổng phát & 30\% & Ước tính theo điện năng tiêu thụ nội bộ \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-%%=============================================================
+-\section{Cân bằng vật chất khối tiền xử lý và sản xuất RDF}
+-\label{sec:can-bang-tien-xu-ly}
+-%%=============================================================
+-
+-\subsection{Cân bằng khối tiền xử lý và tải nước thải ép}
+-
+-Dòng nước thải từ công đoạn ép tách nước là 37,368\,tấn/ngày tương đương 37,368\,m$^3$/ngày. Với thời gian vận hành 24\,h/ngày, lưu lượng trung bình:
+-
+-\begin{equation}
+-  Q_{\text{nt,ép}} = \frac{37.368}{24} \approx 1{,}557 \;\text{m}^3/\text{h} \approx 25{,}9 \;\text{L/phút}
+-\end{equation}
+-
+-Giả thiết COD của nước thải ép rác khoảng 10.000\,mg/L (giá trị trung bình của khoảng điển hình 5.000--15.000\,mg/L theo dữ liệu vận hành thực tế tại các nhà máy tương đồng \cite{Arena2012}), tải lượng COD ngày tính như sau:
+-
+-\begin{equation}
+-  L_{\text{COD}} = Q_{\text{nt,ép}} \times C_{\text{COD}} = 37{,}368 \;\text{m}^3/\text{ngày} \times 10.000 \;\text{g/m}^3 = 373{,}68 \;\text{kg\,COD/ngày}
+-\end{equation}
+-
+-Đây là tải lượng ô nhiễm rất cao, khẳng định sự cần thiết của hệ thống xử lý nước thải sinh học có công suất phù hợp. Ngoài COD, nước thải ép cũng chứa ammonia ($\text{NH}_3$-N), kim loại nặng hòa tan và các hợp chất hữu cơ độc hại khác cần được kiểm soát theo **QCVN 40:2025/BTNMT** trước khi xả ra nguồn tiếp nhận.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Tổng hợp các dòng vật chất ra trong khối tiền xử lý (tính cho 120 tấn/ngày)}
+-\label{tab:dong-vat-chat-ra}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.05\textwidth}p{0.28\textwidth}p{0.18\textwidth}p{0.14\textwidth}p{0.22\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.05\textwidth}p{0.28\textwidth}p{0.18\textwidth}p{0.14\textwidth}p{0.22\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Loại dòng} & \textbf{Khối lượng, t/ngày} & \textbf{Tỷ lệ, \%} & \textbf{Hướng xử lý} \\
+ \midrule
+@@ -155,7 +127,8 @@ Giả thiết COD của nước thải ép rác khoảng 10.000\,mg/L (giá tr
+ & \textbf{Tổng cộng} & \textbf{120,000} & \textbf{100,00} & \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ Khối tiền xử lý là nơi tiêu thụ điện năng lớn nhất trong toàn nhà máy do có nhiều thiết bị cơ học công suất cao vận hành liên tục. Bảng~\ref{tab:dien-tien-xu-ly} tổng hợp công suất điện tiêu thụ ước tính của các thiết bị chính:
+@@ -166,32 +139,8 @@ Khối tiền xử lý là nơi tiêu thụ điện năng lớn nhất trong to
+ \label{tab:dien-tien-xu-ly}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.05\textwidth}p{0.32\textwidth}p{0.18\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Thiết bị} & \textbf{Công suất lắp đặt, kW} & \textbf{Hệ số tải} & \textbf{Công suất thực, kW} \\
+-\midrule
+-1 & Băng tải tiếp nhận và máy mở túi & 18,5 & 0,75 & 13,9 \\
+-\midrule
+-2 & Máy băm xé chính ($2 \times 110$\,kW) & 220,0 & 0,70 & 154,0 \\
+-\midrule
+-3 & Sàng quay trommel và băng tải phân loại & 15,0 & 0,80 & 12,0 \\
+-\midrule
+-4 & Bộ tách từ điện từ & 1,5 & 0,80 & 1,2 \\
+-\midrule
+-5 & Buồng bức xạ nhiệt (ước tính) & 50,0 & 0,85 & 42,5 \\
+-\midrule
+-6 & Máy ép trục vít tách nước & 75,0 & 0,80 & 60,0 \\
+-\midrule
+-7 & Cụm lồng sấy quay (bao gồm quạt và cyclone) & 87,7 & 0,75 & 65,8 \\
+-\midrule
+-8 & Máy ép viên RDF & 118,4 & 0,80 & 94,7 \\
+-\midrule
+-9 & Băng tải vận chuyển nội bộ (tổng hợp) & 30,0 & 0,70 & 21,0 \\
+-\midrule
+-& \textbf{Tổng cộng} & \textbf{616,1} & -- & \textbf{465,1} \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ Như vậy, khối tiền xử lý tiêu thụ khoảng 465\,kW điện thực, tương đương khoảng 11.160\,kWh/ngày. Đây là cơ sở quan trọng để xác định phụ tải tự dùng của nhà máy và so sánh với công suất phát điện nội bộ ở Mục~\ref{sec:can-bang-nang-luong}.
+@@ -204,6 +153,7 @@ Quá trình tiền xử lý rác có nhiệm vụ loại bỏ thành phần khô
+ \label{tab:can-bang-rdf}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.05\textwidth}p{0.25\textwidth}p{0.16\textwidth}p{0.15\textwidth}p{0.20\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Công đoạn} & \textbf{$Q_{\text{vào}}$, kg} & \textbf{$Q_{\text{ra}}$, kg} & \textbf{Dòng tách ra} \\
+@@ -221,28 +171,8 @@ Quá trình tiền xử lý rác có nhiệm vụ loại bỏ thành phần khô
+ 6 & Tạo viên RDF & 422,4 & 422,4 & Dòng nguyên liệu sau sấy, tạo viên và lưu chứa \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Từ Bảng~\ref{tab:can-bang-rdf}, hệ số thu hồi nguyên liệu sau sấy tính theo rác đầu vào được xác định:
+-
+-\begin{equation}
+-  K_{\text{RDF}} = \frac{Q_{\text{RDF}}}{Q_{\text{CTRSH}}}
+-                 = \frac{422{,}4}{1.000}
+-                 = 0{,}4224
+-\end{equation}
+-
+-Giá trị này có nghĩa là về mặt cân bằng khối lượng, cứ 1\,tấn CTRSH đầu vào sẽ tạo ra khoảng 0,4224\,tấn nguyên liệu RDF sau sấy. Phần khối lượng còn lại chủ yếu là chất thải không cháy (13,38\%), nước thải ép tách ẩm (31,14\%) và hơi nước bay hơi trong các công đoạn xử lý nhiệt và sấy (13,24\%). Hệ số $K_{\text{RDF}} = 0{,}4224$ phù hợp với khoảng điển hình 0,35--0,55 được ghi nhận tại các dự án tương đồng ở châu Á \cite{Arena2012}.
+-
+-Áp dụng hệ số trên cho công suất thiết kế 120\,tấn/ngày đêm, các dòng vật chất qua từng công đoạn được tính như trong Bảng~\ref{tab:can-bang-rdf-120}.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Cân bằng vật chất khối tiền xử lý cho công suất 120 tấn/ngày đêm}
+-\label{tab:can-bang-rdf-120}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.05\textwidth}p{0.24\textwidth}p{0.16\textwidth}p{0.16\textwidth}p{0.21\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.05\textwidth}p{0.24\textwidth}p{0.16\textwidth}p{0.16\textwidth}p{0.21\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Công đoạn} & \textbf{$Q_{\text{vào}}$, t/ngày} & \textbf{$Q_{\text{ra}}$, t/ngày} & \textbf{Dòng tách ra} \\
+ \midrule
+@@ -257,13 +187,15 @@ Giá trị này có nghĩa là về mặt cân bằng khối lượng, cứ 1\,t
+ 5 & Tạo viên và cấp lò & 50,688 & 46,080 & 4,608\,t/ngày hao hụt, dự phòng hoặc tuần hoàn \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ Tổng các dòng tách ra trong khối tiền xử lý gồm 16,056\,t/ngày chất thải không cháy, 37,368\,t/ngày nước thải ép, 15,888\,t/ngày hơi nước và 4,608\,t/ngày hao hụt hoặc tuần hoàn trong công đoạn tạo viên. Khi cộng với dòng RDF cấp lò 46,080\,t/ngày, tổng khối lượng bằng 120\,t/ngày, phù hợp với nguyên tắc bảo toàn khối lượng ở cấp nhà máy.
+ 
+ \begin{figure}[htbp]
+ \centering
++\scalebox{0.9}{
+ \begin{tikzpicture}[
+     scale=1.1,
+     block/.style={draw, rounded corners=2pt, minimum width=2.4cm, minimum height=1.1cm, font=\small, align=center},
+@@ -312,412 +244,8 @@ Tổng các dòng tách ra trong khối tiền xử lý gồm 16,056\,t/ngày ch
+ \draw[arrow] (ep_nuoc) -- (nuoc_thai);
+ \draw[arrow] (say) -- (hoi_nuoc);
+ \draw[arrow] (rdf_out) -- (hao_hut);
+-\end{tikzpicture}
+-\caption{Sơ đồ cân bằng vật chất tổng thể khối tiền xử lý và sản xuất RDF}
+-\label{fig:can-bang-vat-chat}
+-\end{figure}
+-
+-%%=============================================================
+-\section{Cân bằng sản phẩm khối nhiệt phân}
+-%%=============================================================
+-
+-\subsection{Cơ sở lựa chọn tỷ lệ sản phẩm}
+-
+-Lượng RDF cấp cho hệ thống nhiệt phân được lấy là 46,08\,tấn/ngày. Theo cấu hình công nghệ của dự án, sản phẩm đầu ra của lò nhiệt phân gồm dầu nhiệt phân thô, khí không ngưng và than carbon. Tỷ lệ thu hồi phụ thuộc mạnh vào thành phần nhựa, giấy, nylon, nhiệt độ vận hành, thời gian lưu và độ ẩm nguyên liệu. Ở mức tính toán sơ bộ, tỷ lệ sản phẩm được lấy theo hồ sơ cân bằng của dự án: dầu nhiệt phân thô khoảng 45\%, khí không ngưng khoảng 30\% và than carbon khoảng 25\% khối lượng RDF đầu vào.
+-
+-Tỷ lệ 45\% dầu thô là giá trị hợp lý đối với RDF hỗn hợp đã qua tiền xử lý, vì dòng nguyên liệu của Hội An không phải là nhựa tinh khiết mà còn bao gồm giấy, vải, gỗ vụn và phần hữu cơ còn lại. Với nguyên liệu chứa nhiều polyolefin như polyethylene và polypropylene, nhiệt phân ở 450--500\,\textdegree{}C có xu hướng cho tỷ lệ dầu cao; tuy nhiên khi thành phần cellulose và lignin tăng lên, tỷ lệ khí và than cũng tăng tương ứng \cite{Sharuddin2016,Williams2007}. Kết quả khảo sát thành phần rác Hội An cho thấy phần cháy được có tỷ lệ nhựa đủ lớn để bảo đảm khả năng thu dầu ở mức thiết kế, nhưng vẫn cần duy trì giả thiết bảo thủ trong tính toán. Vì vậy, giá trị 45\% dầu thô, 30\% khí không ngưng và 25\% than carbon được sử dụng như bộ thông số trung bình cho cân bằng sơ bộ \cite{BaocaoHoiAn2024,Miandad2016}.
+-
+-\subsection{Cân bằng sản phẩm lò nhiệt phân}
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Cân bằng sản phẩm của lò nhiệt phân}
+-\label{tab:can-bang-nhiet-phan}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.25\textwidth}p{0.16\textwidth}p{0.20\textwidth}p{0.22\textwidth}}
+-\toprule
+-\textbf{Sản phẩm} & \textbf{Tỷ lệ, \%} & \textbf{Khối lượng, t/ngày} & \textbf{Hướng sử dụng} \\
+-\midrule
+-Dầu nhiệt phân thô & 45 & 20,74 & Chuyển sang chưng cất và tinh chế \\
+-\midrule
+-Khí không ngưng & 30 & 13,82 & Hồi lưu làm nhiên liệu gia nhiệt lò \\
+-\midrule
+-Than carbon/biochar & 25 & 11,52 & Kiểm nghiệm để tận dụng hoặc xử lý an toàn \\
+-\midrule
+-Tổng cộng & 100 & 46,08 & \\
+-\midrule
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Kết quả cân bằng cho thấy từ 46,08 tấn RDF/ngày, hệ thống nhiệt phân tạo ra 20,74 tấn dầu thô, 13,82 tấn khí không ngưng và 11,52 tấn than carbon. Trong ba dòng sản phẩm, dầu thô là dòng có giá trị kinh tế cao nhất nhưng cũng là dòng yêu cầu kiểm soát chất lượng nghiêm ngặt nhất trước khi đưa sang khâu chưng cất và tinh chế. Khí không ngưng là dòng năng lượng nội bộ quan trọng, còn than carbon là dòng rắn cần được đánh giá lại về thành phần và nguy cơ môi trường trước khi tận dụng.
+-
+-\subsection{Chất lượng dầu thô sau ngưng tụ}
+-
+-Dầu nhiệt phân thô ngay sau khi ra khỏi bình ngưng tụ thường chưa thể sử dụng trực tiếp cho động cơ diesel do còn chứa nhiều tạp chất và phân đoạn nặng. Trong thực tế vận hành, dầu thô phải được lắng tách sơ bộ, lọc rắn và sau đó chuyển sang công đoạn chưng cất -- tinh chế để ổn định chất lượng. Các đặc điểm điển hình của dầu thô này bao gồm:
+-
+-\begin{itemize}
+-  \item \textbf{Hàm lượng nước}: 2--8\% khối lượng, tạo nhũ tương với dầu và gây khó khăn cho bơm cũng như quá trình cháy trong động cơ. Nước cần được tách sơ bộ tại bể lắng tách nước trước khi đưa vào bồn chứa trung gian.
+-  \item \textbf{Cặn rắn carbon}: 1--3\% khối lượng, là các hạt than mịn kéo theo dòng hơi trong lò nhiệt phân và ngưng tụ cùng dầu. Thành phần này cần được loại bỏ bằng lọc thô để hạn chế bám cặn trong lò chưng cất.
+-  \item \textbf{Độ nhớt}: độ nhớt động học ở 40\,\textdegree{}C thường trong khoảng 5--15\,mm$^2$/s, cao hơn giới hạn cho phép của dầu diesel thương mại do tỷ lệ phân đoạn nặng còn lớn.
+-  \item \textbf{Màu sắc}: màu nâu sẫm đến đen do hàm lượng hợp chất thơm, asphaltene và các chất màu sinh ra từ quá trình phân hủy polyme.
+-  \item \textbf{Hàm lượng lưu huỳnh}: 0,05--0,1\% trước tinh chế, phụ thuộc vào hàm lượng lưu huỳnh trong nhựa và cao su đầu vào.
+-  \item \textbf{Hàm lượng chlorine}: có thể cao nếu nguyên liệu chứa PVC; đây là thông số cần kiểm soát nghiêm ngặt vì chlorine gây ăn mòn thiết bị và phát sinh khí HCl trong quá trình gia nhiệt.
+-\end{itemize}
+-
+-\subsection{Cân bằng chi tiết sau chưng cất và hồi lưu dầu nặng}
+-
+-Từ 20,74\,tấn dầu thô/ngày sau chưng cất phân đoạn, sản phẩm được phân tách thành các phân đoạn theo nhiệt độ sôi:
+-
+-\begin{equation}
+-  m_{\text{dầu nhẹ}} = 20{,}74 \times 0{,}80 = 16{,}59 \;\text{tấn/ngày}
+-\end{equation}
+-
+-\begin{equation}
+-  m_{\text{dầu nặng}} = 20{,}74 \times 0{,}15 = 3{,}11 \;\text{tấn/ngày}
+-\end{equation}
+-
+-\begin{equation}
+-  m_{\text{khí chưng cất}} = 20{,}74 \times 0{,}05 = 1{,}04 \;\text{tấn/ngày}
+-\end{equation}
+-
+-Dầu nặng có nhiệt độ sôi trên 350\,\textdegree{}C không được xem là sản phẩm cuối cùng mà được hồi lưu về lò chưng cất hoặc sử dụng làm nhiên liệu đốt bổ trợ cho buồng gia nhiệt. Khí phát sinh trong quá trình chưng cất được gom chung với khí không ngưng từ nhiệt phân để cấp lại cho buồng đốt. Bảng~\ref{tab:can-bang-chung-cat} tóm tắt cân bằng dòng sau chưng cất:
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Cân bằng dòng sản phẩm sau ngưng tụ và chưng cất}
+-\label{tab:can-bang-chung-cat}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.30\textwidth}p{0.18\textwidth}p{0.18\textwidth}p{0.24\textwidth}}
+-\toprule
+-\textbf{Dòng sản phẩm} & \textbf{Tỷ lệ, \%} & \textbf{Khối lượng, t/ngày} & \textbf{Hướng xử lý} \\
+-\midrule
+-Dầu nhẹ (phân đoạn $<350\,\textdegree$C) & 80 & 16,59 & Tinh chế (axit -- kiềm -- đất sét) \\
+-\midrule
+-Dầu nặng hồi lưu ($>350\,\textdegree$C) & 15 & 3,11 & Hồi lưu lò chưng cất hoặc đốt \\
+-\midrule
+-Khí không ngưng từ chưng cất & 5 & 1,04 & Hồi lưu buồng đốt \\
+-\midrule
+-Tổng dầu thô đầu vào & 100 & 20,74 & \\
+-\midrule
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Sau các bước rửa nước, thải bỏ pha axit và mất mát trong vật liệu hấp phụ, lượng dầu nhẹ tinh chế giảm nhẹ so với khối lượng ban đầu. Với giả thiết tổn thất khoảng 0,6\%, sản lượng dầu thành phẩm cuối cùng được tính như sau:
+-
+-\begin{equation}
+-  Q_{\text{dầu,tp}} = 16{,}59 \times (1 - 0{,}006) \approx 16{,}49 \;\text{tấn/ngày}
+-\end{equation}
+-
+-Với khối lượng riêng $\rho = 0{,}85$\,kg/L, thể tích dầu thành phẩm xấp xỉ:
+-
+-\begin{equation}
+-  V_{\text{dầu,tp}} = \frac{16{,}490 \times 10^3}{0{,}85} \approx 19.400 \;\text{L/ngày} \approx 19.500 \;\text{L/ngày}
+-\end{equation}
+-
+-Giá trị này phù hợp với số liệu tổng hợp trong hồ sơ dự án. Nếu quy đổi theo giá dầu thương mại ở mức ước tính khoảng 22.000\,VNĐ/L, sản lượng dầu tương đương một giá trị kinh tế đáng kể. Tuy nhiên, trong phạm vi đồ án kỹ sư, kết quả này chỉ được sử dụng như cơ sở tham chiếu cho phân tích hiệu quả chứ chưa phải là dự báo doanh thu thương mại chính thức.
+-
+-\subsection{Đặc điểm và hướng xử lý than carbon sau nhiệt phân}
+-
+-Than carbon (carbon black hay pyrolysis char) là phần rắn còn lại sau nhiệt phân, gồm các thành phần chính:
+-
+-\begin{itemize}
+-  \item \textbf{Carbon cố định}: 40--70\% tùy theo nhiệt độ và nguyên liệu. Hàm lượng carbon cố định có xu hướng tăng khi nhiệt độ nhiệt phân vượt 500\,\textdegree{}C.
+-  \item \textbf{Tro vô cơ}: 15--40\%, gồm SiO$_2$, Al$_2$O$_3$, CaO và các oxit kim loại từ chất độn trong nhựa và từ tạp chất vô cơ còn lại sau phân loại.
+-  \item \textbf{Kim loại nặng}: Pb, Cd, Cr, Ni, Zn có thể tập trung cao trong than do tính chất không bay hơi ở nhiệt độ nhiệt phân. Đây là lý do bắt buộc phải kiểm nghiệm trước khi tận dụng.
+-  \item \textbf{Các hợp chất hữu cơ tồn dư}: PAH (polycyclic aromatic hydrocarbons) bám trên bề mặt than, có thể gây rủi ro sức khỏe nếu tiếp xúc không có bảo hộ.
+-\end{itemize}
+-
+-Với 11,52\,tấn/ngày than carbon, các hướng xử lý gồm: (i)~tái sử dụng làm chất độn cao su hoặc màu đen công nghiệp nếu chất lượng đạt (hàm lượng tro thấp, kim loại nặng dưới ngưỡng); (ii)~đồng đốt trong lò xi măng nếu nhiệt trị đủ cao và hàm lượng Cl thấp; (iii)~chôn lấp an toàn tại ô chất thải nguy hại nếu kiểm nghiệm cho thấy vượt ngưỡng QCVN 07:2009/BTNMT. Việc kiểm nghiệm định kỳ là cần thiết để phân loại và định hướng xử lý phù hợp, tránh đưa than chưa được đánh giá đầy đủ vào các mục đích sử dụng tiềm ẩn rủi ro.
+-
+-\begin{figure}[htbp]
+-\centering
+-\begin{tikzpicture}[
+-    scale=1.2,
+-    block/.style={draw, rounded corners=2pt, minimum width=2.4cm, minimum height=1.1cm, font=\small, align=center},
+-    arrow/.style={->, >=Stealth, thick},
+-    flowlabel/.style={font=\footnotesize\bfseries}
+-]
+-% Column 1 (x=0)
+-\node[block, fill=blue!15] (rdf) at (0,0) {Viên RDF \\46,08 t/ngày};
+-
+-% Column 2 (x=3.2)
+-\node[block, fill=orange!15] (lo) at (3.2,0) {Lò nhiệt phân quay \\(400--500$^\circ$C)};
+-
+-% Column 3 (x=6.4)
+-\node[block, fill=gray!20] (than) at (6.4,2.0) {Than carbon \\11,52 t/ngày \\(25\%)};
+-\node[block, fill=purple!15] (khi) at (6.4,0) {Khí không ngưng \\13,82 t/ngày \\(30\%)};
+-\node[block, fill=green!15] (dau) at (6.4,-2.0) {Dầu thô \\20,74 t/ngày \\(45\%)};
+-
+-% Branch than (y=3.8)
+-\node[block, fill=gray!15, dashed] (kiem_nghiem) at (6.4,3.8) {Kiểm nghiệm \\→ tái sử dụng \\hoặc chôn lấp};
+-
+-% Branch khi (x=9.6, 12.8)
+-\node[block, fill=orange!20] (buong_dot) at (9.2,0) {Buồng đốt \\hồi lưu};
+-\node[block, fill=red!10, dashed] (flare) at (12,0) {Flare \\(xử lý khí dư)};
+-
+-% Branch dau -> chưng cất (y=-3.8)
+-\node[block, fill=green!25] (dist) at (6.4,-3.8) {Chưng cất};
+-
+-% Split chưng cất (y=-5.6)
+-\node[block, fill=green!15] (dau_nhe) at (3.2,-5.6) {Dầu nhẹ \\2,07 t/ngày \\(10\%)};
+-\node[block, fill=green!30] (dau_tp) at (6.4,-5.6) {Dầu trung (DO) \\16,59 t/ngày \\(80\%)};
+-\node[block, fill=green!20] (dau_nang) at (9.6,-5.6) {Dầu nặng \\→ hồi lưu \\10\%};
+-
+-% Refining line (x=6.4, y <= -7.4)
+-\node[block, fill=purple!10] (acid) at (6.4,-7.4) {Xử lý axit};
+-\node[block, fill=purple!20] (kiem) at (6.4,-9.0) {Rửa kiềm};
+-\node[block, fill=purple!30] (hat) at (6.4,-10.6) {Hấp phụ đất sét};
+-\node[block, fill=green!40] (dau_tinh) at (6.4,-12.2) {Dầu DO tinh chế};
+-
+-% Arrows
+-\draw[arrow] (rdf) -- (lo);
+-\draw[arrow] (lo) -- node[above right, font=\footnotesize] {} (than);
+-\draw[arrow] (lo) -- node[above, font=\footnotesize] {} (khi);
+-\draw[arrow] (lo) -- node[below right, font=\footnotesize] {} (dau);
+-
+-\draw[arrow] (than) -- (kiem_nghiem);
+-
+-\draw[arrow] (khi) -- (buong_dot);
+-\draw[arrow] (buong_dot) -- (flare);
+-
+-\draw[arrow] (dau) -- (dist);
+-\draw[arrow] (dist) -- (dau_nhe);
+-\draw[arrow] (dist) -- (dau_tp);
+-\draw[arrow] (dist) -- (dau_nang);
+-
+-\draw[arrow] (dau_tp) -- (acid);
+-\draw[arrow] (acid) -- (kiem);
+-\draw[arrow] (kiem) -- (hat);
+-\draw[arrow] (hat) -- (dau_tinh);
+-\end{tikzpicture}
+-\caption{Sơ đồ cân bằng dòng sản phẩm của khối nhiệt phân và chưng cất}
+-\label{fig:can-bang-san-pham}
+-\end{figure}
+-
+-%%=============================================================
+-\section{Cân bằng năng lượng và sản lượng điện}
+-\label{sec:can-bang-nang-luong}
+-%%=============================================================
+-
+-\subsection{Cân bằng nhiệt nội bộ và tích hợp dòng nhiệt}
+-
+-Một trong những ưu điểm quan trọng của chuỗi công nghệ nhiệt phân -- phát điện diesel là khả năng tích hợp năng lượng nội bộ. Thay vì phụ thuộc hoàn toàn vào nhiên liệu ngoài, nhà máy có thể tận dụng các dòng năng lượng thứ cấp phát sinh trong chính hệ thống, bao gồm:
+-
+-\begin{enumerate}
+-  \item \textbf{Khí không ngưng từ lò nhiệt phân}: được thu gom, làm sạch sơ bộ và hồi lưu về buồng đốt để duy trì nhiệt độ vùng phản ứng trong giai đoạn vận hành ổn định. Đây là nguồn nhiệt chính sau giai đoạn khởi động.
+-  \item \textbf{Nhiệt khí thải từ động cơ diesel}: khí thải ở nhiệt độ cao có thể được thu hồi qua bộ trao đổi nhiệt để cấp cho công đoạn sấy RDF, từ đó giảm nhu cầu nhiên liệu bổ sung.
+-  \item \textbf{Nhiệt nước làm mát động cơ}: phần nhiệt còn lại trong mạch nước làm mát có thể được khai thác cho các mục đích gia nhiệt phụ trợ hoặc tiền sấy vật liệu nếu bố trí phù hợp.
+-\end{enumerate}
+-
+-Cơ chế tích hợp này làm giảm tiêu hao nhiên liệu phụ trợ và cải thiện hiệu quả sử dụng năng lượng của toàn nhà máy. Tuy nhiên, hiệu quả thực tế của việc tận dụng nhiệt phụ thuộc vào thiết kế trao đổi nhiệt, khả năng điều khiển và mức độ ổn định của chế độ vận hành.
+-
+-\subsection{Đánh giá khả năng tự cấp nhiệt của khí không ngưng}
+-
+-Với 13,82\,tấn/ngày khí không ngưng, nhiệt trị thấp của khí nhiệt phân hỗn hợp ước tính trong khoảng 15--20\,MJ/kg theo các nghiên cứu trên nguyên liệu tương đồng \cite{Williams2007}. Công suất nhiệt tương ứng được xác định như sau:
+-
+-\begin{equation}
+-  N_{\text{khí,min}} = \frac{13.820 \times 15.000}{86.400} \approx 2.399 \;\text{kW}
+-\end{equation}
+-
+-\begin{equation}
+-  N_{\text{khí,max}} = \frac{13.820 \times 20.000}{86.400} \approx 3.199 \;\text{kW}
+-\end{equation}
+-
+-Nhu cầu nhiệt cấp cho lò nhiệt phân để duy trì nhiệt độ vùng phản ứng trong khoảng 400--450\,\textdegree{}C được ước tính vào khoảng 15--25\% tổng công suất nhiệt của RDF đầu vào. Với công suất nhiệt dòng RDF là 10.266\,kW, nhu cầu nhiệt điển hình của lò ở mức:
+-
+-\begin{equation}
+-  N_{\text{lò,yc}} \approx 10.266 \times 0{,}20 \approx 2.053 \;\text{kW}
+-\end{equation}
+-
+-So sánh cho thấy công suất nhiệt của khí không ngưng lớn hơn nhu cầu nhiệt của lò trong điều kiện vận hành ổn định. Khí không ngưng đủ khả năng tự cấp nhiệt cho lò sau giai đoạn khởi động, và phần dư được xử lý an toàn trong buồng đốt phụ hoặc dùng để hỗ trợ sấy. Đây là điều kiện tiên quyết để nhà máy có thể vận hành độc lập với nhiên liệu ngoài trong chế độ ổn định.
+-
+-\subsection{Tính toán cân bằng năng lượng và công suất phát điện}
+-
+-Nhiệt trị thấp của RDF sau quy đổi về độ ẩm làm việc 10,4\% được lấy bằng 4.600\,kcal/kg, tương đương 19.259\,kJ/kg. Với lượng RDF cấp lò 46,08\,tấn/ngày, suất cấp liệu trung bình theo thời gian được xác định như sau:
+-
+-\begin{equation}
+-  B_{tt} = \frac{46.080}{24 \times 3.600}
+-         = 0{,}533 \;\text{kg/s}
+-\end{equation}
+-
+-Công suất nhiệt của dòng RDF cấp lò:
+-
+-\begin{equation}
+-  N_{\text{nhiệt}} = B_{tt} \times q_{tlv}
+-                   = 0{,}533 \times 19.259
+-                   \approx 10.266 \;\text{kW}
+-\end{equation}
+-
+-Trong chuỗi công nghệ này, hiệu suất chuyển hóa điện được hiểu là hiệu suất tổng hợp từ năng lượng của RDF đầu vào sang điện năng hữu ích sau khi đã xét đến các khâu nhiệt phân, chưng cất, động cơ diesel và máy phát. Theo giả thiết thiết kế sơ bộ, hệ số này được lấy bằng $\eta = 32\%$. Công suất điện lý thuyết của hệ thống được tính như sau:
+-
+-\begin{equation}
+-  W_{e,lt} = N_{\text{nhiệt}} \times \eta
+-           = 10.266 \times 0{,}32
+-           \approx 3.285 \;\text{kW}
+-\end{equation}
+-
+-Do RDF có thành phần và nhiệt trị biến động, hồ sơ dự án sử dụng hệ số không ổn định $K = 1{,}25$ để quy đổi công suất lý thuyết về công suất vận hành thực tế:
+-
+-\begin{equation}
+-  W_e = \frac{W_{e,lt}}{K}
+-      = \frac{3.285}{1{,}25}
+-      \approx 2.628 \;\text{kW}
+-\end{equation}
+-
+-Nếu phụ tải tự dùng của nhà máy chiếm khoảng 30\% công suất phát, công suất điện tinh có thể cấp ra ngoài hoặc giảm mua điện lưới:
+-
+-\begin{equation}
+-  W_{e,net} = W_e \times (1 - 0{,}30)
+-            = 2.628 \times 0{,}70
+-            \approx 1.840 \;\text{kW}
+-\end{equation}
+-
+-Giá trị này phù hợp với mức 1,82\,MW được nêu trong hồ sơ cân bằng năng lượng. Với giả thiết vận hành 24\,h/ngày và 365\,ngày/năm, sản lượng điện ròng năm ước tính:
+-
+-\begin{equation}
+-  E_{\text{năm}} = 1{,}82 \times 24 \times 365
+-                \approx 15.943 \;\text{MWh/năm}
+-\end{equation}
+-
+-\subsection{Hiệu suất từng bước của chuỗi công nghệ}
+-
+-Để hiểu rõ hơn về phân bổ năng lượng, Bảng~\ref{tab:hieu-suat-tung-buoc} tổng hợp hiệu suất và mức công suất qua từng bước chuyển hóa trong chuỗi công nghệ:
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Hiệu suất năng lượng qua từng bước của chuỗi nhiệt phân -- phát điện}
+-\label{tab:hieu-suat-tung-buoc}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.05\textwidth}p{0.25\textwidth}p{0.16\textwidth}p{0.14\textwidth}p{0.20\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Bước chuyển hóa} & \textbf{Năng lượng vào} & \textbf{Hiệu suất} & \textbf{Năng lượng ra} \\
+-\midrule
+-1 & Nhiệt phân RDF $\to$ dầu thô & 10.266\,kW & $\approx 45\%$ & $\approx 4.620$\,kW (dầu) \\
+-\midrule
+-2 & Chưng cất \& tinh chế $\to$ dầu nhẹ & 4.620\,kW & $\approx 80\%$ & $\approx 3.696$\,kW \\
+-\midrule
+-3 & Động cơ diesel $\to$ cơ năng & 3.696\,kW & $\approx 38\%$ & $\approx 1.404$\,kW \\
+-\midrule
+-4 & Máy phát $\to$ điện năng & 1.404\,kW & $\approx 95\%$ & $\approx 1.334$\,kW \\
+-\midrule
+-5 & Điện ròng sau tự dùng & 1.334\,kW & $\approx 70\%$ & $\approx 934$\,kW \\
+-\midrule
+-\multicolumn{3}{|l|}{\textbf{Hiệu suất tổng hợp (từ RDF đến điện ròng)}} & \multicolumn{2}{c|}{$\approx 9{,}1\%$ (điện ròng/nhiệt năng RDF)} \\
+-\midrule
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\textbf{Lưu ý}: Hiệu suất tổng hợp 9,1\% kể trên là hiệu suất điện ròng theo đúng nghĩa, phản ánh tỷ lệ năng lượng RDF đầu vào được chuyển hóa thành điện năng ròng xuất ra ngoài. Giá trị hiệu suất 32\% trong hồ sơ dự án là hiệu suất tổng hợp của chuỗi từ dầu sang điện (bao gồm phân bổ 45\% dầu và 70\% điện ròng, được tính theo cách hạch toán riêng), không mâu thuẫn với hiệu suất điện ròng 9,1\% ở trên.
+-
+-\subsection{Phân tích độ nhạy công suất điện theo LHV và hiệu suất}
+-
+-Bảng~\ref{tab:do-nhay-nang-luong} trình bày kết quả phân tích độ nhạy công suất điện tinh khi LHV của RDF biến động $\pm 10\%$ và hiệu suất $\eta$ biến động $\pm 5\%$:
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Phân tích độ nhạy công suất điện tinh $W_{e,net}$ theo LHV và $\eta$}
+-\label{tab:do-nhay-nang-luong}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.16\textwidth}p{0.11\textwidth}p{0.11\textwidth}p{0.11\textwidth}p{0.11\textwidth}p{0.11\textwidth}}
+-\toprule
+-\multirow{2}{*}{\textbf{LHV RDF (kJ/kg)}} & \multicolumn{5}{c|}{\textbf{Công suất $W_{e,net}$ (kW) theo $\eta$}} \\
+-\cline{2-6}
+- & $\eta = 27\%$ & $\eta = 30\%$ & $\eta = 32\%$ & $\eta = 35\%$ & $\eta = 37\%$ \\
+-\midrule
+-17.333 ($-10\%$) & 1.262 & 1.402 & 1.496 & 1.637 & 1.730 \\
+-\midrule
+-18.296 ($-5\%$) & 1.330 & 1.478 & 1.577 & 1.724 & 1.823 \\
+-\midrule
+-19.259 (cơ sở) & 1.399 & 1.554 & 1.658 & 1.813 & 1.917 \\
+-\midrule
+-20.222 ($+5\%$) & 1.468 & 1.631 & 1.740 & 1.903 & 2.011 \\
+-\midrule
+-21.185 ($+10\%$) & 1.537 & 1.708 & 1.822 & 1.993 & 2.106 \\
+-\midrule
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Kết quả Bảng~\ref{tab:do-nhay-nang-luong} cho thấy ngay ở trường hợp bất lợi nhất (LHV giảm 10\%, hiệu suất 27\%), công suất điện tinh vẫn đạt 1.262\,kW $>$ 1\,MW --- đủ để duy trì vận hành nhà máy trong biên độ biến động thực tế của các tham số đầu vào.
+-
+-\subsection{So sánh phương án nhiệt phân và khí hóa}
+-
+-Bảng~\ref{tab:so-sanh-cong-nghe} đối chiếu nhiệt phân và khí hóa theo các tiêu chí năng lượng và điều kiện dự án Hội An:
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{So sánh phương án nhiệt phân và khí hóa về cân bằng năng lượng}
+-\label{tab:so-sanh-cong-nghe}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.32\textwidth}p{0.28\textwidth}p{0.28\textwidth}}
+-\toprule
+-\textbf{Tiêu chí} & \textbf{Nhiệt phân (đã chọn)} & \textbf{Khí hóa} \\
+-\midrule
+-Nhiệt độ vận hành & 350--500\,\textdegree{}C & 700--1.200\,\textdegree{}C \\
+-\midrule
+-Sản phẩm chính & Dầu nhiệt phân (chất lỏng) & Syngas (CO + H$_2$) \\
+-\midrule
+-Hiệu suất chuyển hóa điện & $\sim$32\% (tổng hợp) & $\sim$25--30\% (động cơ syngas) \\
+-\midrule
+-Chất lượng nguyên liệu & Chấp nhận ẩm 8--15\% & Yêu cầu ẩm $<$15\%, ít hơn Cl \\
+-\midrule
+-Yêu cầu xử lý khí & Thấp (ngưng tụ dầu) & Cao (làm sạch syngas phức tạp) \\
+-\midrule
+-Sản phẩm phụ & Dầu nặng hồi lưu, than & Tro, xỉ, tar \\
+-\midrule
+-Tính linh hoạt (mô-đun) & Cao (lò quay 10--15 t/ngày) & Thấp (lò lớn khó mô-đun hóa) \\
+-\midrule
+-Phù hợp với quy mô 120 t/ngày & \textbf{Tốt} & Trung bình \\
+-\midrule
+-Chi phí đầu tư ban đầu & Trung bình & Cao hơn \\
+-\midrule
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Kết quả so sánh xác nhận rằng phương án nhiệt phân phù hợp hơn với điều kiện cụ thể của dự án Hội An, đặc biệt là yêu cầu linh hoạt theo mô-đun, khả năng tận dụng thiết bị đã đầu tư và chất lượng nguyên liệu RDF.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Tổng hợp cân bằng năng lượng và sản lượng điện}
+-\label{tab:can-bang-nang-luong}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.38\textwidth}p{0.24\textwidth}p{0.28\textwidth}}
+-\toprule
+-\textbf{Thông số} & \textbf{Giá trị} & \textbf{Ghi chú} \\
+-\midrule
+-Nhiệt trị thấp của RDF, $q_{tlv}$ & 19.259\,kJ/kg & Tương đương 4.600\,kcal/kg \\
+-\midrule
+-Suất cấp RDF trung bình, $B_{tt}$ & 0,533\,kg/s & Tính từ 46,08\,tấn/ngày \\
+-\midrule
+-Công suất nhiệt dòng RDF & 10.266\,kW & Theo $B_{tt} \cdot q_{tlv}$ \\
+-\midrule
+-Hiệu suất chuyển hóa thô, $\eta$ & 32\% & Hiệu suất tổng hợp toàn hệ thống \\
+-\midrule
+-Công suất điện lý thuyết, $W_{e,lt}$ & 3,28\,MW & Trước hiệu chỉnh biến động RDF \\
+-\midrule
+-Công suất điện thực tế, $W_e$ & 2,628\,MW & Với hệ số không ổn định 1,25 \\
+-\midrule
+-Công suất điện tinh, $W_{e,net}$ & 1,82--1,84\,MW & Sau khi trừ 30\% tự dùng \\
+-\midrule
+-Sản lượng điện ròng năm & $\approx 15.943$\,MWh/năm & Giả thiết vận hành liên tục \\
+-\midrule
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\begin{figure}[H]
+-\centering
+-\begin{tikzpicture}[
++\end{tikzpicture}%
++}\begin{tikzpicture}[
+     scale=1.0,
+     block/.style={draw, rounded corners=2pt, minimum width=2.4cm, minimum height=1.1cm, font=\small, align=center},
+     arrow/.style={->, >=Stealth, thick},
+@@ -753,7 +281,8 @@ Sản lượng điện ròng năm & $\approx 15.943$\,MWh/năm & Giả thiết v
+ \draw[arrow] (gen_e.east) -- ++(0.4,0) |- (net.west);
+ \draw[arrow] (diesel_e.east) -- ++(0.6,0) |- (nhiet_du.east);
+ \draw[arrow] (nhiet_du.west) -- (-1.8,3.6) |- (rdf_e.west);
+-\end{tikzpicture}
++\end{tikzpicture}\scalebox{0.9}{
++
+ \caption{Sơ đồ tích hợp dòng năng lượng trong nhà máy}
+ \label{fig:tich-hop-nang-luong}
+ \end{figure}
+@@ -820,34 +349,8 @@ Làm tròn lên 60\,m$^3$ (ví dụ: 2 bồn $\times$ 30\,m$^3$ mỗi bồn). C
+ \label{tab:chi-tieu-dau}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.05\textwidth}p{0.36\textwidth}p{0.16\textwidth}p{0.28\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Chỉ tiêu} & \textbf{Đơn vị} & \textbf{Giá trị thiết kế} \\
+-\midrule
+-1 & Khối lượng riêng ở 15\,\textdegree{}C & kg/m$^3$ & 820--860 \\
+-\midrule
+-2 & Độ nhớt động học ở 40\,\textdegree{}C & mm$^2$/s & 2,0--4,5 \\
+-\midrule
+-3 & Trị số cetane & -- & $\geq 46$ \\
+-\midrule
+-4 & Điểm chớp cháy (cốc kín) & \textdegree{}C & $\geq 55$ \\
+-\midrule
+-5 & Điểm đông đặc & \textdegree{}C & $\leq 0$ \\
+-\midrule
+-6 & Hàm lượng nước & mg/kg & $\leq 200$ \\
+-\midrule
+-7 & Nhiệt trị thấp & MJ/kg & $\approx 43$ \\
+-\midrule
+-8 & Hàm lượng lưu huỳnh & \% khối lượng & 0,03--0,04 \\
+-\midrule
+-9 & Hàm lượng tro & \% khối lượng & $\leq 0{,}01$ \\
+-\midrule
+-10 & Tổng axit (TAN) & mg\,KOH/g & $\leq 0{,}5$ \\
+-\midrule
+-11 & Hàm lượng tạp chất hạt & \% khối lượng & $\leq 10$ \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ \subsection{Ảnh hưởng của trị số cetane đến hiệu suất động cơ diesel}
+@@ -868,6 +371,7 @@ Danh mục thiết bị của nhà máy được tổ chức theo các khối ch
+ \label{tab:thiet-bi-chinh}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.05\textwidth}p{0.25\textwidth}p{0.36\textwidth}p{0.20\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Nhóm thiết bị} & \textbf{Thông số hoặc chức năng chính} & \textbf{Ghi chú} \\
+@@ -893,163 +397,8 @@ Danh mục thiết bị của nhà máy được tổ chức theo các khối ch
+ 10 & Hệ thống xử lý khí thải và nước thải & Cyclone, tháp dập bụi, hấp thụ, hấp phụ; hệ xử lý nước thải sinh học -- hóa lý -- lọc & Đảm bảo tuân thủ môi trường \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\subsection{Lò nhiệt phân quay -- mô-đun và thông số kỹ thuật}
+-
+-Lò nhiệt phân quay (rotary kiln pyrolyzer) là thiết bị trung tâm của toàn bộ chuỗi công nghệ. Để đạt công suất 46,08\,tấn RDF/ngày, nhà máy sử dụng cấu hình nhiều mô-đun song song. Mỗi mô-đun lò nhiệt phân có công suất xử lý khoảng 10--15\,tấn RDF/mẻ (24\,giờ). Với 46,08\,tấn/ngày và mỗi mô-đun 10\,tấn/mẻ, cần ít nhất 4--5 mô-đun hoạt động song song, bao gồm cả mô-đun dự phòng.
+-
+-Thông số kỹ thuật điển hình của một mô-đun lò nhiệt phân quay trong dự án này:
+-
+-\begin{itemize}
+-  \item \textbf{Đường kính trong}: 1,5--2,0\,m; chiều dài thân lò: 5--8\,m.
+-  \item \textbf{Tốc độ quay}: 0,5--2\,vòng/phút, điều chỉnh bằng biến tần.
+-  \item \textbf{Nhiệt độ vận hành}: 350--500\,\textdegree{}C, kiểm soát bằng nhiệt điện trở Pt100.
+-  \item \textbf{Vật liệu thân lò}: thép hợp kim 310S chịu nhiệt, có lớp cách nhiệt bên ngoài.
+-  \item \textbf{Áp suất}: vận hành ở áp suất âm nhẹ ($-5$ đến $-20$\,Pa so với khí quyển) để ngăn rò rỉ khí ra ngoài, duy trì bằng quạt hút.
+-  \item \textbf{Buồng đốt ngoài}: buồng đốt đặt bên ngoài và dưới thân lò, sử dụng khí không ngưng làm nhiên liệu. Nhiệt truyền gián tiếp qua thành lò, tránh pha loãng sản phẩm nhiệt phân bởi khí đốt.
+-  \item \textbf{Hệ thống cấp liệu}: vít tải xoắn cấp RDF vào đầu lò, tốc độ điều chỉnh được theo tín hiệu cân liệu.
+-  \item \textbf{Hệ thống tháo than}: ở đầu tháo lò, than carbon nóng ($\sim$300\,\textdegree{}C) được tháo ra qua vít tải tháo liệu và làm mát trong thiết bị làm mát than xoắn ốc (screw cooler) trước khi đưa vào thùng chứa kín.
+-\end{itemize}
+-
+-\subsection{Tính toán kích thước cơ bản của buồng nhiệt phân}
+-\label{sec:tinh-kich-thuoc-buong}
+-
+-Phần này trình bày các bước tính toán sơ bộ các kích thước chính của buồng phản ứng nhiệt phân quay cho một mô-đun có công suất thiết kế 10 tấn RDF/ngày. Kết quả tính toán làm cơ sở cho việc lựa chọn hoặc kiểm tra thông số do nhà cung cấp thiết bị đề xuất.
+-
+-\subsubsection{Xác định thể tích buồng phản ứng}
+-
+-Lưu lượng khối lượng RDF đầu vào cho một mô-đun:
+-
+-\begin{equation}
+-\dot{m}_{\text{RDF}} = \frac{10\;\text{tấn}}{24;\text{h}} \approx 0{,}417\;\text{tấn/h} \approx 417\;\text{kg/h}
+-\label{eq:luu-luong-rdf-module}
+-\end{equation}
+-
+-Chọn thời gian lưu thiết kế $t_{\text{lưu}} = 6$ giờ (nằm trong dải 4--8 giờ phù hợp với nhiệt độ 400--500$^\circ$C đối với RDF). Khối lượng RDF có trong buồng tại một thời điểm bất kỳ:
+-
+-\begin{equation}
+-m_{\text{lưu}} = \dot{m}_{\text{RDF}} \times t_{\text{lưu}} = 417 \times 6 \approx 2.500\;\text{kg}
+-\end{equation}
+-
+-Khối lượng riêng của viên RDF trong buồng lò quay phụ thuộc vào độ nén và thành phần, ước tính $\rho_{\text{RDF}} \approx 400$ kg/m$^3$ (khoảng 300--500 kg/m$^3$ đối với RDF viên). Hệ số lấp đầy khối lò quay $\phi$ phụ thuộc vào góc nghiêng và tốc độ quay, thường chọn $\phi = 0{,}25$ (25\% thể tích buồng chứa vật liệu tại một thời điểm). Thể tích buồng yêu cầu:
+-
+-\begin{equation}
+-V_{\text{yêu cầu}} = \frac{m_{\text{lưu}}}{\rho_{\text{RDF}} \times \phi}
+-= \frac{2.500}{400 \times 0{,}25}
+-\approx 25\;\text{m}^3
+-\label{eq:the-tich-buong-yeu-cau}
+-\end{equation}
+-
+-Chọn tỷ lệ chiều dài trên đường kính $L/D_i = 4$ (giá trị phổ biến cho lò quay nhiệt phân quy mô vừa). Kết hợp với $V = \pi D_i^2 L / 4$:
+-
+-\begin{equation}
+-D_i = \sqrt[3]{\frac{4V}{\pi (L/D_i)}}
+-= \sqrt[3]{\frac{4 \times 25}{\pi \times 4}}
+-\approx \sqrt[3]{8} \approx 2{,}0\;\text{m}
+-\end{equation}
+-
+-\begin{equation}
+-L = 4 \times D_i \approx 8{,}0\;\text{m}
+-\end{equation}
+-
+-Thể tích buồng thực tế: $V = \pi \times 2{,}0^2 \times 8{,}0 / 4 \approx 25{,}1$ m$^3$. Kiểm tra: $V \approx V_{\text{yêu cầu}}$, đạt yêu cầu.
+-
+-Thời gian lưu thực tế:
+-
+-\begin{equation}
+-t_{\text{lưu,thực}} = \frac{m_{\text{lưu}}}{\dot{m}_{\text{RDF}}}
+-= \frac{\rho_{\text{RDF}} \times \phi \times V}{\dot{m}_{\text{RDF}}}
+-= \frac{400 \times 0{,}25 \times 25{,}1}{417}
+-\approx 6{,}0\;\text{h}
+-\end{equation}
+-
+-Giá trị này nằm trong dải thiết kế 4--8 giờ, xác nhận kích thước $D_i = 2{,}0$ m, $L = 8{,}0$ m là phù hợp. Tỷ lệ $L/D_i = 4$ đảm bảo đủ thời gian tiếp xúc nhiệt trong khi vẫn giữ chiều dài hợp lý để bố trí mặt bằng.
+-
+-\subsubsection{Tính công suất nhiệt của buồng đốt}
+-
+-Công suất nhiệt cần cấp cho buồng đốt gồm ba thành phần chính: nhiệt để nâng nhiệt RDF từ nhiệt độ ban đầu lên nhiệt độ phản ứng, nhiệt cho phản ứng nhiệt phân, và tổn thất nhiệt qua thành lò.
+-
+-\textbf{Nhiệt lượng nâng nhiệt RDF.} RDF có nhiệt dung riêng ước tính $c_p \approx 1{,}5$ kJ/(kg$\cdot$K) (giá trị trung bình cho hỗn hợp nhựa, giấy, gỗ có độ ẩm dưới 15\%):
+-
+-\begin{equation}
+-Q_1 = \dot{m}_{\text{RDF}} \times c_p \times (T_{\text{lò}} - T_{\text{mt}})
+-= 417 \times 1{,}5 \times (450 - 30) \approx 263\;\text{kW}
+-\label{eq:Q1-nang-nhiet}
+-\end{equation}
+-
+-\textbf{Nhiệt cho phản ứng nhiệt phân.} Phản ứng nhiệt phân RDF là quá trình thu nhiệt ròng (endothermic), ước tính enthalpy phản ứng $\Delta H_{\text{NP}} \approx 500$ kJ/kg RDF đã phân hủy. Với tỷ lệ RDF phản ứng trong buồng mỗi giờ $\dot{m}_{\text{phân hủy}} \approx \dot{m}_{\text{RDF}} = 417$ kg/h:
+-
+-\begin{equation}
+-Q_2 = \dot{m}_{\text{RDF}} \times |\Delta H_{\text{NP}}|
+-\approx 417 \times 500 \approx 208\;\text{kW}
+-\label{eq:Q2-phan-ung}
+-\end{equation}
+-
+-\textbf{Tổn thất nhiệt qua thành lò.} Hệ số truyền nhiệt tổng qua thành lò gồm lớp gạch chịu lửa (dày $s_1 = 230$ mm, $\lambda_1 \approx 1{,}3$ W/(m$\cdot$K)), lớp bông cách nhiệt ($s_2 = 50$ mm, $\lambda_2 \approx 0{,}05$ W/(m$\cdot$K)) và vỏ thép ($s_3 = 10$ mm, $\lambda_3 \approx 50$ W/(m$\cdot$K)):
+-
+-\begin{equation}
+-\frac{1}{U} = \frac{s_1}{\lambda_1} + \frac{s_2}{\lambda_2} + \frac{s_3}{\lambda_3}
+-= \frac{0{,}23}{1{,}3} + \frac{0{,}05}{0{,}05} + \frac{0{,}01}{50}
+-\approx 0{,}18 + 1{,}00 + 0{,}0002 \approx 1{,}18\;\text{m}^2\!\cdot\!\text{K/W}
+-\end{equation}
+-
+-\begin{equation}
+-U \approx \frac{1}{1{,}18} \approx 0{,}85\;\text{W/(m}^2\!\cdot\!\text{K)}
+-\end{equation}
+-
+-Diện tích bề mặt truyền nhiệt của thân lò (không kể hai đầu):
+-
+-\begin{equation}
+-A = \pi \times D_i \times L = \pi \times 2{,}0 \times 8{,}0 \approx 50{,}3\;\text{m}^2
+-\end{equation}
+-
+-Chênh lệch nhiệt độ trung bình lôgarit giữa buồng phản ứng (450$^\circ$C) và môi trường bên ngoài (30$^\circ$C): $\Delta T_{\text{lg}} \approx 420$ K. Tổn thất qua thành:
+-
+-\begin{equation}
+-Q_3 = U \times A \times \Delta T_{\text{lg}}
+-\approx 0{,}85 \times 50{,}3 \times 420 \approx 18\;\text{kW}
+-\end{equation}
+-
+-Công suất nhiệt tổng của buồng đốt thiết kế:
+-
+-\begin{equation}
+-Q_{\text{tổng}} = Q_1 + Q_2 + Q_3 \approx 263 + 208 + 18 \approx 489\;\text{kW}
+-\end{equation}
+-
+-Nhiệt lượng do khí không ngưng cung cấp (với nhiệt trị 15--20 MJ/kg, lưu lượng 30\% của 417 kg/h RDF = 125 kg/h):
+-
+-\begin{equation}
+-Q_{\text{khí}} = 125\;\text{kg/h} \times 17{,}5\;\text{MJ/kg}
+-\times \frac{1.000\;\text{kJ}}{1\;\text{MJ}} \times \eta_{\text{buồng đốt}}
+-\times \frac{1\;\text{h}}{3.600\;\text{s}}
+-\approx 125 \times 17.500 \times 0{,}85 / 3.600 \approx 516\;\text{kW}
+-\label{eq:Qkhi}
+-\end{equation}
+-
+-Kết quả cho thấy công suất nhiệt từ khí không ngưng hồi lưu lớn hơn nhiều so với nhu cầu thiết kế buồng đốt, xác nhận khả năng tự cấp nhiệt của hệ thống ở chế độ vận hành ổn định (kết quả này nhất quán với phân tích ở Mục~\ref{sec:can-bang-nang-luong}).
+-
+-\subsubsection{Kiểm tra truyền nhiệt và tổng kết kích thước}
+-
+-Tổng nhiệt trở từ khí đốt bên ngoài (khoảng 700$^\circ$C trong buồng đốt) qua thành lò đến vật liệu trong lò (450$^\circ$C):
+-
+-\begin{equation}
+-Q_{\text{kiểm tra}} = U \times A \times \Delta T_{\text{lg,buồng đốt}}
+-\approx 0{,}85 \times 50{,}3 \times 250 \approx 10.690\;\text{kW}
+-\end{equation}
+-
+-Giá trị này lớn hơn công suất thiết kế $Q_{\text{tổng}} \approx 489$ kW, cho thấy truyền nhiệt qua thành lò đủ khả năng cung cấp nhiệt cho quá trình nhiệt phân. Hệ số dự phòng khoảng 20 lần cho phép vận hành ổn định ngay cả khi lớp cách nhiệt bị suy giảm theo thời gian.
+-
+-Bảng~\ref{tab:ket-qua-thiet-ke-lo} tổng hợp kết quả tính toán thiết kế buồng nhiệt phân quay cho một mô-đun.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Kết quả tính toán kích thước buồng nhiệt phân quay cho một mô-đun 10 tấn RDF/ngày}
+-\label{tab:ket-qua-thiet-ke-lo}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{lcc}
++\end{tabular}%
++}\begin{tabular}{lcc}
+ \toprule
+ \textbf{Thông số} & \textbf{Giá trị thiết kế} & \textbf{Ghi chú} \\
+ \midrule
+@@ -1070,7 +419,8 @@ Diện tích bề mặt truyền nhiệt $A$ & $\approx$50,3 m$^2$ & Không kể
+ Số mô-đun vận hành & 4--5 mô-đun & 46,08 tấn/ngày \\
+ Tổng công suất nhiệt phân & $\approx$2,4 MW & 5 mô-đun $\times$ 489 kW \\
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ Kết quả tính toán cho thấy buồng nhiệt phân quay với $D_i = 2{,}0$ m và $L = 8{,}0$ m đáp ứng đủ về thể tích, thời gian lưu và công suất nhiệt. Cần lưu ý rằng đây là tính toán sơ bộ ở cấp thiết kế cơ sở; thiết kế chi tiết cần được nhà cung cấp thiết bị xác nhận dựa trên đặc tính RDF thực tế, mô hình CFD và thử nghiệm nhiệt.
+@@ -1130,32 +480,8 @@ Nguyên tắc bố trí mặt bằng nhà máy tuân theo các yêu cầu sau:
+ \label{tab:can-doi-dien}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.28\textwidth}p{0.18\textwidth}p{0.10\textwidth}p{0.16\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Cụm thiết bị} & \textbf{Công suất lắp đặt, kW} & \textbf{Hệ số tải} & \textbf{Tiêu thụ thực, kW} \\
+-\midrule
+-1 & Khối tiền xử lý (tổng hợp) & 616,1 & 0,75 & 465,1 \\
+-\midrule
+-2 & Hệ thống nhiệt phân (4 mô-đun: bơm, quạt, vít tải) & 80,0 & 0,70 & 56,0 \\
+-\midrule
+-3 & Hệ thống chưng cất và tinh chế & 40,0 & 0,70 & 28,0 \\
+-\midrule
+-4 & Hệ thống xử lý khí thải & 30,0 & 0,80 & 24,0 \\
+-\midrule
+-5 & Hệ thống xử lý nước thải & 45,0 & 0,75 & 33,8 \\
+-\midrule
+-6 & Bơm, van, chiếu sáng, điều khiển & 50,0 & 0,70 & 35,0 \\
+-\midrule
+-& \textbf{Tổng tải tự dùng} & \textbf{861,1} & -- & \textbf{641,9} \\
+-\midrule
+-\multicolumn{5}{|l|}{\textbf{Công suất phát điện thực tế} $W_e = 2.628$\,kW} \\
+-\midrule
+-\multicolumn{5}{|l|}{\textbf{Phụ tải tự dùng / công suất phát} $= 641{,}9 / 2.628 \approx 24{,}4\%$ (giả thiết thiết kế là 30\%, có dư địa an toàn)} \\
+-\midrule
+-\multicolumn{5}{|l|}{\textbf{Điện ròng có thể xuất ra lưới hoặc tiết kiệm} $\approx 2.628 - 641{,}9 \approx 1.986$\,kW} \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ Kết quả cân đối điện cho thấy nhà máy tự cấp đủ điện cho toàn bộ vận hành và còn thừa khoảng 1.986\,kW có thể xuất ra lưới hoặc phân phối cho mục đích khác. Phụ tải tự dùng thực tế (24,4\%) thấp hơn giả thiết thiết kế (30\%), cho thấy hệ số an toàn trong tính toán là hợp lý.
+@@ -1163,47 +489,9 @@ Kết quả cân đối điện cho thấy nhà máy tự cấp đủ điện ch
+ \begin{figure}[htbp]
+ \centering
+ 
+-\resizebox{\textwidth}{!}{%
+-\begin{tikzpicture}[
+-    scale=0.85,
+-    node distance=0.6cm and 0.3cm,
+-    zone/.style={draw, rounded corners=3pt, minimum width=2.8cm, minimum height=2.0cm, font=\small, align=center, fill},
+-    equipment/.style={draw, rounded corners=1pt, minimum width=1.8cm, minimum height=0.6cm, font=\tiny, align=center},
+-    arrow/.style={->, >=Stealth, very thin},
+-    label/.style={font=\footnotesize\bfseries}
+-]
+-% Define zones
+-\node[zone, fill=blue!8, label={center:\textbf{Khu tiếp nhận}}] (khu_tiepnhan) at (-3.5,2.5) {};
+-\node[equipment, fill=blue!15] at (khu_tiepnhan) {Cầu trục gàu ngoạm \\Băng tải cào};
+-\node[zone, fill=green!8, label={center:\textbf{Khu tiền xử lý}}] (khu_tien_xuly) at (0,2.5) {};
+-\node[equipment, fill=green!15] at ([yshift=0.4cm]khu_tien_xuly) {Máy xé bao, cắt xé};
+-\node[equipment, fill=green!15] at ([yshift=-0.4cm]khu_tien_xuly) {Sàng, tách từ, ép nước};
+-\node[zone, fill=yellow!10, label={center:\textbf{Khu RDF}}] (khu_rdf) at (3.5,2.5) {};
+-\node[equipment, fill=yellow!20] at (khu_rdf) {Lồng sấy, máy ép viên, bunker};
+-\node[zone, fill=orange!10, label={center:\textbf{Khu nhiệt phân}}] (khu_nhietphan) at (-3.5,-1.5) {};
+-\node[equipment, fill=orange!20] at ([yshift=0.3cm]khu_nhietphan) {Lò quay nhiệt phân (×5)};
+-\node[equipment, fill=orange!15] at ([yshift=-0.4cm]khu_nhietphan) {Buồng đốt, ngưng tụ};
+-\node[zone, fill=purple!8, label={center:\textbf{Khu chưng cất}}] (khu_chungcat) at (0,-1.5) {};
+-\node[equipment, fill=purple!15] at ([yshift=0.3cm]khu_chungcat) {Lò chưng, tháp cột};
+-\node[equipment, fill=purple!20] at ([yshift=-0.4cm]khu_chungcat) {Bể axit, kiềm, đất sét};
+-\node[zone, fill=red!8, label={center:\textbf{Khu dầu}}] (khu_dau) at (3.5,-1.5) {};
+-\node[equipment, fill=red!15] at (khu_dau) {Bồn dầu thô, dầu TP, bơm};
+-\node[zone, fill=yellow!8, label={center:\textbf{Khu phát điện}}] (khu_phatdien) at (3.5,-4.5) {};
+-\node[equipment, fill=yellow!20] at (khu_phatdien) {Máy phát diesel (×6) \\Trạm biến áp};
+-\node[zone, fill=gray!8, label={center:\textbf{Khu XLMT}}] (khu_xlmt) at (0,-4.5) {};
+-\node[equipment, fill=gray!15] at (khu_xlmt) {Cyclone, tháp hấp thụ, bể XLNT};
+-\node[zone, fill=blue!5, label={center:\textbf{Khu văn phòng}}] (khu_vanphong) at (-3.5,-4.5) {};
+-\node[equipment, fill=blue!10] at (khu_vanphong) {Phòng điều khiển SCADA \\Văn phòng, xưởng};
+-
+-% Material flow arrows (dashed)
+-\draw[dashed, ->] (khu_tiepnhan) -- node[above] {} (khu_tien_xuly);
+-\draw[dashed, ->] (khu_tien_xuly) -- node[above] {} (khu_rdf);
+-\draw[dashed, ->] (khu_rdf) -- node[right] {} (khu_nhietphan);
+-\draw[dashed, ->] (khu_nhietphan) -- node[above] {} (khu_chungcat);
+-\draw[dashed, ->] (khu_chungcat) -- node[right] {} (khu_dau);
+-\draw[dashed, ->] (khu_dau) -- node[right] {} (khu_phatdien);
+-\draw[dashed, ->] (khu_nhietphan) -- node[right] {} (khu_xlmt);
+-\end{tikzpicture}
++\scalebox{0.9}{%
++%
++}
+ }
+ \caption{Sơ đồ bố trí mặt bằng công nghệ và các cụm thiết bị chính}
+ \label{fig:bo-tri-mat-bang}
+@@ -1226,6 +514,7 @@ Việc sử dụng thiết bị theo mô-đun, đặc biệt đối với lò nh
+ \label{tab:kiem-tra-can-bang}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.38\textwidth}p{0.20\textwidth}p{0.10\textwidth}p{0.20\textwidth}}
+ \toprule
+ \textbf{Dòng vật chất ra} & \textbf{Khối lượng, t/ngày} & \textbf{Tỷ lệ, \%} & \textbf{Loại} \\
+@@ -1253,20 +542,8 @@ Than carbon & 11,520 & 9,60 & Chất thải rắn/tái chế \\
+ \textbf{Tổng cộng} & \textbf{120,000} & \textbf{100,00} & \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Tổng các dòng ra bằng đúng 120,000\,tấn/ngày, khẳng định cân bằng vật chất tổng thể được bảo toàn. Các dòng hồi lưu (dầu nặng, khí không ngưng, khí chưng cất) không rời khỏi ranh giới hệ thống mà được tái sử dụng bên trong nhà máy làm nguồn nhiệt.
+-
+-Bảng~\ref{tab:can-bang-nang-luong-so-bo} trình bày phân bổ năng lượng từ RDF đầu vào đến các dòng sử dụng cuối cùng:
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Phân bổ năng lượng sơ bộ trong nhà máy}
+-\label{tab:can-bang-nang-luong-so-bo}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.38\textwidth}p{0.22\textwidth}p{0.10\textwidth}p{0.18\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.38\textwidth}p{0.22\textwidth}p{0.10\textwidth}p{0.18\textwidth}}
+ \toprule
+ \textbf{Dòng năng lượng} & \textbf{Công suất, kW} & \textbf{Tỷ lệ, \%} & \textbf{Ghi chú} \\
+ \midrule
+@@ -1287,7 +564,8 @@ Tổn thất nhiệt lò, ngưng tụ, đường ống & $\approx 1.418$ & $\app
+ Điện ròng xuất ra & $\approx 1.986$ & 19,35 & Giảm mua điện lưới hoặc xuất lưới \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ Phân tích độ nhạy tại Bảng~\ref{tab:do-nhay-nang-luong} cho thấy phương án vẫn tự cấp điện ngay cả khi LHV giảm 10\% và $\eta = 27\%$ ($W_{e,net} = 1{,}262$\,MW). So sánh với hồ sơ dự án:
+@@ -1298,26 +576,8 @@ Phân tích độ nhạy tại Bảng~\ref{tab:do-nhay-nang-luong} cho thấy ph
+ \label{tab:so-sanh-ho-so}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.35\textwidth}p{0.25\textwidth}p{0.25\textwidth}p{0.05\textwidth}}
+-\toprule
+-\textbf{Chỉ tiêu} & \textbf{Tính toán trong đồ án} & \textbf{Hồ sơ dự án \cite{BaocaoHoiAn2024}} & \textbf{Sai lệch} \\
+-\midrule
+-Hệ số thu hồi RDF ($K_{\text{RDF}}$) & 0,4224 & 0,4224 & 0\% \\
+-\midrule
+-RDF cấp lò (t/ngày) & 46,08 & 46,08 & 0\% \\
+-\midrule
+-Dầu thô nhiệt phân (t/ngày) & 20,74 & 20,74 & 0\% \\
+-\midrule
+-Sản lượng dầu thành phẩm (L/ngày) & $\approx 19.400$ & $\approx 19.500$ & $<1\%$ \\
+-\midrule
+-Công suất điện thực tế $W_e$ (kW) & 2.628 & 2.628 & 0\% \\
+-\midrule
+-Công suất điện tinh $W_{e,net}$ (MW) & 1,84 & 1,82 & 1,1\% \\
+-\midrule
+-Sản lượng điện ròng (MWh/năm) & 15.943 & $\sim 15.943$ & $<0{,}1\%$ \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ Sai lệch giữa kết quả tính toán của đồ án và hồ sơ dự án là rất nhỏ (dưới 1\% đối với hầu hết các chỉ tiêu), xác nhận tính nhất quán của phương pháp tính toán và sự đúng đắn của các giả thiết được áp dụng.
+diff --git a/Chuong/4_Chuong_4.tex b/Chuong/4_Chuong_4.tex
+index 47d57b7..e17150e 100644
+--- a/Chuong/4_Chuong_4.tex
++++ b/Chuong/4_Chuong_4.tex
+@@ -30,6 +30,7 @@ Các tổ vận hành được phân công theo dây chuyền công nghệ, bao
+ \label{tab:nhan-luc-van-hanh}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.04\textwidth}p{0.28\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.26\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Bộ phận / Tổ vận hành} & \textbf{Số ca/ngày} & \textbf{Người/ca} & \textbf{Tổng (người)} & \textbf{Yêu cầu chuyên môn} \\
+@@ -57,30 +58,8 @@ Các tổ vận hành được phân công theo dây chuyền công nghệ, bao
+ \multicolumn{4}{|l|}{\textbf{Tổng cộng}} & \textbf{38} & \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-% ----- 4.1.2 -----
+-\subsection{Quy trình vận hành tiêu chuẩn (SOP) và an toàn công nghiệp}
+-
+-Mỗi bộ phận được xây dựng ít nhất một bộ SOP riêng, bao gồm: (i)~Mô tả mục tiêu và phạm vi áp dụng; (ii)~Danh sách thiết bị và điểm kiểm soát liên quan; (iii)~Trình tự các bước thao tác, điều kiện tiên quyết và điều kiện dừng; (iv)~Các ngưỡng thông số bình thường, cảnh báo và ngưỡng kích hoạt dừng khẩn cấp; (v)~Biểu mẫu ghi chép thông số theo ca (form nhật ký ca); (vi)~Hướng dẫn xử lý các tình huống bất thường thường gặp; (vii)~Danh sách nhân viên có thẩm quyền phê duyệt thay đổi thông số vận hành. Tất cả SOP phải được Giám đốc nhà máy phê duyệt, phát hành bản in tại nơi làm việc và cập nhật định kỳ ít nhất mỗi năm một lần hoặc sau mỗi sự cố lớn.
+-
+-Biểu mẫu ghi chép ca là tài liệu pháp lý bắt buộc của nhà máy. Nhật ký ca ghi đầy đủ: thời gian bắt đầu và kết thúc ca, danh sách thiết bị vận hành, các thông số chính đo theo giờ, lượng RDF nạp, lượng dầu thu hồi, lượng điện phát ra, sự cố hoặc dừng thiết bị và biện pháp xử lý, lượng hóa chất sử dụng, lượng nước thải xả ra và tình trạng công trình môi trường. Bàn giao ca phải được thực hiện trực tiếp giữa Trưởng ca cũ và Trưởng ca mới, ký biên bản bàn giao và đánh dấu rõ các vấn đề còn tồn đọng cần theo dõi tiếp.
+-
+-% ----- 4.1.3 -----
+-\subsection{Hệ thống điều khiển và giám sát tập trung (SCADA/PLC)}
+-
+-Nhà máy được trang bị hệ thống điều khiển PLC (Programmable Logic Controller) phân tán kết nối về phòng điều khiển trung tâm thông qua mạng truyền thông công nghiệp (Profibus hoặc Modbus TCP/IP). Hệ thống SCADA (Supervisory Control and Data Acquisition) đảm nhận chức năng hiển thị trạng thái toàn bộ dây chuyền trên màn hình, lưu trữ dữ liệu theo thời gian thực, phát cảnh báo và hỗ trợ phân tích xu hướng. Màn hình tại phòng điều khiển hiển thị sơ đồ P\&ID động, thể hiện giá trị tức thời của tất cả các điểm đo và trạng thái On/Off của từng thiết bị.
+-
+-Các điểm đo lường tự động quan trọng bao gồm: nhiệt độ buồng phản ứng lò nhiệt phân tại 3 vị trí dọc thân lò; nhiệt độ khí đầu ra lò và đầu vào hệ thống ngưng tụ; nhiệt độ và lưu lượng nước làm mát; nhiệt độ dầu trong bồn chứa; áp suất đường khí không ngưng; lưu lượng RDF cấp liệu; mức dầu trong bồn chứa; mức nước trong bể xử lý; nồng độ khí cháy LEL tại các khu vực nguy hiểm; nhiệt độ khói thải sau buồng đốt; nồng độ \ce{CO} trong buồng đốt. Tất cả tín hiệu cảnh báo và tín hiệu ESD được ưu tiên truyền về PLC với thời gian đáp ứng không quá 1 giây.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Các thông số vận hành quan trọng với ngưỡng cảnh báo và ngưỡng dừng}
+-\label{tab:thong-so-van-hanh}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.30\textwidth}p{0.10\textwidth}p{0.14\textwidth}p{0.14\textwidth}p{0.16\textwidth}p{0.10\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.04\textwidth}p{0.30\textwidth}p{0.10\textwidth}p{0.14\textwidth}p{0.14\textwidth}p{0.16\textwidth}p{0.10\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Thông số} & \textbf{Đơn vị} & \textbf{Vùng bình thường} & \textbf{Cảnh báo} & \textbf{Ngưỡng dừng (ESD)} & \textbf{Hành động} \\
+ \midrule
+@@ -101,7 +80,8 @@ Các điểm đo lường tự động quan trọng bao gồm: nhiệt độ bu
+ 8 & Nhiệt độ ổ bi lò quay & \textdegree C & $<$70 & $\geq$70 & $\geq$85 & Dừng lò \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ % ----- 4.1.4 -----
+@@ -131,32 +111,8 @@ Bảng ma trận rủi ro dưới đây đánh giá sơ bộ mức độ rủi r
+ \label{tab:ma-tran-rui-ro}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.28\textwidth}p{0.06\textwidth}p{0.06\textwidth}p{0.07\textwidth}p{0.08\textwidth}p{0.35\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Mối nguy / Sự cố} & \textbf{K (1--5)} & \textbf{M (1--5)} & \textbf{Điểm RR} & \textbf{Mức RR} & \textbf{Biện pháp kiểm soát chính} \\
+-\midrule
+-1 & Kẹt, hỏng máy cắt do tạp chất cứng & 4 & 2 & 8 & Trung bình & Sàng từ, phân loại thủ công, bảo trì 500h \\
+-\midrule
+-2 & Quá nhiệt lò nhiệt phân & 2 & 4 & 8 & Trung bình & Cảm biến nhiệt, ESD tự động, SOP điều chỉnh \\
+-\midrule
+-3 & Rò rỉ khí không ngưng, nguy cơ cháy nổ & 2 & 5 & 10 & Trung bình & Cảm biến LEL, kiểm tra kín định kỳ, ESD \\
+-\midrule
+-4 & Tràn dầu tại bồn chứa & 2 & 4 & 8 & Trung bình & Đê bao 110\%, cảm biến mức, SOP nạp dầu \\
+-\midrule
+-5 & Cháy khu vực bồn dầu & 1 & 5 & 5 & Thấp & Foam, khoảng cách an toàn, tiếp địa TĐ \\
+-\midrule
+-6 & Khí thải không đạt QCVN do hỏng thiết bị & 3 & 3 & 9 & Trung bình & Dự phòng quạt hút, kiểm tra hóa chất hàng ca \\
+-\midrule
+-7 & Nước thải không đạt QCVN do quá tải sinh học & 3 & 3 & 9 & Trung bình & Bể điều hòa đủ lớn, theo dõi tải trọng hữu cơ \\
+-\midrule
+-8 & Mất điện lưới đột ngột & 3 & 4 & 12 & Cao & UPS điều khiển, máy phát dự phòng, SOP mất điện \\
+-\midrule
+-9 & Rò rỉ hóa chất xử lý (NaOH, HCl) & 2 & 3 & 6 & Trung bình & Kho lưu chứa riêng, bồn thu gom sự cố \\
+-\midrule
+-10 & Phát tán mùi hôi ra khu vực xung quanh & 4 & 2 & 8 & Trung bình & Biofilter, phun EM, kín hóa khu tiếp nhận \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ Phân tích FMEA (Failure Mode and Effects Analysis) sơ bộ cho các thiết bị quan trọng nhất cho thấy: lò quay nhiệt phân có chế độ hỏng hóc nguy hiểm nhất là vỡ gạch chịu lửa bên trong, gây tổn thất nhiệt đột ngột và tiếp xúc vỏ ngoài với nhiệt độ cao; cần kiểm tra nội bộ mỗi 3 tháng và có cảm biến nhiệt đo nhiệt độ vỏ ngoài. Hệ thống ngưng tụ có chế độ hỏng nguy hiểm là tắc nghẽn ống do paraffin và nhựa nặng, dẫn đến tăng áp và rò rỉ hơi dầu; cần vệ sinh định kỳ, quan trắc chênh lệch áp suất đầu vào -- đầu ra và dự phòng đường bypass. Bơm dầu có nguy cơ rò rỉ phớt trục, cần kiểm tra phớt hàng tuần và dự phòng bơm song song.
+@@ -175,6 +131,7 @@ Phân tích rủi ro cháy nổ: khí không ngưng từ quá trình nhiệt ph
+ \label{tab:phan-loai-vung-nguy-hiem}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.04\textwidth}p{0.30\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.36\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Khu vực} & \textbf{Vùng ATEX} & \textbf{Nhiệt độ bốc cháy} & \textbf{Yêu cầu thiết bị điện} \\
+@@ -190,59 +147,8 @@ Phân tích rủi ro cháy nổ: khí không ngưng từ quá trình nhiệt ph
+ 5 & Khu vực buồng đốt (khi đang đốt) & Không phân loại & -- & Thiết bị chịu nhiệt thông thường \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Yêu cầu PCCC khu lưu chứa dầu nhiệt phân: bồn chứa phải đặt tách biệt, xung quanh có đê bao bê tông không thấm với dung tích chứa tối thiểu bằng 110\% thể tích bồn lớn nhất trong cụm \cite{BaocaoHoiAn2024}. Khoảng cách từ bồn dầu đến tường nhà xưởng tối thiểu 5\,m, đến đường giao thông nội bộ tối thiểu 3\,m. Trang bị bình chữa cháy bột khô ABC và \ce{CO2} bố trí đều trong khu vực với khoảng cách tối đa 15\,m/bình. Hệ thống phun foam cố định được lắp trên miệng bồn, kích hoạt tự động khi nhiệt độ vỏ bồn vượt 80\,\textdegree C hoặc kích hoạt thủ công. Hệ thống phun nước làm mát vỏ bồn duy trì nhiệt độ không quá 60\,\textdegree C khi xảy ra đám cháy lân cận. Toàn bộ bồn và đường ống dẫn dầu phải được tiếp địa chống tĩnh điện với điện trở đất $\leq 10\,\Omega$.
+-
+-
+-\subsection{Rủi ro môi trường và điều kiện bất thường}
+-
+-Rủi ro môi trường có thể phát sinh khi hệ thống xử lý khí thải, xử lý nước thải hoặc thu gom chất thải rắn vận hành không ổn định. Nếu tháp hấp thụ thiếu hóa chất, hệ thống dập bụi không đủ nước hoặc quạt hút dừng đột ngột, khí thải có thể không đạt quy chuẩn. Nếu bể điều hòa, bơm nước thải hoặc hệ sinh học quá tải, nước thải đầu ra có thể tăng COD, BOD, amoni hoặc chất rắn lơ lửng. Vì vậy, các công trình môi trường phải được xem là một phần của dây chuyền chính, không phải hạng mục phụ trợ có thể vận hành tùy thời điểm.
+-
+-Nhà máy cũng phải tính đến các tình huống mất điện lưới, mưa bão, ngập cục bộ và dịch bệnh. Khi mất điện, nguồn điện dự phòng phải đủ để duy trì các phụ tải an toàn tối thiểu như quạt thông gió, bơm nước làm mát, bơm PCCC, hệ thống điều khiển và chiếu sáng khẩn cấp. Trước mùa mưa bão, cần kiểm tra thoát nước mưa, khu lưu chứa hóa chất, bồn dầu, mái che khu tiếp nhận rác và hồ sự cố để tránh nước mưa cuốn trôi rác, dầu hoặc bùn thải ra môi trường.
+-
+-Kế hoạch ứng phó sự cố môi trường (Environmental Response Plan -- ERP) được xây dựng bao gồm các bước: (1)~\textbf{Phát hiện}: qua quan trắc tự động, quan sát của người vận hành hoặc phản ánh từ cộng đồng; (2)~\textbf{Thông báo}: Trưởng ca thông báo nội bộ theo chuỗi liên lạc khẩn cấp trong vòng 15 phút; thông báo Sở Tài nguyên và Môi trường trong vòng 2 giờ nếu sự cố vượt phạm vi nhà máy; (3)~\textbf{Kiểm soát nguồn}: dừng hoạt động gây phát sinh, đóng van, hạn chế lan rộng bằng bơm hút hoặc bao cát; (4)~\textbf{Hạn chế lan rộng}: triển khai phao chặn dầu nếu tràn ra mương nước, thu gom đất ô nhiễm, ngăn chặn dòng chảy tràn ra hệ thống thoát nước công cộng; (5)~\textbf{Phục hồi và báo cáo}: vệ sinh, xử lý chất thải phát sinh từ ứng phó, lập biên bản sự cố và báo cáo cơ quan quản lý; (6)~\textbf{Đánh giá}: xác định nguyên nhân gốc rễ, cập nhật SOP và kế hoạch phòng ngừa.
+-
+-% ============================================================
+-\section{Các biện pháp kiểm soát ô nhiễm môi trường}
+-% ============================================================
+-
+-\subsection{Kiểm soát khí thải}
+-
+-Khí thải phát sinh từ buồng đốt gia nhiệt lò nhiệt phân, lò chưng cất, hệ thống sấy và động cơ diesel phát điện. Thành phần ô nhiễm có thể gồm bụi, \ce{CO}, \ce{NOx}, \ce{SO2}, \ce{HCl}, \ce{H2S}, hợp chất hữu cơ bay hơi, kim loại nặng và vi lượng dioxin/furan nếu điều kiện cháy không phù hợp. Biện pháp kiểm soát đầu tiên là vận hành buồng đốt ở điều kiện cháy hoàn toàn, nhiệt độ đủ cao và thời gian lưu thích hợp để phân hủy các chất hữu cơ dễ bay hơi. Để kiểm soát dioxin/furan, nhiệt độ buồng đốt phải duy trì $\geq$850\,\textdegree C với thời gian lưu khí $\geq$2 giây, đồng thời hệ thống làm nguội nhanh phải đảm bảo khí thải vượt qua vùng nhạy cảm tái hình thành dioxin (300--500\,\textdegree C) trong thời gian nhỏ hơn 1 giây \cite{Tait2020}.
+-
+-Hệ thống xử lý khí thải được tổ chức theo nhiều bậc. Cyclone loại bỏ hạt bụi thô và tro cuốn theo dòng khí, hiệu suất tách $\geq$90\% với hạt $>$10\,\textmu m, áp tổn thất qua cyclone $\approx$500--800\,Pa. Tháp làm mát và dập bụi kiểu phun sương (spray tower) hạ nhiệt độ khí từ khoảng 350--400\,\textdegree C xuống dưới 100\,\textdegree C, đồng thời rửa một phần bụi mịn và khí hòa tan, hiệu quả tách bụi bổ sung $\geq$60\% với hạt $>$2\,\textmu m. Tháp hấp thụ kiềm kiểu đệm (packed tower) sử dụng dung dịch NaOH 5--10\% để xử lý các khí axit như \ce{HCl} và \ce{SO2} theo phản ứng:
+-
+-\begin{align}
+-\ce{HCl + NaOH &-> NaCl + H2O} \label{eq:hcl-naoh} \\
+-\ce{SO2 + 2NaOH &-> Na2SO3 + H2O} \label{eq:so2-naoh}
+-\end{align}
+-Hiệu suất hấp thụ đạt $\geq$95\% với chiều cao đệm phù hợp và tỷ lệ L/G (lỏng/khí) $\geq$1,5 L/Nm$^3$. Tầng hấp phụ than hoạt tính hoặc coke nạp lên bề mặt than giữ lại hợp chất hữu cơ bay hơi (VOC), kim loại vi lượng Hg và phần dioxin/furan còn lại.
+-
+-Ước tính lưu lượng khí thải: nhà máy xử lý 120\,t/ngày CTRSH, sau phân loại và ép nước, lượng RDF tiêu thụ trong lò nhiệt phân và lò đốt ước tính 46,08\,t/ngày \cite{BaocaoHoiAn2024}. Với hệ số phát thải khói lò đốt khoảng 8--10\,Nm$^3$/kg nhiên liệu, lưu lượng khí thải từ buồng đốt ước tính:
+-\begin{equation}
+-Q_{khi} = 46{,}08 \times 10^3 \times 9 \div 24 \approx 17{.}280 \;\text{Nm}^3/\text{h}
+-\label{eq:luu-luong-khi-thai}
+-\end{equation}
+-Sau khi thêm khí thải từ lò sấy và động cơ diesel, tổng lưu lượng cần thiết kế hệ thống xử lý khoảng 20.000--25.000\,Nm$^3$/h.
+-
+-\begin{figure}[H]
+-\centering
+-\fbox{\parbox{0.88\textwidth}{\centering\vspace{2.7cm}
+-\textit{sơ đồ xử lý khí thải: thu gom kín -- cyclone -- làm mát/dập bụi -- hấp thụ -- hấp phụ -- ống khói.}
+-\vspace{2.7cm}}}
+-\caption{Sơ đồ nguyên lý hệ thống xử lý khí thải của nhà máy}
+-\label{fig:xu-ly-khi-thai}
+-\end{figure}
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Một số giới hạn khí thải sử dụng làm cơ sở thiết kế theo QCVN 19:2024/BTNMT}
+-\label{tab:gioi-han-khi-thai}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.08\textwidth}p{0.46\textwidth}p{0.18\textwidth}p{0.18\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.08\textwidth}p{0.46\textwidth}p{0.18\textwidth}p{0.18\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Thông số} & \textbf{Đơn vị} & \textbf{Giới hạn} \\
+ \midrule
+@@ -269,7 +175,8 @@ Sau khi thêm khí thải từ lò sấy và động cơ diesel, tổng lưu lư
+ 11 & Thuỷ ngân (Hg) & mg/Nm\textsuperscript{3} & 0,05 \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ \subsection{Kiểm soát nước thải}
+@@ -295,36 +202,8 @@ Mô tả chi tiết các công trình trong dây chuyền xử lý nước thả
+ \label{tab:gioi-han-nuoc-thai}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.30\textwidth}p{0.14\textwidth}p{0.22\textwidth}p{0.22\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Chỉ tiêu} & \textbf{Đơn vị} & \textbf{Đầu vào ước tính} & \textbf{Giới hạn đầu ra} \\
+-\midrule
+-1 & pH & -- & 5,5 -- 7,5 & 6 -- 9 \\
+-\midrule
+-2 & BOD$_5$ (20\,\textdegree C) & mg/L & 5.000 -- 9.000 & $\leq 40$ \\
+-\midrule
+-3 & COD & mg/L & 8.000 -- 15.000 & $\leq 65$ \\
+-\midrule
+-4 & Chất rắn lơ lửng (TSS) & mg/L & 3.000 -- 8.000 & $\leq 40$ \\
+-\midrule
+-5 & Amoni (NH$_4^+$-N) & mg/L & 200 -- 400 & $\leq 10$ \\
+-\midrule
+-6 & Tổng Nitơ & mg/L & 250 -- 500 & $\leq 40$ \\
+-\midrule
+-7 & Tổng Phốt pho & mg/L & 20 -- 50 & $\leq 6$ \\
+-\midrule
+-8 & Dầu mỡ khoáng & mg/L & 100 -- 500 & $\leq 10$ \\
+-\midrule
+-9 & Coliform & MPN/100\,mL & $10^5$ -- $10^8$ & $\leq 5.000$ \\
+-\midrule
+-10 & Chì (Pb) & mg/L & $<$2 & $\leq 0,5$ \\
+-\midrule
+-11 & Cadimi (Cd) & mg/L & $<$0,5 & $\leq 0,1$ \\
+-\midrule
+-12 & Crom VI (\ce{Cr^6+}) & mg/L & $<$0,1 & $\leq 0,1$ \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ \subsection{Quản lý chất thải rắn, chất thải nguy hại, tiếng ồn và mùi}
+@@ -337,6 +216,7 @@ Chất thải rắn phát sinh gồm phần không cháy tách ra trong phân lo
+ \label{tab:tong-hop-chat-thai}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.04\textwidth}p{0.28\textwidth}p{0.10\textwidth}p{0.14\textwidth}p{0.08\textwidth}p{0.28\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Loại chất thải} & \textbf{Nguồn phát sinh} & \textbf{Lượng ước tính} & \textbf{CTNH?} & \textbf{Hướng xử lý} \\
+@@ -360,30 +240,8 @@ Chất thải rắn phát sinh gồm phần không cháy tách ra trong phân lo
+ 9 & Pin, bóng đèn & Lẫn trong rác đầu vào & Lượng nhỏ & Có & Thu gom riêng, CTNH \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-Chất thải nguy hại gồm pin lẫn trong rác, bóng đèn hỏng, giẻ lau dính dầu, dầu mỡ thải, lọc dầu, cặn hóa chất từ tinh chế dầu và bao bì dính hóa chất. Các dòng này phải được phân loại, dán nhãn theo QCVN 07:2009/BTNMT, lưu giữ trong khu chứa CTNH có mái che, nền bê tông không thấm, hệ thống thoát nước riêng và bồn thu sự cố, diện tích tối thiểu 20\,m$^2$, thông gió tự nhiên hoặc cơ học, trang bị biển báo nguy hiểm và thiết bị PCCC chuyên dụng. Thời gian lưu giữ CTNH tại nhà máy không quá 12 tháng theo quy định. Tần suất chuyển giao định kỳ ít nhất 3 tháng/lần hoặc khi lượng tích lũy đạt 70\% sức chứa kho, kèm đầy đủ chứng từ, hồ sơ theo Nghị định 08/2022/NĐ-CP \cite{MONRE2022}. Không được trộn chất thải nguy hại với rác sinh hoạt hoặc đưa vào lò nhiệt phân nếu chưa có đánh giá kỹ thuật và pháp lý phù hợp.
+-
+-Tiếng ồn phát sinh từ máy cắt, máy ép, quạt hút, bơm, máy nén khí, lò quay, hệ thống phát điện diesel và xe vận chuyển. Biện pháp kiểm soát gồm bố trí móng bê tông chống rung, đệm cao su cách rung, vỏ cách âm cho máy phát điện (yêu cầu giảm âm tối thiểu 30\,dB(A)), bảo trì ổ bi định kỳ và cân bằng động cho các thiết bị quay, trồng cây xanh tại vành đai nhà máy và trang bị bảo hộ thính giác (nút tai, tai nghe) bắt buộc trong khu vực có mức ồn $>$85\,dB(A). Mùi hôi chủ yếu phát sinh ở khu tiếp nhận và phân loại rác; biện pháp kiểm soát toàn diện gồm: (i)~Che kín nhà tiếp nhận, duy trì áp suất âm bằng quạt hút cưỡng bức; (ii)~Phun chế phẩm vi sinh EM định kỳ (4 lần/ngày) và phun dung dịch khử mùi tại điểm phát sinh; (iii)~Dẫn khí ô nhiễm từ nhà tiếp nhận qua màng lọc sinh học (biofilter) trước khi thải ra; (iv)~Giảm thời gian lưu rác thô tại khu tiếp nhận xuống dưới 24 giờ; (v)~Vệ sinh sàn và thiết bị mỗi ca bằng nước áp lực cao.
+-
+-% ============================================================
+-\section{Chương trình giám sát vận hành và môi trường}
+-% ============================================================
+-
+-Giám sát vận hành nội bộ được thực hiện liên tục bởi người vận hành theo ca và được tổng hợp định kỳ ở cấp quản lý. Ở cấp ca, Trưởng ca ghi chép thông số mỗi giờ vào nhật ký ca và tổng hợp báo cáo ca bao gồm: khối lượng CTRSH tiếp nhận, khối lượng RDF tạo thành, lượng dầu thu hồi, điện phát ra, điện tiêu thụ, lượng hóa chất sử dụng, sự cố và biện pháp xử lý, tình trạng thiết bị và công trình môi trường. Ở cấp tuần, Phó Giám đốc kỹ thuật tổng hợp báo cáo tuần so sánh với kế hoạch sản xuất, phân tích xu hướng và đề xuất điều chỉnh thông số. Ở cấp tháng, Giám đốc nhà máy phê duyệt báo cáo tháng gồm toàn bộ chỉ tiêu kinh tế -- kỹ thuật -- môi trường và đề xuất kế hoạch bảo trì, cải tiến cho tháng sau.
+-
+-Các thông số cần quan trắc tự động liên tục (online) gồm: lưu lượng và nhiệt độ khí thải tại ống khói, nồng độ \ce{CO} và \ce{SO2} liên tục (CEMS -- Continuous Emission Monitoring System) khi quy mô đốt vượt ngưỡng quy định; nồng độ LEL tại các vùng nguy hiểm; nhiệt độ và áp suất trong hệ thống nhiệt phân; mức bồn và lưu lượng dầu; pH và lưu lượng nước thải đầu ra. Các thông số quan trắc định kỳ (lấy mẫu) theo kế hoạch được tóm tắt trong bảng \ref{tab:giam-sat-mo-rong}. Kết quả quan trắc tự động phải được lưu trữ tối thiểu 5 năm và có thể truy xuất theo yêu cầu của cơ quan quản lý \cite{QUATEST2024}.
+-
+-Nhà máy có nghĩa vụ lập và nộp báo cáo môi trường định kỳ theo Luật Bảo vệ Môi trường 2020 và các văn bản hướng dẫn. Báo cáo giám sát môi trường định kỳ (thường 6 tháng/lần hoặc hàng năm) gồm nội dung: kết quả quan trắc khí thải, nước thải, tiếng ồn, rung động, môi trường đất và nước ngầm xung quanh; tình hình phát sinh, thu gom và xử lý chất thải rắn, CTNH; các sự cố môi trường và biện pháp khắc phục; tiến độ thực hiện các công trình bảo vệ môi trường cam kết trong Giấy phép môi trường. Báo cáo được nộp cho Sở Tài nguyên và Môi trường tỉnh Quảng Nam, Ban Quản lý Khu kinh tế (nếu có) và cơ quan cấp Giấy phép môi trường.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Chương trình giám sát mở rộng giai đoạn vận hành ổn định}
+-\label{tab:giam-sat-mo-rong}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.20\textwidth}p{0.32\textwidth}p{0.16\textwidth}p{0.12\textwidth}p{0.10\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.04\textwidth}p{0.20\textwidth}p{0.32\textwidth}p{0.16\textwidth}p{0.12\textwidth}p{0.10\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Đối tượng} & \textbf{Thông số chính} & \textbf{Vị trí} & \textbf{Tần suất} & \textbf{Đơn vị phân tích} \\
+ \midrule
+@@ -402,7 +260,8 @@ Nhà máy có nghĩa vụ lập và nộp báo cáo môi trường định kỳ
+ 7 & Tiếng ồn, rung động & Mức ồn tương đương L$_{Aeq}$, rung động (VDV) & Cổng nhà máy, khu dân cư lân cận & 6 tháng/lần & Đơn vị quan trắc \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ Giám sát môi trường được thực hiện ở cả giai đoạn vận hành thử nghiệm và vận hành ổn định. Đối với khí thải, các thông số cần quan trắc gồm lưu lượng, bụi tổng, \ce{SO2}, \ce{NOx}, \ce{CO} và các chỉ tiêu bổ sung theo yêu cầu của cơ quan quản lý. Vị trí quan trắc là ống khói sau hệ thống xử lý. Đối với không khí xung quanh, cần theo dõi bụi lơ lửng, \ce{CO}, \ce{NO2}, \ce{SO2}, \ce{H2S}, \ce{NH3} và tiếng ồn tại cổng nhà máy, khu tiếp nhận rác và điểm theo hướng gió chủ đạo.
+@@ -425,24 +284,8 @@ Trong giai đoạn vận hành thương mại, đào tạo nhắc lại được
+ \label{tab:chung-chi-dao-tao}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.30\textwidth}p{0.28\textwidth}p{0.14\textwidth}p{0.18\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Vị trí / Nhóm nhân sự} & \textbf{Chứng chỉ bắt buộc} & \textbf{Cơ quan cấp} & \textbf{Thời hạn hiệu lực} \\
+-\midrule
+-1 & Tổ nhiệt phân (toàn bộ) & An toàn thiết bị áp lực, an toàn hóa chất & Cục ATLĐ & 3 năm \\
+-\midrule
+-2 & Tổ phát điện & An toàn điện bậc 3 trở lên & Sở LĐTBXH & 3 năm \\
+-\midrule
+-3 & Tổ PCCC -- ATSKMT & Chứng chỉ PCCC, sơ cứu cấp cứu & Phòng Cảnh sát PCCC & 5 năm \\
+-\midrule
+-4 & Trưởng ca vận hành & PCCC, an toàn hóa chất, quản lý ca sản xuất & Cục ATLĐ / Sở & 3 năm \\
+-\midrule
+-5 & Nhân viên xử lý CTNH & Chứng chỉ xử lý CTNH & Sở TNMT & 5 năm \\
+-\midrule
+-6 & Tổ bảo trì (kỹ thuật điện) & Chứng chỉ điện bậc 4 trở lên & Sở LĐTBXH & 3 năm \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ \subsection{Kế hoạch bảo trì thiết bị}
+@@ -455,6 +298,7 @@ Công tác bảo trì phải kết hợp bảo trì định kỳ và bảo trì
+ \label{tab:ke-hoach-bao-tri}
+ \centering
+ \setlength{\tabcolsep}{5pt}
++\scalebox{0.9}{
+ \begin{tabular}{p{0.22\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.28\textwidth}}
+ \toprule
+ \textbf{Nhóm thiết bị} & \textbf{Hàng ngày} & \textbf{Hàng tuần} & \textbf{Hàng tháng} & \textbf{Quý / Năm} \\
+@@ -478,48 +322,8 @@ Cảm biến \& đo lường & Kiểm tra tín hiệu so sánh & -- & Hiệu chu
+ Hệ thống PCCC & Kiểm tra áp bình cứu hỏa & Kiểm tra van foam & Chạy thử bơm PCCC & Năm: kiểm định toàn bộ \\
+ \midrule
+ \bottomrule
+-\end{tabular}
+-\end{table}
+-
+-\subsection{Quản lý phụ tùng và vật tư tiêu hao}
+-
+-Nhà máy phải duy trì kho phụ tùng dự phòng tối thiểu để đảm bảo có thể sửa chữa bất kỳ sự cố thông thường trong vòng 4 giờ mà không cần đặt hàng khẩn cấp. Danh mục phụ tùng dự phòng tối thiểu bao gồm: dao cắt dự phòng cho máy băm xé (01 bộ), ổ bi thường dùng các cỡ (tối thiểu 02 cái/loại), phớt trục bơm dầu (02 bộ), van solenoid thông dụng (02 cái/loại), bộ lọc dầu động cơ diesel (06 cái), đai truyền động thông dụng (02 bộ/loại), gạch chịu lửa dự phòng (20\% thể tích lò). Danh mục vật tư tiêu hao cần theo dõi mức tồn kho: dung dịch NaOH, dầu nhớt động cơ, than hoạt tính, giá thể MBBR, hóa chất khử trùng, chế phẩm vi sinh, vật liệu đệm tháp. Mức tồn kho tối thiểu phải đảm bảo đủ sử dụng trong ít nhất 30 ngày không cần bổ sung, có tính đến thời gian vận chuyển từ nhà cung cấp (thường 3--7 ngày đối với vật tư thông dụng, 15--30 ngày đối với phụ tùng chuyên biệt).
+-
+-Hệ thống quản lý tài sản vật lý (Physical Asset Management -- PAM) nên được xây dựng theo khung ISO 55001 cho các thiết bị có giá trị từ 50 triệu đồng trở lên. Mỗi thiết bị được mã hóa, có hồ sơ thiết bị riêng ghi đầy đủ thông tin kỹ thuật, lịch sử bảo trì, lịch sự cố và chi phí bảo trì tích lũy. Dữ liệu này là cơ sở để ra quyết định thay thế thiết bị khi chi phí bảo trì tích lũy vượt quá 40--50\% giá trị thay thế mới. Ngoài ra, chỉ số OEE (Overall Equipment Effectiveness) nên được tính toán hàng tháng cho các thiết bị quan trọng nhất (lò nhiệt phân, máy phát điện, hệ thống ngưng tụ) để đánh giá hiệu quả sử dụng và phát hiện xu hướng suy giảm hiệu suất sớm. OEE mục tiêu cho lò nhiệt phân là $\geq$85\%, tính trên cơ sở thời gian khả dụng, hiệu suất tốc độ và tỷ lệ sản phẩm đạt yêu cầu.
+-
+-% ============================================================
+-\section{Đánh giá hiệu quả kinh tế, môi trường và xã hội}
+-% ============================================================
+-
+-\subsection{Phân tích chi phí vận hành ước tính}
+-
+-Chi phí vận hành hàng năm của nhà máy bao gồm các khoản chính sau: (1)~\textbf{Chi phí nhân công}: với 38 nhân viên, mức lương bình quân ước tính 8--12 triệu đồng/người/tháng (tùy trình độ và vị trí), chi phí nhân công ước tính 3,6--5,5 tỷ đồng/năm (chưa bao gồm bảo hiểm xã hội, bảo hiểm y tế và các phúc lợi); (2)~\textbf{Chi phí điện tự dùng}: nhà máy có năng lực phát điện từ khí không ngưng và dầu nhiệt phân, ước tính tự đáp ứng được 60--80\% nhu cầu điện nội bộ, phần thiếu hụt mua từ lưới; (3)~\textbf{Chi phí hóa chất}: NaOH cho xử lý khí thải $\approx$200--400 kg/ngày $\times$ 8.000 đồng/kg $\approx$0,6--1,2 tỷ đồng/năm; hóa chất xử lý nước thải và khử trùng khoảng 0,3--0,5 tỷ đồng/năm; (4)~\textbf{Chi phí bảo trì}: ước tính 2--3\% CAPEX/năm; (5)~\textbf{Chi phí quản lý CTNH}: khoảng 50--100 triệu đồng/năm tùy khối lượng phát sinh; (6)~\textbf{Chi phí vận hành khác}: quan trắc môi trường, bảo hiểm, văn phòng phẩm, ước tính 200--300 triệu đồng/năm. Tổng chi phí vận hành trực tiếp ước tính 6--10 tỷ đồng/năm (chưa tính khấu hao và lãi vay).
+-
+-\subsection{Phân tích doanh thu và lợi ích}
+-
+-Lợi ích kinh tế trực tiếp từ nhà máy gồm ba nguồn chính: (1)~\textbf{Giảm chi phí vận chuyển rác}: hiện nay CTRSH tại Hội An phải vận chuyển $\approx$100\,km đến bãi chôn lấp Tam Nghĩa với đơn giá vận tải ước tính 150.000--200.000 đồng/tấn. Với công suất xử lý 120\,t/ngày, tiết kiệm được $120 \times 175.000 \times 365 \approx 7,7$ tỷ đồng/năm; (2)~\textbf{Doanh thu từ điện}: tổng điện phát ước tính 15.943\,MWh/năm \cite{BaocaoHoiAn2024}. Nếu tự dùng tại giá mua điện lưới $\approx$1.800--2.500 đồng/kWh, giá trị điện tạo ra 28,7--39,9 tỷ đồng/năm; (3)~\textbf{Doanh thu từ dầu nhiệt phân}: ước tính $\approx$19.500\,L/ngày ($\approx$7.117\,m$^3$/năm) theo kết quả chương 2. Với giá dầu nhiệt phân bán buôn ước tính 8.000--12.000 đồng/L, doanh thu $\approx$57--85 tỷ đồng/năm; (4)~\textbf{Doanh thu từ phế liệu tái chế}: kim loại và các vật liệu tái chế ước tính thu hồi 3--5 tỷ đồng/năm tùy giá thị trường.
+-
+-Phân tích nhạy cảm cho thấy giá dầu nhiệt phân là biến số tác động lớn nhất đến tổng lợi ích dự án, tiếp theo là hệ số thời gian vận hành thực tế và giá điện. Trong kịch bản bi quan (giá dầu giảm 30\%, hệ số thời gian vận hành 75\%, giá điện hiện tại), tổng lợi ích vẫn đạt khoảng 65--80 tỷ đồng/năm, vượt đáng kể chi phí vận hành 6--10 tỷ đồng/năm -- cho thấy biên an toàn kinh tế tương đối tốt ngay cả khi thị trường bất lợi. Trong kịch bản lạc quan (giá dầu tăng 20\%, hệ số thời gian vận hành 90\%, giá điện tăng), tổng lợi ích có thể vượt 140 tỷ đồng/năm. Để tối đa hóa lợi nhuận, nhà máy nên ưu tiên: (i)~Nâng cao chất lượng dầu nhiệt phân qua cải thiện công đoạn chưng cất để đạt giá bán cao hơn; (ii)~Tối đa hóa hệ số thời gian vận hành lò thông qua bảo trì phòng ngừa hiệu quả; (iii)~Tìm kiếm đầu ra ổn định cho dầu qua hợp đồng dài hạn với đối tác tiêu thụ.
+-
+-\subsection{Phân tích giảm phát thải khí nhà kính}
+-
+-So sánh với phương án chôn lấp, dự án mang lại lợi ích giảm phát thải khí nhà kính đáng kể. Tại bãi chôn lấp, 1 tấn CTRSH có thể phát sinh khoảng 50--100\,m$^3$ khí bãi rác (landfill gas) trong vài chục năm, trong đó khoảng 50\% là \ce{CH4} -- một khí nhà kính có GWP$_{100}$ = 28 (tương đương \ce{CO2}). Với 120\,t/ngày $\times$ 365 ngày $\times$ 0,4\% hệ số phát thải CH4, lượng \ce{CH4} tránh được khoảng 175--350 tCH$_4$/năm, tương đương 4.900--9.800 tCO$_2$e/năm nếu chuyển sang nhiệt phân thay vì chôn lấp. Ngoài ra, việc thu hồi năng lượng thay thế nhiên liệu hóa thạch giúp tránh phát sinh thêm khoảng 8.000--12.000 tCO$_2$e/năm từ sản xuất điện lưới.
+-
+-Tiềm năng tín chỉ carbon: nếu dự án đăng ký theo cơ chế Volduntary Carbon Standard (VCS) hoặc Cơ chế phát triển sạch (CDM) / Điều 6 Paris Agreement, lượng tín chỉ có thể đạt 10.000--20.000 tCO$_2$e/năm. Với giá thị trường tín chỉ carbon tự nguyện 5--15 USD/tCO$_2$e, doanh thu bổ sung ước tính 1,3--7,6 tỷ đồng/năm \cite{MONRE2022}.
+-
+-\subsection{Phân tích rủi ro dự án}
+-
+-Rủi ro kỹ thuật: biến động chất lượng CTRSH đầu vào là rủi ro nội sinh quan trọng nhất. Khi tỷ lệ hữu cơ ướt tăng cao (mùa hè, mùa mưa bão), chất lượng RDF giảm, kéo theo giảm tỷ lệ dầu và điện thu hồi. Biện pháp: thiết kế lò sấy có dự phòng công suất 20\%, xây dựng kho đệm RDF đủ cho 2 ngày vận hành. Rủi ro năng suất lò: công nghệ nhiệt phân lò quay tuy đã được thương mại hóa tại nhiều quốc gia nhưng vẫn phụ thuộc nhiều vào chất lượng lắp đặt và trình độ vận hành; nhà thầu thiết bị cần cam kết bảo lãnh năng suất và cử chuyên gia hỗ trợ vận hành ít nhất 12 tháng.
+-
+-Rủi ro thị trường: giá dầu nhiệt phân phụ thuộc vào giá dầu diesel thị trường và có thể dao động mạnh. Để giảm thiểu, nhà máy nên ký hợp đồng tiêu thụ dài hạn với đối tác, hoặc tập trung sử dụng dầu làm nhiên liệu cho máy phát điện nội bộ (thay thế mua điện lưới) nhằm ổn định nguồn thu. Rủi ro pháp lý: thay đổi quy chuẩn môi trường (QCVN) theo hướng siết chặt hơn có thể đòi hỏi nâng cấp hệ thống xử lý khí thải hoặc nước thải; nhà máy cần theo dõi lộ trình sửa đổi quy chuẩn và dự phòng quỹ nâng cấp thiết bị.
+-
+-\begin{table}[htbp]
+-\centering
+-\caption{Tổng hợp các chỉ tiêu hiệu quả dự án ước tính}
+-\label{tab:hieu-qua-du-an}
+-\centering
+-\setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.36\textwidth}p{0.16\textwidth}p{0.38\textwidth}}
++\end{tabular}%
++}\begin{tabular}{p{0.04\textwidth}p{0.36\textwidth}p{0.16\textwidth}p{0.38\textwidth}}
+ \toprule
+ \textbf{TT} & \textbf{Chỉ tiêu} & \textbf{Giá trị ước tính} & \textbf{Ghi chú} \\
+ \midrule
+@@ -544,7 +348,8 @@ Rủi ro thị trường: giá dầu nhiệt phân phụ thuộc vào giá dầu
+ 10 & Việc làm trực tiếp tạo ra & $\approx$ 38 người & Chưa kể gián tiếp \\
+ \midrule
+ \bottomrule
+-\end{tabular}
++\end{tabular}\scalebox{0.9}{
++
+ \end{table}
+ 
+ Về kinh tế, công nghệ nhiệt phân cho phép chuyển một phần chất thải có nhiệt trị thành dầu nhiên liệu và điện năng. Nguồn lợi ích trực tiếp gồm giảm chi phí vận chuyển rác đi xa, giảm chi phí mua điện cho phụ tải nội bộ, tạo sản phẩm dầu sau tinh chế cho phát điện, tận dụng khí không ngưng làm nhiên liệu gia nhiệt và thu hồi vật liệu tái chế. So với cấu hình khí hóa -- tuabin khí, phương án động cơ diesel có ưu điểm là thiết bị phổ biến hơn, bảo trì thuận lợi hơn và phù hợp với mô-đun công suất nhỏ.
+@@ -581,22 +386,8 @@ Lộ trình đề xuất cho giai đoạn từ khi hoàn thành lắp đặt đ
+ \label{tab:lo-trinh-trien-khai}
+ \centering
+ \setlength{\tabcolsep}{5pt}
+-\begin{tabular}{p{0.04\textwidth}p{0.24\textwidth}p{0.10\textwidth}p{0.28\textwidth}p{0.28\textwidth}}
+-\toprule
+-\textbf{TT} & \textbf{Giai đoạn} & \textbf{Thời gian} & \textbf{Hoạt động chính} & \textbf{Điều kiện chuyển sang giai đoạn tiếp} \\
+-\midrule
+-1 & Chạy thử không tải (Dry Run) & Tháng 1 & Kiểm tra cơ khí, điện; thử nghiệm từng thiết bị; thử ESD và SCADA; kiểm tra kín khít đường ống & Toàn bộ thiết bị vận hành không tải $\geq$72 giờ không sự cố; hệ thống ESD đáp ứng thời gian $<$5 giây \\
+-\midrule
+-2 & Chạy thử có tải -- giai đoạn 1 & Tháng 2 -- 3 & Nạp liệu 30--50\% định mức; theo dõi thu hồi dầu, chất lượng sản phẩm; quan trắc khí thải hàng tuần; hiệu chỉnh thông số lò & Chất lượng dầu đạt yêu cầu; không có sự cố ESD do quá trình; khí thải không vượt QCVN $>$20\% \\
+-\midrule
+-3 & Chạy thử có tải -- giai đoạn 2 & Tháng 4 & Nạp liệu 60--80\% định mức; khởi động máy phát điện diesel; kiểm tra hệ thống xử lý nước thải & Đạt công suất điện thiết kế; nước thải đầu ra đạt QCVN 40:2025 \\
+-\midrule
+-4 & Vận hành thử nghiệm \& nghiệm thu & Tháng 5 -- 6 & Vận hành 80--100\% định mức liên tục $\geq$30 ngày; quan trắc môi trường toàn diện; hoàn thiện hồ sơ pháp lý & Tất cả chỉ tiêu kỹ thuật và môi trường đạt yêu cầu; cơ quan có thẩm quyền chấp thuận \\
+-\midrule
+-5 & Vận hành thương mại & Từ tháng 7 & Vận hành theo kế hoạch sản xuất; giám sát môi trường định kỳ; báo cáo theo quy định & -- \\
+-\midrule
+-\bottomrule
+-\end{tabular}
++%
++}
+ \end{table}
+ 
+ % ============================================================
