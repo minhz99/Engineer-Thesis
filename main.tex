@@ -15,9 +15,11 @@
 \usepackage[top=2cm, bottom=2cm, left=3.5cm, right=2.5cm]{geometry}
 
 \usepackage{tikz} % Thư viện vẽ hình
-\usetikzlibrary{calc, shapes.geometric, arrows.meta, positioning} % Thêm các thư viện TikZ cần thiết
+\usetikzlibrary{calc, shapes.geometric, arrows.meta, positioning, shadows} % Thêm các thư viện TikZ cần thiết
 \usepackage{pgfplots} % Vẽ biểu đồ
 \pgfplotsset{compat=1.18}
+\usepackage{pgf-pie} % Vẽ biểu đồ tròn
+
 \usepackage{graphicx} % Cho phép chèn hỉnh ảnh
 \usepackage{fancybox} % Tạo khung box
 \usepackage{indentfirst} % Thụt đầu dòng ở dòng đầu tiên trong đoạn
@@ -431,28 +433,28 @@
 \label{chuong1}
 \subfile{Chuong/1_Chuong_1.tex} % Phần mở đầu
 
-\newpage
-% \pagestyle{fancy} % Áp dụng header và footer
-\label{chuong2}
-\subfile{Chuong/2_Chuong_2.tex}
+% \newpage
+% % \pagestyle{fancy} % Áp dụng header và footer
+% \label{chuong2}
+% \subfile{Chuong/2_Chuong_2.tex}
 
-\newpage
-% \pagestyle{fancy} % Áp dụng header và footer
-\label{chuong3}
-\subfile{Chuong/3_Chuong_3.tex}
+% \newpage
+% % \pagestyle{fancy} % Áp dụng header và footer
+% \label{chuong3}
+% \subfile{Chuong/3_Chuong_3.tex}
 
-% Chương 4 cũ (QUẢN LÝ VẬN HÀNH) đã được gộp vào Chương 3
+% % Chương 4 cũ (QUẢN LÝ VẬN HÀNH) đã được gộp vào Chương 3
 
-\newpage
-% \pagestyle{fancy} % Áp dụng header và footer
-\label{chuong4}
-\subfile{Chuong/5_Chuong_5.tex} % KẾT LUẬN VÀ KIẾN NGHỊ (Chương 4 mới)
+% \newpage
+% % \pagestyle{fancy} % Áp dụng header và footer
+% \label{chuong4}
+% \subfile{Chuong/5_Chuong_5.tex} % KẾT LUẬN VÀ KIẾN NGHỊ (Chương 4 mới)
 
 % ===================================================
 
 \cleardoublepage
 \renewcommand\bibname{TÀI LIỆU THAM KHẢO}
-\nocite{*}
+% \nocite{*}
 \printbibliography
 \phantomsection\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
 

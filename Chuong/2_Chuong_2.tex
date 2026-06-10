@@ -426,6 +426,124 @@ Phức tạp cơ khí & Thấp & Cao & Cao & Trung bình \\
 
 Trên cơ sở so sánh, lò nhiệt phân quay được chọn cho dự án. Thiết bị này có thể vận hành theo chế độ mẻ hoặc bán liên tục, phù hợp với hệ thống cấp liệu RDF đã qua bunker. Khi lò quay chậm, vật liệu được đảo trộn và dịch chuyển, giúp giảm chênh lệch nhiệt độ trong lớp rác. Hơi hydrocarbon sinh ra được dẫn ngay sang hệ thống ngưng tụ để thu dầu, còn khí không ngưng được xử lý và hồi lưu đốt. Cấu hình này phù hợp với mục tiêu ưu tiên thu dầu nhiệt phân và kiểm soát ổn định quá trình trong điều kiện rác đầu vào biến động.
 
+\begin{table}[htbp]
+\centering
+\caption{Thông số thiết kế lò nhiệt phân quay}
+\label{tab:thong-so-lo-nhiet-phan-quay}
+\centering
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.40\textwidth}p{0.40\textwidth}}
+\toprule
+\textbf{Thông số} & \textbf{Giá trị} \\
+Công suất & 10--15 tấn RDF/ngày/hệ \\
+Số lượng & 6 hệ \\
+Nhiệt độ lò & 400--500\textdegree C \\
+Nhiệt độ đốt & 600--800\textdegree C \\
+Tốc độ quay & 0,5--2 vòng/phút \\
+Thời gian lưu & 4--8 giờ/mẻ \\
+Tỷ lệ dầu & 35--45\% RDF \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\noindent\textit{Nguồn: Theo hồ sơ thiết kế dự án \cite{BaocaoHoiAn2024}.}
+
+\subsection{Lò cacbon hóa rác hữu cơ}
+\label{sec:lo-cacbon-hoa}
+
+Song song với hệ thống nhiệt phân rác nhựa/RDF, dự án triển khai lò cacbon hóa liên tục (\textit{carbonization furnace}) để xử lý phần rác hữu cơ dễ phân hủy -- thành phần chiếm tỷ lệ cao nhất (62,56\%) trong CTRSH Hội An. Cacbon hóa là quá trình gia nhiệt sinh khối hữu cơ ở nhiệt độ 450--590\textdegree C trong điều kiện thiếu oxy, chuyển hóa chất hữu cơ thành than sinh học (biochar) và khí gas nhiệt trị có thể tái sử dụng \cite{Bridgwater2012}. Nhiệt độ vận hành cao hơn so với nhiệt phân nhựa cho phép phân hủy hoàn toàn hơn các hợp chất hữu cơ phức tạp trong rác thực phẩm.
+
+\begin{table}[htbp]
+\centering
+\caption{Thông số vận hành lò cacbon hóa rác hữu cơ}
+\label{tab:lo-cacbon-hoa}
+\centering
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.45\textwidth}p{0.40\textwidth}}
+\toprule
+\textbf{Thông số} & \textbf{Giá trị} \\
+\midrule
+Chế độ vận hành & Liên tục \\
+Nhiệt độ vận hành & 450--590\textdegree C \\
+Công suất thiết kế & 3--5 tấn/giờ \\
+Công suất thực tế (2026) & $\approx$2 tấn/giờ \\
+Dầu tiêu thụ gia nhiệt & 680--1.067 lít/mẻ \\
+Hàm lượng carbon sản phẩm & 70--85\% \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\noindent\textit{Nguồn: \cite{BaocaoHoiAn2024}.}
+
+Than biochar thu được có nhiệt trị 15--20\,MJ/kg và có thể tận dụng làm nhiên liệu phụ trợ hoặc vật liệu cải tạo đất nông nghiệp. Nhiệt thừa từ lò cacbon hóa được tái sử dụng cho hệ thống sấy rác hữu cơ trước khi vào lò, góp phần giảm tiêu hao nhiên liệu bên ngoài. Khí thải từ hệ thống cacbon hóa được thu gom qua cặp cyclone kép, qua tháp làm mát và dập bụi, rồi hợp lưu với khí thải từ hệ thống nhiệt phân trước khi xử lý và thải qua ống khói chung \cite{BaocaoHoiAn2024}.
+
+\subsection{Hệ thống ngưng tụ thu hồi dầu đa cấp}
+\label{sec:he-thong-ngung-tu-da-cap}
+
+Để tối đa hóa tỷ lệ thu hồi dầu, hơi hydrocarbon thoát ra từ lò được xử lý qua hệ thống ngưng tụ ba cấp nối tiếp \cite{BaocaoHoiAn2024}:
+
+\begin{enumerate}
+  \item \textbf{Bình ngưng tụ dọc trước} (\textit{Front Vertical Condenser}) -- đặt ngay sau đầu ra lò, làm mát hơi xuống 80--100\textdegree C bằng nước tuần hoàn lạnh, ngưng tụ các phân đoạn hydrocarbon nặng có điểm sôi cao.
+  \item \textbf{Bình ngưng tụ ngang} (\textit{Horizontal Condenser}) -- tiếp tục làm mát xuống 35--50\textdegree C, thu hồi các phân đoạn dầu trung bình và nhẹ.
+  \item \textbf{Bình ngưng tụ dọc sau} (\textit{Rear Vertical Condenser}) -- hạ nhiệt độ về gần nhiệt độ môi trường, thu hồi phần hơi dầu còn lại.
+\end{enumerate}
+
+Hỗn hợp dầu và nước từ ba cấp ngưng tụ được dẫn vào bình tách dầu--nước theo nguyên lý trọng lực: lớp dầu nổi phía trên chảy sang bồn chứa dầu thô; nước phía dưới đưa về hệ thống xử lý nước thải. Khí không ngưng được xử lý sơ bộ qua tháp khử \ce{H2S} rồi hồi lưu về buồng đốt của lò.
+
+\begin{figure}[htbp]
+\centering
+\scalebox{0.9}{
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=3pt, fill=#1, minimum width=2.0cm, minimum height=0.9cm, font=\footnotesize, align=center},
+    box/.default={white},
+    arr/.style={-{Stealth[length=5pt,width=3pt]}, thick},
+    lbl/.style={font=\scriptsize, fill=white, inner sep=1pt},
+]
+% Hơi đầu vào
+\node[box=orange!20] (hoi) at (0,0) {Hơi\\(từ lò quay)};
+
+% Ba cấp ngưng tụ
+\node[box=blue!15] (c1) at (3.0,0) {Bình\\ngưng dọc 1\\80--100\textdegree C};
+\node[box=blue!25] (c2) at (6.0,0) {Bình\\ngưng ngang\\35--50\textdegree C};
+\node[box=blue!35] (c3) at (9.0,0) {Bình\\ngưng dọc 2\\$\approx$25\textdegree C};
+
+% Bình tách dầu nước
+\node[box=cyan!20] (sep) at (12.0,0) {Bình tách\\dầu--nước};
+
+% Thu hồi dầu
+\node[box=green!30] (oil) at (12.0,-2.2) {Bồn dầu thô\\(sang chưng cất)};
+\node[box=gray!20] (water) at (9.0,-2.2) {Nước thải\\(XLNT)};
+
+% Khí không ngưng
+\node[box=purple!15] (gas) at (12.0,2.0) {Khí không\\ngưng};
+\node[box=red!15] (H2S) at (9.5,2.0) {Tháp\\khử \ce{H2S}};
+\node[box=orange!25] (recycle) at (6.5,2.0) {Hồi lưu\\buồng đốt};
+
+% Arrows - main flow
+\draw[arr] (hoi) -- (c1);
+\draw[arr] (c1) -- node[lbl,above]{Dầu nặng} (c2);
+\draw[arr] (c2) -- node[lbl,above]{Dầu trung} (c3);
+\draw[arr] (c3) -- node[lbl,above]{Dầu nhẹ} (sep);
+
+% Condensate outputs
+\draw[arr] (sep.south) -- (oil.north);
+\draw[arr] (sep.west) -- (water.east);
+
+% Gas outputs
+\draw[arr] (sep.north) -- (gas.south);
+\draw[arr] (gas) -- (H2S);
+\draw[arr] (H2S) -- (recycle);
+
+\end{tikzpicture}
+}
+\caption{Sơ đồ hệ thống ngưng tụ thu hồi dầu ba cấp}
+\label{fig:he-thong-ngung-tu}
+\end{figure}
+
 \begin{figure}[htbp]
 \centering
 \scalebox{0.9}{%
