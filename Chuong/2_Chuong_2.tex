@@ -15,42 +15,42 @@ Phương án công nghệ của đồ án vì vậy được xây dựng trên n
 \centering
 
 \scalebox{0.9}{%
-\begin{tikzpicture}[node distance=1.5cm and 0.8cm, block/.style={draw, fill=blue!10, minimum width=2.2cm, minimum height=1cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\footnotesize, text centered}]
+\begin{tikzpicture}[node distance=1.5cm and 0.8cm, block/.style={draw, fill=blue!10, text width=2.6cm, minimum height=1.2cm, font=\small, align=center}, arrow/.style={->, >=Stealth, thick}, label/.style={font=\footnotesize, text centered}]
 
 % Row 1 - Input and separation
 \node[block] (input) at (0,0) {CTRSH đầu vào \\(120 tấn/ngày)};
 \node[block] (xe_bao) [right=of input] {Máy xé bao \\mở túi rác};
 \node[block] (phan_loai) [right=of xe_bao] {Phân loại \\(thủ công + cơ học)};
-\node[block] (tach_tu) [right=of phan_loai] {Tách từ tính \\(sắt, nhôm)};
-
+\node[block, fill=red!10] (rac_khong_chay) [right=of phan_loai] {Chất thải \\không cháy \\(13,38\%)};
 % Output arrows from phan_loai - bottom
-\node[block, fill=red!10] (rac_khong_chay) [below=of phan_loai] {Chất thải \\không cháy \\(13,38\%)};
-
 % Row 2 - Organic separation
-\node[block, fill=green!10] (huu_co) [right=of tach_tu] {Tách hữu cơ \\dễ phân hủy \\(→ compost)};
-\node[block] (cat_xe) [below=of huu_co] {Cắt xé giảm \\kích thước $<$ 50 mm};
+\node[block] (tach_tu) [below=of phan_loai] {Tách từ tính \\(sắt, nhôm)};
+\node[block, fill=green!10] (huu_co) [left=of tach_tu] {Tách hữu cơ \\dễ phân hủy \\(→ compost)};
+\node[block] (cat_xe) [left=of huu_co] {Cắt xé giảm \\kích thước $<$ 50 mm};
 
 % Row 3 - Mechanical dewatering
 \node[block] (ep_nuoc) [below=of cat_xe] {Ép tách nước \\cơ học};
-\node[block] (say_rac) [below=of ep_nuoc] {Sấy giảm ẩm \\($<$ 15\%)};
-\node[block, fill=yellow!15] (rdf) [below=of say_rac] {Viên RDF \\(đầu ra)};
+\node[block] (say_rac) [right=of ep_nuoc] {Sấy giảm ẩm \\($<$ 15\%)};
+\node[block, fill=yellow!15] (rdf) [right=of say_rac] {Viên RDF \\(đầu ra)};
 
 % Arrows - Row 1
 \draw[arrow] (input) -- (xe_bao);
 \draw[arrow] (xe_bao) -- (phan_loai);
 \draw[arrow] (phan_loai) -- (tach_tu);
 \draw[arrow] (tach_tu) -- (huu_co);
-\draw[arrow] (phan_loai) -- ++(0,-1.2) -| (rac_khong_chay);
-
-% Arrows - Row 2-3
+\draw[arrow] (phan_loai) -- (rac_khong_chay);
+\draw[arrow] (phan_loai) -- (tach_tu);
+% Arrows - Row 2
 \draw[arrow] (huu_co) -- (cat_xe);
 \draw[arrow] (cat_xe) -- (ep_nuoc);
+
+% Arrows - Row 3
 \draw[arrow] (ep_nuoc) -- (say_rac);
 \draw[arrow] (say_rac) -- (rdf);
 
 % Side annotations
-\node[label] at (-1.8, -2.2) {Tiền xử lý cơ học};
-\node[label] at (1.0, -4.5) {Tạo nhiên liệu RDF};
+\node[label, align=center] at ([xshift=-1.2cm, yshift=1.2cm]cat_xe.west) {Tiền xử lý \\ cơ học};
+\node[label, align=center] at ([xshift=-1.2cm]ep_nuoc.west) {Tạo nhiên \\ liệu RDF};
 
 \end{tikzpicture}
 }
@@ -80,7 +80,7 @@ Hướng ủ compost phù hợp với phần thực phẩm và chất hữu cơ 
 \centering
 \setlength{\tabcolsep}{5pt}
 \scalebox{0.9}{
-\begin{tabular}{p{0.20\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}}
 \toprule
 \textbf{Tiêu chí} & \textbf{Ủ compost} & \textbf{Đốt trực tiếp} & \textbf{Khí hóa} & \textbf{Nhiệt phân lò quay} \\
 \midrule
