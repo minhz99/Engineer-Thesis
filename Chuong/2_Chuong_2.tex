@@ -136,7 +136,7 @@ Khi độ ẩm nguyên liệu vượt 15\%, phản ứng hơi nước--carbon (w
 \ce{C + H2O &<=> CO + H2} \quad \Delta H = +131 \;\text{kJ/mol}
 \end{equation}
 
-Phản ứng này làm tăng tỷ lệ \ce{H2} trong syngas nhưng đồng thời tiêu hao carbon dương tính, làm giảm nhiệt trị khí. Nghiên cứu của \cite{McKendry2002} ghi nhận: khi độ ẩm RDF tăng từ 10\% lên 30\%, LHV của syngas giảm khoảng 25--35\%, buộc phải tăng cường sấy hoặc chấp nhận hiệu suất phát điện thấp hơn.
+Phản ứng này làm tăng tỷ lệ \ce{H2} trong syngas nhưng đồng thời tiêu hao carbon rắn, làm giảm nhiệt trị khí. Nghiên cứu của \cite{McKendry2002} ghi nhận: khi độ ẩm RDF tăng từ 10\% lên 30\%, LHV của syngas giảm khoảng 25--35\%, buộc phải tăng cường sấy hoặc chấp nhận hiệu suất phát điện thấp hơn.
 
 \paragraph{Phát sinh hắc ín tăng theo độ ẩm.}
 Độ ẩm cao làm giảm tốc độ gia nhiệt của vật liệu trong lò khí hóa, đẩy phạm vi nhiệt độ 250--500\textdegree C -- vùng nhiệt độ tối ưu hình thành hắc ín sơ cấp -- kéo dài hơn. Kết quả là hàm lượng hắc ín trong syngas tăng đáng kể. Theo \cite{Arena2012}, với RDF có độ ẩm 15\%, hàm lượng hắc ín đã đạt 10--30 g/Nm$^3$ (cao gấp hàng nghìn lần ngưỡng chấp nhận của tuabin khí $<$5 mg/Nm$^3$); với độ ẩm cao hơn, giá trị này còn tăng thêm.
@@ -951,16 +951,17 @@ Chương 2 đã luận chứng lựa chọn phương án nhiệt phân lò quay 
 \midrule
 1 & Công suất tiếp nhận CTRSH & 120 tấn/ngày đêm & Hồ sơ dự án \\
 2 & Nhiệt trị RDF (LHV) & 19.259 kJ/kg (4.600 kcal/kg) & Thực nghiệm \cite{BaocaoHoiAn2024} \\
-3 & Hệ số thu hồi RDF ($K_{RDF}$) & 0,4224 & Cân bằng vật chất Chương 3 \\
-4 & Lượng RDF cấp lò nhiệt phân & 46,08 tấn/ngày & 120 $\times$ 0,384 $\times K_{RDF}$ \\
-5 & Nhiệt độ vận hành lò nhiệt phân & 350--500\textdegree C & Hồ sơ điều chỉnh \cite{BaocaoHoiAn2024} \\
-6 & Tỷ lệ dầu thô/RDF & 45\% & Theo \cite{Sharuddin2016,Miandad2016} \\
-7 & Tỷ lệ khí không ngưng/RDF & 30\% & Theo \cite{Williams2007} \\
-8 & Tỷ lệ than carbon/RDF & 25\% & Thực nghiệm \\
-9 & Hiệu suất chưng cất (dầu nhẹ/dầu thô) & 80\% & Thiết kế cột chưng cất \\
-10 & Hiệu suất chuyển đổi điện ($\eta$) & 32\% (diesel, SFC = 200 g/kWh) & Thông số máy phát diesel \\
-11 & Công suất phát điện tổng & 2,628 MW & Tính toán Chương 3 \\
-12 & Công suất điện ròng (sau tự dùng) & 1,82 MW & Sau trừ 30\% tự dùng \\
+3 & Hệ số thu hồi nguyên liệu sau sấy ($K_{\text{sau sấy}}$) & 0,4224 & Cân bằng vật chất Chương 3 \\
+4 & Hệ số RDF cấp lò nhiệt phân ($K_{\text{RDF,cấp lò}}$) & 0,384 & $= 46{,}08/120$ \\
+5 & Lượng RDF cấp lò nhiệt phân & 46,08 tấn/ngày & $120 \times 0{,}384$ \\
+6 & Nhiệt độ vận hành lò nhiệt phân & 350--500\textdegree C & Hồ sơ điều chỉnh \cite{BaocaoHoiAn2024} \\
+7 & Tỷ lệ dầu thô/RDF & 45\% & Theo \cite{Sharuddin2016,Miandad2016} \
+8 & Tỷ lệ khí không ngưng/RDF & 30\% & Theo \cite{Williams2007} \
+9 & Tỷ lệ than carbon/RDF & 25\% & Thực nghiệm \
+10 & Hiệu suất chưng cất (dầu nhẹ/dầu thô) & 80\% & Thiết kế cột chưng cất \
+11 & Hiệu suất chuyển đổi điện tổng hợp ($\eta$) & 32\% RDF $	o$ điện lý thuyết & Bao gồm nhiệt phân, chưng cất, diesel và máy phát \
+12 & Công suất phát điện tổng & 2,628 MW & Tính toán Chương 3 \
+13 & Công suất điện ròng (sau tự dùng) & 1,82--1,84 MW & Sau trừ 30\% tự dùng \
 \bottomrule
 \end{tabular}%
 }
