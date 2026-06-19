@@ -8,6 +8,7 @@
 \usepackage{mhchem}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{emptypage}
 
 \usepackage{scrextend}
 \changefontsizes{13pt}
@@ -316,33 +317,33 @@
 % =========================== BODY ===============
 \begin{document}
 % \newgeometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\pagenumbering{gobble}
 \subfile{Bia} % Phần bìa
 % \restoregeometry
 
 % ===================================================
 \pagenumbering{roman}
+\pagestyle{plain}
 
-\newpage
-\pagenumbering{gobble}
+\cleardoublepage
+% \pagenumbering{gobble}
 \subfile{Chuong/0_0_Loi_cam_doan.tex}
 
 \cleardoublepage
-\pagenumbering{gobble}
+% \pagenumbering{gobble}
 \subfile{Chuong/0_1_Loi_cam_on.tex}
 
 \cleardoublepage
-\pagenumbering{gobble}
+% \pagenumbering{gobble}
 \subfile{Chuong/0_2_Tom_tat_noi_dung.tex}
 
 \cleardoublepage
-\pagenumbering{gobble}
+% \pagenumbering{gobble}
 \subfile{Chuong/0_3_Loi_noi_dau.tex}
 
 % ===================================================
 % \pagestyle{empty} % Header và footer rỗng
 \cleardoublepage
-\pagenumbering{roman} % Xóa page numbering ở cuối trang
-\pagestyle{plain}
 \renewcommand*\contentsname{MỤC LỤC}
 
 \titlecontents{chapter}
@@ -432,19 +433,19 @@
 \fancyfoot[RO,LE]{\thepage}
 \renewcommand{\sectionmark}[1]{}
 
-\newpage
+\cleardoublepage
 \subfile{Chuong/1_Chuong_1.tex}
 
-\newpage
+\cleardoublepage
 \subfile{Chuong/2_Chuong_2.tex}
 
-\newpage
+\cleardoublepage
 \subfile{Chuong/3_Chuong_3.tex}
 
-\newpage
+\cleardoublepage
 \subfile{Chuong/4_Chuong_4.tex}
 
-\newpage
+\cleardoublepage
 \subfile{Chuong/5_Chuong_5.tex}
 
 % ===================================================
@@ -455,9 +456,9 @@
 \printbibliography
 \phantomsection\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
 
-\appendixpage
-\appendices
-\addappheadtotoc
+% \appendixpage
+% \appendices
+% \addappheadtotoc
 
 % \chapter*{PHỤ LỤC} %Kết luận và hướng phát triển}
 
