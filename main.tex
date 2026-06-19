@@ -1,5 +1,5 @@
-\documentclass[a4paper,13pt,3p,oneside]{report}
-% \documentclass[a4paper,13pt,3p,twoside]{report}
+% \documentclass[a4paper,13pt,3p,oneside]{report}
+\documentclass[a4paper,13pt,3p,twoside]{report}
 
 
 % \usepackage{minted} % yêu cầu biên dịch với -shell-escape
@@ -16,6 +16,8 @@
 
 \usepackage{tikz} % Thư viện vẽ hình
 \usetikzlibrary{calc, shapes.geometric, arrows.meta, positioning, shadows} % Thêm các thư viện TikZ cần thiết
+% \usepackage{ulem}   % Cho \sout (gạch ngang chữ)
+% \usepackage{cancel} % Cho \cancel (gạch ngang biểu thức toán)
 \usepackage{pgfplots} % Vẽ biểu đồ
 \pgfplotsset{compat=1.18}
 \usepackage{pgf-pie} % Vẽ biểu đồ tròn
@@ -68,6 +70,7 @@
 
 \usepackage{listings} % Gói cho phép chèn code và định dạng code
 
+\usepackage{threeparttable}
 % --- CẤU HÌNH HIỂN THỊ CODE ---
 % ==== FONTS & UTF-8 (khuyên dùng XeLaTeX) ====
 % \usepackage{fontspec}           % BẬT nếu dùng XeLaTeX/LuaLaTeX
@@ -430,25 +433,19 @@
 \renewcommand{\sectionmark}[1]{}
 
 \newpage
-\label{chuong1}
-\subfile{Chuong/1_Chuong_1.tex} % Phần mở đầu
+\subfile{Chuong/1_Chuong_1.tex}
 
 \newpage
-% \pagestyle{fancy} % Áp dụng header và footer
-\label{chuong2}
 \subfile{Chuong/2_Chuong_2.tex}
 
 \newpage
-% \pagestyle{fancy} % Áp dụng header và footer
-\label{chuong3}
 \subfile{Chuong/3_Chuong_3.tex}
 
-% % Chương 4 cũ (QUẢN LÝ VẬN HÀNH) đã được gộp vào Chương 3
+\newpage
+\subfile{Chuong/4_Chuong_4.tex}
 
 \newpage
-% \pagestyle{fancy} % Áp dụng header và footer
-\label{chuong4}
-\subfile{Chuong/5_Chuong_5.tex} % KẾT LUẬN VÀ KIẾN NGHỊ (Chương 4 mới)
+\subfile{Chuong/5_Chuong_5.tex}
 
 % ===================================================
 

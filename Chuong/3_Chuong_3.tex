@@ -3,30 +3,26 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{TÍNH TOÁN THIẾT KẾ HỆ THỐNG NHIỆT PHÂN PHÁT ĐIỆN}
+\chapter{TÍNH TOÁN THIẾT KẾ HỆ THỐNG}
+\label{chuong3}
 
 %%=============================================================
 \section{Cơ sở tính toán}
 %%=============================================================
 
-Chương~2 đã phân tích và lựa chọn phương án công nghệ nhiệt phân -- chưng cất dầu -- phát điện diesel làm giải pháp xử lý CTRSH đô thị. Chương này thực hiện bước tiếp theo: cân bằng vật chất và năng lượng sơ bộ, thiết kế sơ bộ các thiết bị chính và kiểm tra tính hợp lý của phương án. Đây là bước tính toán ở cấp \emph{basic engineering}, nhằm lượng hóa dòng vật chất, năng lượng và thông số thiết bị trước khi đi vào thiết kế chi tiết. Toàn bộ tính toán được trình bày ở dạng tổng quát với các biến ký hiệu ($G_0$, $Q_{\text{RDF}}^r$, $y_{\text{dầu}}$, $y_{\text{khí}}$, $y_{\text{than}}$, $\eta$); người đọc có thể thay bằng số liệu cụ thể của từng dự án để thu được kết quả riêng. Các tỷ lệ sản phẩm nhiệt phân và hiệu suất tổng thể được đối chiếu với các nghiên cứu thực nghiệm trên nguồn nguyên liệu tương đồng \cite{Sharuddin2016,Williams2007,Miandad2016,Arena2012}.
-
 \subsection{Nguyên tắc tính toán cân bằng}
 
-Toàn bộ tính toán cân bằng vật chất được xây dựng trên nguyên tắc bảo toàn khối lượng, hay còn gọi là cân bằng vật chất tổng thể (\emph{overall mass balance}). Theo nguyên tắc này, tổng khối lượng các dòng đầu vào bằng tổng khối lượng các dòng đầu ra tại mỗi ranh giới hệ thống được xét. Cụ thể:
-
+Toàn bộ tính toán cân bằng vật chất được xây dựng trên nguyên tắc bảo toàn khối lượng. Theo đó, tổng khối lượng các dòng đầu vào bằng tổng khối lượng các dòng đầu ra tại mỗi ranh giới hệ thống được xét. Cụ thể:
 \begin{equation}
   \sum m_{\text{vào}} = \sum m_{\text{ra}} + \Delta m_{\text{tích lũy}}
 \end{equation}
 
 Trong điều kiện vận hành ổn định, lượng tích lũy trong hệ thống $\Delta m_{\text{tích lũy}} = 0$, tức là khối lượng ra bằng khối lượng vào. Áp dụng cho từng thiết bị hay khối công đoạn, phương trình bảo toàn khối lượng cụ thể hóa thành:
-
 \begin{equation}
   m_{\text{CTRSH}} = m_{\text{RDF}} + m_{\text{không cháy}} + m_{\text{nước thải, ép}} + m_{\text{hơi nước, bức xạ}} + m_{\text{hơi nước, sấy}} + m_{\text{hao hụt}}
 \end{equation}
 
 Phương trình trên là cơ sở cho toàn bộ tính toán cân bằng trong Mục~\ref{sec:can-bang-tien-xu-ly}. Khi áp dụng cho khối nhiệt phân, phương trình tương tự được viết lại:
-
 \begin{equation}
   m_{\text{RDF}} = m_{\text{dầu thô}} + m_{\text{khí không ngưng}} + m_{\text{than carbon}}
 \end{equation}
@@ -955,7 +951,7 @@ Danh mục thiết bị của nhà máy được tổ chức theo các khối ch
 
 \subsection{Cấu hình mô-đun lò nhiệt phân quay}
 
-Lò nhiệt phân quay (rotary kiln pyrolyzer) là thiết bị trung tâm của toàn bộ chuỗi công nghệ. Để đạt công suất $K_{\text{RDF,lò}} \cdot G_0$ tấn RDF/ngày, nhà máy sử dụng cấu hình nhiều mô-đun song song. Mỗi mô-đun lò nhiệt phân có công suất xử lý khoảng 5--20\,tấn RDF/mẻ (24\,giờ). Số lượng mô-đun vận hành song song được tính theo $N_{\text{mô-đun}} = \lceil K_{\text{RDF,lò}} \cdot G_0 / G_{\text{mô-đun}} \rceil$ cộng thêm một mô-đun dự phòng luân phiên bảo dưỡng, cấu hình chi tiết đã nêu ở Chương~2.
+Lò nhiệt phân quay (rotary kiln pyrolyzer) là thiết bị trung tâm của toàn bộ chuỗi công nghệ. Để đạt công suất $K_{\text{RDF,lò}} \cdot G_0$ tấn RDF/ngày, nhà máy sử dụng cấu hình nhiều mô-đun song song. Mỗi mô-đun lò nhiệt phân có công suất xử lý khoảng 5--20\,tấn RDF/mẻ (24\,giờ). Số lượng mô-đun vận hành song song được tính theo $N_{\text{mô-đun}} = \lceil K_{\text{RDF,lò}} \cdot G_0 / G_{\text{mô-đun}} \rceil$ cộng thêm một mô-đun dự phòng luân phiên bảo dưỡng, cấu hình chi tiết đã nêu ở Chương \ref{chuong2}.
 
 Thông số kỹ thuật điển hình của một mô-đun lò nhiệt phân quay trong dự án này bao gồm: đường kính trong 1,5--2,0 m và chiều dài thân lò 5--8 m; tốc độ quay 0,5--2 vòng/phút, điều chỉnh bằng biến tần; nhiệt độ vận hành 350--500$^\circ\mathrm{C}$, kiểm soát bằng nhiệt điện trở Pt100; vật liệu thân lò bằng thép hợp kim 310S chịu nhiệt, có lớp cách nhiệt bên ngoài; áp suất vận hành ở mức âm nhẹ ($-5$ đến $-20$\,Pa so với khí quyển) để ngăn rò rỉ khí ra ngoài, duy trì bằng quạt hút; buồng đốt ngoài đặt bên dưới thân lò sử dụng khí không ngưng làm nhiên liệu, nhiệt truyền gián tiếp qua thành lò nhằm tránh pha loãng sản phẩm nhiệt phân bởi khí đốt; hệ thống cấp liệu gồm vít tải xoắn cấp RDF vào đầu lò với tốc độ điều chỉnh được theo tín hiệu cân liệu; hệ thống tháo than ở đầu tháo lò cho phép than carbon nóng (khoảng 300$^\circ\mathrm{C}$) được tháo ra qua vít tải tháo liệu và làm mát trong thiết bị làm mát than xoắn ốc (screw cooler) trước khi đưa vào thùng chứa kín.
 
@@ -1450,7 +1446,7 @@ Sản lượng điện ròng (MWh/năm) & 15.943 & $\sim 15.943$ & $<0{,}1\%$ \\
 
 Sai lệch giữa kết quả tính toán của đồ án và hồ sơ dự án là rất nhỏ (dưới 1\% đối với hầu hết các chỉ tiêu), xác nhận tính nhất quán của phương pháp tính toán và sự đúng đắn của các giả thiết được áp dụng.
 
-Phương án công nghệ nhiệt phân -- chưng cất dầu -- phát điện diesel cho nhà máy xử lý CTRSH quy mô vừa là khả thi về mặt kỹ thuật theo các tính toán cân bằng sơ bộ. Các kết quả ở dạng tổng quát tương đồng với dữ liệu từ nghiên cứu thực nghiệm trên nguyên liệu cùng loại \cite{Sharuddin2016,Williams2007,Miandad2016,Arena2012}. Các kết luận tổng hợp và kiến nghị về phương án được trình bày ở Chương~4.
+Phương án công nghệ nhiệt phân -- chưng cất dầu -- phát điện diesel cho nhà máy xử lý CTRSH quy mô vừa là khả thi về mặt kỹ thuật theo các tính toán cân bằng sơ bộ. Các kết quả ở dạng tổng quát tương đồng với dữ liệu từ nghiên cứu thực nghiệm trên nguyên liệu cùng loại \cite{Sharuddin2016,Williams2007,Miandad2016,Arena2012}. Các kết luận tổng hợp và kiến nghị về phương án được trình bày ở Chương \ref{chuong4}.
 
 %%=============================================================
 \section{Tính toán cụ thể cho 5 mô-đun nhiệt phân}
