@@ -3,534 +3,739 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{TÍCH HỢP HỆ THỐNG VÀ ĐÁNH GIÁ TÍNH KHẢ THI}
+\chapter{TÍNH TOÁN THIẾT KẾ THIẾT BỊ CÔNG NGHỆ CHÍNH}
 \label{chuong4}
 
-Phần này trình bày bốn nội dung cốt lõi nhằm chứng minh tính khả thi thực tế của toàn bộ dự án nhà máy nhiệt phân -- chưng cất -- phát điện diesel tại Hội An công suất 120 tấn CTRSH/ngày đêm: (i) bố trí mặt bằng công nghệ, (ii) hệ thống điều khiển và giám sát SCADA đảm bảo vận hành ổn định, (iii) giải pháp xử lý môi trường đáp ứng các quy chuẩn cho phép, và (iv) phân tích hiệu quả kinh tế qua các chỉ số CAPEX/OPEX/NPV/IRR.
+Danh mục thiết bị của nhà máy được tổ chức theo các khối chức năng: tiếp nhận và phân loại, cắt nghiền và ép tách nước, sấy và tạo RDF, nhiệt phân, chưng cất -- tinh chế dầu, phát điện diesel, xử lý khí thải và xử lý nước thải. Nguyên tắc lựa chọn thiết bị là đảm bảo năng lực xử lý phù hợp với công suất 120\,tấn/ngày đêm, có dự phòng vận hành, dễ bảo trì và tương thích với các thiết bị đã đầu tư.
 
-%%=============================================================
-\section{Bố trí mặt bằng công nghệ}
-\label{sec:bo-tri-mat-bang}
-%%=============================================================
-
-Nguyên tắc bố trí mặt bằng nhà máy tuân theo các yêu cầu cụ thể. Dòng vật chất phải đi một chiều từ khu tiếp nhận rác (ô nhiễm cao) đến khu tiền xử lý, tiếp đến khu nhiệt phân, khu chưng cất và tinh chế dầu, cuối cùng là khu phát điện; không bố trí dòng ngược chiều để tránh lây nhiễm chéo. Khu tiếp nhận rác và tiền xử lý phải cách biệt hoàn toàn với khu chứa dầu bằng tường hoặc khoảng cách an toàn tối thiểu 15 m, nhằm ngăn nguy cơ cháy nổ lan rộng. Bồn chứa dầu phải đặt cách các công trình liên kề tối thiểu 15 m (đối với bồn dung tích dưới 50 m$^3$) theo TCVN 5684:2012 và QCVN 04:2019/BCT. Khu rác và khu xử lý nước thải cần bố trí cuối hướng gió chủ đạo so với khu văn phòng và khu dân cư lân cận. Hành lang bảo dưỡng tối thiểu 1,5 m xung quanh mỗi thiết bị lớn và đường nội bộ rộng 4 m cho xe nâng và xe chữa cháy phải được đảm bảo xuyên suốt mặt bằng nhà máy.
-
-Việc sử dụng thiết bị theo mô-đun, đặc biệt đối với lò nhiệt phân và tổ máy phát điện diesel, tạo thuận lợi cho vận hành linh hoạt theo lượng rác tiếp nhận thực tế. Khi một mô-đun cần bảo dưỡng, các mô-đun còn lại vẫn có thể duy trì một phần công suất, giảm nguy cơ phải dừng toàn bộ nhà máy.
-
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
-\scalebox{1}{%
-\begin{tikzpicture}[
-    scale=0.85,
-    node distance=0.6cm and 0.3cm,
-    zone/.style={draw, rounded corners=3pt, minimum width=2.8cm, minimum height=2.0cm, font=\small, align=center, fill},
-    equipment/.style={draw, rounded corners=1pt, minimum width=1.8cm, minimum height=0.6cm, font=\tiny, align=center},
-    arrow/.style={->, >=Stealth, very thin},
-    label/.style={font=\footnotesize\bfseries}
-]
-\node[zone, fill=blue!8, label={center:\textbf{Khu tiếp nhận}}] (khu_tiepnhan) at (-3.5,2.5) {};
-\node[equipment, fill=blue!15] at (khu_tiepnhan) {Cầu trục gàu ngoạm \\Băng tải cào};
-\node[zone, fill=green!8, label={center:\textbf{Khu tiền xử lý}}] (khu_tien_xuly) at (0,2.5) {};
-\node[equipment, fill=green!15] at ([yshift=0.4cm]khu_tien_xuly) {Máy xé bao, cắt xé};
-\node[equipment, fill=green!15] at ([yshift=-0.4cm]khu_tien_xuly) {Sàng, tách từ, ép nước};
-\node[zone, fill=yellow!10, label={center:\textbf{Khu RDF}}] (khu_rdf) at (3.5,2.5) {};
-\node[equipment, fill=yellow!20] at (khu_rdf) {Lồng sấy, máy ép viên, bunker};
-\node[zone, fill=orange!10, label={center:\textbf{Khu nhiệt phân}}] (khu_nhietphan) at (-3.5,-1.5) {};
-\node[equipment, fill=orange!20] at ([yshift=0.3cm]khu_nhietphan) {Lò quay nhiệt phân ($\times$5)};
-\node[equipment, fill=orange!15] at ([yshift=-0.4cm]khu_nhietphan) {Buồng đốt, ngưng tụ};
-\node[zone, fill=purple!8, label={center:\textbf{Khu chưng cất}}] (khu_chungcat) at (0,-1.5) {};
-\node[equipment, fill=purple!15] at ([yshift=0.3cm]khu_chungcat) {Lò chưng, tháp cột};
-\node[equipment, fill=purple!20] at ([yshift=-0.4cm]khu_chungcat) {Bể axit, kiềm, đất sét};
-\node[zone, fill=red!8, label={center:\textbf{Khu dầu}}] (khu_dau) at (3.5,-1.5) {};
-\node[equipment, fill=red!15] at (khu_dau) {Bồn dầu thô, dầu TP, bơm};
-\node[zone, fill=yellow!8, label={center:\textbf{Khu phát điện}}] (khu_phatdien) at (3.5,-4.5) {};
-\node[equipment, fill=yellow!20] at (khu_phatdien) {Máy phát diesel ($\times$6) \\Trạm biến áp};
-\node[zone, fill=gray!8, label={center:\textbf{Khu XLMT}}] (khu_xlmt) at (0,-4.5) {};
-\node[equipment, fill=gray!15] at (khu_xlmt) {Cyclone, tháp hấp thụ, bể XLNT};
-\node[zone, fill=blue!5, label={center:\textbf{Khu văn phòng}}] (khu_vanphong) at (-3.5,-4.5) {};
-\node[equipment, fill=blue!10] at (khu_vanphong) {Phòng điều khiển SCADA \\Văn phòng, xưởng};
-
-\draw[dashed, ->] (khu_tiepnhan) -- node[above] {} (khu_tien_xuly);
-\draw[dashed, ->] (khu_tien_xuly) -- node[above] {} (khu_rdf);
-\draw[dashed, ->] (khu_rdf) -- node[right] {} (khu_nhietphan);
-\draw[dashed, ->] (khu_nhietphan) -- node[above] {} (khu_chungcat);
-\draw[dashed, ->] (khu_chungcat) -- node[right] {} (khu_dau);
-\draw[dashed, ->] (khu_dau) -- node[right] {} (khu_phatdien);
-\draw[dashed, ->] (khu_nhietphan) -- node[right] {} (khu_xlmt);
-\end{tikzpicture}
+\caption{Tổng hợp một số nhóm thiết bị công nghệ chính}
+\label{tab:thiet-bi-chinh}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.05\textwidth}p{0.25\textwidth}p{0.36\textwidth}p{0.20\textwidth}}
+\toprule
+\textbf{TT} & \textbf{Nhóm thiết bị} & \textbf{Thông số hoặc chức năng chính} & \textbf{Ghi chú} \\
+\midrule
+1 & Băng tải nhập liệu, máy mở túi rác & Công suất 10--15\,tấn/h; động cơ máy mở túi khoảng 18,5\,kW & Tiếp nhận và phá bao rác \\
+\midrule
+2 & Máy băm xé túi và máy cắt rác & Công suất 10--15\,tấn/h; cụm băm xé chính có công suất động cơ đến $2 \times 110$\,kW & Giảm kích thước, đồng nhất vật liệu \\
+\midrule
+3 & Sàng quay, sàng rung, tách từ & Phân loại hữu cơ/vô cơ, tách kim loại; động cơ tách từ khoảng 1,5\,kW & Giảm tạp chất trơ và kim loại \\
+\midrule
+4 & Máy ép trục vít tách nước & Công suất 7--10\,tấn/h; động cơ chính khoảng 75\,kW & Giảm độ ẩm cơ học \\
+\midrule
+5 & Cụm lò sấy rác & Lồng quay sấy, cyclone, quạt hút, tủ điện; công suất động cơ khoảng 87,7\,kW & Sấy giảm ẩm trước tạo RDF \\
+\midrule
+6 & Máy ép viên RDF & Động cơ khoảng 118,4\,kW; kèm băng tải nhập liệu và băng tải thu viên & Tạo nhiên liệu RDF ổn định \\
+\midrule
+7 & Hệ thống nhiệt phân & Công suất xử lý khoảng 10--15\,tấn/ngày đêm mỗi hệ; gồm lò quay, buồng đốt, ngưng tụ, hydroseal, bơm và quạt & Chuyển hóa RDF thành dầu, khí và than \\
+\midrule
+8 & Hệ thống chưng cất dầu & Lò phản ứng chưng cất, tháp chưng cất, bình ngưng, bồn dầu, bơm chân không; công suất khoảng 10\,tấn dầu/24\,h & Nâng cấp dầu nhiệt phân \\
+\midrule
+9 & Tổ máy phát điện diesel & 6 cụm $\times$ 550 kVA ($\approx$ 440 kW); điện áp 400/230\,V, 50\,Hz, 3 pha, $\cos\varphi = 0{,}8$ & Phát điện từ dầu sau tinh chế \\
+\midrule
+10 & Hệ thống xử lý khí thải và nước thải & Cyclone, tháp dập bụi, hấp thụ, hấp phụ; hệ xử lý nước thải sinh học -- hóa lý -- lọc & Đảm bảo tuân thủ môi trường \\
+\midrule
+\bottomrule
+\end{tabular}
 }
-\caption{Sơ đồ bố trí mặt bằng công nghệ và các cụm thiết bị chính}
-\label{fig:bo-tri-mat-bang}
+\end{table}
+
+\subsection{Tính toán thiết kế lò nhiệt phân quay}
+\label{sec:tinh-toan-lo-nhiet-phan-quay}
+
+Lò nhiệt phân quay (rotary kiln pyrolyzer) là thiết bị trung tâm của toàn bộ chuỗi công nghệ. Để đạt công suất $m_{\text{RDF cấp lò}} = 39{,}41$ tấn RDF/ngày, nhà máy sử dụng cấu hình nhiều mô-đun song song. Mỗi mô-đun lò nhiệt phân có công suất xử lý khoảng 5--20\,tấn RDF/mẻ (24\,giờ). Số lượng mô-đun vận hành song song được tính theo $N_{\text{mô-đun}} = \lceil m_{\text{RDF cấp lò}} / G_{\text{mô-đun}} \rceil$ cộng thêm một mô-đun dự phòng luân phiên bảo dưỡng, cấu hình chi tiết đã nêu ở Chương \ref{chuong2}.
+
+Thông số kỹ thuật điển hình của một mô-đun lò nhiệt phân quay trong dự án này bao gồm: đường kính trong 1,5--2,0 m và chiều dài thân lò 5--8 m; tốc độ quay 0,5--2 vòng/phút, điều chỉnh bằng biến tần; nhiệt độ vận hành 350--500$^\circ\mathrm{C}$, kiểm soát bằng nhiệt điện trở Pt100; vật liệu thân lò bằng thép hợp kim 310S chịu nhiệt, có lớp cách nhiệt bên ngoài; áp suất vận hành ở mức âm nhẹ ($-5$ đến $-20$\,Pa so với khí quyển) để ngăn rò rỉ khí ra ngoài, duy trì bằng quạt hút; buồng đốt ngoài đặt bên dưới thân lò sử dụng khí không ngưng làm nhiên liệu, nhiệt truyền gián tiếp qua thành lò nhằm tránh pha loãng sản phẩm nhiệt phân bởi khí đốt; hệ thống cấp liệu gồm vít tải xoắn cấp RDF vào đầu lò với tốc độ điều chỉnh được theo tín hiệu cân liệu; hệ thống tháo than ở đầu tháo lò cho phép than carbon nóng (khoảng 300$^\circ\mathrm{C}$) được tháo ra qua vít tải tháo liệu và làm mát trong thiết bị làm mát than xoắn ốc (screw cooler) trước khi đưa vào thùng chứa kín.
+
+Phần tiếp theo trình bày các bước tính toán sơ bộ các kích thước chính của buồng phản ứng nhiệt phân quay cho một mô-đun có công suất thiết kế $G_{\text{mô-đun}}$ tấn RDF/ngày (thường 5--20 tấn/ngày tùy cỡ lò). Kết quả tính toán làm cơ sở cho việc lựa chọn hoặc kiểm tra thông số do nhà cung cấp thiết bị đề xuất.
+
+\subsubsection{Xác định thể tích buồng phản ứng}
+
+Lưu lượng khối lượng RDF đầu vào cho một mô-đun:
+\begin{equation}
+\dot{m}_{\text{RDF}} = \frac{10\;\text{tấn}}{24\;\text{h}} \approx 0{,}417\;\text{tấn/h} \approx 417\;\text{kg/h}
+\label{eq:luu-luong-rdf-module}
+\end{equation}
+
+Chọn thời gian lưu thiết kế $t_{\text{lưu}} = 6$ giờ (nằm trong dải 4--8 giờ phù hợp với nhiệt độ 400--500$^\circ\mathrm{C}$ đối với RDF). Khối lượng RDF có trong buồng tại một thời điểm bất kỳ:
+\begin{equation}
+m_{\text{lưu}} = \dot{m}_{\text{RDF}} \times t_{\text{lưu}} \quad \text{[kg]}
+\end{equation}
+
+Khối lượng riêng của viên RDF trong buồng lò quay phụ thuộc vào độ nén và thành phần, ước tính $\rho_{\text{RDF}} \approx 400$ kg/m$^3$ (khoảng 300--500 kg/m$^3$ đối với RDF viên). Hệ số lấp đầy khối lò quay $\phi$ phụ thuộc vào góc nghiêng và tốc độ quay, thường chọn $\phi = 0{,}25$ (25\% thể tích buồng chứa vật liệu tại một thời điểm). Thể tích buồng yêu cầu:
+\begin{equation}
+V_{\text{yêu cầu}} = \frac{m_{\text{lưu}}}{\rho_{\text{RDF}} \times \phi}
+= \frac{2.502}{400 \times 0{,}25}
+\approx 25\;\text{m}^3
+\label{eq:the-tich-buong-yeu-cau}
+\end{equation}
+
+Chọn tỷ lệ chiều dài trên đường kính $L/D_i = 4$ (giá trị phổ biến cho lò quay nhiệt phân quy mô vừa). Kết hợp với $V = \pi D_i^2 L / 4$:
+\begin{equation}
+D_i = \sqrt[3]{\frac{4V}{\pi (L/D_i)}}
+= \sqrt[3]{\frac{4 \times 25}{\pi \times 4}}
+\approx \sqrt[3]{8} \approx 2{,}0\;\text{m}
+\end{equation}
+\begin{equation}
+L = 4 \times D_i \approx 8{,}0\;\text{m}
+\end{equation}
+
+Thể tích buồng thực tế: $V = \pi \times 2{,}0^2 \times 8{,}0 / 4 \approx 25{,}1$ m$^3$. Kiểm tra: $V \approx V_{\text{yêu cầu}}$, đạt yêu cầu.
+
+Thời gian lưu thực tế:
+\begin{equation}
+t_{\text{lưu,thực}} = \frac{m_{\text{lưu}}}{\dot{m}_{\text{RDF}}}
+= \frac{\rho_{\text{RDF}} \times \phi \times V}{\dot{m}_{\text{RDF}}}
+= \frac{400 \times 0{,}25 \times 25{,}1}{417}
+\approx 6{,}0\;\text{h}
+\end{equation}
+
+Giá trị này nằm trong dải thiết kế 4--8 giờ, xác nhận kích thước $D_i = 2{,}0$ m, $L = 8{,}0$ m là phù hợp. Tỷ lệ $L/D_i = 4$ đảm bảo đủ thời gian tiếp xúc nhiệt trong khi vẫn giữ chiều dài hợp lý để bố trí mặt bằng.
+
+\subsubsection{Xác định tốc độ quay và độ nghiêng của lò}
+
+Đối với lò quay vận hành liên tục, thời gian lưu của vật liệu rắn liên hệ với các thông số hình học và động học của lò theo công thức thực nghiệm của Cục Mỏ Hoa Kỳ, được sử dụng rộng rãi trong thiết kế lò quay công nghiệp \cite{Boateng2008}:
+\begin{equation}
+\tau = \frac{1{,}77 \, L \sqrt{\theta}}{S \, N \, D_i}
+\label{eq:thoi-gian-luu-lo-quay}
+\end{equation}
+
+trong đó $\tau$ là thời gian lưu (phút); $L$ là chiều dài lò (m); $\theta$ là góc nghỉ động của vật liệu (độ), lấy $\theta = 35^\circ$ đối với viên RDF; $S$ là độ nghiêng của lò (độ); $N$ là tốc độ quay (vòng/phút) và $D_i$ là đường kính trong (m). Với thời gian lưu mục tiêu $\tau = 360$ phút, tích $S \cdot N$ cần đạt:
+\begin{equation}
+S \cdot N = \frac{1{,}77 \times 8{,}0 \times \sqrt{35}}{360 \times 2{,}0} \approx 0{,}116
+\end{equation}
+
+Chọn độ nghiêng lò $S = 0{,}5^\circ$ (tương đương 8,7\,mm/m chiều dài), tốc độ quay danh định tương ứng là $N \approx 0{,}23$ vòng/phút. Kết quả cho thấy để đạt thời gian lưu 6 giờ ở chế độ cấp liệu liên tục, lò phải quay rất chậm và đặt gần như nằm ngang. Trong chế độ vận hành bán liên tục, tốc độ quay được duy trì ở mức 0,5--2 vòng/phút nhằm tăng cường đảo trộn và truyền nhiệt, còn thời gian lưu tổng được khống chế bằng chu kỳ cấp liệu -- xả than thay vì chỉ bằng độ dốc của lò \cite{Boateng2008}. Dải điều chỉnh của biến tần dẫn động vì vậy được chọn từ 0,2 đến 2 vòng/phút để bao trùm cả hai chế độ vận hành.
+
+\subsubsection{Tính công suất nhiệt của buồng đốt}
+
+Công suất nhiệt cần cấp cho buồng đốt gồm bốn thành phần chính: nhiệt nâng nhiệt độ RDF lên nhiệt độ phản ứng, nhiệt bay hơi và quá nhiệt phần ẩm còn lại trong RDF, nhiệt cho phản ứng nhiệt phân và tổn thất nhiệt qua vỏ buồng đốt ra môi trường.
+
+\textbf{Nhiệt lượng nâng nhiệt RDF.} Suất cấp liệu của một mô-đun là $\dot{m}_{\text{RDF}} = 417$ kg/h $= 0{,}116$ kg/s. RDF có nhiệt dung riêng ước tính $c_p \approx 1{,}5$ kJ/(kg$\cdot$K) (giá trị trung bình cho hỗn hợp nhựa, giấy, gỗ có độ ẩm dưới 15\%) \cite{Basu2013}:
+\begin{equation}
+Q_1 = \dot{m}_{\text{RDF}} \times c_p \times (T_{\text{lò}} - T_{\text{mt}})
+= 0{,}116 \times 1{,}5 \times (450 - 30) \approx 73\;\text{kW}
+\label{eq:Q1-nang-nhiet}
+\end{equation}
+
+\textbf{Nhiệt bay hơi và quá nhiệt ẩm.} Với độ ẩm làm việc 10,4\%, lưu lượng nước trong RDF cấp lò là $\dot{m}_w = 0{,}104 \times 0{,}116 \approx 0{,}012$ kg/s. Nhiệt lượng riêng để gia nhiệt nước từ 30$^\circ\mathrm{C}$ lên 100$^\circ\mathrm{C}$, hóa hơi và quá nhiệt hơi nước đến nhiệt độ lò xấp xỉ $q_w \approx 3.250$ kJ/kg \cite{Incropera2011}:
+\begin{equation}
+Q_{\text{ẩm}} = \dot{m}_w \times q_w \approx 0{,}012 \times 3.250 \approx 39\;\text{kW}
+\label{eq:Q-am}
+\end{equation}
+
+\textbf{Nhiệt cho phản ứng nhiệt phân.} Phản ứng nhiệt phân RDF là quá trình thu nhiệt ròng (endothermic), ước tính enthalpy phản ứng $\Delta H_{\text{NP}} \approx 500$ kJ/kg RDF đã phân hủy \cite{Basu2013}. Với toàn bộ dòng RDF tham gia phản ứng:
+\begin{equation}
+Q_2 = \dot{m}_{\text{RDF}} \times \Delta H_{\text{NP}}
+\approx 0{,}116 \times 500 \approx 58\;\text{kW}
+\label{eq:Q2-phan-ung}
+\end{equation}
+
+\textbf{Tổn thất nhiệt qua vỏ buồng đốt.} Do lò được gia nhiệt gián tiếp, thân lò thép nằm trọn trong buồng đốt nên tổn thất nhiệt ra môi trường xảy ra chủ yếu qua vỏ buồng đốt. Vỏ buồng đốt có kết cấu ba lớp gồm lớp gạch chịu lửa (dày $s_1 = 230$ mm, $\lambda_1 \approx 1{,}3$ W/(m$\cdot$K)), lớp bông cách nhiệt ($s_2 = 50$ mm, $\lambda_2 \approx 0{,}05$ W/(m$\cdot$K)) và vỏ thép ($s_3 = 10$ mm, $\lambda_3 \approx 50$ W/(m$\cdot$K)) \cite{Incropera2011}:
+\begin{equation}
+\frac{1}{U} = \frac{s_1}{\lambda_1} + \frac{s_2}{\lambda_2} + \frac{s_3}{\lambda_3}
+= \frac{0{,}23}{1{,}3} + \frac{0{,}05}{0{,}05} + \frac{0{,}01}{50}
+\approx 0{,}18 + 1{,}00 + 0{,}0002 \approx 1{,}18\;\text{m}^2\!\cdot\!\text{K/W}
+\end{equation}
+\begin{equation}
+U \approx \frac{1}{1{,}18} \approx 0{,}85\;\text{W/(m}^2\!\cdot\!\text{K)}
+\end{equation}
+
+Diện tích vỏ buồng đốt lấy xấp xỉ bằng diện tích bao quanh thân lò (không kể hai đầu):
+\begin{equation}
+A = \pi \times D_i \times L = \pi \times 2{,}0 \times 8{,}0 \approx 50{,}3\;\text{m}^2
+\end{equation}
+
+Chênh lệch nhiệt độ giữa khói trong buồng đốt (khoảng 700$^\circ\mathrm{C}$) và môi trường bên ngoài (30$^\circ\mathrm{C}$): $\Delta T \approx 670$ K. Tổn thất qua vỏ:
+\begin{equation}
+Q_3 = U \times A \times \Delta T
+\approx 0{,}85 \times 50{,}3 \times 670 \approx 29\;\text{kW}
+\end{equation}
+
+Công suất nhiệt tổng của buồng đốt thiết kế:
+\begin{equation}
+Q_{\text{tổng}} = Q_1 + Q_{\text{ẩm}} + Q_2 + Q_3 \approx 73 + 39 + 58 + 29 \approx 200\;\text{kW}
+\end{equation}
+
+Kể đến hiệu suất buồng đốt $\eta_{\text{buồng đốt}} = 85\%$, công suất nhiên liệu cần cấp tương ứng khoảng $200/0{,}85 \approx 235$ kW. Nhiệt lượng do khí không ngưng cung cấp (với nhiệt trị 15--20 MJ/kg, lưu lượng khí 30\% của lưu lượng RDF mỗi mô-đun $0{,}30 \times 0{,}116 \approx 0{,}035$ kg/s $= 125$ kg/h, nhiệt trị trung bình 17,5 MJ/kg, hiệu suất buồng đốt $\eta_{\text{buồng đốt}} = 85\%$):
+\begin{equation}
+Q_{\text{khí}} = 125\;\text{kg/h} \times 17{,}5\;\text{MJ/kg}
+\times \frac{1.000\;\text{kJ}}{1\;\text{MJ}} \times \eta_{\text{buồng đốt}}
+\times \frac{1\;\text{h}}{3.600\;\text{s}}
+\approx 125 \times 17.500 \times 0{,}85 / 3.600 \approx 516\;\text{kW}
+\label{eq:Qkhi}
+\end{equation}
+
+Kết quả cho thấy công suất nhiệt hữu ích từ khí không ngưng hồi lưu (khoảng 516\,kW) lớn hơn đáng kể nhu cầu thiết kế của buồng đốt (khoảng 200\,kW), xác nhận khả năng tự cấp nhiệt của hệ thống ở chế độ vận hành ổn định. Phần khí dư rất lớn (hơn 1,5 MW nhiệt đối với 5 mô-đun) sẽ được chuyển toàn bộ sang gia nhiệt cho lồng sấy rác (RDF) và cung cấp nhiệt lượng cho lò chưng cất dầu, từ đó làm khép kín vòng năng lượng tuyệt đối và tránh lãng phí. Nhu cầu nhiệt chi tiết tính được tương đương khoảng 9--10\% công suất nhiệt của dòng RDF, thấp hơn mức ước tính bảo thủ 15--25\% tại Mục~\ref{sec:can-bang-nang-luong}; khoảng chênh lệch này bao trùm giai đoạn khởi động, chế độ quá độ và suy giảm cách nhiệt theo thời gian.
+
+\subsubsection{Kiểm tra truyền nhiệt và tổng kết kích thước}
+
+Khả năng truyền nhiệt từ khói buồng đốt (khoảng 700$^\circ\mathrm{C}$) qua thành thép của lò vào khối vật liệu (450$^\circ\mathrm{C}$) được kiểm tra theo chuỗi ba nhiệt trở nối tiếp: màng khói phía ngoài, vách thép và lớp hạt phía trong. Ở nhiệt độ buồng đốt 700$^\circ\mathrm{C}$, thành phần bức xạ chiếm ưu thế; hệ số trao đổi nhiệt phía khói (đối lưu cộng bức xạ quy đổi) ước tính $h_g \approx 125$ W/(m$^2\cdot$K) \cite{Incropera2011}. Hệ số trao đổi nhiệt giữa vách trong và lớp hạt được đảo trộn liên tục trong lò quay (nhờ hệ thống cánh đảo - lifters bố trí bên trong nhằm tăng cường truyền nhiệt vào lõi vật liệu) lấy $h_b \approx 100$ W/(m$^2\cdot$K) theo dữ liệu thiết kế lò quay công nghiệp \cite{Boateng2008}. Hệ số truyền nhiệt tổng qua vách thép dày 16 mm:
+\begin{equation}
+\frac{1}{U_t} = \frac{1}{h_g} + \frac{s_3}{\lambda_3} + \frac{1}{h_b}
+= \frac{1}{125} + \frac{0{,}016}{50} + \frac{1}{100}
+\approx 0{,}0183\;\text{m}^2\!\cdot\!\text{K/W}
+\quad\Rightarrow\quad
+U_t \approx 54{,}6 \approx 55\;\text{W/(m}^2\!\cdot\!\text{K)}
+\end{equation}
+
+Phần thân lò nằm trong vùng gia nhiệt của buồng đốt chiếm khoảng 70\% diện tích bề mặt, tức $A_t \approx 0{,}7 \times 50{,}3 \approx 35{,}2$ m$^2$. Với chênh lệch nhiệt độ trung bình giữa khói và vật liệu $\Delta T = 250$ K, công suất truyền nhiệt qua thành lò đạt:
+\begin{equation}
+Q_{\text{truyền}} = U_t \times A_t \times \Delta T
+\approx 55 \times 35{,}2 \times 250 \approx 484\;\text{kW}
+\end{equation}
+
+Giá trị này lớn hơn nhiệt lượng cần truyền vào vật liệu ($Q_1 + Q_{\text{ẩm}} + Q_2 \approx 170$ kW) với hệ số dự phòng khoảng 2,8 lần. Dự trữ truyền nhiệt này cho phép rút ngắn thời gian nâng nhiệt khi khởi động, bù đắp sự bám bẩn bề mặt trao đổi nhiệt theo thời gian và duy trì nhiệt độ vùng phản ứng khi lưu lượng cấp liệu hoặc nhiệt trị RDF dao động; khi cần, nhiệt độ buồng đốt còn có thể điều chỉnh trong dải thiết kế 600--800$^\circ\mathrm{C}$, xác nhận tính hợp lý của cấu hình gia nhiệt gián tiếp.
+
+Bảng~\ref{tab:ket-qua-thiet-ke-lo} tổng hợp kết quả tính toán thiết kế buồng nhiệt phân quay cho một mô-đun.
+
+\begin{table}[htbp]
+\centering
+\caption{Kết quả tính toán kích thước buồng nhiệt phân quay cho một mô-đun 10 tấn RDF/ngày}
+\label{tab:ket-qua-thiet-ke-lo}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{lcc}
+\toprule
+\textbf{Thông số} & \textbf{Giá trị thiết kế} & \textbf{Ghi chú} \\
+\midrule
+Công suất xử lý & 10 tấn RDF/ngày & 1 mô-đun \\
+\midrule
+Đường kính trong $D_i$ & 2,0 m & Chọn tiêu chuẩn \\
+Chiều dài thân lò $L$ & 8,0 m & Tỷ lệ $L/D_i = 4$ \\
+\midrule
+Thể tích buồng làm việc & $\approx$25 m$^3$ & Tại $\phi = 0{,}25$ \\
+Thời gian lưu thiết kế & $\approx$6,0 h & Trong dải 4--8 h \\
+\midrule
+Tốc độ quay / độ nghiêng lò & 0,2--2 vòng/phút; 0,5\textdegree & Theo công thức (\ref{eq:thoi-gian-luu-lo-quay}) \\
+\midrule
+Công suất nhiệt buồng đốt $Q_{\text{tổng}}$ & $\approx$200 kW & Gồm $Q_1 + Q_{\text{ẩm}} + Q_2 + Q_3$ \\
+Nhiệt lượng khí không ngưng cung cấp & $\approx$516 kW & $\eta_{\text{buồng đốt}} = 85\%$ \\
+\midrule
+Hệ số truyền nhiệt vào vật liệu $U_t$ & $\approx$55 W/(m$^2\cdot$K) & Khói -- vách thép -- lớp hạt \\
+Hệ số truyền nhiệt qua vỏ buồng đốt $U$ & $\approx$0,85 W/(m$^2\cdot$K) & Vỏ ba lớp cách nhiệt \\
+Diện tích bề mặt truyền nhiệt $A$ & $\approx$50,3 m$^2$ & Không kể hai đầu lò \\
+\midrule
+Số mô-đun vận hành & $N_{\text{mô-đun}}$ & $m_{\text{RDF cấp lò}} = 39{,}41$ tấn/ngày \\
+\midrule
+Số mô-đun lắp đặt & 6 mô-đun & Gồm 5 vận hành + 1 dự phòng \\
+Tổng công suất nhiệt buồng đốt & $\approx$1,0 MW & 5 mô-đun $\times$ 200 kW \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Kết quả tính toán cho thấy buồng nhiệt phân quay với $D_i = 2{,}0$ m và $L = 8{,}0$ m đáp ứng đủ về thể tích, thời gian lưu và công suất nhiệt. Cần lưu ý rằng đây là tính toán sơ bộ ở cấp thiết kế cơ sở; thiết kế chi tiết cần được nhà cung cấp thiết bị xác nhận dựa trên đặc tính RDF thực tế, mô hình CFD và thử nghiệm nhiệt.
+
+Phần tiếp theo trình bày việc triển khai chi tiết cho 5 mô-đun vận hành song song theo hồ sơ điều chỉnh công nghệ dự án Hội An \cite{ThuyetMinhDieuChinh2026}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Hinhve/ban-ve-he-thong-nhiet-phan-va-danh-muc-thiet-bi.png}
+\caption{Bản vẽ hệ thống nhiệt phân và danh mục thiết bị}
+\label{fig:ban-ve-he-thong-nhiet-phan}
 \end{figure}
 
-Hệ thống SCADA (Supervisory Control and Data Acquisition) được thiết kế theo kiến trúc ba lớp theo tiêu chuẩn ISA-95, cho phép giám sát thời gian thực tất cả các thông số nhiệt, áp suất, lưu lượng và chất lượng khí thải của dây chuyền nhiệt phân -- chưng cất -- phát điện diesel. Việc thu thập dữ liệu thời gian thực là điều kiện tiên quyết để đảm bảo an toàn vận hành, phát hiện sớm các điều kiện bất thường và tối ưu hóa hiệu suất năng lượng.
+\subsubsection{Tính toán chi tiết cho 5 mô-đun nhiệt phân}
+\label{sec:tinh-toan-5-modun}
 
-\subsection{Kiến trúc hệ thống SCADA ba lớp}
+Theo hồ sơ điều chỉnh công nghệ dự án Hội An \cite{ThuyetMinhDieuChinh2026}, dây chuyền nhiệt phân được thiết kế gồm 5 mô-đun lò quay vận hành song song, mỗi mô-đun có cùng thông số kỹ thuật và xử lý lượng RDF bằng nhau.
 
-Hệ thống SCADA được tổ chức theo ba cấp theo tiêu chuẩn ISA-95 \cite{ISA95_2019} và IEC 62264:
-
-\textbf{Cấp trường (Field level):} Gồm các cảm biến (sensors) đo các thông số vật lý và cơ cấu chấp hành (actuators) thực hiện lệnh điều khiển từ cấp PLC. Tất cả thiết bị cấp trường được chọn phù hợp với điều kiện công nghiệp nặng (industrial-grade, IP65 trở lên), chịu nhiệt đến 200--300$^\circ\mathrm{C}$ tại các vị trí gần lò và buồng đốt.
-
-\textbf{Cấp PLC/RTU (Control level):} Các bộ PLC (Programmable Logic Controller) hoặc RTU (Remote Terminal Unit) đặt tại mỗi phân xưởng xử lý logic điều khiển cục bộ, truyền dữ liệu lên cấp giám sát qua mạng công nghiệp. Cấu hình dự phòng nóng (hot-standby redundancy) được áp dụng cho các PLC điều khiển các khối công nghệ quan trọng: lò nhiệt phân, hệ thống chưng cất, tổ máy diesel.
-
-\textbf{Cấp SCADA HMI (Supervisory level):} Trạm HMI (Human-Machine Interface) tại phòng điều khiển trung tâm (Control Room) hiển thị dữ liệu theo thời gian thực, cho phép người vận hành giám sát toàn bộ dây chuyền, đặt các thông số vận hành (setpoint), và xử lý các cảnh báo. Hệ thống gồm 2 máy chủ SCADA dự phòng nóng và 6 trạm HMI phân tán tại mỗi phân xưởng.
-
-Giao thức truyền thông: Modbus TCP/IP kết nối các PLC/RTU với máy chủ SCADA, đảm bảo tốc độ truyền dữ liệu đủ nhanh cho ứng dụng điều khiển; OPC-UA (Open Platform Communications Unified Architecture) cho phép tích hợp với các hệ thống cấp cao hơn và đảm bảo khả năng mở rộng.
-
-\subsection{Thiết bị cảm biến và cơ cấu chấp hành}
-
-Bảng~\ref{tab:cambien-scada} tổng hợp các loại cảm biến chính được sử dụng trong hệ thống SCADA, phân theo vị trí lắp đặt và thông số đo.
-
-\begin{table}[H]
-\caption{Danh mục cảm biến chính trong hệ thống SCADA}
-\label{tab:cambien-scada}
-\centering
-\begin{tabular}{p{3.5cm} p{4.5cm} r p{3.5cm}}
-\toprule
-\textbf{Vị trí} & \textbf{Loại cảm biến} & \textbf{Dải đo} & \textbf{Chức năng} \\
-\midrule
-Lò nhiệt phân & Thermocouple type K & 0--1000$^\circ\mathrm{C}$ & Đo nhiệt độ thành lò, khí thải, hơi dầu \\
-Lò nhiệt phân & Pressure transmitter & 0--10 bar & Đo áp suất buồng đốt, buồng nhiệt phân \\
-Hệ thống tuần hoàn dầu & Thermocouple type K & 0--500$^\circ\mathrm{C}$ & Đo $T_{oil,in}$, $T_{oil,out}$ \\
-Hệ thống tuần hoàn dầu & Flow meter (Coriolis) & 0--50 m$^3$/h & Đo lưu lượng dầu nhiệt phân \\
-Hệ thống tuần hoàn dầu & Flow meter (thermal mass) & 0--500 Nm$^3$/h & Đo lưu lượng khí không ngưng tuần hoàn \\
-Buồng đốt & Pressure transmitter & -5 đến +5 kPa & Đo áp suất buồng đốt, phát hiện bất thường \\
-Tổ máy diesel & Thermocouple type K & 0--800$^\circ\mathrm{C}$ & Đo nhiệt độ khí xả động cơ \\
-Tổ máy diesel & Pressure transmitter & 0--50 bar & Đo áp suất xi-lanh, dầu bôi trơn \\
-Tổ máy diesel & RPM sensor & 0--3000 RPM & Đo tốc độ vòng quay trục khuỷu \\
-Hệ thống thu hồi nhiệt & Thermocouple type K & 0--600$^\circ\mathrm{C}$ & Đo nhiệt độ khí xả trước/sau HRSG \\
-Cột chưng cất & Thermocouple type K & 0--400$^\circ\mathrm{C}$ & Đo nhiệt độ đáy, đỉnh cột, reboiler, condenser \\
-Cột chưng cất & Pressure transmitter & 0--5 bar & Đo áp suất đỉnh/đáy cột chưng cất \\
-Cột chưng cất & Flow meter & 0--20 m$^3$/h & Đo lưu lượng reflux, sản phẩm đỉnh \\
-Khí thải lò & Gas analyzer (O$_2$, CO, CO$_2$, H$_2$S) & 0--25\% O$_2$, 0--2000 ppm CO & Phân tích thành phần khí thải \\
-Khí thải diesel & Gas analyzer (O$_2$, NO$_x$) & 0--25\% O$_2$, 0--500 ppm NO$_x$ & Phân tích khí xả diesel \\
-Buồng đốt & Vibration sensor & 0--100 mm/s & Phát hiện knock, mất cân bằng rotor diesel \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Các cảm biến nhiệt độ sử dụng thermocouple type K với độ chính xác $\pm 1{,}5^\circ\mathrm{C}$ hoặc tốt hơn, phù hợp với dải nhiệt độ rộng từ 0$^\circ\mathrm{C}$ đến 1000$^\circ\mathrm{C}$. Cảm biến áp suất có độ chính xác $\pm 0{,}25\%$ full scale. Cảm biến phân tích khí (gas analyzer) được lắp đặt tại vị trí lấy mẫu có tính đại diện (representative sampling point) trên đường ống khí thải, có thời gian đáp ứng (response time) dưới 30 giây. Tốc độ quay lò nhiệt phân (RPM\textsubscript{kiln}) được đo bằng encoder quang học gắn trên trục truyền động.
-
-Cơ cấu chấp hành chính gồm: (i) van điều khiển (control valve) điều chỉnh lưu lượng khí đốt, không khí cấp buồng đốt, và nước làm mát; (ii) biến tần (VFD) trên quạt cấp gió và quạt hút khí thải; (iii) cơ cấu cấp liệu RDF có thể điều chỉnh tốc độ theo tín hiệu SCADA; (iv) hệ thống phun urea cho SNCR; (v) cửa xả khẩn cấp và van an toàn.
-
-\subsection{Các thông số giám sát thời gian thực}
-
-Hệ thống SCADA giám sát hơn 500 tín hiệu analog và digital, phân theo bốn khối công nghệ chính:
-
-\textbf{Khối lò nhiệt phân (5 mô-đun):} Các thông số cần giám sát bao gồm nhiệt độ thành lò ($T_{kiln\_wall}$), nhiệt độ khí thải sau trao đổi nhiệt ($T_{flue\_gas}$), nhiệt độ hơi dầu đầu ra ($T_{oil\_vapor}$), áp suất buồng nhiệt phân ($P_{chamber}$), tốc độ quay lò ($RPM_{rotary\_kiln}$), và nồng độ O$_2$, CO, CO$_2$ trong khí thải. Các tín hiệu này cho phép đánh giá điều kiện vận hành của từng mô-đun và phát hiện các bất thường như tắc nghẽn dòng liệu, cháy không hoàn toàn hoặc quá nhiệt.
-
-\textbf{Khối thu hồi nhiệt:} Theo dõi nhiệt độ dầu đầu vào ($T_{oil,in}$) và đầu ra ($T_{oil,out}$) của thiết bị trao đổi nhiệt, lưu lượng dầu tuần hoàn ($Flow_{oil}$), nhiệt độ và áp suất hơi nước tại HRSG. Dữ liệu này dùng để tính hiệu suất thu hồi nhiệt và tối ưu hóa vận hành hệ thống trao đổi nhiệt.
-
-\textbf{Khối tổ máy diesel (6 tổ máy):} Giám sát nhiệt độ khí xả ($T_{exhaust}$), áp suất xi-lanh ($P_{cylinder}$), tốc độ vòng quay ($RPM_{engine}$), công suất phát ($Power_{output}$), mức dầu bôi trơn, áp suất dầu bôi trơn, nhiệt độ nước làm mát, và nồng độ O$_2$, NO$_x$ trong khí xả. Cảm biến rung (vibration sensor) gắn trên block động cơ phát hiện hiện tượng knock hoặc mất cân bằng rotor.
-
-\textbf{Khối chưng cất:} Theo dõi nhiệt độ reboiler ($T_{reboiler}$), nhiệt độ condenser ($T_{condenser}$), áp suất đỉnh cột ($P_{column}$), tỷ số hồi lưu (Reflux\_ratio), lưu lượng sản phẩm đỉnh và đáy. Các thông số này quyết định chất lượng phân đoạn và hiệu suất thu hồi dầu.
-
-Tất cả tín hiệu được hiển thị trên màn hình trending (đồ thị xu hướng) theo thời gian thực tại trạm HMI, cho phép người vận hành nhận biết xu hướng thay đổi của các thông số quan trọng.
-
-\subsection{Hệ thống báo động và interlock an toàn}
-
-Hệ thống báo động (alarm system) được phân thành 3 cấp:
-
-\begin{itemize}
-  \item \textbf{Cấp 1 -- Cảnh báo sớm (Andon):} Mức \textbf{vàng}. Ngưỡng cảnh báo đặt ở mức 80\% giá trị giới hạn vận hành. Người vận hành cần theo dõi và chuẩn bị hành động điều chỉnh trong vòng 5 phút.
-  \item \textbf{Cấp 2 -- Can thiệp bắt buộc:} Mức \textbf{cam}. Ngưỡng can thiệp đặt ở mức 95\% giá trị giới hạn. Hệ thống tự động can thiệp: giảm tải, đóng van, giảm cấp liệu RDF.
-  \item \textbf{Cấp 3 -- Dừng khẩn cấp (ESD):} Mức \textbf{đỏ}. Kích hoạt khi thông số vượt giới hạn an toàn tuyệt đối. Hệ thống ESD (Emergency Shutdown) tác động ngay lập tức.
-\end{itemize}
-
-Bảng~\ref{tab:alarm-scada} tổng hợp các ngưỡng báo động và hành động tương ứng cho các thông số quan trọng.
-
-\begin{table}[H]
-\caption{Ngưỡng báo động và hành động của hệ thống SCADA}
-\label{tab:alarm-scada}
-\centering
-\begin{tabular}{p{3.5cm} r r p{4.5cm}}
-\toprule
-\textbf{Thông số} & \textbf{Cảnh báo} & \textbf{ESD} & \textbf{Hành động khi vượt ngưỡng ESD} \\
-\midrule
-Nhiệt độ thành lò nhiệt phân & $> 480^\circ\mathrm{C}$ & $> 550^\circ\mathrm{C}$ & Dừng cấp liệu RDF, tăng tốc độ quay lò, báo động khẩn \\
-Nhiệt độ khí thải buồng đốt & $> 900^\circ\mathrm{C}$ & $> 950^\circ\mathrm{C}$ & Giảm tải, kiểm tra tỷ lệ không khí \\
-Nồng độ CO trong khí thải & $> 500$ ppm & $> 1000$ ppm & Cảnh báo cháy không hoàn toàn; ESD nếu kéo dài 5 phút \\
-Áp suất buồng nhiệt phân & $< -0{,}5$ kPa hoặc $> +0{,}5$ kPa & $< -1{,}0$ hoặc $> +1{,}0$ kPa & Kiểm tra đường ống, quạt hút \\
-Lưu lượng dầu tuần hoàn & $< 80\%$ thiết kế & $< 50\%$ thiết kế & Báo động tắc nghẽn, kiểm tra bơm \\
-Nhiệt độ khí xả diesel & $> 450^\circ\mathrm{C}$ & $> 500^\circ\mathrm{C}$ & Giảm tải, kiểm tra phun nhiên liệu \\
-Áp suất dầu bôi trơn diesel & $< 200$ kPa & $< 150$ kPa & Dừng động cơ ngay lập tức \\
-Tốc độ rung diesel & $> 50$ mm/s & $> 80$ mm/s & Dừng khẩn cấp, kiểm tra knock \\
-Mức dầu bồn chứa & $< 20\%$ hoặc $> 95\%$ & $< 10\%$ hoặc $> 98\%$ & Cảnh báo tràn hoặc cạn, ngắt bơm nạp \\
-Nồng độ LEL khu vực dầu & 20\% LEL & 40\% LEL & Báo động; ESD khu vực, mở thông gió \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Các interlock an toàn quan trọng (critical safety interlocks) sử dụng cấu hình 2-trong-3 (2-out-of-3 voting) cho các tín hiệu an toàn SIL 2 trở lên: nhiệt độ buồng đốt, áp suất buồng nhiệt phân, và nồng độ LEL tại khu vực dầu. Cấu hình này giảm thiểu nguy cơ false trip (tác động nhầm do lỗi cảm biến đơn lẻ) trong khi vẫn đảm bảo độ tin cậy.
-
-Hệ thống ESD đạt mức SIL 2 theo IEC 61508/IEC 61511, hoạt động độc lập với SCADA, có nguồn điện riêng (UPS và ắc quy dự phòng 2 giờ). Nút E-stop (Emergency Stop) được bố trí tại phòng điều khiển trung tâm, đầu mỗi phân xưởng, cạnh bồn dầu và lò nhiệt phân.
-
-\subsection{Lưu trữ dữ liệu và HMI}
-
-\textbf{Lưu trữ dữ liệu (Data logging):} Dữ liệu thời gian thực từ tất cả cảm biến được ghi vào cơ sở dữ liệu chuỗi thời gian (Time Series Database -- TSDB) như InfluxDB hoặc tương đương. Phân giải lưu trữ được phân cấp:
-
-\begin{itemize}
-  \item \textbf{1 giây (1-second resolution):} Các thông số an toàn quan trọng: nhiệt độ buồng đốt, áp suất buồng nhiệt phân, nồng độ LEL, tốc độ quay lò, công suất phát điện diesel.
-  \item \textbf{1 phút (1-minute resolution):} Các thông số quá trình: lưu lượng dầu, lưu lượng khí, nhiệt độ đầu vào/đầu ra thiết bị trao đổi nhiệt, nhiệt độ khí xả.
-  \item \textbf{15 phút (15-minute resolution):} Các thông số tổng hợp: hiệu suất thu hồi nhiệt, tổng sản lượng điện, tổng sản lượng dầu thành phẩm.
-\end{itemize}
-
-Dữ liệu được lưu trữ tối thiểu 1 năm trên ổ cứng cục bộ và sao lưu hàng tuần lên hệ thống lưu trữ đám mây hoặc máy chủ dự phòng. Tốc độ ghi đảm bảo không mất dữ liệu trong trường hợp mất kết nối mạng tạm thời (buffer offline storage).
-
-\textbf{Giao diện HMI (Human-Machine Interface):} Giao diện HMI được thiết kế theo nguyên tắc phân cấp:
-
-\begin{itemize}
-  \item \textbf{Màn hình tổng quan (Overview screen):} Hiển thị sơ đồ P\&ID (Piping and Instrumentation Diagram) toàn bộ dây chuyền với các thông số chính, trạng thái báo động, và chỉ báo tổng thể (màu xanh/vàng/đỏ) của từng khối công nghệ.
-  \item \textbf{Màn hình trending (Live trending):} Đồ thị theo thời gian thực cho 8--16 thông số trên cùng một màn hình, với khả năng phóng to/thu nhỏ và so sánh nhiều ngày.
-  \item \textbf{Màn hình chi tiết từng khối (Unit detail screen):} Hiển thị chi tiết các thông số, đặt setpoint, điều khiển van của từng phân xưởng.
-  \item \textbf{Màn hình báo động (Alarm summary):} Danh sách tất cả báo động đang active, đã acknowledged, và lịch sử báo động 24 giờ gần nhất.
-\end{itemize}
-
-%%=============================================================
-\section{Giải pháp xử lý môi trường}
-\label{sec:giai-phap-moi-truong}
-%%=============================================================
-
-Nhà máy nhiệt phân -- chưng cất -- phát điện diesel phát sinh bốn dòng thải chính: khí thải, nước thải, chất thải rắn và tiếng ồn. Phần này trình bày cấu hình thiết bị xử lý khí thải đạt giới hạn cho phép theo TCVN 5935-1995 hoặc QCVN 40:2011/BTNMT \cite{QCVN40_2025_BTNMT} (tùy phiên bản áp dụng tại thời điểm cấp phép), hệ thống xử lý nước thải sinh học, và quản lý chất thải rắn -- chất thải nguy hại. Các cấu hình được mô tả đủ để đánh giá tính khả thi, không bao gồm tính toán chi tiết.
-
-\subsection{Mục tiêu đáp ứng quy chuẩn khí thải công nghiệp}
-
-Khí thải từ lò nhiệt phân và động cơ diesel là hai nguồn có tác động môi trường lớn nhất. Hệ thống xử lý khí thải nhiều cấp được thiết kế đồng bộ để đạt các giới hạn theo QCVN 19:2024/BTNMT (Cột B, Bảng 1 -- Nguồn thải công nghiệp) hoặc QCVN 40:2011/BTNMT cột B tùy quy chuẩn áp dụng:
-
-\begin{itemize}
-  \item Bụi: $\leq 50$ mg/Nm$^3$
-  \item SO$_2$: $\leq 200$ mg/Nm$^3$
-  \item NO$_x$: $\leq 350$ mg/Nm$^3$
-  \item CO: $\leq 250$ mg/Nm$^3$
-  \item HCl: $\leq 50$ mg/Nm$^3$
-  \item Dioxin/Furan: $\leq 0{,}1$ ng I-TEQ/Nm$^3$ (theo Thông tư 02/2022/TT-BTNMT)
-\end{itemize}
-
-Các nguồn phát thải chính bao gồm: khí thải từ buồng đốt lò nhiệt phân (5 mô-đun, lưu lượng khoảng 5.000--6.000 Nm$^3$/h mỗi mô-đun, nhiệt độ 200--250$^\circ\mathrm{C}$ sau trao đổi nhiệt) và khí thải từ 6 tổ máy diesel (tổng lưu lượng khoảng 18.000 Nm$^3$/h toàn tải).
-
-\subsection{Cấu hình thiết bị xử lý khí thải}
-
-Hệ thống xử lý khí thải nhiều cấp được thiết kế theo thứ tự xử lý tối ưu về mặt nhiệt động và hóa học. Mỗi thiết bị được mô tả cấu hình và chức năng cụ thể:
-
-\textbf{Cyclone separator (Bộ tách cyclone):} Đặt ngay sau thiết bị trao đổi nhiệt thu hồi nhiệt, là cấp xử lý đầu tiên. Cyclone sử dụng lực ly tâm để tách các hạt bụi có kích thước lớn hơn 10 $\mu$m khỏi dòng khí. Hiệu suất tách ước tính 60--70\% cho hạt >10 $\mu$m. Thiết bị được thiết kế vận hành ở nhiệt độ 200--250$^\circ\mathrm{C}$, chịu ăn mòn bằng vật liệu thép hợp kim crom. Cyclone giúp giảm tải cho các thiết bị xử lý phía sau (wet scrubber và baghouse), kéo dài tuổi thọ vật liệu lọc.
-
-\textbf{Wet scrubber (Tháp hấp thụ ướt):} Đặt sau cyclone, sử dụng dung dịch kiềm NaOH 5--10\% phun ngược chiều dòng khí. Wet scrubber xử lý ba nhóm chất ô nhiễm chính: (i) HCl và HF phát sinh từ đốt cháy nhựa PVC trong RDF; (ii) SO$_2$ phát sinh từ phân hủy hợp chất lưu huỳnh trong cao su và nhựa; (iii) một phần bụi mịn còn lại và các khí acid. Quạt hút đặt phía trước scrubber tạo áp suất âm trong hệ thống, ngăn khí thải thoát ra ngoài. Bơm tuần hoàn nước NaOH cung cấp dung dịch phun liên tục; nước rửa khí được xử lý tại trạm XLNT nội bộ. Tháp scrubber được chế tạo bằng vật liệu FRP (Fiberglass Reinforced Plastic) hoặc PP (Polypropylene) chịu ăn mòn acid.
-
-\textbf{Fabric filter -- Baghouse (Thiết bị lọc bụi túi vải):} Đặt sau wet scrubder và thiết bị làm nguội bổ sung. Baghouse sử dụng các túi lọc bằng vải dệt hoặc vải không dệt (needle felt) với kích thước lỗ rỗng 1--2 $\mu$m, lắp đặt trong các ngăn lọc (compartments) cho phép thay túi mà không cần dừng toàn bộ hệ thống. Hiệu suất lọc bụi >99,5\% cho hạt có kích thước >2 $\mu$m, đạt nồng độ bụi sau lọc dưới 30 mg/Nm$^3$. Thiết bị được vận hành ở nhiệt độ 150--180$^\circ\mathrm{C}$, thấp hơn điểm nóng chảy của vật liệu túi lọc (thường dùng PTFE-coated fiberglass hoặc Nomex với giới hạn nhiệt 200--260$^\circ\mathrm{C}$). Hệ thống rũ bụi (pulse jet cleaning) bằng khí nén định kỳ làm sạch túi lọc, bụi thu gom tại phễu chứa phía dưới và được vận chuyển đến khu vực xử lý chất thải rắn.
-
-\textbf{Activated carbon filter (Bộ lọc than hoạt tính):} Đặt trước baghouse, sử dụng than hoạt tính dạng hạt (Granular Activated Carbon -- GAC) hoặc bột phun (Powdered Activated Carbon -- PAC) để hấp phụ dioxin, furan (PCDD/PCDF) và các kim loại nặng bay hơi (Hg, Cd, Pb). Than hoạt tính có cấu trúc mao quản phát triển, diện tích bề mặt riêng 800--1200 m$^2$/g, cho phép hấp phụ các phân tử hữu cơ clo. Hệ thống PAC phun than hoạt tính bột vào dòng khí trước khi vào baghouse, than mang theo dioxin/bụi được giữ lại trong túi lọc. Bộ lọc GAC được bố trí sau baghouse như lớp xử lý bổ sung. Than hoạt tính bão hòa được thay định kỳ (thường 3--6 tháng tùy tải lượng dioxin) và xử lý như chất thải nguy hại.
-
-\textbf{Selective Non-Catalytic Reduction -- SNCR (Khử NO$_x$ phi xúc tác):} Đặt trong vùng nhiệt độ 850--1050$^\circ\mathrm{C}$ của buồng đốt hoặc đường ống dẫn khí. SNCR phun dung dịch urea (NH$_2$)$_2$CO hoặc ammonia NH$_3$ vào dòng khí, xảy ra phản ứng khử NO$_x$ thành N$_2$ và H$_2$O:
-
+Lượng RDF cần xử lý mỗi ngày là 39,41 tấn. Phân bổ đều cho 5 mô-đun:
 \begin{equation}
-4\mathrm{NO} + (\mathrm{NH}_2)_2\mathrm{CO} + \mathrm{O}_2 \rightarrow 2\mathrm{N}_2 + 2\mathrm{CO}_2 + 4\mathrm{H}_2\mathrm{O}
-\label{eq:sncr-urea}
+  m_{\text{RDF, mô-đun}} = \frac{m_{\text{RDF cấp lò}}}{5} = \frac{39{,}41}{5} = 7{,}88 \;\text{tấn RDF/ngày/mô-đun}
 \end{equation}
 
-Hiệu suất khử NO$_x$ của SNCR đạt 30--50\% tùy nhiệt độ, thời gian lưu khí, và tỷ lệ phun urea. Hệ thống phun gồm nhiều đầu phun (lances) bố trí trên thành buồng đốt hoặc đường ống, được điều khiển bởi SCADA theo nồng độ NO$_x$ thực tế. Dung dịch urea 5--10\% được chuẩn bị trong bể chứa riêng, bơm định lượng theo tín hiệu từ gas analyzer.
-
-\textbf{Thermal oxidizer (Thiết bị oxy hóa nhiệt):} Đặt sau baghouse, hoạt động ở nhiệt độ 850--950$^\circ\mathrm{C}$ với thời gian lưu khí tối thiểu 2 giây. Thermal oxidizer đốt cháy hoàn toàn CO và VOCs (Volatile Organic Compounds) còn lại trong dòng khí sau xử lý. Buồng đốt được gia nhiệt bằng burner tiết kiệm nhiên liệu (khí không ngưng từ quá trình nhiệt phân hoặc khí diesel), duy trì nhiệt độ tự duy trì (self-sustaining) khi nồng độ CO/VOCs đủ cao. Nhiệt từ khí thải sau thermal oxidizer được thu hồi qua thiết bị trao đổi nhiệt trước khi thải ra ống khói.
-
-\textbf{Khí thải diesel (6 tổ máy):} Thu gom qua đường ống chung, xử lý qua DPF (Diesel Particulate Filter) giảm bụi PM, qua bộ giảm than và xả qua ống khói riêng cao 12 m. Khí thải diesel sau DPF có nồng độ bụi PM < 20 mg/Nm$^3$, CO < 100 mg/Nm$^3$, NO$_x$ ước tính < 500 mg/Nm$^3$ ở chế độ toàn tải. Nhiệt thừa từ khí thải diesel được thu hồi qua HRSG (Heat Recovery Steam Generator) để gia nhiệt sấy RDF và nước cấp lò chưng cất.
-
-Ống khói chung của lò nhiệt phân cao 25--30 m giúp pha loãng khí thải theo chiều đứng, giảm nồng độ tại mặt đất. Hệ thống quan trắc khí thải tự động (CEMS -- Continuous Emission Monitoring System) đo liên tục nồng độ bụi, SO$_2$, NO$_x$, CO và O$_2$, truyền dữ liệu về Sở Tài nguyên và Môi trường theo quy định.
-
-Bảng~\ref{tab:gioi-han-khi-thai} tổng hợp giới hạn xả thải đạt được sau hệ thống xử lý.
-
-\begin{table}[H]
-\caption{Giới hạn xả thải khí sau hệ thống xử lý}
-\label{tab:gioi-han-khi-thai}
-\centering
-\begin{tabular}{p{3.5cm} r r}
-\toprule
-\textbf{Thông số} & \textbf{QCVN 19:2024 (Cột B)} & \textbf{Sau xử lý (ước tính)} \\
-\midrule
-Bụi (mg/Nm$^3$) & 50 & $< 30$ \\
-SO$_2$ (mg/Nm$^3$) & 200 & $< 50$ \\
-NO$_x$ (mg/Nm$^3$) & 350 & $< 200$ \\
-CO (mg/Nm$^3$) & 250 & $< 100$ \\
-HCl (mg/Nm$^3$) & 50 & $< 10$ \\
-Dioxin/Furan (ng I-TEQ/Nm$^3$) & 0,1 & $< 0{,}1$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Xử lý nước thải sinh học (MBR)}
-
-Nước thải nhà máy gồm nước thải sinh hoạt và nước thải công nghiệp. Nước thải công nghiệp phát sinh chủ yếu từ: (i) quá trình ép nước RDF (ước tính 45,17 t/ngày theo Bảng~\ref{tab:dong-vat-chat-ra-tongquat} Chương \ref{chuong3}), chứa COD cao 3.000--8.000 mg/L; (ii) nước rửa khí từ wet scrubber (chứa HCl, NaOH dư, bụi); (iii) nước rửa thiết bị và sàn nhà xưởng (chứa dầu mỡ, chất tẩy rửa).
-
-Hệ thống xử lý nước thải tập trung (công suất 50--60 m$^3$/ngày) sử dụng quy trình MBR (Membrane Bioreactor) kết hợp bùn hoạt tính hiếu khí. Nước thải được tiếp nhận tại bể gom có lắp khuấy trộn, qua song chắn rác và bể lắng cát, sang bể điều hòa có sục khí, qua bể MBR (giá thể nhựa HDPE diện tích bề mặt $\geq 500$ m$^2$/m$^3$, mật độ lấp đầy 40\% thể tích), bể lắng sinh học, bể khử trùng chlorine. Nước sau xử lý đạt QCVN 40:2025/BTNMT (Cột A): pH 6,0--9,0; COD $\leq 50$ mg/L; BOD$_5$ $\leq 20$ mg/L; TSS $\leq 30$ mg/L; amoni $\leq 5$ mg/L.
-
-Nước thải sinh hoạt qua bể tự hoại và bể khử trùng clo trước khi xả ra hệ thống thoát nước đô thị. Khu vực bồn chứa dầu và hóa chất được xây dựng sàn bê tông chống thấm lớp kép, có rãnh thu gom riêng và giếng quan trắc nước ngầm (3 giếng: 1 giếng thượng lưu, 2 giếng hạ lưu) để ngăn ngừa và phát hiện sớm ô nhiễm nước ngầm.
-
-\subsection{Quản lý chất thải rắn}
-
-Tro bay từ cyclone và baghouse (ước tính 2--4 tấn/ngày) chứa kim loại nặng và các hợp chất có khả năng hòa tan cần được ổn định/ximăng hóa (stabilization/cement solidification) trước khi chôn lấp hợp vệ sinh. Quá trình ổn định trộn tro bay với xi măng Portland (tỷ lệ 1:3 đến 1:5 theo khối lượng) và nước, tạo khối rắn có cường độ nén $\geq 0{,}5$ MPa sau 28 ngày, giảm đáng kể khả năng hòa tan của kim loại nặng.
-
-Than carbon (11,52 t/ngày theo Bảng~\ref{tab:can-bang-nhiet-phan} Chương \ref{chuong3}) là sản phẩm phụ chính. Than carbon chứa carbon cố định (70--80\% khối lượng), tro (15--25\%) và các hợp chất hữu cơ chưa phân hủy hoàn toàn (5--10\%) bao gồm PAH. Than carbon có giá trị LHV khoảng 18--22 MJ/kg, có thể sử dụng làm nhiên liệu rắn thay thế cho xi măng hoặc lò gạch. Nếu không có đầu ra tiêu thụ, than carbon được phân loại là chất thải nguy hại (mã 05 02 01 theo Thông tư 02/2022) và xử lý tại cơ sở có giấy phép.
-
-Chất thải nguy hại (CTNH) khác gồm: cặn axit từ tinh chế dầu (ước tính 29,2--54,8 tấn/năm), giẻ lau dính dầu, dầu thải, bùn tách dầu--nước, bùn axit (từ trung hòa H$_2$SO$_4$). Kho chứa CTNH được bố trí riêng, có mái che, nền bê tông chống thấm, gờ chống tràn cao 15 cm. Thời gian lưu tối đa tại nhà máy không quá 6 tháng theo quy định.
-
-%%=============================================================
-\section{Khái toán kinh tế}
-\label{sec:kinh-te}
-%%=============================================================
-
-Phần này trình bày bài toán tài chính của nhà máy nhiệt phân -- chưng cất -- phát điện diesel Hội An, cụ thể hóa các dòng vật chất và năng lượng từ Chương \ref{chuong3} thành dòng tiền. Các số liệu nền tảng được tham chiếu trực tiếp từ Chương \ref{chuong3}: công suất điện ròng $W_{e,net} = 1{,}84$ MW (Bảng~\ref{tab:quy-doi-dien}), sản lượng dầu thành phẩm 16,59 t/ngày (Bảng~\ref{tab:can-bang-chung-cat}), công suất tự dùng 788,4 kW (Mục~\ref{sec:can-bang-nang-luong}), định mức hóa chất (Bảng~\ref{tab:dinh-muc-hoa-chat}) và kích thước vỏ lò $D_i = 2{,}0$ m, $L = 8{,}0$ m, $t = 16$ mm (Mục~\ref{sec:tinh-toan-lo-nhiet-phan-quay}). Các số liệu trong phần này được tính toán ở cấp khái toán (estimate accuracy $\pm 30\%$), phù hợp với thiết kế cơ sở.
-
-\subsection{Khái toán chi phí đầu tư ban đầu (CAPEX)}
-
-Tổng mức đầu tư (CAPEX) bao gồm chi phí xây dựng, thiết bị, lắp đặt, thiết kế, quản lý và vận hành thử. Theo cấu trúc chi phí thông thường của nhà máy xử lý CTRSH công nghệ nhiệt công suất 100--200 tấn/ngày, khái toán được phân bổ như Bảng~\ref{tab:khai-toan-capex}.
-
-\begin{table}[H]
-\caption{Khái toán chi phí đầu tư ban đầu (CAPEX) nhà máy nhiệt phân Hội An}
-\label{tab:khai-toan-capex}
-\centering
-\begin{tabular}{p{6.5cm} r r}
-\toprule
-\textbf{Hạng mục} & \textbf{Giá trị (triệu đồng)} & \textbf{Tỷ lệ (\%)} \\
-\midrule
-Thiết bị chính (lò nhiệt phân, ngưng tụ, diesel, XL khí, XL nước) & 95.000 & 47,5 \\
-Xây dựng hạ tầng (nhà xưởng, nền móng, đường nội bộ, hệ thống thoát nước) & 38.000 & 19,0 \\
-Lắp đặt và vận chuyển thiết bị & 28.500 & 14,3 \\
-Hệ thống điều khiển và SCADA & 11.900 & 5,95 \\
-Thiết kế kỹ thuật và giám sát thi công & 9.500 & 4,75 \\
-Phí môi trường và giấy phép & 4.750 & 2,38 \\
-Chi phí vận hành thử (6 tháng) & 7.600 & 3,80 \\
-Dự phòng (10\% tổng) & 19.525 & 9,77 \\
-\midrule
-\textbf{Tổng CAPEX} & \textbf{214.775} & \textbf{100} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Tổng mức đầu tư khái toán khoảng 214,8 tỷ đồng (tương đương 8,6 triệu USD theo tỷ giá 25.000 đồng/USD), tương ứng đơn giá đầu tư khoảng 1,79 tỷ đồng/tấn CTRSH/ngày hoặc 117 triệu đồng/kW công suất điện ròng. So sánh với các dự án tương tự: nhà máy RDF đốt chu trình Rankine công suất 40 MW tại Việt Nam có đơn giá khoảng 1,5--2,0 tỷ đồng/tấn/ngày; nhà máy khí hóa CTRSH công suất 10 MW có đơn giá 2,5--4,0 tỷ đồng/tấn/ngày. Đơn giá của phương án nhiệt phân -- diesel nằm trong dải hợp lý nhờ tổ máy diesel có chi phí đầu tư thấp hơn nhiều so với tuabin hơi.
-
-Nguồn vốn đề xuất: vốn ngân sách nhà nước kết hợp vốn ODA hoặc vốn vay ưu đãi từ các tổ chức tài chính quốc tế (World Bank, ADB) cho các dự án xử lý CTRSH. Thời gian xây dựng ước tính 24--30 tháng kể từ khi khởi công.
-
-Chi phí xây dựng hạ tầng (38 tỷ đồng) bao gồm nhà xưởng chính, nhà điều khiển trung tâm, hệ thống thoát nước mưa và nước thải, đường nội bộ, tường rào và cổng, hệ thống điện chiếu sáng. Hệ thống SCADA và điều khiển (11,9 tỷ đồng) bao gồm phần cứng (máy chủ, PLC, HMI, cảm biến, cáp mạng), phần mềm (license SCADA, PLC programming), và chi phí lắp đặt tích hợp.
-
-\subsection{Ước tính chi phí vận hành hàng năm (OPEX)}
-
-Chi phí vận hành hàng năm bao gồm chi phí cố định (nhân công, bảo trì) và chi phí biến đổi (điện tự dùng, hóa chất, nước), được phân bổ như Bảng~\ref{tab:khai-toan-opex}.
-
-\begin{table}[H]
-\caption{Khái toán chi phí vận hành hàng năm (OPEX) nhà máy nhiệt phân Hội An}
-\label{tab:khai-toan-opex}
-\centering
-\begin{tabular}{p{6.5cm} r r}
-\toprule
-\textbf{Hạng mục chi phí} & \textbf{Giá trị (triệu đồng/năm)} & \textbf{Tỷ lệ (\%)} \\
-\midrule
-Nhân công vận hành (70 nhân viên, lương TB 10 triệu/tháng) & 8.400 & 35,0 \\
-Bảo trì sửa chữa (2--3\% CAPEX) & 6.443 & 26,8 \\
-Điện tự dùng nhà máy (30\% sản lượng, giá 2.500 đ/kWh) & 3.609 & 15,0 \\
-Hóa chất (H$_2$SO$_4$, NaOH, đất sét, vật tư lọc) & 2.100 & 8,75 \\
-Chi phí quản lý, bảo hiểm, phí môi trường & 1.800 & 7,50 \\
-Nước công nghiệp (giá 15.000 đ/m$^3$) & 315 & 1,31 \\
-Dự phòng chi phí khác (5\%) & 1.133 & 4,72 \\
-\midrule
-\textbf{Tổng OPEX} & \textbf{23.800} & \textbf{100} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Tổng chi phí vận hành hàng năm khái toán khoảng 23,8 tỷ đồng/năm, tương ứng chi phí xử lý 1 tấn CTRSH khoảng 545.000 đồng (chưa tính khấu hao). Chi phí này tương đương hoặc thấp hơn chi phí vận hành bãi chôn lấp hợp vệ sinh (ước tính 500.000--700.000 đồng/tấn bao gồm chi phí vận hành và khấu hao).
-
-Chi phí bảo trì sửa chữa (6,443 tỷ đồng/năm, tương đương 3\% CAPEX) bao gồm: bảo dưỡng định kỳ lò nhiệt phân (thay gạch chịu lửa, kiểm tra seal, bôi trơn ổ đỡ), bảo dưỡng tổ máy diesel (thay dầu bôi trơn 250 giờ/lần, kiểm tra vòi phun 1.000 giờ/lần, đại tu 5.000 giờ/lần), thay vật tư lọc (túi baghouse, than hoạt tính), và sửa chữa đường ống, van.
-
-Chi phí hóa chất (2,1 tỷ đồng/năm) bao gồm: H$_2$SO$_4$ 98\% cho quá trình tinh chế dầu (ước tính 200--400 kg/ngày theo Bảng~\ref{tab:dinh-muc-hoa-chat} Chương \ref{chuong3}), NaOH 99\% trung hòa acid và trong wet scrubber, đất sét ổn định tro bay, vật tư lọc (túi baghouse, màng MBR).
-
-\subsection{Các nguồn doanh thu dự kiến}
-
-Doanh thu của nhà máy đến từ ba nguồn chính, thừa hưởng trực tiếp từ các thông số đã chốt ở Chương \ref{chuong3}. Bảng~\ref{tab:doanh-thu-nguon} tổng hợp chi tiết từng nguồn.
-
-\begin{table}[H]
-\caption{Tổng hợp các nguồn doanh thu dự kiến của nhà máy nhiệt phân Hội An}
-\label{tab:doanh-thu-nguon}
-\centering
-\begin{tabular}{p{0.06\textwidth}p{0.32\textwidth}r r p{0.30\textwidth}}
-\toprule
-\textbf{TT} & \textbf{Nguồn doanh thu} & \textbf{Sản lượng} & \textbf{Doanh thu (tỷ đồng/năm)} & \textbf{Ghi chú} \\
-\midrule
-1 & Bán điện cho lưới quốc gia & $\approx$14,8 triệu kWh/năm & $\approx$31,7 & Giá FIT theo QĐ 328/2023/QĐ-TTg: 2.143 đ/kWh; hệ số công suất 85\% \\
-\midrule
-2 & Bán dầu nhiệt phân tinh chế (phần bán ngoài) & 16,59 tấn/ngày $\times$ 330 ngày & $\approx$25,0 & Phần tiêu thụ nội bộ cho diesel engine tính là chi phí tiết kiệm nhiên liệu \\
-\midrule
-3 & Phí xử lý CTRSH từ chính quyền địa phương & 120 tấn/ngày $\times$ 365 ngày & $\approx$13,1 & Mức phí 300.000 đ/tấn; 120 tấn $\times$ 365 ngày $\times$ 300.000 đ \\
-\midrule
- & \textbf{Tổng doanh thu} & & \textbf{$\approx$70,0} & \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Tổng doanh thu dự kiến khoảng 70 tỷ đồng/năm từ ba nguồn: bán điện chiếm ưu thế (khoảng 45\% tổng doanh thu), tiếp đến là bán dầu nhiệt phân (khoảng 36\%) và phí xử lý CTRSH (khoảng 19\%). Cơ cấu đa nguồn thu này giúp giảm rủi ro kinh doanh khi một trong các nguồn gặp khó khăn tạm thời.
-
-Bán điện: công suất điện ròng 1,84 MW (Bảng~\ref{tab:quy-doi-dien} Chương \ref{chuong3}), sản lượng điện ròng ước tính 14,8 triệu kWh/năm (tương đương 1,84 MW $\times$ 8.760 h $\times$ 92\% availability). Giá FIT theo Quyết định 328/2023/QĐ-TTg là 2.143 đ/kWh. Bán dầu nhiệt phân: sản lượng dầu thành phẩm 16,59 t/ngày $\times$ 330 ngày vận hành, giá bán ước tính 4.500--5.000 đ/lít (tương đương 4.500.000--5.000.000 đ/tấn). Phí xử lý CTRSH: 300.000 đ/tấn $\times$ 120 tấn/ngày $\times$ 365 ngày.
-
-\subsection{Dòng tiền chiết khấu, NPV và IRR}
-
-Công thức NPV với dòng tiền cố định hàng năm:
+Tương ứng, lượng CTRSH cần cho mỗi mô-đun:
 \begin{equation}
-\text{NPV} = -I_0 + \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}
-           = -I_0 + CF \times \frac{(1+r)^n - 1}{r\,(1+r)^n}
-\label{eq:npv-formula}
+  m_{\text{CTRSH, mô-đun}} = \frac{G_0}{5} = \frac{120}{5} = 24 \;\text{tấn CTRSH/ngày/mô-đun}
 \end{equation}
-trong đó $I_0 = 214{,}8$ tỷ đồng là vốn đầu tư ban đầu CAPEX, $CF$ là dòng tiền ròng hàng năm sau thuế (đã cộng khấu hao), $r$ là suất chiết khấu, $n = 20$ năm là vòng đời dự án.
 
-Từ doanh thu 70,0 tỷ đồng/năm và OPEX 23,8 tỷ đồng/năm, lợi nhuận gộp trước khấu hao và thuế là 46,2 tỷ đồng. Khấu hao TSCĐ theo đường thẳng trong 10 năm: $214{,}8 / 10 = 21{,}48$ tỷ đ/năm. Lợi nhuận trước thuế $= 46{,}2 - 21{,}48 = 24{,}72$ tỷ đồng. Thuế TNDN 22\%: $24{,}72 \times 0{,}22 = 5{,}44$ tỷ đồng. Lợi nhuận sau thuế $= 24{,}72 - 5{,}44 = 19{,}28$ tỷ đồng. Dòng tiền ròng hàng năm $= 19{,}28 + 21{,}48 = 40{,}76$ tỷ đồng.
+Sản phẩm từ mỗi mô-đun:
+\begin{itemize}
+  \item Dầu thô: $0{,}45 \times 7{,}88 = 3{,}55$ tấn/ngày
+  \item Khí không ngưng: $0{,}30 \times 7{,}88 = 2{,}36$ tấn/ngày
+  \item Than carbon: $0{,}25 \times 9{,}22 = 2{,}30$ tấn/ngày
+\end{itemize}
 
-Bảng~\ref{tab:dong-tien-chiet-khau} trình bày dòng tiền chiết khấu chi tiết từng năm tại $r = 8\%$/năm:
+Năng lượng nhiệt RDF cấp cho mỗi mô-đun:
+\begin{equation}
+  \dot{Q}_{\text{RDF, mô-đun}} = \frac{7{,}88 \times 19{,}259}{86{,}4} \approx 1.757 \;\text{kW}
+\end{equation}
 
-\begin{table}[H]
-\caption{Bảng dòng tiền chiết khấu dự án Nhà máy nhiệt phân Hội An (r = 8\%/năm)}
-\label{tab:dong-tien-chiet-khau}
+Trong đó khoảng 30\% năng lượng chuyển thành nhiệt cần cung cấp cho buồng đốt gia nhiệt lò (phần còn lại được dầu và khí không ngưng mang đi). Do đó công suất nhiệt buồng đốt:
+\begin{equation}
+  \dot{Q}_{\text{buồng đốt}} = 0{,}30 \times 1.757 \approx 527 \;\text{kW}
+\end{equation}
+Tuy nhiên, do buồng đốt hoạt động gián tiếp và có tổn thất qua thành lò, công suất thực tế cần thiết khoảng 200--250 kW cho mỗi mô-đun (theo hồ sơ thiết kế, $\approx 200$ kW/mô-đun).
+
+\begin{table}[htbp]
 \centering
-\scalebox{0.78}{
-\begin{tabular}{r r r r r}
+\caption{Thông số vận hành của 5 mô-đun lò nhiệt phân}
+\label{tab:thong-so-5-modun}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.40\textwidth}p{0.20\textwidth}p{0.30\textwidth}}
 \toprule
-\textbf{Năm} & \textbf{CF danh nghĩa (tỷ đ)} & \textbf{Hệ số chiết khấu $\frac{1}{(1+r)^t}$} & \textbf{CF hiện tại (tỷ đ)} & \textbf{NPV tích lũy (tỷ đ)} \\
+\textbf{Thông số} & \textbf{Giá trị} & \textbf{Ghi chú} \\
 \midrule
-Năm 0 & $-214{,}80$ & 1,0000 & $-214{,}80$ & $-214{,}80$ \\
-Năm 1 & $+40{,}76$ & 0,9259 & $+37{,}74$ & $-177{,}06$ \\
-Năm 2 & $+40{,}76$ & 0,8573 & $+34{,}94$ & $-142{,}12$ \\
-Năm 3 & $+40{,}76$ & 0,7938 & $+32{,}35$ & $-109{,}77$ \\
-Năm 4 & $+40{,}76$ & 0,7350 & $+29{,}96$ & $-79{,}81$ \\
-Năm 5 & $+40{,}76$ & 0,6806 & $+27{,}74$ & $-52{,}07$ \\
-Năm 6 & $+40{,}76$ & 0,6302 & $+25{,}68$ & $-26{,}39$ \\
-Năm 7 & $+40{,}76$ & 0,5835 & $+23{,}78$ & $-2{,}61$ \\
-Năm 8 & $+40{,}76$ & 0,5403 & $+22{,}02$ & $+19{,}41$ \\
-Năm 9 & $+40{,}76$ & 0,5002 & $+20{,}39$ & $+39{,}80$ \\
-Năm 10 & $+40{,}76$ & 0,4632 & $+18{,}88$ & $+58{,}68$ \\
-Năm 11 & $+40{,}76$ & 0,4289 & $+17{,}48$ & $+76{,}16$ \\
-Năm 12 & $+40{,}76$ & 0,3971 & $+16{,}19$ & $+92{,}35$ \\
-Năm 13 & $+40{,}76$ & 0,3677 & $+14{,}99$ & $+107{,}34$ \\
-Năm 14 & $+40{,}76$ & 0,3405 & $+13{,}88$ & $+121{,}22$ \\
-Năm 15 & $+40{,}76$ & 0,3152 & $+12,85$ & $+134{,}07$ \\
-Năm 16 & $+40{,}76$ & 0,2919 & $+11{,}90$ & $+145{,}97$ \\
-Năm 17 & $+40{,}76$ & 0,2703 & $+11{,}02$ & $+156{,}99$ \\
-Năm 18 & $+40{,}76$ & 0,2502 & $+10{,}20$ & $+167{,}19$ \\
-Năm 19 & $+40{,}76$ & 0,2317 & $+9{,}44$ & $+176{,}63$ \\
-Năm 20 & $+40{,}76$ & 0,2145 & $+8{,}74$ & $\mathbf{+185{,}37}$ \\
+Số mô-đun & 5 & Vận hành song song \\
 \midrule
+RDF mỗi mô-đun & 7,88 t/ngày & $39{,}41 / 5$ mô-đun \\
+\midrule
+CTRSH mỗi mô-đun & 24 t/ngày & Công suất tiếp nhận \\
+\midrule
+Dầu thô mỗi mô-đun & 3,55 t/ngày & 45\% khối lượng RDF \\
+\midrule
+Khí không ngưng mỗi mô-đun & 2,36 t/ngày & 30\% khối lượng RDF \\
+\midrule
+Than carbon mỗi mô-đun & 1,97 t/ngày & 25\% khối lượng RDF \\
+\midrule
+Năng lượng RDF mỗi mô-đun & $\approx 1.757$ kW & $Q_{\text{RDF}}^r = 19{,}259$ kJ/kg; $= 7{,}88 \times 19.259 / 86{,}4$ \\
+\midrule
+Công suất nhiệt buồng đốt & $\approx 200$ kW & Theo thiết kế cơ sở \\
+\midrule
+Kích thước buồng nhiệt phân & $D_i = 2{,}0$ m; $L = 8{,}0$ m & Thể tích $\approx 25$ m$^3$ \\
+\midrule
+Thời gian lưu & 4--6 giờ & Có thể điều chỉnh \\
+\midrule
+Tốc độ quay & 0,2--2 vòng/phút & Qua biến tần \\
+\bottomrule
 \end{tabular}
 }
 \end{table}
 
-Từ bảng trên, NPV tại $r = 8\%$ là tổng cộng cột CF hiện tại:
-\begin{equation}
-\text{NPV}_{8\%} = -214{,}80 + 40{,}76 \times 9{,}8181 \approx \mathbf{+185{,}4 \text{ tỷ đồng}}
-\end{equation}
-với hệ số chiết khấu cho niên kim cố định 20 năm: $\frac{(1{,}08)^{20} - 1}{0{,}08 \times (1{,}08)^{20}} \approx 9{,}8181$.
+\subsection{Tính toán cơ khí vỏ lò nhiệt phân quay}
+\label{sec:tinh-co-khi-vo-lo}
 
-IRR được xác định bằng cách giải phương trình NPV $= 0$:
-\begin{equation}
-\frac{CF}{\text{IRR}} \times \left[1 - (1+\text{IRR})^{-20}\right] = I_0 \quad \Rightarrow \quad \text{IRR} \approx 13{,}5\%
-\end{equation}
-(kiểm tra: $40{,}76 / 0{,}135 = 301{,}9 \approx 214{,}8 \times 1{,}4058$)
+Vỏ lò nhiệt phân quay là kết cấu áp lực nội bộ, chịu tác động đồng thời của: (i) áp suất trong lò (thường bằng áp suất khí quyển, nhưng có thể dao động dương nhẹ khi đốt khí hồi lưu); (ii) ứng suất nhiệt do gradient nhiệt độ giữa bề mặt trong ($450^\circ\mathrm{C}$) và bề mặt ngoài ($\approx 60^\circ\mathrm{C}$); (iii) trọng lượng bản thân lò (khoảng 12 tấn khi đầy vật liệu); (iv) mô-men uốn do độ nghiêng $2^\circ$ và tự trọng; (v) ứng suất tiếp xúc tại các vị trí đặt con lăn.
 
-Thời gian hoàn vốn đơn giản (không chiết khấu):
-\begin{equation}
-T_{payback} = \frac{I_0}{CF} = \frac{214{,}8}{40{,}76} \approx 5{,}3 \text{ năm}
-\end{equation}
+\subsubsection{Chọn vật liệu vỏ lò}
 
-Các chỉ số tài chính tổng hợp:
+Nhiệt độ vận hành tối đa trong lò là $500^\circ\mathrm{C}$ ở vùng buồng đốt và $450^\circ\mathrm{C}$ ở vùng nhiệt phân. Xét điều kiện ăn mòn do HCl và hắc ín sinh ra trong quá trình nhiệt phân RDF, vật liệu lựa chọn là thép hợp kim Austenitic AISI 310S (tương đương X15CrNiSi25-20, 1.4841) cho vùng buồng đốt và AISI 316L (X2CrNiMo17-12-2, 1.4404) cho vùng nhiệt phân và các phần khác.
+
 \begin{itemize}
-  \item \textbf{Lợi nhuận gộp hàng năm (trước khấu hao, thuế):} 70,0 -- 23,8 = 46,2 tỷ đồng/năm.
-  \item \textbf{Khấu hao TSCĐ (đường thẳng, 10 năm):} $\approx$ 21,5 tỷ đồng/năm.
-  \item \textbf{Lợi nhuận trước thuế (EBT):} 46,2 -- 21,5 = 24,7 tỷ đồng/năm.
-  \item \textbf{Thuế TNDN (22\%):} $\approx$ 5,4 tỷ đồng/năm.
-  \item \textbf{Lợi nhuận sau thuế: } $\approx$ 19,3 tỷ đồng/năm.
-  \item \textbf{Dòng tiền ròng hàng năm (CF, sau thuế có khấu hao):} 19,3 + 21,5 = 40,8 tỷ đồng/năm.
-  \item \textbf{NPV (r = 8\%, 20 năm):} $\approx$ +185,4 tỷ đồng -- dương, dự án tạo giá trị.
-  \item \textbf{IRR (Internal Rate of Return):} $\approx$ 13,5\%/năm -- cao hơn WACC $\approx$ 8--10\%.
-  \item \textbf{Thời gian hoàn vốn đơn giản (không chiết khấu):} $214{,}8 / 40{,}8 \approx 5{,}3$ năm.
+    \item \textbf{AISI 310S:} Thành phần chứa 25\% Cr, 20\% Ni, có khả năng chịu nhiệt liên tục đến $1.150^\circ\mathrm{C}$, chống oxy hóa tốt ở nhiệt độ cao, kháng HCl lên đến $450^\circ\mathrm{C}$. Giới hạn bền kéo $\sigma_b = 515$ MPa, giới hạn chảy $\sigma_{0,2} = 205$ MPa ở nhiệt độ phòng. Hệ số dãn nở nhiệt $\alpha \approx 14{,}4 \times 10^{-6}$/K. Chiều dày thành vỏ lò được chọn 16 mm để tránh hiện tượng võng (creep) ở nhiệt độ cao đối với lò đường kính 2 m, đồng thời đảm bảo độ cứng và chịu áp suất.
+    \item \textbf{AISI 316L:} Thành phần chứa 16\% Cr, 10\% Ni, 2\% Mo, có khả năng chống ăn mòn lỗ và ăn mòn kẽ trong môi trường axit hữu cơ. Chịu nhiệt liên tục đến $800^\circ\mathrm{C}$. Giới hạn bền kéo $\sigma_b = 485$ MPa, giới hạn chảy $\sigma_{0,2} = 170$ MPa. Chiều dày thành vỏ lò được chọn 16 mm, cùng với AISI 310S, để đảm bảo tính đồng nhất kết cấu.
 \end{itemize}
 
-Bảng~\ref{tab:chi-so-tai-chinh} tổng hợp các chỉ số tài chính chính.
+Đường hàn giữa vùng 310S và 316L cần sử dụng que hàn ER310 hoặc ER312 để đảm bảo tính đồng nhất hóa học và cơ tính tại vùng chuyển tiếp. Toàn bộ bề mặt trong lò được phủ lớp phủ chống ăn mòn (ví dụ: lớp phủ ceramic hoặc men vic).
 
-\begin{table}[H]
-\caption{Tổng hợp các chỉ số tài chính chính của dự án}
-\label{tab:chi-so-tai-chinh}
+\subsubsection{Kiểm tra ứng suất vỏ trụ}
+
+Vỏ lò được tính như vỏ trụ tròn chịu áp lực trong. Trong điều kiện vận hành bình thường, áp suất trong lò $p \approx 0$ (áp suất khí quyển), nên ứng suất chính trong vỏ phát sinh chủ yếu từ ứng suất nhiệt và tải trọng cơ học.
+
+Ứng suất nhiệt tương đương theo lý thuyết trụ rỗng:
+\begin{equation}
+\sigma_T = \frac{E \alpha \Delta T}{2(1 - \nu)} \ln\!\left(\frac{r_o}{r_i}\right)
+\label{eq:ust-nhiet-vo-lo}
+\end{equation}
+trong đó $E = 200$ GPa, $\alpha = 14{,}4 \times 10^{-6}$/K, $\nu = 0{,}3$, $\Delta T = 450 - 60 = 390$ K, $r_i = 1{,}0$ m, $r_o = 1{,}016$ m (chiều dày thành $t = 16$ mm). Thay số:
+\[
+\sigma_T = \frac{200\,000 \times 14{,}4 \times 10^{-6} \times 390}{2 \times 0{,}7} \times \ln\!\frac{1{,}016}{1{,}000}
+\approx 12{,}7 \;\text{MPa}
+\]
+
+Ứng suất uốn do mô-men uốn tại tiết diện giữa nhịp (nhịp tự do giữa hai gối con lăn $L_b \approx 3{,}2$ m, khoảng cách đầu lò đến gối $a \approx 1{,}4$ m):
+\begin{equation}
+M_{\max} = q \frac{L_b^2}{8} + P_{\text{lò}} a, \qquad
+\sigma_{\text{uốn}} = \frac{M_{\max} r_o}{I}
+\label{eq:uon-vo-lo}
+\end{equation}
+với $q$ là tải phân bố (trọng lượng vỏ + vật liệu trong lò), $P_{\text{lò}}$ là phản lực tại gối. Ứng suất uốn tính được khoảng 25--35 MPa.
+
+Tổ hợp ứng suất Von Mises:
+\[
+\sigma_{\text{VM}} = \sqrt{\sigma_T^2 + 3\tau^2 + \sigma_{\text{uốn}}^{\,2}}
+\approx \sqrt{12{,}7^2 + 25^2} \approx 28{,}1 \;\text{MPa}
+\]
+
+Ứng suất uốn tính toán đạt khoảng 25--35 MPa.
+
+Tổ hợp ứng suất theo tiêu chuẩn Von Mises:
+\[
+\sigma_{\text{VM}} = \sqrt{\sigma_T^2 + 3\tau^2 + \sigma_{\text{uốn}}^{\,2}} \approx 28{,}1 \;\text{MPa}
+\]
+
+Hệ số an toàn: $n = \sigma_{0,2}/\sigma_{\text{VM}} \approx 7{,}3 > 3{,}0$ (đạt yêu cầu ASME).
+
+Chiều dày thực tế 16 mm vượt trội so với yêu cầu tối thiểu của tiêu chuẩn ASME, đảm bảo khả năng chịu tải cơ học và chống lại sự võng biến dạng nhiệt theo thời gian tại $450^\circ\mathrm{C}$. Hệ thống cách nhiệt gồm bông khoáng 100 mm và vỏ bọc nhôm giúp giảm tổn thất nhiệt dưới 5\%, đồng thời giảm thiểu gradient nhiệt độ lên vỏ lò.
+
+\subsection{Phân tích truyền nhiệt phức hợp}
+\label{sec:truyen-nhiet-phuc-hop-va-thiet-ke-lo}
+Bốn biện pháp kỹ thuật được đề xuất nhằm giảm ngưỡng độ knock khi sử dụng dầu nhiệt phân: truyền nhiệt trong lò nhiệt phân quay, phân tích chi tiết từng cơ chế theo chuỗi ba lớp từ khói buồng đốt đến khối RDF.
+
+\subsubsection{Bức xạ và đối lưu từ khói buồng đốt vào vỏ ngoài lò}
+\label{sec:buc-xa-va-doi-luu-tu-khoi-buong-dot-vao-vo-ngoai-lo}
+
+Khói buồng đốt có nhiệt độ $T_g \approx 700^\circ\mathrm{C} = 973$ K. Thành phần chính của khói (CO$_2$, H$_2$O, N$_2$, O$_2$) có khả năng bức xạ khí. Tại $T_g = 973$ K, độ đen hiệu dụng của khói ước tính $\varepsilon_g \approx 0{,}30$--$0{,}35$ (với áp suất riêng phần CO$_2 \cdot L \approx 0{,}1$ atm·m và H$_2$O $\cdot L \approx 0{,}08$ atm·m). Thép 310S có độ đen $\varepsilon_s \approx 0{,}80$. Độ đen hiệu dụng cho bài toán bức xạ từ khí vào bề mặt thép:
+\begin{equation}
+  \varepsilon_{\text{eff}} = \frac{1}{\frac{1}{\varepsilon_g} + \frac{1}{\varepsilon_s} - 1}
+  \approx \frac{1}{\frac{1}{0{,}32} + \frac{1}{0{,}80} - 1}
+  \approx 0{,}25
+\end{equation}
+
+Thông lượng bức xạ từ khói vào vỏ lò:
+\begin{equation}
+  q_{\text{rad}} = \varepsilon_{\text{eff}} \, \sigma \, \left(T_g^4 - T_s^4\right)
+  = 0{,}25 \times 5{,}67 \times 10^{-8} \times \left(973^4 - 673^4\right)
+  \approx 9{,}8 \;\text{kW/m}^2
+  \label{eq:radiation-flux}
+\end{equation}
+với $T_s \approx 673$ K ($400^\circ$C) là nhiệt độ bề mặt ngoài thép, và $\sigma = 5{,}67 \times 10^{-8}$ W/(m$^2$·K$^4$).
+
+Hệ số truyền nhiệt bức xạ tương đương:
+\begin{equation}
+  h_{\text{rad}} = \frac{q_{\text{rad}}}{T_g - T_s}
+  \approx \frac{9{,}8 \times 10^3}{300} \approx 33 \;\text{W/(m}^2\cdot\text{K)}
+  \label{eq:hrad}
+\end{equation}
+
+Hệ số đối lưu tự nhiên phía ngoài lò:
+\begin{equation}
+  h_{\text{conv}} \approx 10 \text{--}20 \;\text{W/(m}^2\cdot\text{K)}
+\end{equation}
+
+Tổng hệ số truyền nhiệt phía ngoài (đối lưu cưỡng bức nhẹ):
+\begin{equation}
+  h_{\text{ext}} = h_{\text{rad}} + h_{\text{conv}}
+  \approx 33 + 20 \approx 53 \;\text{W/(m}^2\cdot\text{K)}
+  \label{eq:hext}
+\end{equation}
+
+Bảng~\ref{tab:he-so-truyen-nhiet-khoi} tổng hợp các thông số truyền nhiệt từ khói vào vỏ lò:
+\begin{table}[htbp]
 \centering
-\begin{tabular}{p{0.04\linewidth}p{0.36\linewidth}r p{0.35\linewidth}}
+\caption{Tổng hợp hệ số truyền nhiệt từ khói buồng đốt vào vỏ lò}
+\label{tab:he-so-truyen-nhiet-khoi}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{lcc}
 \toprule
- & \textbf{Chỉ số} & \textbf{Giá trị} & \textbf{Ghi chú} \\
+\textbf{Cơ chế} & \textbf{Hệ số (W/(m$^2$·K))} & \textbf{Ghi chú} \\
 \midrule
- & \multicolumn{3}{c}{\textbf{A. VỐN ĐẦU TƯ (CAPEX)}} \\
+Bức xạ khói--thép & $h_{\text{rad}} \approx 33$ & Theo CT (\ref{eq:radiation-flux}) \\
 \midrule
-1 & Tổng mức đầu tư & 214,8 tỷ đồng & Khái toán $\pm 30\%$; $\approx$ 8,6 triệu USD \\
+Đối lưu tự nhiên & $h_{\text{conv}} \approx 10$ & Gió nhẹ, vị trí trong nhà xưởng \\
 \midrule
- & \multicolumn{3}{c}{\textbf{B. CHI PHÍ VẬN HÀNH (OPEX)}} \\
+Đối lưu cưỡng bức (quạt làm mát) & $h_{\text{conv}} \approx 20$ & Khi cần tăng cường làm mát vỏ lò \\
 \midrule
-2 & OPEX hàng năm & 23,8 tỷ đồng/năm & Chi phí xử lý $\approx$ 545.000 đ/tấn CTRSH \\
-\midrule
- & \multicolumn{3}{c}{\textbf{C. DOANH THU HÀNG NĂM}} \\
-\midrule
-3 & Bán điện (FIT 2.143 đ/kWh) & 31,7 tỷ đ/năm & $\approx$14,8 triệu kWh/năm \\
-4 & Bán dầu nhiệt phân (phần ngoài) & 25,0 tỷ đ/năm & 16,59 t/ngày $\times$ 330 ngày \\
-5 & Phí xử lý CTRSH & 13,1 tỷ đ/năm & 300.000 đ/tấn $\times$ 120 tấn/ngày \\
- & \textbf{Tổng doanh thu} & \textbf{$\approx$70,0 tỷ đ/năm} & \\
-\midrule
- & \multicolumn{3}{c}{\textbf{D. LỢI NHUẬN VÀ DÒNG TIỀN}} \\
-\midrule
-6 & Lợi nhuận gộp (trước khấu hao, thuế) & $\approx$46,2 tỷ đ/năm & Doanh thu -- OPEX \\
-7 & Khấu hao TSCĐ (đường thẳng 10 năm) & $\approx$21,5 tỷ đ/năm & 214,8 / 10 \\
-8 & Lợi nhuận trước thuế (EBT) & $\approx$24,7 tỷ đ/năm & 46,2 -- 21,5 \\
-9 & Thuế TNDN (22\%) & $\approx$5,4 tỷ đ/năm & \\
-10 & Lợi nhuận sau thuế & $\approx$19,3 tỷ đ/năm & \\
-11 & Dòng tiền ròng hàng năm (CF) & $\approx$40,8 tỷ đ/năm & Sau thuế + Khấu hao \\
-\midrule
- & \multicolumn{3}{c}{\textbf{E. CÁC CHỈ SỐ ĐÁNH GIÁ DỰ ÁN}} \\
-\midrule
-12 & Thời gian hoàn vốn (đơn giản) & $\approx$5,3 năm & 214,8 / 40,8 (không chiết khấu) \\
-13 & NPV (r = 8\%, 20 năm) & $\approx$185,4 tỷ đồng & Tổng CF hiện tại 400,17 tỷ -- CAPEX 214,8 tỷ \\
-14 & IRR & $\approx$13,5\%/năm & Cao hơn WACC $\approx$ 8--10\% \\
+\textbf{Tổng bên ngoài} & \textbf{$h_{\text{ext}} \approx 53$} & Quy đổi cho tính toán thiết kế \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
-\subsection{So sánh hiệu quả kinh tế -- môi trường với phương án chôn lấp}
+\subsubsection{Dẫn nhiệt qua vách trụ nhiều lớp}
+\label{sec:dan-nhiet-vach-lo}
 
-Phương án chôn lấp hợp vệ sinh (sanitary landfill) cho 120 tấn CTRSH/ngày tại Quảng Nam có chi phí đầu tư khoảng 50--80 tỷ đồng (không bao gồm chi phí đất và giải phóng mặt bằng), chi phí vận hành khoảng 300.000--500.000 đồng/tấn, tuổi thọ bãi chôn lấp 15--20 năm.
+Vách lò nhiệt phân quay gồm ba lớp: (1) thép 310S bên trong dày $s_1 = 16$ mm, (2) lớp cách nhiệt bông gốm dày $s_2 = 100$ mm, (3) vỏ bọc thép 316L bên ngoài dày $s_3 = 3$ mm. Nhiệt trở dẫn nhiệt của mỗi lớp:
+\begin{equation}
+  R_i = \frac{s_i}{\lambda_i}
+\end{equation}
 
-Tuy nhiên, phương án chôn lấp có các chi phí ẩn lớn chưa được tính đầy đủ: (i) chi phí xử lý nước rác (leachate) khoảng 50--80 triệu đồng/năm; (ii) chi phí phát thải khí methane khoảng 20--30 triệu đồng/năm (phí phát thải khí nhà kính); (iii) chi phí giám sát môi trường suốt vòng đời bãi chôn lấp (30--50 năm sau khi đóng cửa).
-
-Phương án nhiệt phân -- diesel có lợi thế rõ rệt trên nhiều phương diện: (i) giảm 90--95\% thể tích rác thải so với chôn lấp; (ii) không phát sinh methane từ phân hủy yếm khí (giảm phát thải khí nhà kính tương đương); (iii) tạo ra năng lượng tái tạo (điện 1,84 MW); (iv) thu hồi dầu nhiệt phân có giá trị; (v) thời gian hoàn vốn 5,3 năm, NPV tại r = 8\% đạt khoảng 185 tỷ đồng và IRR khoảng 13,5\% vượt chi phí vốn, chứng minh dự án khả thi về mặt tài chính ngay cả khi không tính các chi phí ẩn của chôn lấp.
-
-Bảng~\ref{tab:so-sanh-chon-lap} tổng hợp so sánh.
-
-\begin{table}[H]
-\caption{So sánh phương án nhiệt phân -- diesel với phương án chôn lấp hợp vệ sinh}
-\label{tab:so-sanh-chon-lap}
+Bảng~\ref{tab:nhiet-tro-dan-nhiet} tổng hợp nhiệt trở và phân bố nhiệt độ qua vách lò:
+\begin{table}[htbp]
 \centering
-\begin{tabular}{p{3.5cm} r r}
+\caption{Tổng hợp nhiệt trở và phân bố nhiệt độ qua vách lò nhiệt phân quay}
+\label{tab:nhiet-tro-dan-nhiet}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{lcccc}
 \toprule
-\textbf{Chỉ tiêu} & \textbf{Nhiệt phân -- Diesel} & \textbf{Chôn lấp HS} \\
+\textbf{Lớp} & \textbf{Chiều dày $s$ (m)} & \textbf{$\lambda$ (W/(m·K))} & \textbf{$R$ (m$^2$·K/W)} & \textbf{$\Delta T$ (K)} \\
 \midrule
-Chi phí đầu tư & 214,8 tỷ đồng & 50--80 tỷ đồng \\
-Chi phí vận hành & 545.000 đ/tấn & 300.000--500.000 đ/tấn \\
-Diện tích sử dụng đất & Nhỏ (nhà xưởng) & Lớn (bãi chôn lấp) \\
-Phát thải khí nhà kính & Không methane, CO$_2$ từ đốt & Methane + CO$_2$ từ phân hủy \\
-Thu hồi năng lượng & Điện 1,84 MW + dầu & Không \\
-Chi phí ẩn dài hạn & Thấp & Cao (30--50 năm sau đóng cửa) \\
-NPV (r = 8\%) & $\approx$185,4 tỷ đ & Không tạo doanh thu \\
-\bottomrule
-\end{tabular}
+Màng khói ngoài & -- & $h_{\text{ext}}$ & 0,019 & 6 \\
+\midrule
+Thép 310S & 0,016 & 15 & 0,001 & 0,3 \\
+\midrule
+Bông gốm cách nhiệt & 0,100 & 0,15 & 0,667 & 199 \\
+\midrule
+Thép 316L & 0,003 & 20 & 0,0002 & 0,1 \\
+\midrule
+Màng hơi trong (ước tính) & -- & $h_{\text{int}}$ & 0,010 & 3 \\
+\midrule
+\textbf{Tổng} & -- & -- & \textbf{0,697} & \textbf{$\approx 300$} \\
+\midrule
+\end{tabular}}
 \end{table}
 
+Từ Bảng~\ref{tab:nhiet-tro-dan-nhiet}, nhiệt trở của lớp cách nhiệt bông gốm chiếm:
+\begin{equation}
+  \frac{R_{\text{bông}}}{R_{\text{tổng}}} = \frac{0{,}667}{0{,}697} \approx 95{,}7\%
+\end{equation}
+Nói cách khác, lớp cách nhiệt quyết định khả năng cách nhiệt của toàn vách lò. Lớp bám bẩn (cặn coke và tro) dày 2 mm với $\lambda_{\text{bẩn}} \approx 0{,}5$ W/(m·K) có nhiệt trở $R_{\text{bẩn}} = 0{,}004$ m$^2$·K/W — nhỏ nhưng không thể bỏ qua khi vận hành dài hạn vì nó làm giảm dần hiệu quả cách nhiệt.
+
+Tổn thất nhiệt qua vách lò cho lò có $D = 1{,}8$ m, $L = 8$ m ($A = \pi D L \approx 45{,}2$ m$^2$):
+\begin{equation}
+  Q_{\text{tổn thất}} = \frac{T_g - T_{\text{mt}}}{R_{\text{tổng}}} \times A
+  = \frac{700 - 30}{0{,}697} \times 45{,}2 \approx 43{,}5 \;\text{kW}
+  \label{eq:heat-loss-wall}
+\end{equation}
+Tổn thất chỉ khoảng 1,5\% công suất nhiệt thiết kế của buồng đốt (xấp xỉ 3 MW), xác nhận thiết kế cách nhiệt đạt yêu cầu.
+
+\subsubsection{Truyền nhiệt tiếp xúc từ vách trong vào khối RDF}
+\label{sec:truyen-nhiet-tiep-xuc}
+
+Công suất truyền nhiệt từ vách trong lò vào khối RDF:
+\begin{equation}
+  \dot{Q}_{\text{bed}} = h_{\text{bed}} \, A_{\text{contact}} \, \left(T_{\text{wall}} - T_{\text{bed}}\right)
+  \label{eq:bed-heat-transfer}
+\end{equation}
+trong đó $h_{\text{bed}}$ là hệ số cấp nhiệt tiếp xúc, phụ thuộc mạnh vào chế độ chuyển động của lớp hạt trong lò quay.
+
+Hệ số $h_{\text{bed}}$ tăng theo tốc độ quay $N$ do tần số tiếp xúc hạt--vách tăng và hiệu ứng trộn bề mặt (surface renewal). Theo lý thuyết surface renewal của Higbie và thực nghiệm trên lò quay công nghiệp \cite{Boateng2008}:
+\begin{equation}
+  h_{\text{bed}} \propto \text{Nu} \cdot \frac{k_g}{d_p}, \qquad
+  \text{Nu} \approx 2 + 0{,}046 \, \text{Re}^{0{,}8}
+\end{equation}
+với $\text{Re} = \rho_g u_{\text{tang}} d_p / \mu_g$, và $u_{\text{tang}}$ tỷ lệ thuận với tốc độ quay $N$.
+
+Bảng~\ref{tab:hbedo-rpm} trình bày sự phụ thuộc của $h_{\text{bed}}$ vào tốc độ quay lò:
+\begin{table}[htbp]
+\centering
+\caption{Hệ số truyền nhiệt tiếp xúc $h_{\text{bed}}$ theo tốc độ quay lò}
+\label{tab:hbedo-rpm}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{ccll}
+\toprule
+\textbf{$N$ (vòng/phút)} & \textbf{$h_{\text{bed}}$ (W/(m$^2$·K))} & \textbf{Chế độ} & \textbf{Đặc điểm} \\
+\midrule
+0,2 & 5--15 & Tĩnh / Trượt yếu & Tiếp xúc liên tục, không trộn \\
+\midrule
+0,5 & 20--40 & Trượt & Đảo trộn nhẹ, cải thiện dần \\
+\midrule
+1,0 & 50--80 & Lăn / Saltation & Tăng mạnh tần số tiếp xúc \\
+\midrule
+2,0 & 80--120 & Cascading & Tối ưu, diện tích tiếp xúc cực đại \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Tại thiết kế $N = 2$ vòng/phút, lấy $h_{\text{bed}} \approx 100$ W/(m$^2$·K). Diện tích tiếp xúc hiệu dụng ước tính $A_{\text{contact}} \approx 0{,}3 \, A_{\text{vách}} \approx 0{,}3 \times 45{,}2 \approx 13{,}6$ m$^2$ (vì chỉ một phần bề mặt vách tiếp xúc trực tiếp với lớp hạt tại mỗi thời điểm). Với $\Delta T = T_{\text{wall}} - T_{\text{bed}} \approx 450 - 300 = 150$ K:
+\begin{equation}
+  \dot{Q}_{\text{bed}} = 100 \times 13{,}6 \times 150 \approx 204 \;\text{kW}
+  \label{eq:bed-heat-value}
+\end{equation}
+Giá trị này lớn hơn nhu cầu nhiệt thiết kế cho giai đoạn khởi động ($\approx 170$ kW), với hệ số dự phòng $\approx 1{,}2$. Ở chế độ vận hành ổn định, nhiệt do phản ứng nhiệt phân tỏa ra đã cung cấp phần lớn nhu cầu nội tại, nên $\dot{Q}_{\text{bed}}$ giảm xuống còn $\approx 7{,}6$ kW (theo ước tính sơ bộ).
+
+\subsubsection{Biên dạng phân bố nhiệt độ dọc theo chiều dài lò}
+\label{sec:bien-do-nhiet-do}
+
+Nhiệt độ trong lò nhiệt phân quay phân bố không đều theo chiều dài. Dựa trên phân tích ba vùng truyền nhiệt và phản ứng nhiệt phân, biên dạng nhiệt độ có thể chia thành bốn vùng đặc trưng:
+
+\begin{enumerate}
+  \item \textbf{Vùng tiền nóng (z = 0--1 m):} Khí nóng tiếp xúc trực tiếp với RDF lạnh ($T_{\text{RDF}} \approx 30^\circ$C). Nhiệt độ khí giảm nhẹ từ 973 K xuống khoảng 923 K do truyền nhiệt vào vật liệu. Vách lò ở vùng này có nhiệt độ khoảng 873 K. RDF được nâng nhiệt nhanh đến $\approx 200^\circ$C, bắt đầu bay hơi ẩm còn lại.
+  \item \textbf{Vùng nhiệt phân chính (z = 1--5 m):} Nhiệt độ RDF đạt 400--450$^\circ$C, phản ứng nhiệt phân xảy ra mạnh. Khí nóng duy trì $T_g \approx 923$--$973$ K do buồng đốt liên tục cung cấp nhiệt. Vách trong lò ở khoảng 873 K. Đây là vùng tiêu thụ nhiệt chủ yếu.
+  \item \textbf{Vùng cracking nhẹ và ngưng tụ (z = 5--7 m):} Phản ứng nhiệt phân chậm lại. Nhiệt độ khí giảm nhẹ xuống 873--923 K do tổn thất qua vách và phản ứng thu nhiệt kết thúc. Một phần hơi dầu nặng ngưng tụ ở vùng này.
+  \item \textbf{Vùng làm nguội than (z = 7--8 m):} Khí nguội dần xuống 773 K. Than carbon ra khỏi lò ở $\approx 300^\circ$C, được làm nguội bằng thiết bị làm nguội xoắn ốc trước khi thu gom.
+\end{enumerate}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.88\textwidth,
+      height=9cm,
+      xlabel={Chiều dài lò $z$ (m)},
+      ylabel={Nhiệt độ ($^\circ$C)},
+      xmin=0, xmax=8,
+      ymin=0, ymax=750,
+      xtick={0,1,2,3,4,5,6,7,8},
+      ytick={0,100,200,300,400,500,600,700},
+      grid=major,
+      legend pos=north east,
+      font=\footnotesize,
+      mark size=2,
+      every axis plot/.append style={very thick}
+    ]
+    % Gas temperature profile (relatively flat)
+    \addplot[color=red!80!black,mark=*,smooth,tension=0.3] coordinates {
+      (0,700)(0.5,693)(1,680)(2,675)(3,670)(4,668)(5,660)(6,648)(7,600)(8,500)
+    };
+    \addlegendentry{$T_{\text{khí}}$}
+    % Wall temperature
+    \addplot[color=orange!80!black,mark=square*,smooth,tension=0.3] coordinates {
+      (0,600)(0.5,580)(1,600)(2,600)(3,600)(4,600)(5,595)(6,580)(7,540)(8,450)
+    };
+    \addlegendentry{$T_{\text{vách}}$}
+    % Bed/solid temperature
+    \addplot[color=blue!80!black,mark=triangle*,smooth,tension=0.3] coordinates {
+      (0,30)(0.5,100)(1,200)(2,380)(3,430)(4,450)(5,445)(6,430)(7,380)(8,300)
+    };
+    \addlegendentry{$T_{\text{bed}}$}
+    % Zone boundaries
+    \addplot[dashed,black!50,very thick] coordinates {(1,0)(1,750)};
+    \addplot[dashed,black!50,very thick] coordinates {(5,0)(5,750)};
+    \addplot[dashed,black!50,very thick] coordinates {(7,0)(7,750)};
+    \node[font=\tiny,anchor=south] at (axis cs:0.5,720) {Tiền nóng};
+    \node[font=\tiny,anchor=south] at (axis cs:3,720) {Nhiệt phân chính};
+    \node[font=\tiny,anchor=south] at (axis cs:6,720) {Cracking nhẹ};
+    \node[font=\tiny,anchor=south] at (axis cs:7.5,720) {Làm nguội};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Biên dạng phân bố nhiệt độ dọc theo chiều dài lò nhiệt phân quay ($L = 8$ m)}
+  \label{fig:bien-do-nhiet-do}
+\end{figure}
+
+Hình~\ref{fig:bien-do-nhiet-do} minh họa biên dạng nhiệt độ. Đặc điểm quan trọng: nhiệt độ khí gần như phẳng (hành vi kiểu fire-tube) ở vùng trung tâm do buồng đốt liên tục cấp nhiệt, trong khi nhiệt độ RDF tăng nhanh ở đoạn đầu rồi duy trì ổn định ở vùng nhiệt phân. Gradient nhiệt lớn nhất ở vùng tiền nóng ($z < 1$ m), nơi truyền nhiệt từ khói vào RDF lạnh diễn ra mạnh nhất.
+
+
+
 %%=============================================================
-\section{Kết luận chương 4}
+\section{Hệ thống phụ trợ}
+%%=============================================================
+\subsection{Hệ thống chưng cất và tinh chế dầu}
+\label{sec:chung-cat-tinh-che}
+
+Hơi dầu và khí không ngưng từ lò nhiệt phân đi qua hệ ngưng tụ nhiều cấp. Ở cấp một, ngưng tụ sơ cấp sử dụng thiết bị ngưng dạng vỏ ống (shell-and-tube) hoặc kiểu xương cá (air-cooled fin-tube), làm mát bằng không khí cưỡng bức. Nhiệt độ hơi vào khoảng 350--400$^\circ\mathrm{C}$ được giảm xuống khoảng 80--100$^\circ\mathrm{C}$ ở đầu ra; tại đây phần lớn phân đoạn dầu nặng và trung được ngưng tụ. Ở cấp hai, ngưng tụ thứ cấp sử dụng thiết bị làm mát bằng nước tuần hoàn, giảm nhiệt độ hơi xuống còn 30--40$^\circ\mathrm{C}$ để ngưng tụ phân đoạn dầu nhẹ và một phần dầu thơm. Cuối cùng, hydroseal (bình chặn thủy lực) là bình chứa nước đặt sau ngưng tụ cấp hai, có tác dụng chặn ngọn lửa không cháy ngược từ buồng đốt vào đường khí không ngưng, đồng thời loại bỏ phần bụi và dầu còn lại trong khí.
+
+Khí không ngưng sau hydroseal có nhiệt độ gần nhiệt độ môi trường và được thu gom qua hệ thống đường ống kín áp suất dương nhẹ, đưa về buồng đốt lò nhiệt phân. Trong trường hợp dư khí, van xả áp và đuốc đốt (flare) đảm bảo không có khí không ngưng nào thoát trực tiếp ra môi trường.
+
+Hệ thống chưng cất bao gồm: lò chưng cất dung tích 10\,m$^3$ (gia nhiệt bằng điện trở hoặc đốt gas), tháp cột chưng cất cao 3--4\,m với vật chêm Raschig ring, thiết bị ngưng tụ phân đoạn dạng vỏ ống, bể tách nước trọng lực, và hệ thống bơm chân không để hỗ trợ khi chưng ở áp suất giảm. Ngoài ra, hệ thống tinh chế bao gồm: bể khuấy trộn axit (316L), bể lắng cặn axit, bể trung hòa kiềm, bể hấp phụ đất sét, lọc ép khung bản, lọc túi tinh, và bồn chứa dầu thành phẩm.
+
+Công suất xử lý của hệ chưng cất mẻ khoảng 8--15\,tấn dầu thô/24\,giờ, phù hợp với lượng dầu thô từ các lò nhiệt phân (tổng cộng $y_{\text{dầu}} \cdot m_{\text{RDF cấp lò}} = 17{,}73$ t/ngày cần chưng cất trong nhiều chu kỳ mẻ hoặc vận hành song song nhiều hệ chưng cất).
+
+Dầu nhiệt phân thô cần được chưng cất và tinh chế để cải thiện độ nhớt, giảm cặn, giảm nước, giảm lưu huỳnh và nâng cao tính ổn định khi sử dụng cho động cơ diesel. Hệ thống chưng cất vận hành theo mẻ (batch distillation), phù hợp với quy mô nhỏ và đặc thù nguồn dầu biến động theo mẻ nhiệt phân. Một chu trình mẻ chưng cất điển hình bắt đầu bằng công đoạn nạp liệu: dầu thô từ bồn trung gian được bơm vào lò chưng cất (nồi chưng, dạng thép không gỉ hoặc thép carbon chịu nhiệt 316L) qua van cầu, với thể tích nạp một mẻ khoảng 8--10\,m$^3$. Tiếp theo là công đoạn gia nhiệt: lò chưng cất được gia nhiệt gián tiếp bằng dầu nóng hoặc trực tiếp bằng khí đốt (khí không ngưng hồi lưu), với nhiệt độ tăng dần từ nhiệt độ môi trường lên 350$^\circ\mathrm{C}$ theo chương trình tự động.
+
+Quá trình ngưng tụ phân đoạn diễn ra khi hơi dầu bốc lên qua tháp chưng cất (column với vật chêm hoặc đĩa chưng cất đơn giản) và được ngưng tụ tại thiết bị ngưng tụ dạng vỏ ống (shell-and-tube condenser). Phân đoạn nhẹ (dưới 200$^\circ\mathrm{C}$) được thu trước, tiếp đến là phân đoạn trung (200--350$^\circ\mathrm{C}$), phần nặng còn lại trong nồi được tháo ra cuối mẻ. Dầu ngưng tụ tiếp tục chảy xuống bể tách nước (gravity separator) dạng nằm ngang; nước lắng xuống đáy được tháo ra định kỳ, còn dầu tràn qua vách ngăn vào bồn chứa phân đoạn. Sau mỗi mẻ, phần cặn rắn và dầu nặng ở đáy nồi chưng được bơm ra bằng bơm bánh răng chịu nhiệt, nồi được vệ sinh định kỳ (tuần/lần) để ngăn tích tụ cặn carbon.
+
+Phân đoạn dầu nhẹ thu được sau chưng cất tiếp tục đi qua các bước tinh chế nhằm loại bỏ các tạp chất còn lại. Bước xử lý bằng axit sulfuric: dầu nhẹ được khuấy trộn với dung dịch \ce{H2SO4} nồng độ 93--98\%, tỷ lệ khoảng 2--5\% thể tích dầu. Axit tạo phản ứng với các hợp chất thơm, olefin và tạp chất chứa nitơ, lưu huỳnh, tạo thành cặn axit (acid sludge) lắng xuống đáy bể phản ứng. Cặn axit là chất thải nguy hại, cần được xử lý riêng theo quy định. Bước rửa kiềm: dầu sau xử lý axit còn chứa một lượng nhỏ axit hòa tan và các tạp chất axit hữu cơ. Dầu được rửa với dung dịch \ce{NaOH} 5--10\%, khuấy trộn nhẹ rồi tách lớp. Phản ứng trung hòa:
+\begin{equation}
+  \ce{R-COOH + NaOH -> R-COONa + H2O}
+\end{equation}
+Nước kiềm thải ra được đưa vào hệ thống xử lý nước thải. Bước hấp phụ bằng đất sét hoạt hóa: dầu được khuấy trộn với đất sét hoạt hóa (Fuller's earth hoặc acid-activated bentonite) ở nhiệt độ 60--80$^\circ\mathrm{C}$ trong thời gian 30--60\,phút. Đất sét hấp phụ các hợp chất màu (carotenoid, porphyrin, asphaltene), các hợp chất cực tính và vết kim loại. Bước cuối là lọc qua màng lọc tinh (lưới lọc 5--10\,µm) để loại bỏ hạt bụi mịn còn lại. Dầu sau lọc tinh đạt tiêu chuẩn bơm vào bồn chứa thành phẩm.
+
+Dầu thành phẩm sau tinh chế cần được lưu chứa trong điều kiện an toàn trước khi sử dụng cho tổ máy phát điện. Thể tích bồn chứa thiết kế đủ cho 3 ngày sản xuất:
+\begin{equation}
+  V_{\text{bồn}} = V_{\text{dầu,tp}} \times 3 = 19{,}5 \;\text{m}^3/\text{ngày} \times 3 = 58{,}5 \;\text{m}^3
+\end{equation}
+
+Chọn thể tích thiết kế 60\,m$^3$, bố trí hai bồn dung tích 30\,m$^3$. Các yêu cầu kỹ thuật đối với bồn chứa dầu bao gồm: vật liệu chế tạo bằng thép carbon A36 hoặc tương đương với mối hàn được kiểm tra theo ASME Sec.~VIII; đê bao (bund wall) bê tông xung quanh bồn có thể tích chứa ít nhất 110$\%$ thể tích bồn lớn nhất, theo TCVN 5684:2012; hệ thống tiếp địa và chống sét lan truyền cho toàn bộ hệ thống bồn và đường ống dẫn dầu; van áp lực và van chân không (pressure-vacuum valve, PV valve) để kiểm soát áp suất hơi bên trong bồn; hệ thống phát hiện rò rỉ tại đáy đê bao với tín hiệu cảnh báo kết nối về phòng điều khiển trung tâm.
+
+\begin{table}[htbp]
+\centering
+\caption{Định mức hóa chất tinh chế dầu nhiệt phân}
+\label{tab:dinh-muc-hoa-chat}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.05\textwidth}p{0.35\textwidth}p{0.25\textwidth}p{0.25\textwidth}}
+\toprule
+\textbf{TT} & \textbf{Hóa chất sử dụng} & \textbf{Định mức (kg/tấn dầu)} & \textbf{Giai đoạn} \\
+\midrule
+1 & Axit sulfuric (\ce{H2SO4} 98\%) & 16--40 & Xử lý cặn, tạo acid sludge \\
+\midrule
+2 & Natri hydroxit (\ce{NaOH} 3\%) & 24 & Rửa kiềm, trung hòa axit \\
+\midrule
+3 & Đất sét hoạt hóa (Activated clay) & 16--40 & Hấp phụ màu, mùi, kim loại \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Chỉ tiêu kỹ thuật dầu nhiệt phân sau tinh chế}
+
+Bảng~\ref{tab:chi-tieu-dau-tinh-che} trình bày các chỉ tiêu thiết kế đối với dầu sau chưng cất và tinh chế:
+
+\begin{table}[htbp]
+\centering
+\caption{Chỉ tiêu thiết kế đối với dầu nhiệt phân sau tinh chế}
+\label{tab:chi-tieu-dau-tinh-che}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.05\textwidth}p{0.36\textwidth}p{0.16\textwidth}p{0.28\textwidth}}
+\toprule
+\textbf{TT} & \textbf{Chỉ tiêu} & \textbf{Đơn vị} & \textbf{Giá trị thiết kế} \\
+\midrule
+1 & Khối lượng riêng ở 15$^\circ\mathrm{C}$ & kg/m$^3$ & 820--860 \\
+\midrule
+2 & Độ nhớt động học ở 40$^\circ\mathrm{C}$ & mm$^2$/s & 2,0--4,5 \\
+\midrule
+3 & Trị số cetane & -- & $\geq 46$ \\
+\midrule
+4 & Điểm chớp cháy (cốc kín) & $^\circ\mathrm{C}$ & $\geq 55$ \\
+\midrule
+5 & Điểm đông đặc & $^\circ\mathrm{C}$ & $\leq 0$ \\
+\midrule
+6 & Hàm lượng nước & mg/kg & $\leq 200$ \\
+\midrule
+7 & Nhiệt trị thấp & MJ/kg & $\approx 43$ \\
+\midrule
+8 & Hàm lượng lưu huỳnh & \% khối lượng & 0,03--0,04 \\
+\midrule
+9 & Hàm lượng tro & \% khối lượng & $\leq 0{,}01$ \\
+\midrule
+10 & Tổng axit (TAN) & mg\,KOH/g & $\leq 0{,}5$ \\
+\midrule
+11 & Hàm lượng tạp chất hạt & mg/kg & $\leq 10$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Ảnh hưởng của trị số cetane đến hiệu suất động cơ diesel}
+Trị số cetane (CN) là thước đo khả năng tự bốc cháy của nhiên liệu, phản ánh trực tiếp thời gian trễ đánh lửa (\emph{ignition delay}) trong buồng đốt. Trị số CN cao đồng nghĩa với quá trình cháy êm hơn và giảm hiện tượng gõ động cơ (diesel knock). Đối với tổ máy phát điện đang thiết kế, ngưỡng tối thiểu CN $\geq 46$ là yêu cầu bắt buộc theo TCVN 5689:2013.
+
+Do dầu nhiệt phân thường có hàm lượng hợp chất thơm cao, giá trị CN sẽ được kiểm soát chặt chẽ thông qua việc duy trì nhiệt độ lò ở 400--450$^\circ\mathrm{C}$ để ưu tiên phân đoạn n-paraffin. Việc duy trì chất lượng dầu ở thông số này giúp hạn chế mài mòn vòi phun, kéo dài tuổi thọ động cơ và tối ưu hóa hiệu suất phát điện ròng của toàn nhà máy.
+
+\subsection{Cấu hình tổ máy phát điện diesel}
+
+Tổ máy phát điện diesel 550\,kVA (440\,kW tác dụng) là khâu cuối của chuỗi công nghệ. Để đạt công suất phát điện 2.628\,kW, nhà máy cần:
+\begin{equation}
+  n_{\text{MFĐ}} = \left\lceil \frac{2.628}{440} \right\rceil = \lceil 5{,}97 \rceil = 6 \;\text{tổ máy}
+\end{equation}
+
+Cấu hình 6 tổ máy $\times$ 440\,kW $= 2.640$\,kW tổng công suất tác dụng, phù hợp với yêu cầu 2.628\,kW. Trong phạm vi thiết kế sơ bộ, 6 tổ máy được xem là cấu hình lắp đặt chính. Việc bổ sung tổ máy dự phòng có thể được xem xét ở bước thiết kế kỹ thuật nếu yêu cầu độ tin cậy cao hơn hoặc cần bảo dưỡng luân phiên mà không giảm công suất phát. Các tổ máy được đấu song song trên thanh cái 400\,V/50\,Hz qua áp-tô-mát và bộ đồng bộ (synchronizer) tự động. Bộ điều tốc điện tử (electronic governor) đảm bảo ổn định tần số 50\,Hz $\pm 0{,}5\%$ khi tải thay đổi.
+
 %%=============================================================
 
-Chương 4 đã trình bày ba nội dung cốt lõi để chứng minh tính khả thi thực tế của toàn bộ dự án nhà máy nhiệt phân -- chưng cất -- phát điện diesel tại Hội An công suất 120 tấn CTRSH/ngày đêm.
+%%=============================================================
 
-\textbf{Về hệ thống SCADA}, hệ thống điều khiển và giám sát ba lớp ISA-95 với hơn 500 tín hiệu analog/digital, cấu hình 2-trong-3 cho các interlock an toàn SIL 2, và cơ sở dữ liệu chuỗi thời gian 1-giây cho các thông số quan trọng đảm bảo giám sát thời gian thực toàn bộ dây chuyền công nghệ từ lò nhiệt phân, hệ thống thu hồi nhiệt, tổ máy diesel đến cột chưng cất.
+\subsection{Cân đối điện tự dùng của nhà máy}
 
-\textbf{Về môi trường}, cấu hình thiết bị xử lý khí thải nhiều cấp (cyclone, wet scrubber, baghouse, than hoạt tính, SNCR, thermal oxidizer) đạt QCVN 19:2024/BTNMT (Cột B) và Thông tư 02/2022/TT-BTNMT cho dioxin/furan; hệ thống MBR xử lý nước thải đạt QCVN 40:2025/BTNMT (Cột A); tro bay được ổn định/ximăng hóa trước khi chôn lấp. Nhà máy thể hiện tính ưu việt so với phương án chôn lấp: giảm 90--95\% thể tích rác thải, không phát sinh methane, thu hồi năng lượng.
+Lưu ý đối với các thiết bị có công suất lớn tại phân khu tiền xử lý như máy băm xé (220 kW) và máy ép viên (118 kW), dòng khởi động (inrush current) có thể rất cao. Khi nhà máy vận hành ở chế độ độc lập (island mode) tách khỏi lưới điện quốc gia, việc khởi động trực tiếp các động cơ này có thể gây sụt áp nghiêm trọng cho toàn hệ thống điện nội bộ. Do đó, các thiết bị này được yêu cầu trang bị bộ khởi động mềm (Soft Starter) hoặc biến tần (VFD) để đảm bảo ổn định lưới điện nhà máy.
 
-\textbf{Về tài chính}, với tổng CAPEX 214,8 tỷ đồng, OPEX 23,8 tỷ đồng/năm và doanh thu ước tính 70 tỷ đồng/năm, dự án có NPV tại r = 8\% đạt khoảng 185 tỷ đồng, IRR 13,5\% vượt chi phí vốn (WACC $\approx$ 8--10\%) và thời gian hoàn vốn 5,3 năm, chứng minh tính khả thi về mặt tài chính.
+\begin{table}[htbp]
+\centering
+\caption{Tổng hợp công suất điện tiêu thụ các thiết bị chính và so sánh với phát điện nội bộ}
+\label{tab:can-doi-dien}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.9}{
+\begin{tabular}{p{0.04\textwidth}p{0.28\textwidth}p{0.18\textwidth}p{0.10\textwidth}p{0.16\textwidth}}
+\toprule
+\textbf{TT} & \textbf{Cụm thiết bị} & \textbf{Công suất lắp đặt, kW} & \textbf{Hệ số tải} & \textbf{Tiêu thụ thực, kW} \\
+\midrule
+1 & Khối tiền xử lý (tổng hợp) & 616,1 & 0,75 & 465,1 \\
+\midrule
+2 & Hệ thống nhiệt phân (4 mô-đun: bơm, quạt, vít tải) & 80,0 & 0,70 & 56,0 \\
+\midrule
+3 & Hệ thống chưng cất và tinh chế & 40,0 & 0,70 & 28,0 \\
+\midrule
+4 & Hệ thống xử lý khí thải & 30,0 & 0,80 & 24,0 \\
+\midrule
+5 & Hệ thống xử lý nước thải & 45,0 & 0,75 & 33,8 \\
+\midrule
+6 & Bơm, van, chiếu sáng, điều khiển & 50,0 & 0,70 & 35,0 \\
+\midrule
+& \textbf{Tổng tải tự dùng} & \textbf{861,1} & -- & \textbf{641,9} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Công suất phát điện thực tế} $W_e = 2.628$\,kW} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Phụ tải tự dùng tính theo thiết bị} $= 641{,}9 / 2.628 \approx 24{,}4\%$} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Phụ tải tự dùng dùng trong thiết kế bảo thủ} $= 30\% \times 2.628 \approx 788{,}4$\,kW} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Điện ròng thiết kế} $\approx 2.628 - 788{,}4 \approx 1.840$\,kW} \\
+\midrule
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
-Các thông số kỹ thuật trong chương được đối chiếu và nhất quán với kết quả tính toán thiết kế ở Chương \ref{chuong3}, đảm bảo tính khả thi khi triển khai thực tế tại nhà máy Hội An.
+Kết quả cân đối điện năng xác nhận nhà máy có khả năng tự cấp đủ điện cho toàn bộ vận hành. Phụ tải tự dùng tính theo danh mục thiết bị là 641,9\,kW, tương đương 24,4\% công suất phát thực tế. Hệ số 30\% được chọn cao hơn mức tính toán thực tế (24,4\%) nhằm dự phòng cho các tổn thất trên trạm biến áp, chiếu sáng ngoại vi và các thiết bị phụ trợ chưa liệt kê. Do đó, thiết kế bảo thủ sử dụng giả thiết phụ tải tự dùng bằng 30\% (tương đương 788,4\,kW). Điện ròng thiết kế còn lại khoảng 1.840\,kW, thấp hơn giá trị tính theo danh mục thiết bị nhưng đảm bảo tính bảo thủ trong đánh giá khả thi.
+
 
 \end{document}

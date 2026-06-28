@@ -627,8 +627,72 @@ Tại Việt Nam, công nghệ đốt rác phát điện đang trong giai đoạ
 
 Xu hướng công nghệ hiện đại đang hướng tới hiệu suất cao hơn, phát thải thấp hơn và tích hợp công nghệ số. Với đốt trực tiếp, các nhà máy thế hệ mới áp dụng thông số hơi cao hơn (áp suất 80$-$100 bar, nhiệt độ 450$-$500$^\circ\mathrm{C}$), giúp nâng hiệu suất phát điện lên 25$-$30\% so với 18$-$22\% của các nhà máy cũ. Với khí hóa và nhiệt phân, trọng tâm phát triển hiện nay là kiểm soát tạp chất trong khí nhiên liệu, cải thiện hệ ngưng tụ sản phẩm, nâng cao hiệu suất chuyển hóa và mở rộng khả năng xử lý các loại nhiên liệu thải đa dạng. Hai công nghệ này tạo ra sản phẩm trung gian có giá trị năng lượng cao, phù hợp cho các hệ thống phát điện hoặc làm nguyên liệu đầu vào cho các quy trình chế biến tiếp theo, do đó sẽ được phân tích sâu hơn trong Chương \ref{chuong2}.
 
-\section{Bối cảnh rác thải tại Hội An và định hướng tiếp cận}
-\label{sec:bo-canh-hoi-an}
+
+\section{Khung pháp lý áp dụng cho dự án}
+
+\subsection{Khung pháp lý về xử lý CTRSH tại Việt Nam}
+
+Sau khi xác định phương án công nghệ, dự án phải được đặt trong khung pháp lý về bảo vệ môi trường, đầu tư xây dựng và quản lý chất thải rắn. Luật Bảo vệ môi trường năm 2020 (Luật số 72/2020/QH14) \cite{LuatBVMT2020} và các nghị định hướng dẫn thi hành là cơ sở pháp lý chính cho việc đầu tư, vận hành và giám sát các công trình xử lý chất thải. Đối với dự án xử lý CTRSH bằng công nghệ nhiệt, các yêu cầu quan trọng bao gồm lựa chọn công nghệ phù hợp, kiểm soát phát thải, quản lý chất thải thứ cấp, quan trắc môi trường và bảo đảm an toàn vận hành.
+
+Về cơ chế kinh tế, Nghị định số 32/2019/NĐ-CP về cơ chế đặt hàng cung cấp dịch vụ công ích trong lĩnh vực môi trường \cite{NghiDinh32_2019_NDCP} tạo cơ sở cho việc đặt hàng, đấu thầu hoặc giao nhiệm vụ xử lý chất thải. Các cơ chế khuyến khích phát triển năng lượng tái tạo hiện hành như Quyết định số 39/2018/QĐ-TTg và Quyết định số 13/2020/QĐ-TTg \cite{QuyetDinh39_2018_QDTTg,QuyetDinh13_2020_QDTTg} chưa giải quyết đầy đủ đặc thù của điện từ chất thải, do đó dự án cần được xem xét đồng thời dưới góc độ dịch vụ xử lý môi trường và thu hồi năng lượng. Tại địa phương, Quy hoạch tỉnh Quảng Nam giai đoạn 2021--2030 \cite{QuyHoachQuangNam2024} xác định xử lý CTRSH là một trong các nhiệm vụ môi trường ưu tiên, tạo cơ sở định hướng cho việc lựa chọn công nghệ phù hợp.
+
+\subsection{Quy chuẩn kỹ thuật quốc gia về môi trường}
+
+Đối với khí thải, các nguồn phát sinh từ buồng đốt gia nhiệt, đốt khí không ngưng, hệ thống sấy, chưng cất và động cơ diesel phải được thiết kế để đáp ứng \textbf{QCVN 19:2024/BTNMT} -- Quy chuẩn kỹ thuật quốc gia về khí thải công nghiệp \cite{QCVN19_2024_BTNMT}. Hệ thống xử lý cần tập trung giải quyết ba nhóm chất ô nhiễm chính: nhóm hạt rắn (bụi tổng số và bụi mịn PM$_{2,5}$, \ce{PM10}) sinh ra từ quá trình vật lý và cháy chưa hoàn toàn; nhóm khí gốc axit (\ce{NO_x}, \ce{SO2}, \ce{HCl}) bắt nguồn từ sự oxy hóa các nguyên tố lưu huỳnh, nitơ và clo có trong thành phần rác thải; và nhóm các hợp chất hữu cơ có độc tính cao (điển hình là dioxin và furan) phát sinh khi điều kiện nhiệt độ không được kiểm soát tối ưu. Về khía cạnh quản lý vận hành, nhà máy buộc phải thiết lập chương trình quan trắc định kỳ nghiêm ngặt. Đối với các hệ thống quy mô lớn hoặc thuộc đối tượng theo luật định, việc lắp đặt hệ thống giám sát khí thải liên tục (CEMS) là yêu cầu bắt buộc nhằm đảm bảo các thông số phát thải luôn nằm trong giới hạn an toàn.
+
+\begin{table}[htbp]
+\centering
+\caption{Một số giới hạn khí thải cần xét theo QCVN 19:2024/BTNMT}
+\label{tab:gioi-han-khi-thai-qcvn19}
+\setlength{\tabcolsep}{6pt}
+\scalebox{0.9}{
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.48\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}}
+\toprule
+\textbf{Thông số} & \textbf{Giá trị giới hạn tham khảo} \\
+\midrule
+Bụi tổng số & $\leq$ 30 mg/Nm$^3$ \\
+Bụi mịn PM$_{2,5}$ & $\leq$ 10 mg/Nm$^3$ \\
+Lưu huỳnh dioxit (\ce{SO2}) & $\leq$ 70 mg/Nm$^3$ \\
+Oxit nitơ tổng (\ce{NO_x}, tính theo \ce{NO2}) & $\leq$ 150 mg/Nm$^3$ \\
+Hydroclorua (\ce{HCl}) & $\leq$ 20 mg/Nm$^3$ \\
+Cacbon monoxit (\ce{CO}) & $\leq$ 50 mg/Nm$^3$ \\
+Dioxin/Furan (tính quy về \ce{TEQ}) & $\leq$ 0,1 ng TEQ/Nm$^3$ \\
+Thủy ngân và hợp chất (\ce{Hg}) & $\leq$ 0,05 mg/Nm$^3$ \\
+Tổng kim loại nặng nhóm Cd, Tl & $\leq$ 0,05 mg/Nm$^3$ \\
+Tổng kim loại nặng nhóm Sb, As, Pb, Cr, Co, Cu, Mn, Ni, V & $\leq$ 0,5 mg/Nm$^3$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+Đối với nước thải, các dòng cần kiểm soát gồm nước rỉ rác, nước ép tách ẩm, nước rửa thiết bị, nước từ hệ thống xử lý khí thải ướt và nước thải sinh hoạt của nhà máy. Các dòng nước thải này phải được thu gom riêng, xử lý đạt \textbf{QCVN 40:2025/BTNMT} -- Quy chuẩn kỹ thuật quốc gia về nước thải công nghiệp \cite{QCVN40_2025_BTNMT} trước khi xả ra môi trường hoặc đấu nối vào hệ thống xử lý tập trung. Nước rỉ rác và nước ép rác thường có hàm lượng chất hữu cơ, amonia và muối cao, nên hệ thống xử lý cần kết hợp các quá trình sinh học, hóa lý và lọc màng khi cần thiết.
+
+\begin{table}[htbp]
+\centering
+\caption{Một số thông số nước thải cần xét theo QCVN 40:2025/BTNMT}
+\label{tab:gioi-han-nuoc-thai-qcvn40}
+\setlength{\tabcolsep}{6pt}
+\scalebox{0.75}{
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.48\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}}
+\toprule
+\textbf{Thông số} & \textbf{Giá trị giới hạn cột A/cột B} \\
+\midrule
+pH & 6,0--9,0 \\
+Tổng chất rắn lơ lửng (TSS) & $\leq 30/50$ mg/L \\
+BOD$_5$ & $\leq 20/50$ mg/L \\
+COD & $\leq 50/150$ mg/L \\
+Tổng Nitơ & $\leq 15/30$ mg/L \\
+Amoni & $\leq 5/10$ mg/L \\
+Chì (\ce{Pb}) & $\leq 0,05/0,5$ mg/L \\
+Thủy ngân (\ce{Hg}) & $\leq 0,001/0,002$ mg/L \\
+Tổng coliform & $\leq 3.000/5.000$ MPN/100 mL \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\section{Điều kiện biên và đặc trưng dòng rác tại dự án Hội An}
+\label{sec:dieu-kien-bien-hoi-an}
 
 Hội An là đô thị du lịch trọng điểm của thành phố Đà Nẵng (tỉnh Quảng Nam cũ) với lượng CTRSH phát sinh dự báo đạt 120--140 tấn/ngày trong giai đoạn 2025--2030 \cite{BaocaoHoiAn2024}. Dòng rác tại đây có đặc trưng phức tạp hơn so với đô thị thuần dân cư do yếu tố du lịch: rác từ nhà hàng, khách sạn, chợ, khu dân cư và hoạt động thương mại lẫn nhiều bao bì nhựa, giấy, vải, thủy tinh, kim loại và tạp chất vô cơ. Thành phần biến động mạnh theo mùa du lịch: mùa cao điểm lượng rác thực phẩm từ nhà hàng và khách sạn tăng vọt, làm nhiệt trị RDF giảm rõ rệt; mùa thấp điểm tỷ lệ này giảm, dẫn đến nhiệt trị và thành phần RDF dao động theo \cite{BaocaoHoiAn2024}. Nội dung chi tiết về đặc trưng dòng rác, ý nghĩa kỹ thuật của các thông số và định hướng tiếp cận công nghệ được trình bày trong các mục \ref{sec:dac-trung-dong-rac}, \ref{sec:y-nghia-ky-thuat} và \ref{sec:dinh-huong-tiep-can}.
 
@@ -694,68 +758,44 @@ Việc lựa chọn công nghệ xử lý CTRSH không thể dựa trên một t
 
 Từ vòng so sánh thứ nhất, chôn lấp, tái chế và compost đều có vai trò nhất định nhưng không giải quyết triệt để phần rác cháy được có giá trị năng lượng. Do đó, trọng tâm tiếp theo của đồ án là nhóm công nghệ xử lý nhiệt. Trong nhóm này, đốt trực tiếp là công nghệ đã trưởng thành nhất để phát điện quy mô lớn; khí hóa và nhiệt phân là hai hướng chuyển hóa nhiệt tiên tiến hơn vì tạo ra sản phẩm trung gian là khí nhiên liệu hoặc dầu nhiên liệu. Việc phân tích sâu hai hướng sau cùng với cơ sở lý thuyết, luận chứng lựa chọn công nghệ và đề xuất phương án cụ thể cho dự án quy mô vừa tại Hội An được trình bày chi tiết trong Chương \ref{chuong2}.
 
-\section{Khung pháp lý áp dụng cho dự án}
+%%=============================================================
+% Nội dung gộp từ Mục 2.1 cũ: Điều kiện biên của dự án
+%%=============================================================
 
-\subsection{Khung pháp lý về xử lý CTRSH tại Việt Nam}
+\subsection{Điều kiện biên của dự án}
 
-Sau khi xác định phương án công nghệ, dự án phải được đặt trong khung pháp lý về bảo vệ môi trường, đầu tư xây dựng và quản lý chất thải rắn. Luật Bảo vệ môi trường năm 2020 (Luật số 72/2020/QH14) \cite{LuatBVMT2020} và các nghị định hướng dẫn thi hành là cơ sở pháp lý chính cho việc đầu tư, vận hành và giám sát các công trình xử lý chất thải. Đối với dự án xử lý CTRSH bằng công nghệ nhiệt, các yêu cầu quan trọng bao gồm lựa chọn công nghệ phù hợp, kiểm soát phát thải, quản lý chất thải thứ cấp, quan trắc môi trường và bảo đảm an toàn vận hành.
-
-Về cơ chế kinh tế, Nghị định số 32/2019/NĐ-CP về cơ chế đặt hàng cung cấp dịch vụ công ích trong lĩnh vực môi trường \cite{NghiDinh32_2019_NDCP} tạo cơ sở cho việc đặt hàng, đấu thầu hoặc giao nhiệm vụ xử lý chất thải. Các cơ chế khuyến khích phát triển năng lượng tái tạo hiện hành như Quyết định số 39/2018/QĐ-TTg và Quyết định số 13/2020/QĐ-TTg \cite{QuyetDinh39_2018_QDTTg,QuyetDinh13_2020_QDTTg} chưa giải quyết đầy đủ đặc thù của điện từ chất thải, do đó dự án cần được xem xét đồng thời dưới góc độ dịch vụ xử lý môi trường và thu hồi năng lượng. Tại địa phương, Quy hoạch tỉnh Quảng Nam giai đoạn 2021--2030 \cite{QuyHoachQuangNam2024} xác định xử lý CTRSH là một trong các nhiệm vụ môi trường ưu tiên, tạo cơ sở định hướng cho việc lựa chọn công nghệ phù hợp.
-
-\subsection{Quy chuẩn kỹ thuật quốc gia về môi trường}
-
-Đối với khí thải, các nguồn phát sinh từ buồng đốt gia nhiệt, đốt khí không ngưng, hệ thống sấy, chưng cất và động cơ diesel phải được thiết kế để đáp ứng \textbf{QCVN 19:2024/BTNMT} -- Quy chuẩn kỹ thuật quốc gia về khí thải công nghiệp \cite{QCVN19_2024_BTNMT}. Hệ thống xử lý cần tập trung giải quyết ba nhóm chất ô nhiễm chính: nhóm hạt rắn (bụi tổng số và bụi mịn PM$_{2,5}$, \ce{PM10}) sinh ra từ quá trình vật lý và cháy chưa hoàn toàn; nhóm khí gốc axit (\ce{NO_x}, \ce{SO2}, \ce{HCl}) bắt nguồn từ sự oxy hóa các nguyên tố lưu huỳnh, nitơ và clo có trong thành phần rác thải; và nhóm các hợp chất hữu cơ có độc tính cao (điển hình là dioxin và furan) phát sinh khi điều kiện nhiệt độ không được kiểm soát tối ưu. Về khía cạnh quản lý vận hành, nhà máy buộc phải thiết lập chương trình quan trắc định kỳ nghiêm ngặt. Đối với các hệ thống quy mô lớn hoặc thuộc đối tượng theo luật định, việc lắp đặt hệ thống giám sát khí thải liên tục (CEMS) là yêu cầu bắt buộc nhằm đảm bảo các thông số phát thải luôn nằm trong giới hạn an toàn.
+Dự án Nhà máy xử lý CTRSH thành phố Hội An có công suất 120 tấn/ngày đêm, tại thôn Bàu Ốc, thành phố Đà Nẵng, diện tích mặt bằng 14.068,5\,m$^2$. Phương án công nghệ ban đầu gồm bốn công đoạn: tiền xử lý và tạo RDF, sấy khô xuống dưới 20\% độ ẩm, khí hóa trong lò tầng sôi và phát điện bằng tuabin khí. Các đặc tính cụ thể của dòng CTRSH (thành phần, độ ẩm, nhiệt trị) đã được trình bày chi tiết tại Mục~\ref{sec:dac-trung-dong-rac}; phần này chỉ tóm tắt các thông số biên làm điều kiện tính toán cho phân tích lựa chọn công nghệ.
 
 \begin{table}[htbp]
 \centering
-\caption{Một số giới hạn khí thải cần xét theo QCVN 19:2024/BTNMT}
-\label{tab:gioi-han-khi-thai-qcvn19}
-\setlength{\tabcolsep}{6pt}
-\scalebox{0.9}{
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.48\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}}
+\caption{Ý nghĩa kỹ thuật của các đặc tính CTRSH Hội An đối với lựa chọn công nghệ}
+\label{tab:y-nghia-dac-tinh-rac-hoi-an}
+\setlength{\tabcolsep}{5pt}
+\scalebox{0.8}{
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\textwidth}p{0.36\textwidth}p{0.36\textwidth}}
 \toprule
-\textbf{Thông số} & \textbf{Giá trị giới hạn tham khảo} \\
+\textbf{Đặc tính rác} & \textbf{Ảnh hưởng kỹ thuật} & \textbf{Yêu cầu đối với phương án công nghệ} \\
 \midrule
-Bụi tổng số & $\leq$ 30 mg/Nm$^3$ \\
-Bụi mịn PM$_{2,5}$ & $\leq$ 10 mg/Nm$^3$ \\
-Lưu huỳnh dioxit (\ce{SO2}) & $\leq$ 70 mg/Nm$^3$ \\
-Oxit nitơ tổng (\ce{NO_x}, tính theo \ce{NO2}) & $\leq$ 150 mg/Nm$^3$ \\
-Hydroclorua (\ce{HCl}) & $\leq$ 20 mg/Nm$^3$ \\
-Cacbon monoxit (\ce{CO}) & $\leq$ 50 mg/Nm$^3$ \\
-Dioxin/Furan (tính quy về \ce{TEQ}) & $\leq$ 0,1 ng TEQ/Nm$^3$ \\
-Thủy ngân và hợp chất (\ce{Hg}) & $\leq$ 0,05 mg/Nm$^3$ \\
-Tổng kim loại nặng nhóm Cd, Tl & $\leq$ 0,05 mg/Nm$^3$ \\
-Tổng kim loại nặng nhóm Sb, As, Pb, Cr, Co, Cu, Mn, Ni, V & $\leq$ 0,5 mg/Nm$^3$ \\
+Rác hữu cơ và độ ẩm cao & Giảm nhiệt trị, tăng năng lượng sấy, phát sinh nước thải ép và mùi trong khu tiếp nhận & Cần tiền xử lý ẩm hiệu quả; công nghệ phía sau phải chịu được dao động độ ẩm và không yêu cầu RDF quá đồng nhất \\
+Tỷ lệ nhựa, nylon và giấy đáng kể & Tạo tiềm năng sinh dầu và khí khi nhiệt phân; đồng thời có thể phát sinh hợp chất chứa clo nếu lẫn PVC & Nhiệt phân phù hợp để thu hồi dầu, nhưng cần kiểm soát phân loại và xử lý khí axit trong hệ thống khí thải \\
+Thành phần không cháy khoảng 13,38\% & Làm tăng tro, cặn, bụi, mài mòn và nguy cơ kẹt thiết bị & Cần tách kim loại, thủy tinh, đất cát trước khi tạo RDF và trước khi cấp vào lò nhiệt phân \\
+Biến động theo nguồn và mùa & Làm thay đổi nhiệt trị, độ ẩm, tỷ lệ dầu/khí/than và tải xử lý môi trường & Cần bố trí hầm/bunker đệm, trộn đều nguyên liệu và vận hành theo dải thông số thay vì một điểm cố định \\
+Chưa phân loại triệt để tại nguồn & Làm tăng tạp chất nguy hại, rác trơ và rủi ro môi trường thứ cấp & Dây chuyền phải có công đoạn phân loại cơ học, thu gom chất thải nguy hại lẫn trong rác và quản lý chất thải thứ cấp \\
 \bottomrule
 \end{tabular}
 }
 \end{table}
 
-Đối với nước thải, các dòng cần kiểm soát gồm nước rỉ rác, nước ép tách ẩm, nước rửa thiết bị, nước từ hệ thống xử lý khí thải ướt và nước thải sinh hoạt của nhà máy. Các dòng nước thải này phải được thu gom riêng, xử lý đạt \textbf{QCVN 40:2025/BTNMT} -- Quy chuẩn kỹ thuật quốc gia về nước thải công nghiệp \cite{QCVN40_2025_BTNMT} trước khi xả ra môi trường hoặc đấu nối vào hệ thống xử lý tập trung. Nước rỉ rác và nước ép rác thường có hàm lượng chất hữu cơ, amonia và muối cao, nên hệ thống xử lý cần kết hợp các quá trình sinh học, hóa lý và lọc màng khi cần thiết.
+Đặc trưng dòng CTRSH tại Hội An gồm: rác hữu cơ 62,56\%; nhựa và bao nylon 10,16\%; giấy 7,42\%; đất cát 7,76\%; thủy tinh 2,28\%; kim loại 1,45\%. Nhóm cháy được khoảng 86,62\%. Độ ẩm trung bình 56,3\%, độ tro 8,5\% \cite{BaocaoHoiAn2024}. Thành phần biến động mạnh theo mùa du lịch: mùa cao điểm lượng rác thực phẩm tăng vọt; mùa thấp điểm nhiệt trị và thành phần RDF dao động rõ rệt. Đặc điểm này ảnh hưởng trực tiếp đến khả năng áp dụng các công nghệ nhiệt và là cơ sở cho phân tích so sánh dưới đây.
 
-\begin{table}[htbp]
-\centering
-\caption{Một số thông số nước thải cần xét theo QCVN 40:2025/BTNMT}
-\label{tab:gioi-han-nuoc-thai-qcvn40}
-\setlength{\tabcolsep}{6pt}
-\scalebox{0.75}{
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.48\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}}
-\toprule
-\textbf{Thông số} & \textbf{Giá trị giới hạn cột A/cột B} \\
-\midrule
-pH & 6,0--9,0 \\
-Tổng chất rắn lơ lửng (TSS) & $\leq 30/50$ mg/L \\
-BOD$_5$ & $\leq 20/50$ mg/L \\
-COD & $\leq 50/150$ mg/L \\
-Tổng Nitơ & $\leq 15/30$ mg/L \\
-Amoni & $\leq 5/10$ mg/L \\
-Chì (\ce{Pb}) & $\leq 0,05/0,5$ mg/L \\
-Thủy ngân (\ce{Hg}) & $\leq 0,001/0,002$ mg/L \\
-Tổng coliform & $\leq 3.000/5.000$ MPN/100 mL \\
-\bottomrule
-\end{tabular}
-}
-\end{table}
+Trên cơ sở đặc trưng trên, phương án khí hóa -- tuabin khí bộc lộ ba nhóm hạn chế kỹ thuật cụ thể. Về đặc tính nguyên liệu, độ ẩm 56,3\% đặt ra yêu cầu sấy khô triệt để xuống dưới 15\% trước khi khí hóa, tiêu tốn năng lượng lớn. Về chất lượng khí tổng hợp, khí từ khí hóa RDF chứa hắc ín ở nồng độ 500--5.000 mg/Nm$^3$, trong khi tuabin khí yêu cầu dưới 5 mg/Nm$^3$ -- chênh lệch hàng nghìn lần, đòi hỏi hệ thống làm sạch khí nhiều tầng phức tạp và chi phí vận hành đáng kể. Về lưu trữ sản phẩm, khí tổng hợp không thể lưu trữ, buộc phải sử dụng ngay hoặc đốt bỏ khi hệ thống phát điện dừng. Ngoài ra, giải pháp khí hóa đa nhiên liệu MBT-GRE (HMC) được nghiên cứu từ 2015 đến nay (2026) vẫn chưa được ứng dụng thực tế.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Hinhve/so-do-ban-dau.png}
+    \caption{Sơ đồ khái quát phương án công nghệ khí hóa -- tuabin khí ban đầu}
+    \label{fig:so-do-cong-nghe-ban-dau}
+\end{figure}
 
 \section*{Tóm tắt nội dung Chương 1}
 
@@ -792,25 +832,29 @@ Trên cơ sở bức tranh tổng quan đã trình bày ở các mục trước,
         draw=teal!60!black
     }
 ]
-\node (b1) [box] {\textbf{\color{teal!80!black}Chương 1 -- Tổng quan}\\ Bức tranh hiện trạng CTRSH tại Việt Nam, đặc trưng dòng rác Hội An, khung pháp lý và các công nghệ xử lý nhiệt tổng quan.};
+\node (b1) [box] {\textbf{\color{teal!80!black}Chương 1 -- Tổng quan}\\ Hiện trạng CTRSH tại Việt Nam, các công nghệ xử lý nhiệt, khung pháp lý, điều kiện biên và đặc trưng dòng rác tại dự án Hội An.};
 \node (s1) [stepnum, left=of b1] {1};
 
-\node (b2) [box, below=of b1] {\textbf{\color{teal!80!black}Chương 2 -- Cơ sở lý thuyết và lựa chọn công nghệ}\\ Phân tích cơ sở lý thuyết nhiệt phân, khí hóa, chưng cất dầu, phát điện diesel; luận chứng lựa chọn phương án nhiệt phân -- diesel cho dự án Hội An.};
+\node (b2) [box, below=of b1] {\textbf{\color{teal!80!black}Chương 2 -- Cơ sở lý thuyết và lựa chọn công nghệ}\\ Mô hình động học nhiệt phân, chu trình nhiệt động diesel; đánh giá và lựa chọn phương án nhiệt phân -- chưng cất dầu -- phát điện diesel.};
 \node (s2) [stepnum, left=of b2] {2};
 
-\node (b3) [box, below=of b2] {\textbf{\color{teal!80!black}Chương 3 -- Tính toán thiết kế}\\ Cân bằng vật chất, cân bằng năng lượng, xác định quy mô và thông số các nhóm thiết bị chính của dây chuyền.};
+\node (b3) [box, below=of b2] {\textbf{\color{teal!80!black}Chương 3 -- Tính toán cân bằng vật chất và năng lượng}\\ Cân bằng vật chất toàn hệ thống, cân bằng năng lượng, hiệu suất phát điện và phân tích độ nhạy.};
 \node (s3) [stepnum, left=of b3] {3};
 
-\node (b4) [box, below=of b3] {\textbf{\color{teal!80!black}Chương 4 -- Quản lý vận hành và bảo vệ môi trường}\\ Hệ thống xử lý khí thải, nước thải, quản lý chất thải thứ cấp, an toàn công nghiệp, PCCC và SCADA.};
+\node (b4) [box, below=of b3] {\textbf{\color{teal!80!black}Chương 4 -- Tính toán thiết kế thiết bị công nghệ chính}\\ Thiết kế lò nhiệt phân quay, hệ thống chưng cất và nâng cấp dầu, tổ máy phát điện diesel.};
 \node (s4) [stepnum, left=of b4] {4};
 
-\node (b5) [box, below=of b4] {\textbf{\color{teal!80!black}Chương 5 -- Kết luận và kiến nghị}\\ Tổng hợp kết quả nghiên cứu, đánh giá hiệu quả phương án, kiến nghị và hướng phát triển tiếp theo.};
+\node (b5) [box, below=of b4] {\textbf{\color{teal!80!black}Chương 5 -- Tích hợp hệ thống, vận hành và đánh giá kinh tế}\\ Bố trí mặt bằng, SCADA, xử lý môi trường, phân tích hiệu quả kinh tế (CAPEX, OPEX, NPV, IRR).};
 \node (s5) [stepnum, left=of b5] {5};
+
+\node (b6) [box, below=of b5] {\textbf{\color{teal!80!black}Chương 6 -- Kết luận và hướng phát triển}\\ Tổng hợp kết quả, đánh giá hiệu quả phương án, kiến nghị và hướng phát triển tiếp theo.};
+\node (s6) [stepnum, left=of b6] {6};
 
 \draw [arrow] (s1) -- (s2);
 \draw [arrow] (s2) -- (s3);
 \draw [arrow] (s3) -- (s4);
 \draw [arrow] (s4) -- (s5);
+\draw [arrow] (s5) -- (s6);
 \end{tikzpicture}
 }
 \caption{Lược đồ nội dung đồ án}
