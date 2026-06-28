@@ -4,266 +4,21 @@
 
 \begin{document}
 
-\chapter{CƠ SỞ LÝ THUYẾT VÀ LỰA CHỌN PHƯƠNG ÁN CÔNG NGHỆ}
+\chapter{ĐÁNH GIÁ CÔNG NGHỆ VÀ CƠ SỞ LÝ THUYẾT HỆ THỐNG}
 \label{chuong2}
 
-% Chương này trình bày cơ sở lý thuyết và lựa chọn công nghệ theo trình tự:
-% 1. Cơ sở lý thuyết quá trình nhiệt phân và động học phân hủy RDF
-% 2. Phân tích chu trình nhiệt động động cơ Diesel sử dụng dầu nhiệt phân
-% 3. Đánh giá và lựa chọn công nghệ xử lý nhiệt
-% 4. Lựa chọn phương thức phát điện và hệ thống phụ trợ
-% 5. Xử lý dầu nhiệt phân làm nhiên liệu động cơ diesel
-% 6. Lựa chọn hệ thống thiết bị nhiệt phân
-% 7. Tổng hợp sơ đồ công nghệ điều chỉnh
+% Chương này trình bày theo trình tự logic học thuật:
+% 1. Đánh giá và lựa chọn công nghệ xử lý nhiệt (tiền đề)
+% 2. Lựa chọn phương thức phát điện
+% 3. Cơ sở lý thuyết của hệ thống đã chọn (nền tảng tính toán)
+%    3.1 Mô hình động học phản ứng nhiệt phân RDF
+%    3.2 Phân tích chu trình nhiệt động động cơ Diesel
+% 4. Xử lý dầu nhiệt phân làm nhiên liệu động cơ diesel
+% 5. Lựa chọn hệ thống thiết bị nhiệt phân
+% 6. Tổng hợp sơ đồ công nghệ
 
 %%=============================================================
-\section{Mô hình động học phản ứng nhiệt phân RDF}
-\label{sec:dong-hoc-nhiet-phan}
-%%=============================================================
-
-Phương trình động học nhiệt phân RDF được biểu diễn bằng mô hình bậc $n$ kết hợp phương trình Arrhenius \cite{Arena2012,Di_Blasi2008}:
-\begin{equation}
-  \frac{d\alpha}{dt} = A \, \exp\!\left(-\frac{E_a}{R \, T}\right) \left(1 - \alpha\right)^n
-  \label{eq:arrhenius-kinetics}
-\end{equation}
-trong đó $\alpha$ là mức chuyển hóa khối lượng, $A$ là thừa số trước số mũ (s$^{-1}$), $E_a$ là năng lượng hoạt hóa (kJ/mol), $R = 8{,}314 \times 10^{-3}$ kJ/(mol·K), $T$ là nhiệt độ tuyệt đối (K), và $n$ là bậc phản ứng.
-
-Áp dụng cho phản ứng bậc một ($n = 1$), phương trình (\ref{eq:arrhenius-kinetics}) có nghiệm giải tích:
-\begin{equation}
-  \alpha(t) = 1 - \exp(-k \cdot t), \qquad k = A \, \exp\!\left(-\frac{E_a}{R \, T}\right)
-  \label{eq:first-order-conversion}
-\end{equation}
-với $k$ là hằng số tốc độ phản ứng (h$^{-1}$).
-
-Năng lượng hoạt hóa của hỗn hợp RDF phụ thuộc mạnh vào thành phần nhựa. Dựa trên dữ liệu thực nghiệm từ nhiều nghiên cứu \cite{Sharuddin2016,Miandad2016,Williams2007}, Bảng~\ref{tab:nang-luong-hoat-hoa} tổng hợp giá trị $E_a$ cho các thành phần chính trong RDF:
-\begin{table}[htbp]
-\centering
-\caption{Năng lượng hoạt hóa và thừa số Arrhenius của các thành phần trong RDF}
-\label{tab:nang-luong-hoat-hoa}
-\setlength{\tabcolsep}{4pt}
-\scalebox{0.9}{
-\begin{tabular}{lcccl}
-\toprule
-\textbf{Thành phần} & \textbf{$E_a$ (kJ/mol)} & \textbf{$A$ (s$^{-1}$)} & \textbf{$T$ vùng phản ứng ($^\circ$C)} & \textbf{Ghi chú} \\
-\midrule
-PVC & 80--120 & $2 \times 10^5$--$1 \times 10^7$ & 250--350 & Khử HCl trước \\
-HDPE & 200--250 & $1 \times 10^{10}$--$5 \times 10^{11}$ & 400--500 & Cắt mạch ngẫu nhiên \\
-PP & 180--220 & $5 \times 10^9$--$3 \times 10^{10}$ & 400--500 & Cắt mạch ngẫu nhiên \\
-Cellulose (sinh khối) & 150--200 & $1 \times 10^8$--$1 \times 10^{10}$ & 300--400 & Phân hủy nhiệt \\
-\midrule
-\textbf{RDF hỗn hợp} & \textbf{150--180} & $\approx 1 \times 10^7$ & \textbf{400--500} & \textbf{Trung bình có trọng số} \\
-\bottomrule
-\end{tabular}}
-\end{table}
-
-Nhựa (HDPE, PP) có $E_a$ cao hơn cellulose vì các liên kết C--C trong polyme bền vững hơn liên kết trong cellulose. Tuy nhiên, thành phần PVC trong RDF lại có $E_a$ thấp nhất do phản ứng khử HCl xảy ra dễ dàng ở nhiệt độ thấp. Điều này khiến RDF hỗn hợp có $E_a$ trung bình thấp hơn so với sinh khối thuần, một đặc điểm thuận lợi cho quá trình nhiệt phân.
-
-Bảng~\ref{tab:dong-hoc-nhiet-phan} tổng hợp kết quả tính toán hằng số tốc độ $k$ và mức chuyển hóa $\alpha$ tại các nhiệt độ vận hành khác nhau, với $E_a = 160$ kJ/mol và $A = 1 \times 10^7$ s$^{-1}$ (giá trị trung bình cho RDF hỗn hợp):
-\begin{table}[htbp]
-\centering
-\caption{Tổng hợp tính toán động học nhiệt phân RDF tại các nhiệt độ vận hành}
-\label{tab:dong-hoc-nhiet-phan}
-\setlength{\tabcolsep}{4pt}
-\scalebox{0.9}{
-\begin{tabular}{ccccccc}
-\toprule
- & & \multicolumn{2}{c}{\textbf{$\alpha$ sau 3 giờ}} & \multicolumn{2}{c}{\textbf{$\alpha$ sau 6 giờ}} \\
-\cmidrule{3-4}\cmidrule{5-6}
-\textbf{$T$ ($^\circ$C)} & \textbf{$k$ (h$^{-1}$)} & \textbf{Giá trị} & \textbf{\%} & \textbf{Giá trị} & \textbf{\%} \\
-\midrule
-400 & 0,28 & 0,57 & 57\% & 0,81 & 81\% \\
-420 & 0,40 & 0,70 & 70\% & 0,91 & 91\% \\
-450 & 0,56 & 0,81 & 81\% & 0,96 & 96\% \\
-500 & 0,89 & 0,93 & 93\% & 0,99 & 99\% \\
-\midrule
-\textbf{500 (HDPE/PP riêng, $E_a=220$)} & \textbf{0,19} & \textbf{0,44} & \textbf{44\%} & \textbf{0,68} & \textbf{68\%} \\
-\bottomrule
-\end{tabular}}
-\end{table}
-
-Từ Bảng~\ref{tab:dong-hoc-nhiet-phan}, tại nhiệt độ 450$^\circ$C ($T = 723$ K), hằng số tốc độ $k = 0{,}56$ h$^{-1}$. Sau 6 giờ lưu, mức chuyển hóa $\alpha \approx 96\%$. Con số này xác nhận tính khả thi của giả thiết tỷ lệ sản phẩm nhiệt phân. Tại 500$^\circ$C, mức chuyển hóa sau 3 giờ đã đạt 93\%, cho thấy nhiệt độ vận hành trên 500$^\circ$C rút ngắn thời gian lưu nhưng đồng thời tăng nguy cơ cracking thứ cấp.
-
-Đường cong chuyển hóa $\alpha(t) = 1 - \exp(-0{,}56 \cdot t)$ tại $T = 450^\circ$C được mô tả như sau:
-\begin{itemize}
-  \item \textbf{Giờ đầu tiên ($t = 1$ h):} $\alpha \approx 43\%$. Giai đoạn khởi động nhanh, đặc biệt khi PVC trong RDF bắt đầu khử HCl.
-  \item \textbf{Giờ thứ 2--3 ($t = 2$--3 h):} $\alpha$ tăng lên 67--81\%. Giai đoạn chuyển hóa chính của cellulose và nhựa HDPE/PP.
-  \item \textbf{Giờ thứ 4--6 ($t = 4$--6 h):} $\alpha$ tăng lên 90--96\%. Giai đoạn hoàn thiện, tốc độ phản ứng giảm dần theo quy luật bậc một.
-\end{itemize}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      width=0.85\textwidth,
-      height=8cm,
-      xlabel={Thời gian lưu $t$ (giờ)},
-      ylabel={Mức chuyển hóa $\alpha$},
-      xmin=0, xmax=8,
-      ymin=0, ymax=1.05,
-      ytick={0,0.25,0.5,0.75,1.0},
-      yticklabels={0\%,25\%,50\%,75\%,100\%},
-      xtick={0,1,2,3,4,5,6,7,8},
-      grid=major,
-      legend pos=south east,
-      font=\footnotesize,
-      mark size=2.5,
-      every axis plot/.append style={very thick}
-    ]
-    \addplot[color=blue,domain=0:8,samples=100] {1 - exp(-0.28*x)};
-    \addlegendentry{$T = 400^\circ$C ($k = 0.28$ h$^{-1}$)}
-    \addplot[color=green!60!black,domain=0:8,samples=100] {1 - exp(-0.40*x)};
-    \addlegendentry{$T = 420^\circ$C ($k = 0.40$ h$^{-1}$)}
-    \addplot[color=red!80!black,domain=0:8,samples=100] {1 - exp(-0.56*x)};
-    \addlegendentry{$T = 450^\circ$C ($k = 0.56$ h$^{-1}$)}
-    \addplot[color=orange,domain=0:8,samples=100] {1 - exp(-0.89*x)};
-    \addlegendentry{$T = 500^\circ$C ($k = 0.89$ h$^{-1}$)}
-    \addplot[dashed,black!60!black,very thick,domain=0:8,samples=2] coordinates {(6,0)(6,1)};
-    \node[anchor=north west] at (axis cs:6.1,0.95) {$t = 6$ h};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Đường cong chuyển hóa $\alpha(t) = 1 - \exp(-k \cdot t)$ tại các nhiệt độ vận hành khác nhau}
-  \label{fig:duong-cong-chuyen-hoa}
-\end{figure}
-
-Vùng nhiệt độ tối ưu cho thiết kế là \textbf{400--500$^\circ$C với thời gian lưu 6 giờ}. Tại vùng này:
-\begin{itemize}
-  \item Mức chuyển hóa đạt 81--96\%, đảm bảo hiệu suất thu dầu cao.
-  \item Nguy cơ cracking thứ cấp (phân hủy dầu thành khí nhẹ) được kiểm soát vì nhiệt độ chưa vượt ngưỡng 500$^\circ$C.
-  \item Thời gian lưu 6 giờ cung cấp đủ thời gian cho phản ứng hoàn tất mà không gây tiêu hao năng lượng quá mức.
-\end{itemize}
-
-Kết quả phân tích động học trên cung cấp cơ sở lý thuyết cho việc lựa chọn các thông số vận hành lò nhiệt phân tại Chương~\ref{chuong3}: nhiệt độ 400--500$^\circ$C, thời gian lưu 6 giờ, và tỷ lệ sản phẩm nhiệt phân $y_{\text{dầu}} + y_{\text{khí}} + y_{\text{than}} \approx 90\%$ (phần còn lại là tổn thất cơ học và sản phẩm trung gian).
-
-%%=============================================================
-\section{Phân tích chu trình nhiệt động động cơ Diesel sử dụng dầu nhiệt phân}
-\label{sec:chu-trinh-nhiet-dong}
-%%=============================================================
-
-\subsection{Mô hình chu trình Sabathe (Dual cycle)}
-\label{sec:sabathe-model}
-
-Chu trình Sabathe (dual cycle) là mô hình phù hợp nhất để mô tả quá trình cháy trong động cơ diesel sử dụng dầu nhiệt phân, vì nó kết hợp cả hai giai đoạn: cấp nhiệt đẳng tích (trong thời gian trễ đánh lửa) và cấp nhiệt đẳng áp (trong giai đoạn cháy khuếch tán). So với chu trình Otto (chỉ đẳng tích, cho động cơ xăng) và chu trình Diesel thuần (chỉ đẳng áp, cho diesel tiêm trực tiếp đơn giản), chu trình Sabathe nắm bắt chính xác hơn bản chất hai pha của quá trình cháy nhiên liệu nặng \cite{Heywood1988}.
-
-Chu trình gồm sáu quá trình:
-\begin{enumerate}
-  \item \textbf{1 $\rightarrow$ 2}: Nén đoạn nhiệt (isentropic compression) của không khí từ $V_1$ đến $V_2$. Tỷ số nén $r = V_1/V_2 = 16$--$18$ cho diesel. Nhiệt độ cuối quá trình nén: $T_2 = T_1 \cdot r^{\gamma-1} \approx 800$--$900$ K.
-  \item \textbf{2 $\rightarrow$ 3}: Cấp nhiệt đẳng tích (v = const) — giai đoạn trễ đánh lửa. Áp suất tăng nhanh từ $p_2$ lên $p_3 = \lambda \cdot p_2$, với $\lambda$ là tỷ số áp suất, $\lambda \approx 1{,}5$--$2{,}5$.
-  \item \textbf{3 $\rightarrow$ 4}: Cấp nhiệt đẳng áp (p = const) — giai đoạn cháy khuếch tán. Tỷ số cắt ngắn: $\beta = V_4/V_3 \approx 1{,}5$--$2{,}0$.
-  \item \textbf{4 $\rightarrow$ 5}: Giãn nở đoạn nhiệt (isentropic expansion).
-  \item \textbf{5 $\rightarrow$ 6}: Thải nhiệt đẳng tích (v = const).
-  \item \textbf{6 $\rightarrow$ 1}: Thải nhiệt đẳng áp (p = const) — xả khí.
-\end{enumerate}
-
-Hiệu suất nhiệt của chu trình Sabathe:
-\begin{equation}
-  \eta_{\text{Sabathe}} = 1 - \frac{1}{r^{\gamma-1}}
-  \cdot \frac{\lambda \, \beta^\gamma - 1}
-               {(\lambda - 1) + \gamma \, \lambda \, (\beta - 1)}
-  \label{eq:sabathe-efficiency}
-\end{equation}
-với $\gamma = c_p/c_v \approx 1{,}4$ cho không khí.
-
-Áp dụng cho thiết kế: $r = 18$, $\lambda = 1{,}8$, $\beta = 1{,}5$:
-\begin{equation}
-  \eta_{\text{Sabathe}} = 1 - \frac{1}{18^{0,4}}
-  \cdot \frac{1{,}8 \times 1{,}5^{1,4} - 1}
-               {(1{,}8 - 1) + 1{,}4 \times 1{,}8 \times (1{,}5 - 1)}
-  \approx 75\%
-\end{equation}
-Hiệu suất lý thuyết $\eta_{\text{Sabathe}} \approx 75\%$ cho thấy tiềm năng của động cơ diesel. Hiệu suất thực tế thấp hơn nhiều (30--40\%) do tổn thất bơm, tổn thất nhiệt qua thành xy-lanh, và thời gian cháy hữu hạn.
-
-Hiệu suất chỉ số (indicated efficiency) của động cơ diesel thực tế:
-\begin{equation}
-  \eta_i = \eta_{\text{Sabathe}} \cdot \eta_{\text{mix}} \cdot \eta_{\text{comb}}
-  \approx 0{,}75 \times 0{,}85 \times 0{,}90 \approx 0{,}57
-\end{equation}
-với $\eta_{\text{mix}}$ là hiệu suất hòa trộn nhiên liệu-không khí và $\eta_{\text{comb}}$ là hiệu suất cháy. Hiệu suất hữu ích (brake efficiency) $\eta_b = \eta_i \cdot \eta_m \approx 0{,}57 \times 0{,}85 \approx 0{,}48$ (với $\eta_m \approx 0{,}85$ là hiệu suất cơ khí).
-
-\subsection{Ignition delay và hiện tượng knock}
-\label{sec:ignition-delay}
-
-Trị số cetane (CN) của dầu nhiệt phân từ RDF nằm trong dải 40--52, thấp hơn so với dầu diesel thương mại (CN $\approx 50$--55). Giá trị CN thấp kéo dài thời gian trễ đánh lửa $\tau_{\text{id}}$, tích lũy khối lượng nhiên liệu trong xy-lanh, và gây nguy cơ knock.
-
-Thời gian trễ đánh lửa được ước tính bằng tương quan thực nghiệm Hardenberg-Hase \cite{Heywood1988}:
-\begin{equation}
-  \tau_{\text{id}} = C_1 \, p^{-n} \, \exp\!\left(\frac{E_A}{R_u \, T}\right)
-  \label{eq:ignition-delay}
-\end{equation}
-trong đó $C_1 = 0{,}44$, $n = 1{,}19$, $E_A/R_u \approx 2.100$ K cho nhiên liệu có CN thấp; $p$ (MPa) và $T$ (K) là áp suất và nhiệt độ tại thời điểm bắt đầu phun.
-
-Bảng~\ref{tab:ignition-delay} so sánh thời gian trễ đánh lửa giữa dầu nhiệt phân và dầu diesel:
-\begin{table}[htbp]
-\centering
-\caption{So sánh thời gian trễ đánh lửa $\tau_{\text{id}}$ giữa dầu nhiệt phân và dầu diesel}
-\label{tab:ignition-delay}
-\setlength{\tabcolsep}{4pt}
-\scalebox{0.9}{
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Loại nhiên liệu} & \textbf{CN} & \textbf{$\tau_{\text{id}}$ (ms) at $p=5$ MPa} & \textbf{$\tau_{\text{id}}$ (ms) at $p=10$ MPa} & \textbf{Ghi chú} \\
-\midrule
-Dầu diesel thương phẩm & 50--55 & 0,45--0,50 & 0,18--0,20 & Cơ sở so sánh \\
-\midrule
-Dầu nhiệt phân & 40--52 & 0,58--0,72 & 0,23--0,29 & Tùy chất lượng tinh chế \\
-\midrule
-Dầu nhiệt phân (thô, CN=40) & $\approx 40$ & $\approx 0{,}80$ & $\approx 0{,}32$ & Chưa tinh chế \\
-\bottomrule
-\end{tabular}}
-\end{table}
-
-Tại điều kiện thiết kế ($p = 5$ MPa, $T = 900$ K):
-\begin{equation}
-  \tau_{\text{id}} = 0{,}44 \times 5^{-1,19} \times \exp\!\left(\frac{2100}{900}\right)
-  \approx 0{,}71 \;\text{ms}
-\end{equation}
-
-Dầu nhiệt phân tích lũy nhiều hơn khoảng 40\% so với diesel, dẫn đến đỉnh áp suất cực đại cao hơn 15--20\% và gây hiện tượng knock. Bảng~\ref{tab:knock-assessment} đánh giá mức độ knock:
-\begin{table}[htbp]
-\centering
-\caption{Đánh giá mức độ knock của dầu nhiệt phân so với dầu diesel}
-\label{tab:knock-assessment}
-\setlength{\tabcolsep}{4pt}
-\scalebox{0.9}{
-\begin{tabular}{lccc}
-\toprule
-\textbf{Thông số} & \textbf{Dầu diesel} & \textbf{Dầu nhiệt phân} & \textbf{Chênh lệch} \\
-\midrule
-Trị số cetane (CN) & 50--55 & 40--52 & $-10$ đến $-3$ đơn vị \\
-\midrule
-$\tau_{\text{id}}$ (ms, $p=5$ MPa) & 0,45--0,50 & 0,58--0,72 & +29--44\% \\
-\midrule
-$m_{\text{accum}}$ (mg) & 2,3--2,5 & 2,9--3,6 & +26--44\% \\
-\midrule
-$p_{\max}$ ($p_2 = 6$ MPa, $\lambda = 1{,}8$) & 9,0 MPa & 10,2--10,8 MPa & +13--20\% \\
-\midrule
-Cường độ knock (heuristic) & Thấp & Trung bình--Cao & Phụ thuộc tinh chế \\
-\bottomrule
-\end{tabular}}
-\end{table}
-
-\subsection{Các biện pháp kỹ thuật khắc phục knock}
-\label{sec:kien-nghi-knock}
-
-Bốn biện pháp kỹ thuật được đề xuất để giảm nguy cơ knock khi sử dụng dầu nhiệt phân:
-
-\textbf{(i) Điều chỉnh góc phun sớm.} Tiến phun 2--5° CA (crankshaft angle) so với diesel tiêu chuẩn cho phép nhiên liệu bắt đầu phun sớm hơn trong chu trình, tăng thời gian hòa trộn và giảm khối lượng tích lũy tại thời điểm đánh lửa. Cần lưu ý tiến phun quá mức có thể gây va đập thủy lực và tăng NO$_x$.
-
-\textbf{(ii) Tiền gia nhiệt nhiên liệu.} Gia nhiệt dầu nhiệt phân đến 65--75°C giảm độ nhớt từ 15--50 cSt xuống còn 5--10 cSt, cải thiện phun tia mịn và rút ngắn $\tau_{\text{id}}$ khoảng 15--20\%.
-
-\textbf{(iii) Thiết kế buồng cháy tối ưu.} Tăng tỷ số xoáy (swirl ratio) lên 1,5 lần so với thiết kế tiêu chuẩn, kết hợp thiết kế bowl-in-piston.
-
-\textbf{(iv) Pha trộn với dầu diesel.} Trộn dầu nhiệt phân với 30\% dầu diesel thương phẩm nâng CN của hỗn hợp lên mức chấp nhận được:
-\begin{equation}
-  \text{CN}_{\text{mix}} = x \cdot \text{CN}_{\text{pyro}} + (1 - x) \cdot \text{CN}_{\text{diesel}}
-  \label{eq:cn-blend}
-\end{equation}
-với $x = 0{,}7$ (70\% dầu nhiệt phân), $\text{CN}_{\text{pyro}} \approx 46$, $\text{CN}_{\text{diesel}} \approx 50$:
-\begin{equation}
-  \text{CN}_{\text{mix}} \approx 0{,}7 \times 46 + 0{,}3 \times 50 \approx 47{,}2
-\end{equation}
-Ngưỡng $\text{CN} \geq 46$ theo TCVN 5689:2013 được đáp ứng. Phân tích chi tiết về trị số cetane và ảnh hưởng đến vận hành động cơ sẽ được trình bày trong phần tính toán thiết kế tại Chương~\ref{chuong4}.
-
-\section{Lựa chọn công nghệ}
+\section{Lựa chọn công nghệ xử lý nhiệt}
 \label{sec:lua-chon-cong-nghe}
 
 Bước thứ nhất trong quá trình lựa chọn công nghệ là xác định loại hình xử lý nhiệt phù hợp với đặc tính dòng CTRSH Hội An. Phần này phân tích lần lượt ba hướng xử lý nhiệt chính: đốt trực tiếp, khí hóa và nhiệt phân, trên cơ sở đó thực hiện so sánh định lượng ba chiều và đưa ra lựa chọn công nghệ cuối cùng.
@@ -308,7 +63,15 @@ m_{\text{HCl}} \approx 0{,}6 \times \frac{36{,}5}{62{,}5} \approx 0{,}35 \;\text
 
 Sau khi trừ đi phần HCl bị hấp thụ tự nhiên bởi tro kiềm trong buồng đốt (tỷ lệ hấp thụ ước tính 40--60\%), lượng HCl còn lại đi vào hệ thống xử lý khí thải vẫn ở mức 140--210 kg/ngày. Đặc tính ăn mòn cực mạnh của HCl ở nhiệt độ cao sẽ nhanh chóng phá hủy các dàn ống trao đổi nhiệt sinh hơi và bắt buộc nhà máy phải đầu tư tháp hấp thụ kiềm đắt tiền, đồng thời phát sinh thêm dòng nước muối thải (CaCl$_2$, NaCl) cần quản lý đặc biệt.
 
-Với những lý do trên, đốt trực tiếp không phù hợp với điều kiện CTRSH Hội An và không được triển khai chi tiết trong đồ án này.
+Cần làm rõ rằng tính toán $Q_\text{ẩm}$ ở trên phản ánh tổng nhiệt cần thiết để bay hơi nước trong dòng rác, chứ không phải nhiệt lấy trực tiếp từ vùng cháy thứ cấp. Trong lò ghi cơ khí hiện đại, vùng sấy đầu ghi (drying zone) nhận nhiệt chủ yếu từ bức xạ ngọn lửa và gió cấp 1 đã được tái sử dụng, không lấy từ vùng duy trì 850$^\circ\mathrm{C}$. Do đó, $Q_\text{ẩm}$ là yếu tố ảnh hưởng đến hiệu suất nhiệt tổng thể, nhưng không đủ mạnh để phủ nhận công nghệ đốt trực tiếp như một lập luận độc lập.
+
+Lý do kỹ thuật -- kinh tế xác đáng hơn để loại trừ đốt trực tiếp tại Hội An là:
+\begin{itemize}
+  \item \textbf{Quy mô quá nhỏ để có chu trình Rankine hiệu quả}: Với 120 tấn/ngày và nhiệt trị RDF khoảng 4.000--5.500 kcal/kg sau sấy, công suất nhiệt đầu vào khả dụng ước tính 5--7 MW nhiệt. Chu trình hơi nước (Rankine) chỉ đạt hiệu suất phát điện 20--28\% ở quy mô nhỏ dưới 10 MWe, trong khi ngưỡng kinh tế thực tế của nhà máy đốt rác phát điện quy mô nhỏ thường ở mức 200--300 tấn/ngày \cite{Arena2012}. Ở 120 tấn/ngày, chi phí đầu tư hệ thống hơi, tuabin và lò hơi áp suất cao sẽ không hoàn vốn trong vòng đời dự án.
+  \item \textbf{Biến động nhiệt trị theo mùa du lịch}: Hội An là đô thị du lịch với lưu lượng rác tăng 40--60\% vào mùa cao điểm và giảm tương ứng vào mùa thấp điểm. Lò hơi và tuabin hơi yêu cầu duy trì phụ tải ổn định ở mức 70--100\% công suất thiết kế để đảm bảo hiệu suất; sự dao động lớn về lưu lượng rác làm tăng rủi ro vận hành ở tải thấp và giảm tuổi thọ thiết bị.
+\end{itemize}
+
+Tổng hợp từ các phân tích trên, đốt trực tiếp không phù hợp với điều kiện cụ thể của dự án Hội An và không được triển khai chi tiết trong đồ án này.
 
 \subsection{Công nghệ khí hóa}
 \label{sec:phan-tich-khi-hoa-dot-am}
@@ -344,11 +107,8 @@ Cung cấp nhiệt cần thiết cho các phản ứng thu nhiệt khác. Đây 
 
 Các phản ứng hóa học trên cho thấy nhiệt độ vận hành là thông số then chốt: ở nhiệt độ cao ($> 900^\circ\mathrm{C}$), phản ứng water-gas và partial combustion chiếm ưu thế, cho syngas giàu \ce{CO} và \ce{H2}; ở nhiệt độ thấp hơn, phản ứng shift và methanation chiếm ưu thế hơn. Với RDF từ CTRSH Hội An có độ ẩm cao, phản ứng water-gas được thúc đẩy mạnh, làm tăng tỷ lệ \ce{H2} nhưng đồng thời tiêu hao carbon rắn vào phản ứng thu nhiệt, giảm nhiệt trị syngas \cite{Arena2012}.
 
-Khí hóa yêu cầu nhiệt độ 800--1.000$^\circ\mathrm{C}$ và độ ẩm nguyên liệu dưới 15\% để đạt hiệu quả kinh tế. Ngưỡng 15\% là giới hạn cứng của công nghệ khí hóa: vượt qua ngưỡng này, các hệ quả kỹ thuật trở nên nghiêm trọng theo cấp số nhân -- không chỉ đơn thuần là tiêu hao thêm nhiệt sấy mà còn làm suy giảm chất lượng sản phẩm khí ở mức khó khắc phục.
+Khí hóa yêu cầu nhiệt độ 800--1.000$^\circ\mathrm{C}$ và độ ẩm nguyên liệu dưới 15\% để đạt hiệu quả kinh tế. Khi độ ẩm nguyên liệu vượt ngưỡng 15\%, phản ứng water-gas thu nhiệt (phương trình~\ref{eq:water-gas}) chiếm ưu thế, làm giảm LHV của syngas khoảng 25--35\% theo ghi nhận thực nghiệm của McKendry~\cite{McKendry2002}, đồng thời làm giảm hiệu suất phát điện xuống còn khoảng 12--18\% (từ mức 20--25\% ở điều kiện độ ẩm tối ưu). Ngoài ra, nhiệt độ thấp hơn trong vùng sấy kéo dài thời gian lưu ở dải 250--500$^\circ\mathrm{C}$ -- vùng hình thành hắc ín sơ cấp -- làm tăng hàm lượng hắc ín trong syngas lên 10--30\,g/Nm$^3$, vượt quá ngưỡng chấp nhận của tuabin khí ($<$5\,mg/Nm$^3$) hàng nghìn lần.
 
-Khi độ ẩm nguyên liệu vượt 15\%, phản ứng water-gas (\ref{eq:water-gas}) chiếm ưu thế, làm tăng tỷ lệ \ce{H2} trong syngas nhưng đồng thời tiêu hao carbon rắn, làm giảm nhiệt trị khí. Nghiên cứu của P. McKendry ghi nhận: khi độ ẩm RDF tăng từ 10\% lên 30\%, LHV của syngas giảm khoảng 25--35\%, buộc phải tăng cường sấy hoặc chấp nhận hiệu suất phát điện thấp hơn \cite{McKendry2002}.
-
-Độ ẩm cao còn làm giảm tốc độ gia nhiệt của vật liệu trong lò khí hóa, đẩy phạm vi nhiệt độ 250--500$^\circ\mathrm{C}$ -- vùng nhiệt độ tối ưu hình thành hắc ín sơ cấp -- kéo dài hơn. Kết quả là hàm lượng hắc ín trong syngas tăng đáng kể. Theo \cite{Arena2012}, với RDF có độ ẩm 15\%, hàm lượng hắc ín đã đạt 10--30 g/Nm$^3$ (cao gấp hàng nghìn lần ngưỡng chấp nhận của tuabin khí $<$5 mg/Nm$^3$); với độ ẩm cao hơn, giá trị này còn tăng thêm.
 
 Để đưa độ ẩm RDF từ 56,3\% xuống dưới 15\% trước khi cấp vào lò khí hóa, nhà máy cần sấy bổ sung khoảng:
 \begin{equation}
@@ -648,6 +408,253 @@ Phù hợp dự án Hội An & Hạn chế (hiệu suất 14\%, OPEX cao, công 
 
 Từ bảng so sánh trên, động cơ diesel là phương án phát điện phù hợp nhất cho dự án Hội An vì bốn lý do chính: (i) hiệu suất điện cao nhất trong dải công suất 1--3 MW (35--42\%), gấp 2,5--3 lần so với chu trình tuabin hơi (12--14\%); (ii) thời gian khởi động ngắn (10--60 giây), phù hợp chế độ vận hành linh hoạt theo nhu cầu tải; (iii) OPEX thấp hơn đáng kể do không cần hệ thống xử lý nước cấp, tháp giải nhiệt và đường ống áp lực cao như tuabin hơi; (iv) chấp nhận nhiên liệu lỏng (dầu nhiệt phân tinh chế pha trộn) với yêu cầu chất lượng vừa phải, phù hợp với sản phẩm đầu ra của nhiệt phân.
 
+\section{Cơ sở lý thuyết của hệ thống nhiệt phân -- phát điện đã chọn}
+\label{sec:co-so-ly-thuyet}
+%%=============================================================
+
+\subsection{Mô hình động học phản ứng nhiệt phân RDF}
+\label{sec:dong-hoc-nhiet-phan}
+
+Phương trình động học nhiệt phân RDF được biểu diễn bằng mô hình bậc $n$ kết hợp phương trình Arrhenius \cite{Arena2012,Di_Blasi2008}:
+\begin{equation}
+  \frac{d\alpha}{dt} = A \, \exp\!\left(-\frac{E_a}{R \, T}\right) \left(1 - \alpha\right)^n
+  \label{eq:arrhenius-kinetics}
+\end{equation}
+trong đó $\alpha$ là mức chuyển hóa khối lượng, $A$ là thừa số trước số mũ (s$^{-1}$), $E_a$ là năng lượng hoạt hóa (kJ/mol), $R = 8{,}314 \times 10^{-3}$ kJ/(mol·K), $T$ là nhiệt độ tuyệt đối (K), và $n$ là bậc phản ứng.
+
+Áp dụng cho phản ứng bậc một ($n = 1$), phương trình (\ref{eq:arrhenius-kinetics}) có nghiệm giải tích:
+\begin{equation}
+  \alpha(t) = 1 - \exp(-k \cdot t), \qquad k = A \, \exp\!\left(-\frac{E_a}{R \, T}\right)
+  \label{eq:first-order-conversion}
+\end{equation}
+với $k$ là hằng số tốc độ phản ứng (h$^{-1}$).
+
+Năng lượng hoạt hóa của hỗn hợp RDF phụ thuộc mạnh vào thành phần nhựa. Dựa trên dữ liệu thực nghiệm từ nhiều nghiên cứu \cite{Sharuddin2016,Miandad2016,Williams2007}, Bảng~\ref{tab:nang-luong-hoat-hoa} tổng hợp giá trị $E_a$ cho các thành phần chính trong RDF:
+\begin{table}[htbp]
+\centering
+\caption{Năng lượng hoạt hóa và thừa số Arrhenius của các thành phần trong RDF}
+\label{tab:nang-luong-hoat-hoa}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{lcccl}
+\toprule
+\textbf{Thành phần} & \textbf{$E_a$ (kJ/mol)} & \textbf{$A$ (s$^{-1}$)} & \textbf{$T$ vùng phản ứng ($^\circ$C)} & \textbf{Ghi chú} \\
+\midrule
+PVC & 80--120 & $2 \times 10^5$--$1 \times 10^7$ & 250--350 & Khử HCl trước \\
+HDPE & 200--250 & $1 \times 10^{10}$--$5 \times 10^{11}$ & 400--500 & Cắt mạch ngẫu nhiên \\
+PP & 180--220 & $5 \times 10^9$--$3 \times 10^{10}$ & 400--500 & Cắt mạch ngẫu nhiên \\
+Cellulose (sinh khối) & 150--200 & $1 \times 10^8$--$1 \times 10^{10}$ & 300--400 & Phân hủy nhiệt \\
+\midrule
+\textbf{RDF hỗn hợp} & \textbf{150--180} & $\approx 1 \times 10^7$ & \textbf{400--500} & \textbf{Trung bình có trọng số} \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Nhựa (HDPE, PP) có $E_a$ cao hơn cellulose vì các liên kết C--C trong polyme bền vững hơn liên kết trong cellulose. Tuy nhiên, thành phần PVC trong RDF lại có $E_a$ thấp nhất do phản ứng khử HCl xảy ra dễ dàng ở nhiệt độ thấp. Điều này khiến RDF hỗn hợp có $E_a$ trung bình thấp hơn so với sinh khối thuần, một đặc điểm thuận lợi cho quá trình nhiệt phân.
+
+Bảng~\ref{tab:dong-hoc-nhiet-phan} tổng hợp kết quả tính toán hằng số tốc độ $k$ và mức chuyển hóa $\alpha$ tại các nhiệt độ vận hành khác nhau, với $E_a = 160$ kJ/mol và $A = 1 \times 10^7$ s$^{-1}$ (giá trị trung bình cho RDF hỗn hợp):
+\begin{table}[htbp]
+\centering
+\caption{Tổng hợp tính toán động học nhiệt phân RDF tại các nhiệt độ vận hành}
+\label{tab:dong-hoc-nhiet-phan}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{ccccccc}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{$\alpha$ sau 3 giờ}} & \multicolumn{2}{c}{\textbf{$\alpha$ sau 6 giờ}} \\
+\cmidrule{3-4}\cmidrule{5-6}
+\textbf{$T$ ($^\circ$C)} & \textbf{$k$ (h$^{-1}$)} & \textbf{Giá trị} & \textbf{\%} & \textbf{Giá trị} & \textbf{\%} \\
+\midrule
+400 & 0,28 & 0,57 & 57\% & 0,81 & 81\% \\
+420 & 0,40 & 0,70 & 70\% & 0,91 & 91\% \\
+450 & 0,56 & 0,81 & 81\% & 0,96 & 96\% \\
+500 & 0,89 & 0,93 & 93\% & 0,99 & 99\% \\
+\midrule
+\textbf{500 (HDPE/PP riêng, $E_a=220$)} & \textbf{0,19} & \textbf{0,44} & \textbf{44\%} & \textbf{0,68} & \textbf{68\%} \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Từ Bảng~\ref{tab:dong-hoc-nhiet-phan}, tại nhiệt độ 450$^\circ$C ($T = 723$ K), hằng số tốc độ $k = 0{,}56$ h$^{-1}$. Sau 6 giờ lưu, mức chuyển hóa $\alpha \approx 96\%$. Con số này xác nhận tính khả thi của giả thiết tỷ lệ sản phẩm nhiệt phân. Tại 500$^\circ$C, mức chuyển hóa sau 3 giờ đã đạt 93\%, cho thấy nhiệt độ vận hành trên 500$^\circ$C rút ngắn thời gian lưu nhưng đồng thời tăng nguy cơ cracking thứ cấp.
+
+Đường cong chuyển hóa $\alpha(t) = 1 - \exp(-0{,}56 \cdot t)$ tại $T = 450^\circ$C được mô tả như sau:
+\begin{itemize}
+  \item \textbf{Giờ đầu tiên ($t = 1$ h):} $\alpha \approx 43\%$. Giai đoạn khởi động nhanh, đặc biệt khi PVC trong RDF bắt đầu khử HCl.
+  \item \textbf{Giờ thứ 2--3 ($t = 2$--3 h):} $\alpha$ tăng lên 67--81\%. Giai đoạn chuyển hóa chính của cellulose và nhựa HDPE/PP.
+  \item \textbf{Giờ thứ 4--6 ($t = 4$--6 h):} $\alpha$ tăng lên 90--96\%. Giai đoạn hoàn thiện, tốc độ phản ứng giảm dần theo quy luật bậc một.
+\end{itemize}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.85\textwidth,
+      height=8cm,
+      xlabel={Thời gian lưu $t$ (giờ)},
+      ylabel={Mức chuyển hóa $\alpha$},
+      xmin=0, xmax=8,
+      ymin=0, ymax=1.05,
+      ytick={0,0.25,0.5,0.75,1.0},
+      yticklabels={0\%,25\%,50\%,75\%,100\%},
+      xtick={0,1,2,3,4,5,6,7,8},
+      grid=major,
+      legend pos=south east,
+      font=\footnotesize,
+      mark size=2.5,
+      every axis plot/.append style={very thick}
+    ]
+    \addplot[color=blue,domain=0:8,samples=100] {1 - exp(-0.28*x)};
+    \addlegendentry{$T = 400^\circ$C ($k = 0.28$ h$^{-1}$)}
+    \addplot[color=green!60!black,domain=0:8,samples=100] {1 - exp(-0.40*x)};
+    \addlegendentry{$T = 420^\circ$C ($k = 0.40$ h$^{-1}$)}
+    \addplot[color=red!80!black,domain=0:8,samples=100] {1 - exp(-0.56*x)};
+    \addlegendentry{$T = 450^\circ$C ($k = 0.56$ h$^{-1}$)}
+    \addplot[color=orange,domain=0:8,samples=100] {1 - exp(-0.89*x)};
+    \addlegendentry{$T = 500^\circ$C ($k = 0.89$ h$^{-1}$)}
+    \addplot[dashed,black!60!black,very thick,domain=0:8,samples=2] coordinates {(6,0)(6,1)};
+    \node[anchor=north west] at (axis cs:6.1,0.95) {$t = 6$ h};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Đường cong chuyển hóa $\alpha(t) = 1 - \exp(-k \cdot t)$ tại các nhiệt độ vận hành khác nhau}
+  \label{fig:duong-cong-chuyen-hoa}
+\end{figure}
+
+Vùng nhiệt độ tối ưu cho thiết kế là \textbf{400--500$^\circ$C với thời gian lưu 6 giờ}. Tại vùng này:
+\begin{itemize}
+  \item Mức chuyển hóa đạt 81--96\%, đảm bảo hiệu suất thu dầu cao.
+  \item Nguy cơ cracking thứ cấp (phân hủy dầu thành khí nhẹ) được kiểm soát vì nhiệt độ chưa vượt ngưỡng 500$^\circ$C.
+  \item Thời gian lưu 6 giờ cung cấp đủ thời gian cho phản ứng hoàn tất mà không gây tiêu hao năng lượng quá mức.
+\end{itemize}
+
+Kết quả phân tích động học trên cung cấp cơ sở lý thuyết cho việc lựa chọn các thông số vận hành lò nhiệt phân tại Chương~\ref{chuong3}: nhiệt độ 400--500$^\circ$C, thời gian lưu 6 giờ, và tỷ lệ sản phẩm nhiệt phân $y_{\text{dầu}} + y_{\text{khí}} + y_{\text{than}} \approx 90\%$ (phần còn lại là tổn thất cơ học và sản phẩm trung gian).
+
+%%=============================================================
+\subsection{Phân tích chu trình nhiệt động động cơ Diesel sử dụng dầu nhiệt phân}
+\label{sec:chu-trinh-nhiet-dong}
+%%=============================================================
+
+\subsection{Mô hình chu trình Sabathe (Dual cycle)}
+\label{sec:sabathe-model}
+
+Chu trình Sabathe (dual cycle) là mô hình phù hợp nhất để mô tả quá trình cháy trong động cơ diesel sử dụng dầu nhiệt phân, vì nó kết hợp cả hai giai đoạn: cấp nhiệt đẳng tích (trong thời gian trễ đánh lửa) và cấp nhiệt đẳng áp (trong giai đoạn cháy khuếch tán). So với chu trình Otto (chỉ đẳng tích, cho động cơ xăng) và chu trình Diesel thuần (chỉ đẳng áp, cho diesel tiêm trực tiếp đơn giản), chu trình Sabathe nắm bắt chính xác hơn bản chất hai pha của quá trình cháy nhiên liệu nặng \cite{Heywood1988}.
+
+Chu trình gồm sáu quá trình:
+\begin{enumerate}
+  \item \textbf{1 $\rightarrow$ 2}: Nén đoạn nhiệt (isentropic compression) của không khí từ $V_1$ đến $V_2$. Tỷ số nén $r = V_1/V_2 = 16$--$18$ cho diesel. Nhiệt độ cuối quá trình nén: $T_2 = T_1 \cdot r^{\gamma-1} \approx 800$--$900$ K.
+  \item \textbf{2 $\rightarrow$ 3}: Cấp nhiệt đẳng tích (v = const) — giai đoạn trễ đánh lửa. Áp suất tăng nhanh từ $p_2$ lên $p_3 = \lambda \cdot p_2$, với $\lambda$ là tỷ số áp suất, $\lambda \approx 1{,}5$--$2{,}5$.
+  \item \textbf{3 $\rightarrow$ 4}: Cấp nhiệt đẳng áp (p = const) — giai đoạn cháy khuếch tán. Tỷ số cắt ngắn: $\beta = V_4/V_3 \approx 1{,}5$--$2{,}0$.
+  \item \textbf{4 $\rightarrow$ 5}: Giãn nở đoạn nhiệt (isentropic expansion).
+  \item \textbf{5 $\rightarrow$ 6}: Thải nhiệt đẳng tích (v = const).
+  \item \textbf{6 $\rightarrow$ 1}: Thải nhiệt đẳng áp (p = const) — xả khí.
+\end{enumerate}
+
+Hiệu suất nhiệt của chu trình Sabathe:
+\begin{equation}
+  \eta_{\text{Sabathe}} = 1 - \frac{1}{r^{\gamma-1}}
+  \cdot \frac{\lambda \, \beta^\gamma - 1}
+               {(\lambda - 1) + \gamma \, \lambda \, (\beta - 1)}
+  \label{eq:sabathe-efficiency}
+\end{equation}
+với $\gamma = c_p/c_v \approx 1{,}4$ cho không khí.
+
+Áp dụng cho thiết kế: $r = 18$, $\lambda = 1{,}8$, $\beta = 1{,}5$:
+\begin{equation}
+  \eta_{\text{Sabathe}} = 1 - \frac{1}{18^{0,4}}
+  \cdot \frac{1{,}8 \times 1{,}5^{1,4} - 1}
+               {(1{,}8 - 1) + 1{,}4 \times 1{,}8 \times (1{,}5 - 1)}
+  \approx 75\%
+\end{equation}
+Hiệu suất lý thuyết $\eta_{\text{Sabathe}} \approx 75\%$ cho thấy tiềm năng của động cơ diesel. Hiệu suất thực tế thấp hơn nhiều (30--40\%) do tổn thất bơm, tổn thất nhiệt qua thành xy-lanh, và thời gian cháy hữu hạn.
+
+Hiệu suất chỉ số (indicated efficiency) của động cơ diesel thực tế:
+\begin{equation}
+  \eta_i = \eta_{\text{Sabathe}} \cdot \eta_{\text{mix}} \cdot \eta_{\text{comb}}
+  \approx 0{,}75 \times 0{,}85 \times 0{,}90 \approx 0{,}57
+\end{equation}
+với $\eta_{\text{mix}}$ là hiệu suất hòa trộn nhiên liệu-không khí và $\eta_{\text{comb}}$ là hiệu suất cháy. Hiệu suất hữu ích (brake efficiency) $\eta_b = \eta_i \cdot \eta_m \approx 0{,}57 \times 0{,}85 \approx 0{,}48$ (với $\eta_m \approx 0{,}85$ là hiệu suất cơ khí).
+
+\subsection{Ignition delay và hiện tượng knock}
+\label{sec:ignition-delay}
+
+Trị số cetane (CN) của dầu nhiệt phân từ RDF nằm trong dải 40--52, thấp hơn so với dầu diesel thương mại (CN $\approx 50$--55). Giá trị CN thấp kéo dài thời gian trễ đánh lửa $\tau_{\text{id}}$, tích lũy khối lượng nhiên liệu trong xy-lanh, và gây nguy cơ knock.
+
+Thời gian trễ đánh lửa được ước tính bằng tương quan thực nghiệm Hardenberg-Hase \cite{Heywood1988}:
+\begin{equation}
+  \tau_{\text{id}} = C_1 \, p^{-n} \, \exp\!\left(\frac{E_A}{R_u \, T}\right)
+  \label{eq:ignition-delay}
+\end{equation}
+trong đó $C_1 = 0{,}44$, $n = 1{,}19$, $E_A/R_u \approx 2.100$ K cho nhiên liệu có CN thấp; $p$ (MPa) và $T$ (K) là áp suất và nhiệt độ tại thời điểm bắt đầu phun.
+
+Bảng~\ref{tab:ignition-delay} so sánh thời gian trễ đánh lửa giữa dầu nhiệt phân và dầu diesel:
+\begin{table}[htbp]
+\centering
+\caption{So sánh thời gian trễ đánh lửa $\tau_{\text{id}}$ giữa dầu nhiệt phân và dầu diesel}
+\label{tab:ignition-delay}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Loại nhiên liệu} & \textbf{CN} & \textbf{$\tau_{\text{id}}$ (ms) at $p=5$ MPa} & \textbf{$\tau_{\text{id}}$ (ms) at $p=10$ MPa} & \textbf{Ghi chú} \\
+\midrule
+Dầu diesel thương phẩm & 50--55 & 0,45--0,50 & 0,18--0,20 & Cơ sở so sánh \\
+\midrule
+Dầu nhiệt phân & 40--52 & 0,58--0,72 & 0,23--0,29 & Tùy chất lượng tinh chế \\
+\midrule
+Dầu nhiệt phân (thô, CN=40) & $\approx 40$ & $\approx 0{,}80$ & $\approx 0{,}32$ & Chưa tinh chế \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Tại điều kiện thiết kế ($p = 5$ MPa, $T = 900$ K):
+\begin{equation}
+  \tau_{\text{id}} = 0{,}44 \times 5^{-1,19} \times \exp\!\left(\frac{2100}{900}\right)
+  \approx 0{,}71 \;\text{ms}
+\end{equation}
+
+Dầu nhiệt phân tích lũy nhiều hơn khoảng 40\% so với diesel, dẫn đến đỉnh áp suất cực đại cao hơn 15--20\% và gây hiện tượng knock. Bảng~\ref{tab:knock-assessment} đánh giá mức độ knock:
+\begin{table}[htbp]
+\centering
+\caption{Đánh giá mức độ knock của dầu nhiệt phân so với dầu diesel}
+\label{tab:knock-assessment}
+\setlength{\tabcolsep}{4pt}
+\scalebox{0.9}{
+\begin{tabular}{lccc}
+\toprule
+\textbf{Thông số} & \textbf{Dầu diesel} & \textbf{Dầu nhiệt phân} & \textbf{Chênh lệch} \\
+\midrule
+Trị số cetane (CN) & 50--55 & 40--52 & $-10$ đến $-3$ đơn vị \\
+\midrule
+$\tau_{\text{id}}$ (ms, $p=5$ MPa) & 0,45--0,50 & 0,58--0,72 & +29--44\% \\
+\midrule
+$m_{\text{accum}}$ (mg) & 2,3--2,5 & 2,9--3,6 & +26--44\% \\
+\midrule
+$p_{\max}$ ($p_2 = 6$ MPa, $\lambda = 1{,}8$) & 9,0 MPa & 10,2--10,8 MPa & +13--20\% \\
+\midrule
+Cường độ knock (heuristic) & Thấp & Trung bình--Cao & Phụ thuộc tinh chế \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{Các biện pháp kỹ thuật khắc phục knock}
+\label{sec:kien-nghi-knock}
+
+Bốn biện pháp kỹ thuật được đề xuất để giảm nguy cơ knock khi sử dụng dầu nhiệt phân:
+
+\textbf{(i) Điều chỉnh góc phun sớm.} Tiến phun 2--5° CA (crankshaft angle) so với diesel tiêu chuẩn cho phép nhiên liệu bắt đầu phun sớm hơn trong chu trình, tăng thời gian hòa trộn và giảm khối lượng tích lũy tại thời điểm đánh lửa. Cần lưu ý tiến phun quá mức có thể gây va đập thủy lực và tăng NO$_x$.
+
+\textbf{(ii) Tiền gia nhiệt nhiên liệu.} Gia nhiệt dầu nhiệt phân đến 65--75°C giảm độ nhớt từ 15--50 cSt xuống còn 5--10 cSt, cải thiện phun tia mịn và rút ngắn $\tau_{\text{id}}$ khoảng 15--20\%.
+
+\textbf{(iii) Thiết kế buồng cháy tối ưu.} Tăng tỷ số xoáy (swirl ratio) lên 1,5 lần so với thiết kế tiêu chuẩn, kết hợp thiết kế bowl-in-piston.
+
+\textbf{(iv) Pha trộn với dầu diesel.} Trộn dầu nhiệt phân với 30\% dầu diesel thương phẩm nâng CN của hỗn hợp lên mức chấp nhận được:
+\begin{equation}
+  \text{CN}_{\text{mix}} = x \cdot \text{CN}_{\text{pyro}} + (1 - x) \cdot \text{CN}_{\text{diesel}}
+  \label{eq:cn-blend}
+\end{equation}
+
+Lưu ý quan trọng: công thức~(\ref{eq:cn-blend}) chỉ cho giá trị \emph{ước lượng tuyến tính} của CN hỗn hợp. Trong thực tế, trị số cetane của hỗn hợp hydrocarbon thơm (từ dầu nhiệt phân) và paraffin mạch thẳng (từ diesel khoáng) \textbf{không tuân theo quy luật cộng tuyến tính}. Sự tương tác hóa học giữa hai nhóm phân tử -- đặc biệt là phản ứng ức chế tự bốc cháy của các hợp chất thơm -- làm cho CN thực tế của hỗn hợp thấp hơn giá trị tuyến tính từ 2--5 đơn vị \cite{Heywood1988}. Do đó, thay vì dùng công thức tuyến tính, phần tính toán thiết kế tại Chương~\ref{chuong4} sẽ sử dụng chỉ số pha trộn thực nghiệm (Blending Cetane Number -- BCN) và áp dụng hệ số điều chỉnh phi tuyến, đồng thời thiết lập điều kiện pha trộn an toàn $x \leq 0{,}7$ (tối đa 70\% dầu nhiệt phân) để đảm bảo CN hỗn hợp thực tế $\geq 46$ theo TCVN 5689:2013.
+
+%%=============================================================
 \section{Xử lý dầu nhiệt phân làm nhiên liệu động cơ diesel}
 \label{sec:xu-ly-dau-nhiet-phan}
 
