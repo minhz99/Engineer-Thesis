@@ -6,12 +6,62 @@
 \chapter{TÍCH HỢP HỆ THỐNG VÀ ĐÁNH GIÁ TÍNH KHẢ THI}
 \label{chuong4}
 
-Phần này trình bày ba nội dung cốt lõi nhằm chứng minh tính khả thi thực tế của toàn bộ dự án nhà máy nhiệt phân -- chưng cất -- phát điện diesel tại Hội An công suất 120 tấn CTRSH/ngày đêm: (i) hệ thống điều khiển và giám sát SCADA đảm bảo vận hành ổn định, (ii) giải pháp xử lý môi trường đáp ứng các quy chuẩn cho phép, và (iii) phân tích hiệu quả kinh tế qua các chỉ số CAPEX/OPEX/NPV/IRR.
+Phần này trình bày bốn nội dung cốt lõi nhằm chứng minh tính khả thi thực tế của toàn bộ dự án nhà máy nhiệt phân -- chưng cất -- phát điện diesel tại Hội An công suất 120 tấn CTRSH/ngày đêm: (i) bố trí mặt bằng công nghệ, (ii) hệ thống điều khiển và giám sát SCADA đảm bảo vận hành ổn định, (iii) giải pháp xử lý môi trường đáp ứng các quy chuẩn cho phép, và (iv) phân tích hiệu quả kinh tế qua các chỉ số CAPEX/OPEX/NPV/IRR.
 
 %%=============================================================
-\section{Hệ thống điều khiển và giám sát SCADA}
-\label{sec:he-thong-scada}
+\section{Bố trí mặt bằng công nghệ}
+\label{sec:bo-tri-mat-bang}
 %%=============================================================
+
+Nguyên tắc bố trí mặt bằng nhà máy tuân theo các yêu cầu cụ thể. Dòng vật chất phải đi một chiều từ khu tiếp nhận rác (ô nhiễm cao) đến khu tiền xử lý, tiếp đến khu nhiệt phân, khu chưng cất và tinh chế dầu, cuối cùng là khu phát điện; không bố trí dòng ngược chiều để tránh lây nhiễm chéo. Khu tiếp nhận rác và tiền xử lý phải cách biệt hoàn toàn với khu chứa dầu bằng tường hoặc khoảng cách an toàn tối thiểu 15 m, nhằm ngăn nguy cơ cháy nổ lan rộng. Bồn chứa dầu phải đặt cách các công trình liên kề tối thiểu 15 m (đối với bồn dung tích dưới 50 m$^3$) theo TCVN 5684:2012 và QCVN 04:2019/BCT. Khu rác và khu xử lý nước thải cần bố trí cuối hướng gió chủ đạo so với khu văn phòng và khu dân cư lân cận. Hành lang bảo dưỡng tối thiểu 1,5 m xung quanh mỗi thiết bị lớn và đường nội bộ rộng 4 m cho xe nâng và xe chữa cháy phải được đảm bảo xuyên suốt mặt bằng nhà máy.
+
+Việc sử dụng thiết bị theo mô-đun, đặc biệt đối với lò nhiệt phân và tổ máy phát điện diesel, tạo thuận lợi cho vận hành linh hoạt theo lượng rác tiếp nhận thực tế. Khi một mô-đun cần bảo dưỡng, các mô-đun còn lại vẫn có thể duy trì một phần công suất, giảm nguy cơ phải dừng toàn bộ nhà máy.
+
+\begin{figure}[htbp]
+\centering
+\scalebox{1}{%
+\begin{tikzpicture}[
+    scale=0.85,
+    node distance=0.6cm and 0.3cm,
+    zone/.style={draw, rounded corners=3pt, minimum width=2.8cm, minimum height=2.0cm, font=\small, align=center, fill},
+    equipment/.style={draw, rounded corners=1pt, minimum width=1.8cm, minimum height=0.6cm, font=\tiny, align=center},
+    arrow/.style={->, >=Stealth, very thin},
+    label/.style={font=\footnotesize\bfseries}
+]
+\node[zone, fill=blue!8, label={center:\textbf{Khu tiếp nhận}}] (khu_tiepnhan) at (-3.5,2.5) {};
+\node[equipment, fill=blue!15] at (khu_tiepnhan) {Cầu trục gàu ngoạm \\Băng tải cào};
+\node[zone, fill=green!8, label={center:\textbf{Khu tiền xử lý}}] (khu_tien_xuly) at (0,2.5) {};
+\node[equipment, fill=green!15] at ([yshift=0.4cm]khu_tien_xuly) {Máy xé bao, cắt xé};
+\node[equipment, fill=green!15] at ([yshift=-0.4cm]khu_tien_xuly) {Sàng, tách từ, ép nước};
+\node[zone, fill=yellow!10, label={center:\textbf{Khu RDF}}] (khu_rdf) at (3.5,2.5) {};
+\node[equipment, fill=yellow!20] at (khu_rdf) {Lồng sấy, máy ép viên, bunker};
+\node[zone, fill=orange!10, label={center:\textbf{Khu nhiệt phân}}] (khu_nhietphan) at (-3.5,-1.5) {};
+\node[equipment, fill=orange!20] at ([yshift=0.3cm]khu_nhietphan) {Lò quay nhiệt phân ($\times$5)};
+\node[equipment, fill=orange!15] at ([yshift=-0.4cm]khu_nhietphan) {Buồng đốt, ngưng tụ};
+\node[zone, fill=purple!8, label={center:\textbf{Khu chưng cất}}] (khu_chungcat) at (0,-1.5) {};
+\node[equipment, fill=purple!15] at ([yshift=0.3cm]khu_chungcat) {Lò chưng, tháp cột};
+\node[equipment, fill=purple!20] at ([yshift=-0.4cm]khu_chungcat) {Bể axit, kiềm, đất sét};
+\node[zone, fill=red!8, label={center:\textbf{Khu dầu}}] (khu_dau) at (3.5,-1.5) {};
+\node[equipment, fill=red!15] at (khu_dau) {Bồn dầu thô, dầu TP, bơm};
+\node[zone, fill=yellow!8, label={center:\textbf{Khu phát điện}}] (khu_phatdien) at (3.5,-4.5) {};
+\node[equipment, fill=yellow!20] at (khu_phatdien) {Máy phát diesel ($\times$6) \\Trạm biến áp};
+\node[zone, fill=gray!8, label={center:\textbf{Khu XLMT}}] (khu_xlmt) at (0,-4.5) {};
+\node[equipment, fill=gray!15] at (khu_xlmt) {Cyclone, tháp hấp thụ, bể XLNT};
+\node[zone, fill=blue!5, label={center:\textbf{Khu văn phòng}}] (khu_vanphong) at (-3.5,-4.5) {};
+\node[equipment, fill=blue!10] at (khu_vanphong) {Phòng điều khiển SCADA \\Văn phòng, xưởng};
+
+\draw[dashed, ->] (khu_tiepnhan) -- node[above] {} (khu_tien_xuly);
+\draw[dashed, ->] (khu_tien_xuly) -- node[above] {} (khu_rdf);
+\draw[dashed, ->] (khu_rdf) -- node[right] {} (khu_nhietphan);
+\draw[dashed, ->] (khu_nhietphan) -- node[above] {} (khu_chungcat);
+\draw[dashed, ->] (khu_chungcat) -- node[right] {} (khu_dau);
+\draw[dashed, ->] (khu_dau) -- node[right] {} (khu_phatdien);
+\draw[dashed, ->] (khu_nhietphan) -- node[right] {} (khu_xlmt);
+\end{tikzpicture}
+}
+\caption{Sơ đồ bố trí mặt bằng công nghệ và các cụm thiết bị chính}
+\label{fig:bo-tri-mat-bang}
+\end{figure}
 
 Hệ thống SCADA (Supervisory Control and Data Acquisition) được thiết kế theo kiến trúc ba lớp theo tiêu chuẩn ISA-95, cho phép giám sát thời gian thực tất cả các thông số nhiệt, áp suất, lưu lượng và chất lượng khí thải của dây chuyền nhiệt phân -- chưng cất -- phát điện diesel. Việc thu thập dữ liệu thời gian thực là điều kiện tiên quyết để đảm bảo an toàn vận hành, phát hiện sớm các điều kiện bất thường và tối ưu hóa hiệu suất năng lượng.
 
