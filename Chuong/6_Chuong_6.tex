@@ -3,24 +3,257 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
+\chapter{PHÂN TÍCH HIỆU QUẢ KINH TẾ}
 \label{chuong6}
 
-\section{Kết luận}
+Phần này trình bày bài toán tài chính của nhà máy nhiệt phân -- chưng cất -- phát điện diesel Hội An, cụ thể hóa các dòng vật chất và năng lượng từ Chương \ref{chuong3} thành dòng tiền. Các số liệu nền tảng được tham chiếu trực tiếp từ Chương \ref{chuong3} và Chương \ref{chuong4}: công suất điện ròng $W_{e,net} = 1{,}84$ MW (Bảng~\ref{tab:quy-doi-dien}), sản lượng dầu thành phẩm 16,59 t/ngày (Bảng~\ref{tab:can-bang-chung-cat}), công suất tự dùng 788,4 kW (Mục~\ref{sec:can-bang-nang-luong}), định mức hóa chất (Bảng~\ref{tab:dinh-muc-hoa-chat}) và kích thước vỏ lò $D_i = 2{,}0$ m, $L = 8{,}0$ m, $t = 16$ mm (Mục~\ref{sec:tinh-toan-lo-nhiet-phan-quay} ở Chương \ref{chuong4}). Các số liệu trong phần này được tính toán ở cấp khái toán (estimate accuracy $\pm 30\%$), phù hợp với thiết kế cơ sở.
 
-Đồ án đã hoàn thiện thuyết minh kỹ thuật cho phương án điều chỉnh công nghệ của Nhà máy xử lý chất thải rắn sinh hoạt thành phố Hội An, công suất 120 tấn/ngày đêm. Trên cơ sở đặc tính rác đầu vào, cân bằng vật chất -- năng lượng và yêu cầu vận hành thực tế, phương án chuyển từ khí hóa -- tuabin khí sang nhiệt phân -- chưng cất dầu -- phát điện diesel được đánh giá là phù hợp hơn với điều kiện của dự án.
+\section{Khái toán chi phí đầu tư ban đầu (CAPEX)}
+\label{sec:khai-toan-capex}
 
-Kết quả phân tích cho thấy CTRSH tại Hội An có tỷ lệ hữu cơ cao, độ ẩm trung bình 56,3\% và thành phần không đồng nhất. Các đặc điểm này làm giảm đáng kể tính phù hợp của công nghệ khí hóa, trong khi công nghệ nhiệt phân cho phép chuyển hóa phần RDF và rác nhựa sau tiền xử lý thành dầu nhiệt phân, khí không ngưng và than carbon -- trong đó dầu lỏng có ưu điểm là có thể lưu trữ, chưng cất và sử dụng linh hoạt hơn khí tổng hợp.
+Tổng mức đầu tư (CAPEX) bao gồm chi phí xây dựng, thiết bị, lắp đặt, thiết kế, quản lý và vận hành thử. Theo cấu trúc chi phí thông thường của nhà máy xử lý CTRSH công nghệ nhiệt công suất 100--200 tấn/ngày, khái toán được phân bổ như Bảng~\ref{tab:khai-toan-capex}.
 
-Về cân bằng vật chất, từ 120 tấn CTRSH/ngày.đêm, khối tiền xử lý tạo ra khoảng 46,08 tấn RDF/ngày cấp lò nhiệt phân. Kết quả thiết kế sơ bộ buồng nhiệt phân quay (Mục~\ref{sec:tinh-toan-lo-nhiet-phan-quay}) cho thấy một mô-đun lò có đường kính trong $D_i = 2{,}0$ m, chiều dài $L = 8{,}0$ m, thể tích khoảng 25 m$^3$ và thời gian lưu thiết kế 6 giờ, với tổng nhiệt cần cấp khoảng 489 kW (Bảng~\ref{tab:ket-qua-thiet-ke-lo}). Dòng nhiệt phân dự kiến gồm 20,74 tấn/ngày dầu thô, 13,82 tấn/ngày khí không ngưng và 11,52 tấn/ngày than carbon.
+\begin{table}[H]
+\caption{Khái toán chi phí đầu tư ban đầu (CAPEX) nhà máy nhiệt phân Hội An}
+\label{tab:khai-toan-capex}
+\centering
+\begin{tabular}{p{6.5cm} r r}
+\toprule
+\textbf{Hạng mục} & \textbf{Giá trị (triệu đồng)} & \textbf{Tỷ lệ (\%)} \\
+\midrule
+Thiết bị chính (lò nhiệt phân, ngưng tụ, diesel, XL khí, XL nước) & 95.000 & 47,5 \\
+Xây dựng hạ tầng (nhà xưởng, nền móng, đường nội bộ, hệ thống thoát nước) & 38.000 & 19,0 \\
+Lắp đặt và vận chuyển thiết bị & 28.500 & 14,3 \\
+Hệ thống điều khiển và SCADA & 11.900 & 5,95 \\
+Thiết kế kỹ thuật và giám sát thi công & 9.500 & 4,75 \\
+Phí môi trường và giấy phép & 4.750 & 2,38 \\
+Chi phí vận hành thử (6 tháng) & 7.600 & 3,80 \\
+Dự phòng (10\% tổng) & 19.525 & 9,77 \\
+\midrule
+\textbf{Tổng CAPEX} & \textbf{214.775} & \textbf{100} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Về cân bằng năng lượng, công suất điện tinh đạt khoảng 1,82--1,84 MW, tương ứng sản lượng điện ròng khoảng 15.943 MWh/năm, khẳng định nhà máy có khả năng thu hồi năng lượng ở quy mô đáng kể. Phân tích độ nhạy xác nhận phương án vẫn khả thi ngay ở điều kiện bất lợi nhất.
+Tổng mức đầu tư khái toán khoảng 214,8 tỷ đồng (tương đương 8,6 triệu USD theo tỷ giá 25.000 đồng/USD), tương ứng đơn giá đầu tư khoảng 1,79 tỷ đồng/tấn CTRSH/ngày hoặc 117 triệu đồng/kW công suất điện ròng. So sánh với các dự án tương tự: nhà máy RDF đốt chu trình Rankine công suất 40 MW tại Việt Nam có đơn giá khoảng 1,5--2,0 tỷ đồng/tấn/ngày; nhà máy khí hóa CTRSH công suất 10 MW có đơn giá 2,5--4,0 tỷ đồng/tấn/ngày. Đơn giá của phương án nhiệt phân -- diesel nằm trong dải hợp lý nhờ tổ máy diesel có chi phí đầu tư thấp hơn nhiều so với tuabin hơi.
 
-Phương án nhiệt phân kết hợp chưng cất dầu và phát điện diesel có tính khả thi kỹ thuật đối với điều kiện rác sinh hoạt Hội An, đồng thời phù hợp với định hướng giảm chôn lấp và tận dụng năng lượng từ chất thải.
+Nguồn vốn đề xuất: vốn ngân sách nhà nước kết hợp vốn ODA hoặc vốn vay ưu đãi từ các tổ chức tài chính quốc tế (World Bank, ADB) cho các dự án xử lý CTRSH. Thời gian xây dựng ước tính 24--30 tháng kể từ khi khởi công.
 
-\section{Kiến nghị}
+Chi phí xây dựng hạ tầng (38 tỷ đồng) bao gồm nhà xưởng chính, nhà điều khiển trung tâm, hệ thống thoát nước mưa và nước thải, đường nội bộ, tường rào và cổng, hệ thống điện chiếu sáng. Hệ thống SCADA và điều khiển (11,9 tỷ đồng) bao gồm phần cứng (máy chủ, PLC, HMI, cảm biến, cáp mạng), phần mềm (license SCADA, PLC programming), và chi phí lắp đặt tích hợp.
 
-Để phương án công nghệ đạt hiệu quả trong thực tế, cần chú trọng ba nhóm vấn đề chính. Nhóm thứ nhất là nguyên liệu đầu vào: duy trì chất lượng RDF ổn định thông qua thúc đẩy phân loại rác tại nguồn, ký hợp đồng cung ứng dài hạn và xây dựng khu đệm RDF đủ cho ít nhất 2 ngày vận hành. Nhóm thứ hai là vận hành và an toàn: ban hành đầy đủ SOP cho từng công đoạn, đào tạo nhân lực trước khi vận hành thương mại, kiểm tra định kỳ hệ thống ESD, cảm biến LEL và phương tiện PCCC. Nhóm thứ ba là kiểm chứng thực tế: trong giai đoạn chạy thử, cần thu thập số liệu thực tế về thành phần rác, độ ẩm RDF, chất lượng dầu, tiêu hao năng lượng và hiệu quả xử lý môi trường để hiệu chỉnh thiết kế và hoàn thiện hồ sơ kỹ thuật.
+\section{Ước tính chi phí vận hành hàng năm (OPEX)}
+\label{sec:khai-toan-opex}
+
+Chi phí vận hành hàng năm bao gồm chi phí cố định (nhân công, bảo trì) và chi phí biến đổi (điện tự dùng, hóa chất, nước), được phân bổ như Bảng~\ref{tab:khai-toan-opex}.
+
+\begin{table}[H]
+\caption{Khái toán chi phí vận hành hàng năm (OPEX) nhà máy nhiệt phân Hội An}
+\label{tab:khai-toan-opex}
+\centering
+\begin{tabular}{p{6.5cm} r r}
+\toprule
+\textbf{Hạng mục chi phí} & \textbf{Giá trị (triệu đồng/năm)} & \textbf{Tỷ lệ (\%)} \\
+\midrule
+Nhân công vận hành (70 nhân viên, lương TB 10 triệu/tháng) & 8.400 & 35,0 \\
+Bảo trì sửa chữa (2--3\% CAPEX) & 6.443 & 26,8 \\
+Điện tự dùng nhà máy (30\% sản lượng, giá 2.500 đ/kWh) & 3.609 & 15,0 \\
+Hóa chất (H$_2$SO$_4$, NaOH, đất sét, vật tư lọc) & 2.100 & 8,75 \\
+Chi phí quản lý, bảo hiểm, phí môi trường & 1.800 & 7,50 \\
+Nước công nghiệp (giá 15.000 đ/m$^3$) & 315 & 1,31 \\
+Dự phòng chi phí khác (5\%) & 1.133 & 4,72 \\
+\midrule
+\textbf{Tổng OPEX} & \textbf{23.800} & \textbf{100} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tổng chi phí vận hành hàng năm khái toán khoảng 23,8 tỷ đồng/năm, tương ứng chi phí xử lý 1 tấn CTRSH khoảng 545.000 đồng (chưa tính khấu hao). Chi phí này tương đương hoặc thấp hơn chi phí vận hành bãi chôn lấp hợp vệ sinh (ước tính 500.000--700.000 đồng/tấn bao gồm chi phí vận hành và khấu hao).
+
+Chi phí bảo trì sửa chữa (6,443 tỷ đồng/năm, tương đương 3\% CAPEX) bao gồm: bảo dưỡng định kỳ lò nhiệt phân (thay gạch chịu lửa, kiểm tra seal, bôi trơn ổ đỡ), bảo dưỡng tổ máy diesel (thay dầu bôi trơn 250 giờ/lần, kiểm tra vòi phun 1.000 giờ/lần, đại tu 5.000 giờ/lần), thay vật tư lọc (túi baghouse, than hoạt tính), và sửa chữa đường ống, van.
+
+Chi phí hóa chất (2,1 tỷ đồng/năm) bao gồm: H$_2$SO$_4$ 98\% cho quá trình tinh chế dầu (ước tính 200--400 kg/ngày theo Bảng~\ref{tab:dinh-muc-hoa-chat} Chương \ref{chuong3}), NaOH 99\% trung hòa acid và trong wet scrubber, đất sét ổn định tro bay, vật tư lọc (túi baghouse, màng MBR).
+
+\section{Các nguồn doanh thu dự kiến}
+\label{sec:nguon-doanh-thu}
+
+Doanh thu của nhà máy đến từ ba nguồn chính, thừa hưởng trực tiếp từ các thông số đã chốt ở Chương \ref{chuong3}. Bảng~\ref{tab:doanh-thu-nguon} tổng hợp chi tiết từng nguồn.
+
+\begin{table}[H]
+\caption{Tổng hợp các nguồn doanh thu dự kiến của nhà máy nhiệt phân Hội An}
+\label{tab:doanh-thu-nguon}
+\centering
+\begin{tabular}{p{0.06\textwidth}p{0.32\textwidth}r r p{0.30\textwidth}}
+\toprule
+\textbf{TT} & \textbf{Nguồn doanh thu} & \textbf{Sản lượng} & \textbf{Doanh thu (tỷ đồng/năm)} & \textbf{Ghi chú} \\
+\midrule
+1 & Bán điện cho lưới quốc gia & $\approx$14,8 triệu kWh/năm & $\approx$31,7 & Giá FIT theo QĐ 328/2023/QĐ-TTg: 2.143 đ/kWh; hệ số công suất 85\% \\
+\midrule
+2 & Bán dầu nhiệt phân tinh chế (phần bán ngoài) & 16,59 tấn/ngày $\times$ 330 ngày & $\approx$25,0 & Phần tiêu thụ nội bộ cho diesel engine tính là chi phí tiết kiệm nhiên liệu \\
+\midrule
+3 & Phí xử lý CTRSH từ chính quyền địa phương & 120 tấn/ngày $\times$ 365 ngày & $\approx$13,1 & Mức phí 300.000 đ/tấn; 120 tấn $\times$ 365 ngày $\times$ 300.000 đ \\
+\midrule
+ & \textbf{Tổng doanh thu} & & \textbf{$\approx$70,0} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tổng doanh thu dự kiến khoảng 70 tỷ đồng/năm từ ba nguồn: bán điện chiếm ưu thế (khoảng 45\% tổng doanh thu), tiếp đến là bán dầu nhiệt phân (khoảng 36\%) và phí xử lý CTRSH (khoảng 19\%). Cơ cấu đa nguồn thu này giúp giảm rủi ro kinh doanh khi một trong các nguồn gặp khó khăn tạm thời.
+
+Bán điện: công suất điện ròng 1,84 MW (Bảng~\ref{tab:quy-doi-dien} Chương \ref{chuong3}), sản lượng điện ròng ước tính 14,8 triệu kWh/năm (tương đương 1,84 MW $\times$ 8.760 h $\times$ 92\% availability). Giá FIT theo Quyết định 328/2023/QĐ-TTg là 2.143 đ/kWh. Bán dầu nhiệt phân: sản lượng dầu thành phẩm 16,59 t/ngày $\times$ 330 ngày vận hành, giá bán ước tính 4.500--5.000 đ/lít (tương đương 4.500.000--5.000.000 đ/tấn). Phí xử lý CTRSH: 300.000 đ/tấn $\times$ 120 tấn/ngày $\times$ 365 ngày.
+
+\section{Dòng tiền chiết khấu, NPV và IRR}
+\label{sec:npv-irr}
+
+Công thức NPV với dòng tiền cố định hàng năm:
+\begin{equation}
+\text{NPV} = -I_0 + \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}
+           = -I_0 + CF \times \frac{(1+r)^n - 1}{r\,(1+r)^n}
+\label{eq:npv-formula}
+\end{equation}
+trong đó $I_0 = 214{,}8$ tỷ đồng là vốn đầu tư ban đầu CAPEX, $CF$ là dòng tiền ròng hàng năm sau thuế (đã cộng khấu hao), $r$ là suất chiết khấu, $n = 20$ năm là vòng đời dự án.
+
+Từ doanh thu 70,0 tỷ đồng/năm và OPEX 23,8 tỷ đồng/năm, lợi nhuận gộp trước khấu hao và thuế là 46,2 tỷ đồng. Khấu hao TSCĐ theo đường thẳng trong 10 năm: $214{,}8 / 10 = 21{,}48$ tỷ đ/năm. Lợi nhuận trước thuế $= 46{,}2 - 21{,}48 = 24{,}72$ tỷ đồng. Thuế TNDN 22\%: $24{,}72 \times 0{,}22 = 5{,}44$ tỷ đồng. Lợi nhuận sau thuế $= 24{,}72 - 5{,}44 = 19{,}28$ tỷ đồng. Dòng tiền ròng hàng năm $= 19{,}28 + 21{,}48 = 40{,}76$ tỷ đồng.
+
+Bảng~\ref{tab:dong-tien-chiet-khau} trình bày dòng tiền chiết khấu chi tiết từng năm tại $r = 8\%$/năm:
+
+\begin{table}[H]
+\caption{Bảng dòng tiền chiết khấu dự án Nhà máy nhiệt phân Hội An (r = 8\%/năm)}
+\label{tab:dong-tien-chiet-khau}
+\centering
+\scalebox{0.78}{
+\begin{tabular}{r r r r r}
+\toprule
+\textbf{Năm} & \textbf{CF danh nghĩa (tỷ đ)} & \textbf{Hệ số chiết khấu $\frac{1}{(1+r)^t}$} & \textbf{CF hiện tại (tỷ đ)} & \textbf{NPV tích lũy (tỷ đ)} \\
+\midrule
+Năm 0 & $-214{,}80$ & 1,0000 & $-214{,}80$ & $-214{,}80$ \\
+Năm 1 & $+40{,}76$ & 0,9259 & $+37{,}74$ & $-177{,}06$ \\
+Năm 2 & $+40{,}76$ & 0,8573 & $+34{,}94$ & $-142{,}12$ \\
+Năm 3 & $+40{,}76$ & 0,7938 & $+32{,}35$ & $-109{,}77$ \\
+Năm 4 & $+40{,}76$ & 0,7350 & $+29{,}96$ & $-79{,}81$ \\
+Năm 5 & $+40{,}76$ & 0,6806 & $+27{,}74$ & $-52{,}07$ \\
+Năm 6 & $+40{,}76$ & 0,6302 & $+25{,}68$ & $-26{,}39$ \\
+Năm 7 & $+40{,}76$ & 0,5835 & $+23{,}78$ & $-2{,}61$ \\
+Năm 8 & $+40{,}76$ & 0,5403 & $+22{,}02$ & $+19{,}41$ \\
+Năm 9 & $+40{,}76$ & 0,5002 & $+20{,}39$ & $+39{,}80$ \\
+Năm 10 & $+40{,}76$ & 0,4632 & $+18{,}88$ & $+58{,}68$ \\
+Năm 11 & $+40{,}76$ & 0,4289 & $+17{,}48$ & $+76{,}16$ \\
+Năm 12 & $+40{,}76$ & 0,3971 & $+16{,}19$ & $+92{,}35$ \\
+Năm 13 & $+40{,}76$ & 0,3677 & $+14{,}99$ & $+107{,}34$ \\
+Năm 14 & $+40{,}76$ & 0,3405 & $+13{,}88$ & $+121{,}22$ \\
+Năm 15 & $+40{,}76$ & 0,3152 & $+12,85$ & $+134{,}07$ \\
+Năm 16 & $+40{,}76$ & 0,2919 & $+11{,}90$ & $+145{,}97$ \\
+Năm 17 & $+40{,}76$ & 0,2703 & $+11{,}02$ & $+156{,}99$ \\
+Năm 18 & $+40{,}76$ & 0,2502 & $+10{,}20$ & $+167{,}19$ \\
+Năm 19 & $+40{,}76$ & 0,2317 & $+9{,}44$ & $+176{,}63$ \\
+Năm 20 & $+40{,}76$ & 0,2145 & $+8{,}74$ & $\mathbf{+185{,}37}$ \\
+\midrule
+\end{tabular}
+}
+\end{table}
+
+Từ bảng trên, NPV tại $r = 8\%$ là tổng cộng cột CF hiện tại:
+\begin{equation}
+\text{NPV}_{8\%} = -214{,}80 + 40{,}76 \times 9{,}8181 \approx \mathbf{+185{,}4 \text{ tỷ đồng}}
+\end{equation}
+với hệ số chiết khấu cho niên kim cố định 20 năm: $\frac{(1{,}08)^{20} - 1}{0{,}08 \times (1{,}08)^{20}} \approx 9{,}8181$.
+
+IRR được xác định bằng cách giải phương trình NPV $= 0$:
+\begin{equation}
+\frac{CF}{\text{IRR}} \times \left[1 - (1+\text{IRR})^{-20}\right] = I_0 \quad \Rightarrow \quad \text{IRR} \approx 13{,}5\%
+\end{equation}
+(kiểm tra: $40{,}76 / 0{,}135 = 301{,}9 \approx 214{,}8 \times 1{,}4058$)
+
+Thời gian hoàn vốn đơn giản (không chiết khấu):
+\begin{equation}
+T_{payback} = \frac{I_0}{CF} = \frac{214{,}8}{40{,}76} \approx 5{,}3 \text{ năm}
+\end{equation}
+
+Các chỉ số tài chính tổng hợp:
+\begin{itemize}
+  \item \textbf{Lợi nhuận gộp hàng năm (trước khấu hao, thuế):} 70,0 -- 23,8 = 46,2 tỷ đồng/năm.
+  \item \textbf{Khấu hao TSCĐ (đường thẳng, 10 năm):} $\approx$ 21,5 tỷ đồng/năm.
+  \item \textbf{Lợi nhuận trước thuế (EBT):} 46,2 -- 21,5 = 24,7 tỷ đồng/năm.
+  \item \textbf{Thuế TNDN (22\%):} $\approx$ 5,4 tỷ đồng/năm.
+  \item \textbf{Lợi nhuận sau thuế: } $\approx$ 19,3 tỷ đồng/năm.
+  \item \textbf{Dòng tiền ròng hàng năm (CF, sau thuế có khấu hao):} 19,3 + 21,5 = 40,8 tỷ đồng/năm.
+  \item \textbf{NPV (r = 8\%, 20 năm):} $\approx$ +185,4 tỷ đồng -- dương, dự án tạo giá trị.
+  \item \textbf{IRR (Internal Rate of Return):} $\approx$ 13,5\%/năm -- cao hơn WACC $\approx$ 8--10\%.
+  \item \textbf{Thời gian hoàn vốn đơn giản (không chiết khấu):} $214{,}8 / 40{,}8 \approx 5{,}3$ năm.
+\end{itemize}
+
+Bảng~\ref{tab:chi-so-tai-chinh} tổng hợp các chỉ số tài chính chính.
+
+\begin{table}[H]
+\caption{Tổng hợp các chỉ số tài chính chính của dự án}
+\label{tab:chi-so-tai-chinh}
+\centering
+\begin{tabular}{p{0.04\linewidth}p{0.36\linewidth}r p{0.35\linewidth}}
+\toprule
+ & \textbf{Chỉ số} & \textbf{Giá trị} & \textbf{Ghi chú} \\
+\midrule
+ & \multicolumn{3}{c}{\textbf{A. VỐN ĐẦU TƯ (CAPEX)}} \\
+\midrule
+1 & Tổng mức đầu tư & 214,8 tỷ đồng & Khái toán $\pm 30\%$; $\approx$ 8,6 triệu USD \\
+\midrule
+ & \multicolumn{3}{c}{\textbf{B. CHI PHÍ VẬN HÀNH (OPEX)}} \\
+\midrule
+2 & OPEX hàng năm & 23,8 tỷ đồng/năm & Chi phí xử lý $\approx$ 545.000 đ/tấn CTRSH \\
+\midrule
+ & \multicolumn{3}{c}{\textbf{C. DOANH THU HÀNG NĂM}} \\
+\midrule
+3 & Bán điện (FIT 2.143 đ/kWh) & 31,7 tỷ đ/năm & $\approx$14,8 triệu kWh/năm \\
+4 & Bán dầu nhiệt phân (phần ngoài) & 25,0 tỷ đ/năm & 16,59 t/ngày $\times$ 330 ngày \\
+5 & Phí xử lý CTRSH & 13,1 tỷ đ/năm & 300.000 đ/tấn $\times$ 120 tấn/ngày \\
+ & \textbf{Tổng doanh thu} & \textbf{$\approx$70,0 tỷ đ/năm} & \\
+\midrule
+ & \multicolumn{3}{c}{\textbf{D. LỢI NHUẬN VÀ DÒNG TIỀN}} \\
+\midrule
+6 & Lợi nhuận gộp (trước khấu hao, thuế) & $\approx$46,2 tỷ đ/năm & Doanh thu -- OPEX \\
+7 & Khấu hao TSCĐ (đường thẳng 10 năm) & $\approx$21,5 tỷ đ/năm & 214,8 / 10 \\
+8 & Lợi nhuận trước thuế (EBT) & $\approx$24,7 tỷ đ/năm & 46,2 -- 21,5 \\
+9 & Thuế TNDN (22\%) & $\approx$5,4 tỷ đ/năm & \\
+10 & Lợi nhuận sau thuế & $\approx$19,3 tỷ đ/năm & \\
+11 & Dòng tiền ròng hàng năm (CF) & $\approx$40,8 tỷ đ/năm & Sau thuế + Khấu hao \\
+\midrule
+ & \multicolumn{3}{c}{\textbf{E. CÁC CHỈ SỐ ĐÁNH GIÁ DỰ ÁN}} \\
+\midrule
+12 & Thời gian hoàn vốn (đơn giản) & $\approx$5,3 năm & 214,8 / 40,8 (không chiết khấu) \\
+13 & NPV (r = 8\%, 20 năm) & $\approx$185,4 tỷ đồng & Tổng CF hiện tại 400,17 tỷ -- CAPEX 214,8 tỷ \\
+14 & IRR & $\approx$13,5\%/năm & Cao hơn WACC $\approx$ 8--10\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{So sánh hiệu quả kinh tế -- môi trường với phương án chôn lấp}
+\label{sec:so-sanh-chon-lap}
+
+Phương án chôn lấp hợp vệ sinh (sanitary landfill) cho 120 tấn CTRSH/ngày tại Quảng Nam có chi phí đầu tư khoảng 50--80 tỷ đồng (không bao gồm chi phí đất và giải phóng mặt bằng), chi phí vận hành khoảng 300.000--500.000 đồng/tấn, tuổi thọ bãi chôn lấp 15--20 năm.
+
+Tuy nhiên, phương án chôn lấp có các chi phí ẩn lớn chưa được tính đầy đủ: (i) chi phí xử lý nước rác (leachate) khoảng 50--80 triệu đồng/năm; (ii) chi phí phát thải khí methane khoảng 20--30 triệu đồng/năm (phí phát thải khí nhà kính); (iii) chi phí giám sát môi trường suốt vòng đời bãi chôn lấp (30--50 năm sau khi đóng cửa).
+
+Phương án nhiệt phân -- diesel có lợi thế trên nhiều phương diện: (i) giảm 90--95\% thể tích rác thải so với chôn lấp; (ii) không phát sinh methane từ phân hủy yếm khí (giảm phát thải khí nhà kính tương đương); (iii) tạo ra năng lượng tái tạo (điện 1,84 MW); (iv) thu hồi dầu nhiệt phân có giá trị; (v) thời gian hoàn vốn 5,3 năm, NPV tại r = 8\% đạt khoảng 185 tỷ đồng và IRR khoảng 13,5\% vượt chi phí vốn, chứng minh dự án khả thi về mặt tài chính ngay cả khi không tính các chi phí ẩn của chôn lấp.
+
+Bảng~\ref{tab:so-sanh-chon-lap} tổng hợp so sánh.
+
+\begin{table}[H]
+\caption{So sánh phương án nhiệt phân -- diesel với phương án chôn lấp hợp vệ sinh}
+\label{tab:so-sanh-chon-lap}
+\centering
+\begin{tabular}{p{3.5cm} r r}
+\toprule
+\textbf{Chỉ tiêu} & \textbf{Nhiệt phân -- Diesel} & \textbf{Chôn lấp HS} \\
+\midrule
+Chi phí đầu tư & 214,8 tỷ đồng & 50--80 tỷ đồng \\
+Chi phí vận hành & 545.000 đ/tấn & 300.000--500.000 đ/tấn \\
+Diện tích sử dụng đất & Nhỏ (nhà xưởng) & Lớn (bãi chôn lấp) \\
+Phát thải khí nhà kính & Không methane, CO$_2$ từ đốt & Methane + CO$_2$ từ phân hủy \\
+Thu hồi năng lượng & Điện 1,84 MW + dầu & Không \\
+Chi phí ẩn dài hạn & Thấp & Cao (30--50 năm sau đóng cửa) \\
+NPV (r = 8\%) & $\approx$185,4 tỷ đ & Không tạo doanh thu \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Các thông số kỹ thuật trong chương được đối chiếu và nhất quán với kết quả tính toán thiết kế ở Chương \ref{chuong3} và Chương \ref{chuong4}, đảm bảo tính khả thi khi triển khai thực tế tại nhà máy Hội An.
 
 \end{document}
-

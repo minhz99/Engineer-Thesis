@@ -3,7 +3,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\chapter{TÍNH TOÁN THIẾT KẾ THIẾT BỊ CÔNG NGHỆ CHÍNH}
+\chapter{TÍNH TOÁN, THIẾT KẾ CÁC THIẾT BỊ CÔNG NGHỆ CHÍNH}
 \label{chuong4}
 
 Danh mục thiết bị của nhà máy được tổ chức theo các khối chức năng: tiếp nhận và phân loại, cắt nghiền và ép tách nước, sấy và tạo RDF, nhiệt phân, chưng cất -- tinh chế dầu, phát điện diesel, xử lý khí thải và xử lý nước thải. Nguyên tắc lựa chọn thiết bị là đảm bảo năng lực xử lý phù hợp với công suất 120\,tấn/ngày đêm, có dự phòng vận hành, dễ bảo trì và tương thích với các thiết bị đã đầu tư.
@@ -170,7 +170,7 @@ Q_{\text{khí}} = 125\;\text{kg/h} \times 17{,}5\;\text{MJ/kg}
 \label{eq:Qkhi}
 \end{equation}
 
-Kết quả cho thấy công suất nhiệt hữu ích từ khí không ngưng hồi lưu (khoảng 516\,kW) lớn hơn đáng kể nhu cầu thiết kế của buồng đốt (khoảng 200\,kW), xác nhận khả năng tự cấp nhiệt của hệ thống ở chế độ vận hành ổn định. Phần khí dư rất lớn (hơn 1,5 MW nhiệt đối với 5 mô-đun) sẽ được chuyển toàn bộ sang gia nhiệt cho lồng sấy rác (RDF) và cung cấp nhiệt lượng cho lò chưng cất dầu, từ đó làm khép kín vòng năng lượng tuyệt đối và tránh lãng phí. Nhu cầu nhiệt chi tiết tính được tương đương khoảng 9--10\% công suất nhiệt của dòng RDF, thấp hơn mức ước tính bảo thủ 15--25\% tại Mục~\ref{sec:can-bang-nang-luong}; khoảng chênh lệch này bao trùm giai đoạn khởi động, chế độ quá độ và suy giảm cách nhiệt theo thời gian.
+Kết quả cho thấy công suất nhiệt hữu ích từ khí không ngưng hồi lưu (khoảng 516\,kW) lớn hơn nhu cầu thiết kế của buồng đốt (khoảng 200\,kW), xác nhận khả năng tự cấp nhiệt của hệ thống ở chế độ vận hành ổn định. Phần khí dư lớn (hơn 1,5 MW nhiệt đối với 5 mô-đun) sẽ được chuyển toàn bộ sang gia nhiệt cho lồng sấy rác (RDF) và cung cấp nhiệt lượng cho lò chưng cất dầu, từ đó làm khép kín vòng năng lượng và tránh lãng phí. Nhu cầu nhiệt chi tiết tính được tương đương khoảng 9--10\% công suất nhiệt của dòng RDF, thấp hơn mức ước tính bảo thủ 15--25\% tại Mục~\ref{sec:can-bang-nang-luong}; khoảng chênh lệch này bao trùm giai đoạn khởi động, chế độ quá độ và suy giảm cách nhiệt theo thời gian.
 
 \subsubsection{Kiểm tra truyền nhiệt và tổng kết kích thước}
 
@@ -256,11 +256,15 @@ Tương ứng, lượng CTRSH cần cho mỗi mô-đun:
 \end{equation}
 
 Sản phẩm từ mỗi mô-đun:
-\begin{itemize}
-  \item Dầu thô: $0{,}45 \times 7{,}88 = 3{,}55$ tấn/ngày
-  \item Khí không ngưng: $0{,}30 \times 7{,}88 = 2{,}36$ tấn/ngày
-  \item Than carbon: $0{,}25 \times 9{,}22 = 2{,}30$ tấn/ngày
-\end{itemize}
+\begin{equation}
+m_{\text{dầu thô, mô-đun}} = 0{,}45 \times 7{,}88 = 3{,}55 \text{ tấn/ngày}
+\end{equation}
+\begin{equation}
+m_{\text{khí NN, mô-đun}} = 0{,}30 \times 7{,}88 = 2{,}36 \text{ tấn/ngày}
+\end{equation}
+\begin{equation}
+m_{\text{than, mô-đun}} = 0{,}25 \times 7{,}88 = 1{,}97 \text{ tấn/ngày}
+\end{equation}
 
 Năng lượng nhiệt RDF cấp cho mỗi mô-đun:
 \begin{equation}
@@ -680,7 +684,7 @@ Bảng~\ref{tab:chi-tieu-dau-tinh-che} trình bày các chỉ tiêu thiết kế
 \subsubsection{Ảnh hưởng của trị số cetane đến hiệu suất động cơ diesel}
 Trị số cetane (CN) là thước đo khả năng tự bốc cháy của nhiên liệu, phản ánh trực tiếp thời gian trễ đánh lửa (\emph{ignition delay}) trong buồng đốt. Trị số CN cao đồng nghĩa với quá trình cháy êm hơn và giảm hiện tượng gõ động cơ (diesel knock). Đối với tổ máy phát điện đang thiết kế, ngưỡng tối thiểu CN $\geq 46$ là yêu cầu bắt buộc theo TCVN 5689:2013.
 
-Đặc biệt, trị số cetane của hỗn hợp nhiên liệu (ví dụ khi phối trộn dầu nhiệt phân với dầu DO hoặc các phụ gia nâng cetane) không tuân theo quy luật cộng tuyến tính theo tỷ lệ thể tích. Việc tính toán độ bắt cháy của hỗn hợp phải được thực hiện thông qua chỉ số BCN (Blending Cetane Number) phi tuyến tính. BCN sử dụng các hệ số điều chỉnh thực nghiệm nhằm phản ánh đúng tương tác hóa học phức tạp giữa các phân đoạn hydrocarbon khác nhau (đặc biệt là hàm lượng hợp chất thơm cao trong dầu nhiệt phân thường làm giảm đột ngột CN của hỗn hợp). Việc loại bỏ cách tính tuyến tính đơn giản và áp dụng BCN giúp dự báo chính xác hơn chất lượng nhiên liệu thực tế, từ đó điều chỉnh thông số chưng cất và tỷ lệ pha trộn tối ưu.
+Đặc biệt, trị số cetane của hỗn hợp nhiên liệu (ví dụ khi phối trộn dầu nhiệt phân với dầu DO hoặc các phụ gia nâng cetane) không tuân theo quy luật cộng tuyến tính theo tỷ lệ thể tích. Việc tính toán độ bắt cháy của hỗn hợp phải được thực hiện thông qua chỉ số BCN (Blending Cetane Number) phi tuyến tính. BCN sử dụng các hệ số điều chỉnh thực nghiệm nhằm phản ánh đúng tương tác hóa học phức tạp giữa các phân đoạn hydrocarbon khác nhau (nhất là hàm lượng hợp chất thơm cao trong dầu nhiệt phân thường làm giảm đột ngột CN của hỗn hợp). Việc loại bỏ cách tính tuyến tính đơn giản và áp dụng BCN giúp dự báo chính xác hơn chất lượng nhiên liệu thực tế, từ đó điều chỉnh thông số chưng cất và tỷ lệ pha trộn.
 
 Đồng thời, giá trị CN cơ sở của dầu nhiệt phân sẽ được kiểm soát chặt chẽ thông qua việc duy trì nhiệt độ lò ở 400--450$^\circ\mathrm{C}$ để ưu tiên phân đoạn n-paraffin. Việc duy trì chất lượng dầu ổn định kết hợp tính toán BCN chính xác giúp hạn chế mài mòn vòi phun, kéo dài tuổi thọ động cơ và tối ưu hóa hiệu suất phát điện ròng của toàn nhà máy.
 
@@ -699,7 +703,7 @@ Cấu hình 6 tổ máy $\times$ 440\,kW $= 2.640$\,kW tổng công suất tác 
 
 \subsection{Cân đối điện tự dùng của nhà máy}
 
-Lưu ý đối với các thiết bị có công suất lớn tại phân khu tiền xử lý như máy băm xé (220 kW) và máy ép viên (118 kW), dòng khởi động (inrush current) có thể rất cao. Khi nhà máy vận hành ở chế độ độc lập (island mode) tách khỏi lưới điện quốc gia, việc khởi động trực tiếp các động cơ này có thể gây sụt áp nghiêm trọng cho toàn hệ thống điện nội bộ. Do đó, các thiết bị này được yêu cầu trang bị bộ khởi động mềm (Soft Starter) hoặc biến tần (VFD) để đảm bảo ổn định lưới điện nhà máy.
+Lưu ý đối với các thiết bị có công suất lớn tại phân khu tiền xử lý như máy băm xé (220 kW) và máy ép viên (118 kW), dòng khởi động (inrush current) có thể rất cao. Khi nhà máy vận hành ở chế độ độc lập (island mode) tách khỏi lưới điện quốc gia, việc khởi động trực tiếp các động cơ này có thể gây sụt áp cho toàn hệ thống điện nội bộ. Do đó, các thiết bị này được yêu cầu trang bị bộ khởi động mềm (Soft Starter) hoặc biến tần (VFD) để đảm bảo ổn định lưới điện nhà máy.
 
 \begin{table}[htbp]
 \centering
@@ -727,11 +731,14 @@ Lưu ý đối với các thiết bị có công suất lớn tại phân khu ti
 \midrule
 \multicolumn{5}{l}{\textbf{Công suất phát điện thực tế} $W_e = 2.245$\,kW} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Phụ tải tự dùng tính theo thiết bị} $= 641{,}9 / 2.245 \approx 28{,}6\%$} \\
+\multicolumn{5}{l}{\textbf{Phụ tải tự dùng tính theo thiết bị}} \\
+\multicolumn{5}{l}{$f_{\text{tự dùng,TT}} = 641{,}9 / 2.245 \approx 28{,}6\%$} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Phụ tải tự dùng dùng trong thiết kế bảo thủ} $= 30\% \times 2.245 \approx 673{,}5$\,kW} \\
+\multicolumn{5}{l}{\textbf{Phụ tải tự dùng dùng trong thiết kế bảo thủ}} \\
+\multicolumn{5}{l}{$P_{\text{tự dùng, BT}} = 30\% \times 2.245 \approx 673{,}5$\,kW} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Điện ròng thiết kế} $\approx 2.245 - 673{,}5 \approx 1.571$\,kW} \\
+\multicolumn{5}{l}{\textbf{Điện ròng thiết kế}} \\
+\multicolumn{5}{l}{$W_{\text{ròng}} \approx 2.245 - 673{,}5 \approx 1.571$\,kW} \\
 \midrule
 \bottomrule
 \end{tabular}
@@ -740,5 +747,34 @@ Lưu ý đối với các thiết bị có công suất lớn tại phân khu ti
 
 Kết quả cân đối điện năng xác nhận nhà máy có khả năng tự cấp đủ điện cho toàn bộ vận hành. Phụ tải tự dùng tính theo danh mục thiết bị là 641,9\,kW, tương đương 28,6\% công suất phát thực tế. Hệ số 30\% được chọn cao hơn mức tính toán thực tế (28,6\%) nhằm dự phòng cho các tổn thất trên trạm biến áp, chiếu sáng ngoại vi và các thiết bị phụ trợ chưa liệt kê. Do đó, thiết kế bảo thủ sử dụng giả thiết phụ tải tự dùng bằng 30\% (tương đương 673,5\,kW). Điện ròng thiết kế còn lại khoảng 1.571\,kW, thấp hơn giá trị tính theo danh mục thiết bị nhưng đảm bảo tính bảo thủ trong đánh giá khả thi.
 
+%%=============================================================
+\section{Các thông số đo lường và kiểm soát chính}
+\label{sec:thong-so-do-luong}
+%%=============================================================
+
+Để đảm bảo các thiết bị chính (lò nhiệt phân, hệ thống chưng cất, và tổ máy phát điện diesel) hoạt động ổn định và an toàn, kỹ sư quá trình xác định các thông số cốt lõi cần phải đo lường và kiểm soát liên tục:
+
+\begin{itemize}
+    \item \textbf{Cụm Lò nhiệt phân:}
+    \begin{itemize}
+        \item \textit{Nhiệt độ thành lò và không gian nhiệt phân ($400 - 500^\circ\mathrm{C}$):} Quyết định động học phản ứng, tỷ lệ bẻ gãy mạch carbon và hiệu suất tạo dầu.
+        \item \textit{Áp suất buồng lò (duy trì áp âm nhẹ):} Ngăn rò rỉ khí thoát ra môi trường, chống nguy cơ cháy nổ.
+        \item \textit{Tốc độ quay lò:} Điều chỉnh thời gian lưu của RDF, đảm bảo phân hủy triệt để.
+    \end{itemize}
+    
+    \item \textbf{Cụm Chưng cất dầu:}
+    \begin{itemize}
+        \item \textit{Nhiệt độ đỉnh và đáy tháp chưng cất:} Kiểm soát độ bay hơi và chất lượng phân đoạn các thành phần nhẹ/nặng.
+        \item \textit{Lưu lượng hồi lưu (Reflux ratio):} Đảm bảo độ tinh khiết cho phân đoạn dầu diesel.
+    \end{itemize}
+    
+    \item \textbf{Cụm Máy phát điện Diesel:}
+    \begin{itemize}
+        \item \textit{Nhiệt độ và lưu lượng khí nạp/xả:} Liên quan mật thiết đến quá trình cháy Sabathe, tỷ lệ hòa trộn nhiên liệu -- không khí.
+        \item \textit{Cảnh báo rung động (Knocking):} Đo lường qua cảm biến gia tốc để phát hiện và ngăn chặn kích nổ, bảo vệ tuổi thọ động cơ.
+    \end{itemize}
+\end{itemize}
+
+Việc thiết lập và duy trì dải vận hành tiêu chuẩn cho các thông số trên là cơ sở để bộ phận Tự động hóa thiết kế hệ thống điều khiển PLC/SCADA tương ứng, đảm bảo nhà máy vận hành tối ưu.
 
 \end{document}
