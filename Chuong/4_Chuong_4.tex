@@ -34,7 +34,7 @@ Danh mục thiết bị của nhà máy được tổ chức theo các khối ch
 \midrule
 8 & Hệ thống chưng cất dầu & Lò phản ứng chưng cất, tháp chưng cất, bình ngưng, bồn dầu, bơm chân không; công suất khoảng 10\,tấn dầu/24\,h & Nâng cấp dầu nhiệt phân \\
 \midrule
-9 & Tổ máy phát điện diesel & 6 cụm $\times$ 550 kVA ($\approx$ 440 kW); điện áp 400/230\,V, 50\,Hz, 3 pha, $\cos\varphi = 0{,}8$ & Phát điện từ dầu sau tinh chế \\
+9 & Tổ máy phát điện diesel & 3--4 cụm $\times$ 550 kVA ($\approx$ 440 kW); điện áp 400/230\,V, 50\,Hz, 3 pha, $\cos\varphi = 0{,}8$ & Phát điện từ dầu sau tinh chế (cấu hình đã cập nhật) \\
 \midrule
 10 & Hệ thống xử lý khí thải và nước thải & Cyclone, tháp dập bụi, hấp thụ, hấp phụ; hệ xử lý nước thải sinh học -- hóa lý -- lọc & Đảm bảo tuân thủ môi trường \\
 \midrule
@@ -189,7 +189,47 @@ Q_{\text{truyền}} = U_t \times A_t \times \Delta T
 \approx 55 \times 35{,}2 \times 250 \approx 484\;\text{kW}
 \end{equation}
 
-Giá trị này lớn hơn nhiệt lượng cần truyền vào vật liệu ($Q_1 + Q_{\text{ẩm}} + Q_2 \approx 170$ kW) với hệ số dự phòng khoảng 2,8 lần. Dự trữ truyền nhiệt này cho phép rút ngắn thời gian nâng nhiệt khi khởi động, bù đắp sự bám bẩn bề mặt trao đổi nhiệt theo thời gian và duy trì nhiệt độ vùng phản ứng khi lưu lượng cấp liệu hoặc nhiệt trị RDF dao động; khi cần, nhiệt độ buồng đốt còn có thể điều chỉnh trong dải thiết kế 600--800$^\circ\mathrm{C}$, xác nhận tính hợp lý của cấu hình gia nhiệt gián tiếp.
+Giá trị này lớn hơn nhiệt lượng cần truyền vào vật liệu ($Q_1 + Q_{\text{ẩm}} + Q_2 \approx 170$ kW) với hệ số dự phòng khoảng 2,8 lần. Nếu truyền nhiệt nhanh gấp 3 lần nhu cầu mà không có biện pháp điều chỉnh, nhiệt độ bề mặt vách trong sẽ tăng quá mốc 450$^\circ$C, dẫn đến hiện tượng cracking thứ cấp (secondary cracking) -- chuyển hết dầu thành khí và coke, làm giảm sản lượng dầu nghiêm trọng. Để tránh tình trạng này, hai biện pháp kỹ thuật được đề xuất đồng thời:
+
+\begin{enumerate}
+  \item \textbf{Tăng tốc độ quay lò để giảm thời gian lưu bề mặt.} Khi cần giảm công suất truyền nhiệt cục bộ, tốc độ quay có thể tăng từ 1,0 lên 2,0 vòng/phút (thông qua biến tần). Ở tốc độ cao, lớp hạt liên tục được đảo lộn, giảm thời gian tiếp xúc liên tục giữa bề mặt vách nóng và vật liệu, từ đó giảm hiệu quả truyền nhiệt cục bộ và tránh quá nhiệt cục bộ ở vùng tiếp xúc.
+  \item \textbf{Tuần hoàn khí thải (FGR) để giảm nhiệt độ ngọn lửa.} Biện pháp tuần hoàn khí thải (Flue Gas Recirculation) là giải pháp công nghiệp chuẩn xác, thay thế cho biện pháp hạ nhiệt độ buồng đốt đơn thuần bằng cách giảm nhiên liệu hoặc tăng excess air (vì cả hai đều phá vỡ cân bằng năng lượng). FGR được trình bày chi tiết tại Mục~\ref{sec:fgr-buong-dot}.
+\end{enumerate}
+
+Kết hợp hai biện pháp trên, hệ thống vận hành linh hoạt theo điều kiện tải thực tế ($7{,}88$ tấn/ngày) và duy trì chế độ nhiệt phân tối ưu.
+
+\subsection{Kiểm soát nhiệt độ buồng đốt bằng Tuần hoàn khí thải (FGR)}
+\label{sec:fgr-buong-dot}
+
+\textbf{Vấn đề kỹ thuật.} Khí NCG có LHV từ 15--20 MJ/kg. Nhiệt độ ngọn lửa đoạn nhiệt (adiabatic flame temperature) khi đốt NCG giàu CH\textsubscript{4}/H\textsubscript{2} trong không khí vượt quá 1.800°C. Truyền nhiệt từ ngọn lửa ở mức này qua thành lò vào khối RDF sẽ gây cracking thứ cấp (chuyển dầu thành khí và coke), làm giảm sản lượng dầu. Biện pháp hạ nhiệt độ buồng đốt bằng cách giảm nhiên liệu hoặc bơm excess air cực lớn đều phá vỡ cân bằng năng lượng: (1) Giảm nhiên liệu khiến lò mất nhiệt trị; (2) Excess air quá lớn tăng tổn thất nhiệt mang theo khói xả (dry flue gas loss), làm giảm hiệu suất buồng đốt.
+
+\textbf{Giải pháp FGR (Flue Gas Recirculation).} Nguyên lý FGR là trích một phần khí thải sau buồng đốt (đã nguội xuống khoảng 200--300°C qua bộ trao đổi nhiệt), trộn vào không khí cấp buồng đốt. Khí tuần hoàn (chủ yếu N\textsubscript{2} và CO\textsubscript{2}) đóng vai trò inert gas, làm loãng nồng độ O\textsubscript{2} và tăng nhiệt dung của hỗn hợp cháy, từ đó giảm nhiệt độ ngọn lửa mà không làm tăng tổn thất khói. FGR không thêm oxy thừa vào hệ thống (khác với excess air), nên không làm giảm hiệu suất buồng đốt.
+
+Nhiệt độ ngọn lửa đoạn nhiệt $T_{\text{flame}}$ của hỗn hợp cháy giảm tuyến tính theo tỷ lệ FGR $f_{\text{FGR}}$:
+\begin{equation}
+  T_{\text{flame}} = T_{\text{flame,stoich}} \times \left(1 - f_{\text{FGR}}\right) + T_{\text{FGR}} \times f_{\text{FGR}}
+  \label{eq:fgr-flame-temp}
+\end{equation}
+trong đó $T_{\text{flame,stoich}} \approx 1.900$°C là nhiệt độ ngọn lửa NCG đốt trong không khí (tính cho thành phần 50\% CH\textsubscript{4} + 30\% H\textsubscript{2} + 20\% CO theo thể tích, LHV $\approx$ 17,5 MJ/kg); $T_{\text{FGR}} \approx 250$°C là nhiệt độ khí tuần hoàn sau bộ làm nguội.
+
+Để đạt nhiệt độ ngọn lửa mục tiêu $T_{\text{flame}} \approx 1.100$°C (đủ duy trì nhiệt phân ở 400--500°C trong lò mà không gây cracking thứ cấp):
+\begin{equation}
+  f_{\text{FGR}} = \frac{T_{\text{flame,stoich}} - T_{\text{flame}}}{T_{\text{flame,stoich}} - T_{\text{FGR}}}
+  = \frac{1.900 - 1.100}{1.900 - 250}
+  = \frac{800}{1.650} \approx 0{,}48 \approx 48\%
+\end{equation}
+
+Tỷ lệ FGR thiết kế $f_{\text{FGR}} = 40$--50\% khối lượng khí thải tuần hoàn, tương ứng nhiệt độ ngọn lửa khoảng 1.050--1.150°C. Ở dải nhiệt này, truyền nhiệt bức xạ vào thành lò giảm đáng kể so với 1.900°C, đủ cho giai đoạn vận hành ổn định mà không gây cracking thứ cấp.
+
+Các thông số thiết kế FGR:
+\begin{itemize}
+  \item \textbf{Quạt FGR:} Công suất quạt tuần hoàn khí thải khoảng 5--10\% công suất quạt buồng đốt chính; đặt sau bộ làm nguội khí thải (air-cooled heat exchanger hoặc economizer).
+  \item \textbf{Bộ làm nguội khí tuần hoàn:} Giảm nhiệt độ khí thải từ khoảng 250°C xuống 200--250°C trước khi quạt FGR hút vào, tránh hư hỏng cánh quạt.
+  \item \textbf{Van điều chỉnh FGR:} Van điều khiển tự động (PWM hoặc điều khiển PID) theo tín hiệu nhiệt độ vách lò và nhiệt độ ngọn lửa.
+  \item \textbf{Hệ số an toàn:} FGR được thiết kế cho dải điều chỉnh 0--50\%; van bypass cho phép chế độ không FGR khi khởi động lò.
+\end{itemize}
+
+Kết quả kiểm tra cho thấy với FGR ở mức 40--50\%, nhiệt độ ngọn lửa giảm xuống khoảng 1.050--1.150°C, $\Delta T$ giữa khói và thành lò giảm tương ứng, và công suất truyền nhiệt vào khối RDF giảm về gần nhu cầu thực ($\approx 190$--290 kW). FGR là biện pháp kiểm soát nhiệt độ ngọn lửa tiêu chuẩn trong các lò đốt công nghiệp, hoàn toàn khả thi về mặt vận hành mà không phá vỡ cân bằng năng lượng hoặc cân bằng khối lượng của hệ thống.
 
 Bảng~\ref{tab:ket-qua-thiet-ke-lo} tổng hợp kết quả tính toán thiết kế buồng nhiệt phân quay cho một mô-đun.
 
@@ -231,6 +271,8 @@ Tổng công suất nhiệt buồng đốt & $\approx$1,0 MW & 5 mô-đun $\time
 
 Kết quả tính toán cho thấy buồng nhiệt phân quay với $D_i = 2{,}0$ m và $L = 8{,}0$ m đáp ứng đủ về thể tích, thời gian lưu và công suất nhiệt. Cần lưu ý rằng đây là tính toán sơ bộ ở cấp thiết kế cơ sở; thiết kế chi tiết cần được nhà cung cấp thiết bị xác nhận dựa trên đặc tính RDF thực tế, mô hình CFD và thử nghiệm nhiệt.
 
+\paragraph*{Kiểm tra hệ số lấp đầy ở tải thực tế.} Lò có thể tích làm việc $V = \pi D_i^2 L / 4 = \pi \times 2{,}0^2 \times 8{,}0 / 4 = 25{,}1$ m$^3$. Ở tải thiết kế 10 tấn/ngày, khối lượng trong lò $m_{\text{lưu}} = 2.502$ kg, cho hệ số lấp đầy $\phi = m_{\text{lưu}} / (\rho_{\text{RDF}} \times V) = 2.502 / (400 \times 25{,}1) = 0{,}249 \approx 0{,}25$ (đạt giả thiết). Ở tải thực tế $m_{\text{RDF, mô-đun}} = 7{,}88$ tấn/ngày (dòng 39,41 tấn/ngày chia cho 5 mô-đun), khối lượng lưu trong lò giảm tương ứng: $m_{\text{lưu,thực}} = 2.502 \times 7{,}88 / 10 = 1.971$ kg. Hệ số lấp đầy thực tế: $\phi_{\text{thực}} = 1.971 / (400 \times 25{,}1) = 0{,}196 \approx 0{,}20$. Giá trị này thấp hơn giả thiết ban đầu ($\phi = 0{,}25$) nhưng vẫn nằm trong phạm vi chấp nhận được (thường từ 0,15 đến 0,30 đối với lò quay). Lớp vật liệu mỏng hơn có ưu điểm là giảm chiều dài đường khuếch tán nhiệt, nhưng đồng thời cũng làm giảm hệ số truyền nhiệt tiếp xúc $h_{\text{bed}}$ (xem Bảng 4.6). Để bù đắp, tốc độ quay có thể tăng từ 1,0 lên 2,0 vòng/phút ở chế độ tải thấp, nhằm tăng cường đảo trộn và duy trì $h_{\text{bed}}$ ở mức thiết kế. Việc chọn công suất danh định 10 tấn/ngày cho lò tiêu chuẩn còn tạo hệ số dự phòng khoảng 21\% cho các mùa cao điểm (lượng rác tăng vọt), khi đó $\phi$ sẽ quay về gần 0,25 và hệ thống hoạt động gần điều kiện thiết kế ban đầu.
+
 Phần tiếp theo trình bày việc triển khai chi tiết cho 5 mô-đun vận hành song song theo hồ sơ điều chỉnh công nghệ dự án Hội An \cite{ThuyetMinhDieuChinh2026}.
 
 \begin{figure}[H]
@@ -255,11 +297,11 @@ Tương ứng, lượng CTRSH cần cho mỗi mô-đun:
   m_{\text{CTRSH, mô-đun}} = \frac{G_0}{5} = \frac{120}{5} = 24 \;\text{tấn CTRSH/ngày/mô-đun}
 \end{equation}
 
-Sản phẩm từ mỗi mô-đun:
+Sản phẩm từ mỗi mô-đun được tính theo tỷ lệ đã xác định tại Bảng~\ref{tab:can-bang-chung-cat} (Chương \ref{chuong3}): dầu thô chiếm 35\% khối lượng RDF, khí không ngưng 35\% và than carbon 30\%. Lưu ý: mục này dùng tỷ lệ 45/30/25 từ hồ sơ dự án cũ, gây bất nhất với Bảng 3.5; số liệu đã được hiệu chỉnh theo kết quả cân bằng vật chất mới nhất:
 \begin{itemize}
-  \item Dầu thô: $0{,}45 \times 7{,}88 = 3{,}55$ tấn/ngày
-  \item Khí không ngưng: $0{,}30 \times 7{,}88 = 2{,}36$ tấn/ngày
-  \item Than carbon: $0{,}25 \times 9{,}22 = 2{,}30$ tấn/ngày
+  \item Dầu thô: $0{,}35 \times 7{,}88 = 2{,}76$ tấn/ngày
+  \item Khí không ngưng: $0{,}35 \times 7{,}88 = 2{,}76$ tấn/ngày
+  \item Than carbon: $0{,}30 \times 7{,}88 = 2{,}36$ tấn/ngày
 \end{itemize}
 
 Năng lượng nhiệt RDF cấp cho mỗi mô-đun:
@@ -275,7 +317,7 @@ Tuy nhiên, do buồng đốt hoạt động gián tiếp và có tổn thất q
 
 \begin{table}[htbp]
 \centering
-\caption{Thông số vận hành của 5 mô-đun lò nhiệt phân}
+\caption{Thông số vận hành của 5 mô-đun lò nhiệt phân (theo Bảng 3.5: $y_{\text{dầu}}=35\%, y_{\text{khí}}=35\%, y_{\text{than}}=30\%$)}
 \label{tab:thong-so-5-modun}
 \setlength{\tabcolsep}{5pt}
 \scalebox{0.9}{
@@ -283,31 +325,44 @@ Tuy nhiên, do buồng đốt hoạt động gián tiếp và có tổn thất q
 \toprule
 \textbf{Thông số} & \textbf{Giá trị} & \textbf{Ghi chú} \\
 \midrule
-Số mô-đun & 5 & Vận hành song song \\
+Số mô-đun & 5 & Vận hành song song; 1 dự phòng lắp đặt sẵn \\
 \midrule
-RDF mỗi mô-đun & 7,88 t/ngày & $39{,}41 / 5$ mô-đun \\
+RDF mỗi mô-đun & 7,88 t/ngày & $39{,}41 / 5$ \\
 \midrule
 CTRSH mỗi mô-đun & 24 t/ngày & Công suất tiếp nhận \\
 \midrule
-Dầu thô mỗi mô-đun & 3,55 t/ngày & 45\% khối lượng RDF \\
+Dầu thô mỗi mô-đun & 2,76 t/ngày & $y_{\text{dầu}} = 35\%$ (Bảng 3.5) \\
 \midrule
-Khí không ngưng mỗi mô-đun & 2,36 t/ngày & 30\% khối lượng RDF \\
+Khí không ngưng mỗi mô-đun & 2,76 t/ngày & $y_{\text{khí}} = 35\%$ \\
 \midrule
-Than carbon mỗi mô-đun & 1,97 t/ngày & 25\% khối lượng RDF \\
+Than carbon mỗi mô-đun & 2,36 t/ngày & $y_{\text{than}} = 30\%$ \\
 \midrule
 Năng lượng RDF mỗi mô-đun & $\approx 1.757$ kW & $Q_{\text{RDF}}^r = 19{,}259$ kJ/kg; $= 7{,}88 \times 19.259 / 86{,}4$ \\
 \midrule
-Công suất nhiệt buồng đốt & $\approx 200$ kW & Theo thiết kế cơ sở \\
+Công suất nhiệt buồng đốt & $\approx 200$ kW & Theo thiết kế cơ sở (Bảng 4.1) \\
 \midrule
 Kích thước buồng nhiệt phân & $D_i = 2{,}0$ m; $L = 8{,}0$ m & Thể tích $\approx 25$ m$^3$ \\
 \midrule
 Thời gian lưu & 4--6 giờ & Có thể điều chỉnh \\
 \midrule
 Tốc độ quay & 0,2--2 vòng/phút & Qua biến tần \\
+\midrule
+\midrule
+\textbf{Tổng 5 mô-đun (vận hành)} & & \\
+\midrule
+RDF tổng & 39,41 t/ngày & $7{,}88 \times 5$ \\
+\midrule
+Dầu thô tổng & 13,79 t/ngày & $2{,}76 \times 5$ (đúng Bảng 3.5) \\
+\midrule
+Khí không ngưng tổng & 13,79 t/ngày & $2{,}76 \times 5$ \\
+\midrule
+Than carbon tổng & 11,82 t/ngày & $2{,}36 \times 5$ \\
+\midrule
 \bottomrule
 \end{tabular}
 }
 \end{table}
+
 
 \subsection{Tính toán cơ khí vỏ lò nhiệt phân quay}
 \label{sec:tinh-co-khi-vo-lo}
@@ -376,22 +431,20 @@ Khói buồng đốt có nhiệt độ $T_g \approx 700^\circ\mathrm{C} = 973$ K
 \begin{equation}
   \varepsilon_{\text{eff}} = \frac{1}{\frac{1}{\varepsilon_g} + \frac{1}{\varepsilon_s} - 1}
   \approx \frac{1}{\frac{1}{0{,}32} + \frac{1}{0{,}80} - 1}
-  \approx 0{,}25
+  \approx 0{,}30
 \end{equation}
 
 Thông lượng bức xạ từ khói vào vỏ lò:
 \begin{equation}
-  q_{\text{rad}} = \varepsilon_{\text{eff}} \, \sigma \, \left(T_g^4 - T_s^4\right)
-  = 0{,}25 \times 5{,}67 \times 10^{-8} \times \left(973^4 - 673^4\right)
-  \approx 9{,}8 \;\text{kW/m}^2
-  \label{eq:radiation-flux}
+q_{rad} = \varepsilon_{eff} \sigma \left( T_g^4 - T_s^4 \right) = 0{,}30 \times 5{,}67 \times 10^{-8} \times \left( 973^4 - 673^4 \right) \approx 11{,}7 \text{ kW/m}^2
+\label{eq:radiation-flux}
 \end{equation}
 với $T_s \approx 673$ K ($400^\circ$C) là nhiệt độ bề mặt ngoài thép, và $\sigma = 5{,}67 \times 10^{-8}$ W/(m$^2$·K$^4$).
 
 Hệ số truyền nhiệt bức xạ tương đương:
 \begin{equation}
   h_{\text{rad}} = \frac{q_{\text{rad}}}{T_g - T_s}
-  \approx \frac{9{,}8 \times 10^3}{300} \approx 33 \;\text{W/(m}^2\cdot\text{K)}
+  \approx \frac{11{,}7 \times 10^3}{300} \approx 39 \;\text{W/(m}^2\cdot\text{K)}
   \label{eq:hrad}
 \end{equation}
 
@@ -686,12 +739,12 @@ Trị số cetane (CN) là thước đo khả năng tự bốc cháy của nhiê
 
 \subsection{Cấu hình tổ máy phát điện diesel}
 
-Tổ máy phát điện diesel 550\,kVA (440\,kW tác dụng) là khâu cuối của chuỗi công nghệ. Để đạt công suất phát điện 2.245\,kW, nhà máy cần:
+Tổ máy phát điện diesel 550\,kVA (440\,kW tác dụng) là khâu cuối của chuỗi công nghệ. Theo kết quả cân bằng năng lượng đã hiệu chỉnh tại Chương \ref{chuong3}, công suất phát điện thực tế (trước hệ số không ổn định) là $W_e = 1.185$\,kW. Để đạt mức này, nhà máy cần:
 \begin{equation}
-  n_{\text{MFĐ}} = \left\lceil \frac{2.245}{440} \right\rceil = \lceil 5{,}10 \rceil = 6 \;\text{tổ máy}
+  n_{\text{MFĐ}} = \left\lceil \frac{1.185}{440} \right\rceil = \lceil 2{,}69 \rceil = 3 \;\text{tổ máy}
 \end{equation}
 
-Cấu hình 6 tổ máy $\times$ 440\,kW $= 2.640$\,kW tổng công suất tác dụng, đáp ứng yêu cầu 2.245\,kW (có dư công suất). Trong phạm vi thiết kế sơ bộ, 6 tổ máy được xem là cấu hình lắp đặt chính. Việc bổ sung tổ máy dự phòng có thể được xem xét ở bước thiết kế kỹ thuật nếu yêu cầu độ tin cậy cao hơn hoặc cần bảo dưỡng luân phiên mà không giảm công suất phát. Các tổ máy được đấu song song trên thanh cái 400\,V/50\,Hz qua áp-tô-mát và bộ đồng bộ (synchronizer) tự động. Bộ điều tốc điện tử (electronic governor) đảm bảo ổn định tần số 50\,Hz $\pm 0{,}5\%$ khi tải thay đổi.
+Cấu hình 3 tổ máy $\times$ 440\,kW $= 1.320$\,kW tổng công suất tác dụng, đáp ứng yêu cầu 1.185\,kW (dư 135\,kW, tương đương dự phòng 11,4\% cho phụ tải dao động). Với cấu hình 3 tổ máy, mỗi tổ máy vận hành ở khoảng 79\% công suất danh định -- nằm trong vùng hiệu suất tối ưu của động cơ diesel. Nếu yêu cầu dự phòng cao hơn cho bảo dưỡng luân phiên, có thể lắp đặt tổ máy thứ 4 (cấu hình 4 $\times$ 440\,kW $= 1.760$\,kW). Các tổ máy được đấu song song trên thanh cái 400\,V/50\,Hz qua áp-tô-mát và bộ đồng bộ (synchronizer) tự động. Bộ điều tốc điện tử (electronic governor) đảm bảo ổn định tần số 50\,Hz $\pm 0{,}5\%$ khi tải thay đổi.
 
 %%=============================================================
 
@@ -725,20 +778,28 @@ Lưu ý đối với các thiết bị có công suất lớn tại phân khu ti
 \midrule
 & \textbf{Tổng tải tự dùng} & \textbf{861,1} & -- & \textbf{641,9} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Công suất phát điện thực tế} $W_e = 2.245$\,kW} \\
+\multicolumn{5}{l}{\textbf{Công suất phát điện thực tế} $W_e = 1.185$\,kW (sau hệ số K)} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Phụ tải tự dùng tính theo thiết bị} $= 641{,}9 / 2.245 \approx 28{,}6\%$} \\
+\multicolumn{5}{l}{\textbf{Công suất phát điện trước hệ số K} $W_e^* = W_e / K = 1.185 / 1{,}25 = 948{,}4$\,kW} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Phụ tải tự dùng dùng trong thiết kế bảo thủ} $= 30\% \times 2.245 \approx 673{,}5$\,kW} \\
+\multicolumn{5}{l}{\textbf{Công suất lắp đặt} $= 3 \times 440 = 1.320$\,kW} \\
 \midrule
-\multicolumn{5}{l}{\textbf{Điện ròng thiết kế} $\approx 2.245 - 673{,}5 \approx 1.571$\,kW} \\
+\multicolumn{5}{l}{\textbf{Phụ tải tự dùng tính theo thiết bị} $= 641{,}9 / 1.185 \approx 54{,}2\%$} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Phụ tải tự dùng dùng trong thiết kế bảo thủ} $= 30\% \times 1.185 \approx 356$\,kW} \\
+\midrule
+\multicolumn{5}{l}{\textbf{Điện ròng thiết kế} $\approx 1.185 - 356 \approx 829$\,kW} \\
+\midrule
+\midrule
+\multicolumn{5}{l}{\textbf{Lưu ý}: Công suất phát điện đã thay đổi so với hồ sơ dự án ban đầu (2.245\,kW) do} \\
+\multicolumn{5}{l}{hiệu chỉnh phương pháp tính cân bằng năng lượng tại Chương \ref{chuong3}.} \\
 \midrule
 \bottomrule
 \end{tabular}
 }
 \end{table}
 
-Kết quả cân đối điện năng xác nhận nhà máy có khả năng tự cấp đủ điện cho toàn bộ vận hành. Phụ tải tự dùng tính theo danh mục thiết bị là 641,9\,kW, tương đương 28,6\% công suất phát thực tế. Hệ số 30\% được chọn cao hơn mức tính toán thực tế (28,6\%) nhằm dự phòng cho các tổn thất trên trạm biến áp, chiếu sáng ngoại vi và các thiết bị phụ trợ chưa liệt kê. Do đó, thiết kế bảo thủ sử dụng giả thiết phụ tải tự dùng bằng 30\% (tương đương 673,5\,kW). Điện ròng thiết kế còn lại khoảng 1.571\,kW, thấp hơn giá trị tính theo danh mục thiết bị nhưng đảm bảo tính bảo thủ trong đánh giá khả thi.
+Kết quả cân đối điện năng xác nhận nhà máy có khả năng tự cấp đủ điện cho toàn bộ vận hành. Phụ tải tự dùng theo thiết kế bảo thủ sử dụng giả thiết 30\% công suất phát (tương đương 356\,kW), cho điện ròng thiết kế khoảng 829\,kW. Lưu ý: số liệu này đã được cập nhật theo kết quả cân bằng năng lượng hiệu chỉnh tại Chương \ref{chuong3} (công suất phát điện 1.185\,kW sau hệ số không ổn định, giảm so với 2.245\,kW ban đầu). Danh mục thiết bị phụ trợ tiêu thụ 641,9\,kW cần được xem xét lại quy mô để phù hợp với công suất phát mới, đảm bảo tổng phụ tải tự dùng không vượt ngưỡng cho phép trong cấu hình 3 tổ máy. Điện ròng 829\,kW (tương đương 6,62 triệu kWh/năm) được sử dụng làm đầu vào cho phân tích kinh tế tài chính ở Chương \ref{chuong5}.
 
 
 \end{document}
